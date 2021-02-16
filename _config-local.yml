@@ -6,9 +6,19 @@ baseurl: "/scroll-line/_site" # the subpath of your site, e.g. /blog
 title: Style guide # title of the documentation
 description: >- # Description of the docs. (>- means to ignore newlines until "baseurl:")
   UI and UX documentation for my app.
-#sidebar_logo_url: https://itautomotive-dev.github.io/bymycar-www/img/logo-bymycar.svg # Image URL: Can be local e.g. '/img/logo-bymycar.png' or remote 'https://remotesite.com/img/logo-bymycar.png'
-#sidebar_logo_max_height: 30px # Logo image max height
-sidebar_text_logo_font_size: 32px # If no logo, font size of the site title 
+
+sidebar:
+    #logo_url: https://www.example.com/logo.svg # Image URL: Can be local e.g. '/img/logo.png' or remote 'https://remotesite.com/img/logo.png'
+    #logo_max_height: 30px # Logo image max height
+    text_logo_font_size: 32px # If no logo, font size of the site title 
+
+playground:
+    stylesheets: # Relative URL from site root, absolute URL with 'http'
+        - styleguide/css/normalize.css
+        - styleguide/css/prism.css
+    scripts: # Relative URL from site root, absolute URL with 'http'
+        - https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js
+        - styleguide/js/my-toggles.js
 
 # Build settings - Do not edit excepting you do know what you do
 markdown: kramdown

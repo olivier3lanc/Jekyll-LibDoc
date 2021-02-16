@@ -17,17 +17,17 @@
     <ul class="u-m-none u-p-none u-ls-none u-mh-100vh u-o-auto">
         <li>
             <a rel="author" href="{{ site.url }}{{ site.baseurl }}" class="c-btn m-translucid m-block-right u-p-md">
-                {% if site.sidebar_logo_url %}
-                    <img    src="{% if site.sidebar_logo_url contains 'https://' or site.sidebar_logo_url contains 'http://' %}{{ site.sidebar_logo_url }}{% else %}{{ site.url }}{{ site.baseurl }}{{ site.sidebar_logo_url }}{% endif %}" 
-                            {% if site.sidebar_logo_max_height %}
-                                style="max-height:{{ site.sidebar_logo_max_height }}; max-width: 100%;"
+                {% if site.sidebar.logo_url %}
+                    <img    src="{% if site.sidebar.logo_url contains 'https://' or site.sidebar.logo_url contains 'http://' %}{{ site.sidebar.logo_url }}{% else %}{{ site.url }}{{ site.baseurl }}{{ site.sidebar.logo_url }}{% endif %}" 
+                            {% if site.sidebar.logo_max_height %}
+                                style="max-height:{{ site.sidebar.logo_max_height }}; max-width: 100%;"
                             {% else %}
                                 class="u-mh-100 u-mw-100"
                             {% endif %}
                             alt="{{ site.title }}">
                 {% else %}
                     <!-- Without logo -->
-                    <span {% if site.sidebar_text_logo_font_size %}style="font-size:{{ site.sidebar_text_logo_font_size }}"{% endif %}>{{ site.title | escape }}</span>
+                    <span {% if site.sidebar.text_logo_font_size %}style="font-size:{{ site.sidebar.text_logo_font_size }}"{% endif %}>{{ site.title | escape }}</span>
                 {% endif %}
             </a>
         </li>
@@ -38,7 +38,7 @@
                         id="search-box" 
                         name="query" 
                         placeholder="Search" 
-                        class="u-bl-none u-bt-thin-dashed-alt u-br-none u-bb-none u-bg-search"
+                        class="u-bl-none u-bt-thin-dashed-alt {% if page.title == 'Search results' %}u-br-large-solid{% else %}u-br-none{% endif %} u-bb-none u-bg-search"
                         u-fs-xs="sm,md"
                         u-p-xs="sm,md">
                 <input type="submit" value="Search" class="u-none">

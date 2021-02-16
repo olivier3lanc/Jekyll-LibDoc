@@ -1,0 +1,67 @@
+---
+layout: styleguide/page
+---
+{{ content }}
+<link rel="stylesheet" href="{{ 'styleguide/css/file-icon-vectors.min.css' | relative_url }}">
+<ul class="c-grid u-bl-thin-dashed-alt">
+    <li class="m-w-12 c-form u-bt-thin-dashed-alt u-br-thin-dashed-alt u-bb-thin-dashed-alt">
+        <input type="search" id="asset-search" class="u-b-none u-bg-search">
+        <label for="asset-search">Quick search</label>
+    </li>
+    {% assign base_filter_path = site.url | append: site.baseurl %}
+    {% assign user_filter_path = base_filter_path | append: page.files.path_from_root %}
+    
+    {% for file in site.static_files %}
+        {% assign absolute_file_url = base_filter_path | append: file.path %}
+        {% assign extname_downcase = file.extname | downcase %}
+        {% if page.files.filter.size > 0 %}
+            {% assign to_be_displayed = false %}
+            {% for user_filter in page.files.filter %}
+                {% assign ext_filter = user_filter | prepend: '.' %}
+                {% if ext_filter == extname_downcase %}
+                    {% assign to_be_displayed = true %}
+                    {% break %}
+                {% else %}
+                {% endif %}
+            {% endfor %}
+        {% else %}
+            {% assign to_be_displayed = true %}
+        {% endif %}
+        {% if absolute_file_url contains user_filter_path and to_be_displayed == true %}
+            {% assign file_is_an_image = false %}
+            {% if extname_downcase == '.svg' or extname_downcase == '.jpg' or extname_downcase == '.jpeg' or extname_downcase == '.gif' or extname_downcase == '.png' or extname_downcase == '.webp' %}
+                {% assign file_is_an_image = true %}
+            {% endif %}
+            <li class="m-w-4 c-grid m-column m-space-between m-middle u-bb-thin-dashed-alt u-br-thin-dashed-alt u-p-md asset" m-nowrap="md,xl">
+                <a  href="{{ site.url }}{{ site.baseurl }}{{ file.path }}" title="Preview {{ file.extname }}" 
+                    target="_blank" 
+                    class="m-grow c-btn m-block m-column m-translucid u-p-none {% if file_is_an_image == true %}u-bg-damier-hard preview{% endif %}">
+                    {% if file_is_an_image == true %}
+                        <img    src="{{ site.url }}{{ site.baseurl }}{{ file.path }}" 
+                                loading="lazy" 
+                                alt="{{ file.name }}" 
+                                class="u-mh-100 u-mw-100">
+                    {% else %}
+                        {% assign extname_downcase_wo_point = extname_downcase | replace: '.', '' %}
+                        <span class="u-fs-xxl fiv-hct fiv-icon-{{ extname_downcase_wo_point }}"></span>
+                    {% endif %}
+                </a>
+                <nav class="u-m-none">
+                    <p class="u-ta-center u-fs-xxs u-mt-sm u-c-primary-alt">{{ file.name }}</p> 
+                    <button class="c-btn m-translucid"
+                            title="Copy URL"
+                            onclick="copyToClipboard('{{ site.url }}{{ site.baseurl }}{{ file.path }}')">
+                        <span class="i-copy u-mr-xs"></span>
+                    </button>
+                    <a  href="{{ site.baseurl }}{{ file.path }}" 
+                        class="c-btn"
+                        title="Download file"
+                        download>
+                        <span class="i-download"></span>
+                    </a>
+                </nav>
+            </li>
+        {% endif %}
+    {% endfor %}
+</ul>
+<script type="text/javascript" src="{{ '/styleguide/js/files.js' | relative_url }}"></script>

@@ -62,172 +62,25 @@ let playground = {
         }
         // Iterate each playgournd from selector
         jQuery(mainSelector).each(function(playgroundIndex) {
-            var jQ_this = jQuery(this),
-                responsiveCheckboxName = jQuery(this).attr('data-responsive-checkbox-name'), // Responsive checkbox name
-                responsiveComponentSelector = jQuery(this).attr('data-responsive-component-selector'), // Selector string of the component
-                responsivePrefix = styleGuide.getCssVariable('--briks-responsive-prefix'), // Briks responsive prefix
-                responsiveModifiers = jQuery(this).attr('data-responsive-modifier-class-names'), // Comma separated modifiers names
-                responsiveModifierOperator = jQuery(this).attr('data-responsive-modifier-operator'), // Selector operator between component and modifier
+            var jQ_this = jQuery(this);
                 playgroundId = jQ_this.attr('id'); // Playground id
             if (playgroundId === undefined) {
                 // If playground id is not set, apply one based on index
                 playgroundId = 'playground-'+playgroundIndex;
                 jQ_this.attr('id', playgroundId);
             }
-            // Set empty string if selector operator is undefined
-            if (responsiveModifierOperator === undefined) {
-                responsiveModifierOperator = '';
-            }
-            // Optional: If all responsive data are defined
-            if (responsiveCheckboxName !== undefined && responsiveComponentSelector !== undefined && responsiveModifiers !== undefined && responsivePrefix !== undefined) {
-                // Make an array of modifiers names list
-                var listOfModifiersSelectors = responsiveModifiers.split(',');
-                // Init class names and attributes shorthands to insert into displayed code
-                var classNames = '',
-                    screens = '',
-                    jQ_checked = jQuery('input[type="checkbox"][name="'+responsiveCheckboxName+'"]:checked'); // Checked screen sizes
-                    console.log(responsiveCheckboxName);
-                // If source code from playground is not already copied
-                if (jQuery('#'+playgroundId+'-source').length === 0) {
-                    // Copy source code from playground to a specific element
-                    // This is to always start from the source code
-                    jQuery('body').append(
-                        '<div id="'+playgroundId+'-source" style="display:none" data-class="'+jQ_this.attr('class')+'">'+
-                            jQ_this.html()+
-                        '</div>'
-                    );
-                } 
-                // If source code already copied, copy the source code into the playground
-                else {
-                    jQ_this.html(jQuery('#'+playgroundId+'-source').html());
-                }
-                // If at least one screen size is checked
-                if (jQ_checked.length > 0) {
-                    // For each pattern, iterate to build responsive CSS class names and shorthand attributes
-                    listOfModifiersSelectors.forEach(function(pattern) {
-                        // With or without point class names
-                        const   patternWithoutPoint = pattern.replace('.',''),
-                                responsiveSelectorWithoutPoint = responsiveComponentSelector.replace('.','');
-                        // For each checked screen size
-                        jQ_checked.each(function(index) {
-                            // Get the name of the screen size and use it to build CSS class names and shorthand attributes 
-                            const screen = jQuery(this).val();
-                            classNames += ' '+patternWithoutPoint+responsivePrefix+screen;
-                            screens += screen;
-                            // If last checked screen size
-                            if (index < jQ_checked.length - 1) {
-                                screens += ', ';
-                            }
-                        });
-                        // If shorthand display checkbox is checked
-                        // Insert responsive shorthand
-                        if (jQuery('#'+responsiveCheckboxName+'-shorthand').prop('checked')) {
-                            jQ_this
-                                .find(responsiveComponentSelector+responsiveModifierOperator+pattern)
-                                .removeClass(patternWithoutPoint)
-                                .attr(patternWithoutPoint, screens);
-                        }
-                        // Otherwise, insert list of responsive CSS class names
-                        else {
-                            // Modifier and component's root are on the same level
-                            if (responsiveModifierOperator == '') {
-                                jQ_this
-                                    .find(responsiveComponentSelector+responsiveModifierOperator+pattern)
-                                    .attr('class', responsiveSelectorWithoutPoint+classNames);
-                            }
-                            // Otherwise, modifier is set on a children of the component's root
-                            else {
-                                // Remove first white space
-                                classNames = classNames.replace(' ', '');
-                                jQ_this
-                                    .find(responsiveComponentSelector+responsiveModifierOperator+pattern)
-                                    .attr('class', classNames);
-                            }
-                        }
-                        // Clean empty class attributes
-                        jQ_this.find('*').each(function() {
-                            const raw = jQuery(this).attr('class');
-                            if (raw !== undefined && raw.trim() == '') {
-                                jQuery(this).removeAttr('class');
-                            }
-                        });
-                        // Reset for the next iteration
-                        classNames = '';
-                        screens = '';
-                    });
-                }
-            }
             // The HTML content of the current playground
             // var content = jQ_this.html();
             var content = jQ_this.find('code').html();
             // console.log(jQ_this.find('code').html());
             content = playground.decodeHtml(content);
-            // Expand / Minimize control
-            var expandClasses = '';
-            if (jQuery(this).attr('data-expand') !== undefined) {
-                expandClasses = jQuery(this).attr('data-expand');
-            }
-            // console.log(jQ_this[0].innerText);
-            // Init options string
-            // var optionsStr = '';
-            // Option 'data-resizeable': Enable resizeable playground
-            // var optionResizeable = jQuery(this).attr('data-resizeable');
-            // Default playground width in %
-            // var resizerValue = '100';
-            // If option resizeable is set
-            // if (optionResizeable !== undefined) {
-            //     // If resizer input range was already set on a custom value
-            //     if (jQ_this.attr('data-resizer') !== undefined) {
-            //         resizerValue = jQ_this.attr('data-resizer');
-            //     }
-                // HTML Input range of the playground resizer
-                // optionsStr += ''+
-                // '<div class="c-form u-bl-dashed-neutral u-br-dashed-neutral u-bc-primary-edge">'+
-                //     '<input type="range" class="playground-resizer" title="Playground resizer" id="'+playgroundId+'-iframe-resizer" value="'+resizerValue+'" min="1" max="100" data-target="'+playgroundId+'-wrapper" data-playground-id="'+playgroundId+'">'+
-                //     '<label for="'+playgroundId+'-iframe-resizer" class="sg-fs-xxs">Resizer</label>'+
-                // '</div>';
-            // }
-            // Default playground width in %
-            var resizerValue = '100';
-            if (jQ_this.attr('data-resizer') !== undefined) {
-                resizerValue = jQ_this.attr('data-resizer');
-                jQuery('[data-playground-resizer-value="'+playgroundId+'"]').val(resizerValue);
-            }
-            // Option 'data-force-pattern': Apply a light damier repeated background into the playground
-            var optionForcePattern = jQuery(this).attr('data-force-pattern');
-            if (optionForcePattern === undefined) {
-                optionForcePattern = false;
-            } else {
-                optionForcePattern = true;
-            }
-            // Option 'data-force-hard-pattern': Apply a heavy weight damier repeated background into the playground
-            var optionForceHardPattern = jQuery(this).attr('data-force-hard-pattern');
-            if (optionForceHardPattern === undefined) {
-                optionForceHardPattern = false;
-            } else {
-                optionForceHardPattern = true;
-            }
-            // Option 'data-centered': Center the content of the playground horizontally and vertically
-            var optionCentered = jQuery(this).attr('data-centered');
-            if (optionCentered === undefined) {
-                optionCentered = false;
-            } else {
-                optionCentered = true;
-            }
-            // Option 'data-centered': Apply a padding into the playground
-            var optionPadding = jQuery(this).attr('data-padding');
-            if (optionPadding === undefined) {
-                optionPadding = false;
-            } else {
-                optionPadding = true;
-            }
             // Set up the final opbject that will be base64 and stringified
             var sentObject = {
                 options: {
-                    padding: optionPadding,
-                    forcePattern: optionForcePattern,
-                    forceHardPattern: optionForceHardPattern,
-                    centered: optionCentered
+                    // padding: optionPadding,
+                    // forcePattern: optionForcePattern,
+                    // forceHardPattern: optionForceHardPattern,
+                    // centered: optionCentered
                 },
                 content: content
             }
@@ -266,8 +119,8 @@ let playground = {
                         '</button>'+
                     '</li>'+
                 '</ul>'+
-                '<div class="playground-instance '+expandClasses+'" id="'+playgroundId+'-instance">'+
-                    '<div class="u-relative u-transition-none u-bl-thin-dashed-alt u-br-thin-dashed-alt u-o-auto u-resize-both u-mw-100" id="'+playgroundId+'-wrapper" style="width: '+resizerValue+'%">'+
+                '<div class="playground-instance" id="'+playgroundId+'-instance">'+
+                    '<div class="u-relative u-transition-none u-bl-thin-dashed-alt u-br-thin-dashed-alt u-o-auto u-resize-both u-mw-100" id="'+playgroundId+'-wrapper">'+
                         iframeStr+
                         '<div class="playground-preview c-position m-absolute m-top-left u-w-100 u-h-100 u-bg-play u-cur-pointer" onclick="playground.loadIframe(\''+playgroundId+'-iframe\')"></div>'+
                     '</div>'+
@@ -283,16 +136,6 @@ let playground = {
         if (typeof Prism !== undefined) {
             Prism.highlightAll();
         }
-        // Resizer input range listener
-        jQuery('.playground-resizer').on('input', function() {
-            var value = jQuery(this).val();
-            var id = jQuery(this).attr('data-target');
-            var playgroundId = jQuery(this).attr('data-playground-id');
-            // Sets the playground width
-            jQuery('#'+id).css('width', value+'%');
-            // Record the resized value on the playground data attribute data-resizer
-            jQuery('#'+playgroundId).attr('data-resizer', value);
-        });
         // Manage playground top position to match the bottom of the commands
         playground.adjustPlaygroundInstanceMaximized();
         jQuery(window).on('resize', function() {

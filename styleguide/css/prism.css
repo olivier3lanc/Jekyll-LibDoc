@@ -7,7 +7,7 @@
  pre[class*="language-"] {
    color: #ABB2BF;
    background: none;
-   font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+   font-family: var(--sg-font-family-monospace);
    text-align: left;
    white-space: pre;
    word-spacing: normal;
