@@ -1,0 +1,40 @@
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% assign pagecontent_description = page.content | markdownify | replace: '.', '. ' | replace: '</h2>', ': ' | replace: '</h3>', ': ' | replace: '</h4>', ': ' | strip_html | strip_newlines | replace: '  ', ' ' | truncate: 160 %}
+    <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{% if pagecontent_description.size > 10 %}{{ pagecontent_description }}{% else %}{{ site.description }}{% endif %}{% endif %} ">
+    <link rel="apple-touch-icon" sizes="57x57" href="{{ '/img/favicons/apple-icon-57x57.png' | absolute_url }}">
+    <link rel="apple-touch-icon" sizes="60x60" href="{{ '/img/favicons/apple-icon-60x60.png' | absolute_url }}">
+    <link rel="apple-touch-icon" sizes="72x72" href="{{ '/img/favicons/apple-icon-72x72.png' | absolute_url }}">
+    <link rel="apple-touch-icon" sizes="76x76" href="{{ '/img/favicons/apple-icon-76x76.png' | absolute_url }}">
+    <link rel="apple-touch-icon" sizes="114x114" href="{{ '/img/favicons/apple-icon-114x114.png' | absolute_url }}">
+    <link rel="apple-touch-icon" sizes="120x120" href="{{ '/img/favicons/apple-icon-120x120.png' | absolute_url }}">
+    <link rel="apple-touch-icon" sizes="144x144" href="{{ '/img/favicons/apple-icon-144x144.png' | absolute_url }}">
+    <link rel="apple-touch-icon" sizes="152x152" href="{{ '/img/favicons/apple-icon-152x152.png' | absolute_url }}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ '/img/favicons/apple-icon-180x180.png' | absolute_url }}">
+    <link rel="icon" type="image/png" sizes="192x192"  href="{{ '/img/favicons/android-icon-192x192.png' | absolute_url }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ '/img/favicons/favicon-32x32.png' | absolute_url }}">
+    <link rel="icon" type="image/png" sizes="96x96" href="{{ '/img/favicons/favicon-96x96.png' | absolute_url }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ '/img/favicons/favicon-16x16.png' | absolute_url }}">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="{{ '/img/favicons/ms-icon-144x144.png' | absolute_url }}">
+    <meta name="theme-color" content="#ffffff">
+    {% include styleguide/common-css.html %}
+
+{% for stylesheet in page.stylesheets %}
+    {% if stylesheet contains 'https://' or stylesheet contains 'http://' %}
+    <link rel="stylesheet" href="{{ stylesheet }}">
+    {% else %}
+    <link rel="stylesheet" href="{{ site.url }}{{ site.baseurl }}/styleguide/css/{{ stylesheet }}">
+    {% endif %}
+{% endfor %}
+    <script type="text/javascript" src="{{ '/styleguide/js/jquery/jquery-3.4.0.min.js' | relative_url }}"></script>
+    <script>
+        window.site = {
+            url: '{{ site.url }}',
+            baseurl: '{{ site.baseurl }}'
+        }
+    </script>
+</head>

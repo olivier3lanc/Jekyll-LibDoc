@@ -1,0 +1,2264 @@
+/*
+888888b.           d8b 888               
+888  "88b          Y8P 888               
+888  .88P              888               
+8888888K.  888d888 888 888  888 .d8888b  
+888  "Y88b 888P"   888 888 .88P 88K      
+888    888 888     888 888888K  "Y8888b. 
+888   d88P 888     888 888 "88b      X88 
+8888888P"  888     888 888  888  88888P' 
+*/
+/* 
+    CSS VARIABLES
+    Enable or disable CSS variables of Briks into :root
+    --briks-{{ patternType }}-{{ patternName }}
+*/
+$briks-css-variables-enabled:           false;
+/* 
+    UNIT
+    The default unit used into the entire design system
+*/
+$briks-unit:                            'px';
+/* 
+    COMPONENTS PREFIX
+    The prefix which preceeds every component name
+*/
+$briks-components-prefix:               'my-';
+/* 
+    MODIFIERS PREFIX
+    The prefix which preceeds every modifier name
+*/
+$briks-modifiers-prefix:                'mod-';
+/* 
+    UTILITIES PREFIX
+    The prefix which preceeds every utility name
+*/
+$briks-utilities-prefix:                'u-';
+/* 
+    RESPONSIVE PREFIX
+    The prefix which preceeds every screen size name
+*/
+$briks-responsive-prefix:               '-';
+/* 
+    LUMINANCE METHOD
+    Sets the method for automatic color contrast calculation. Involved in briks-smart-contrast function.
+    Default is 3, possible values:
+    1: Weighted Euclidean Distance in 3D RGB Space http://alienryderflex.com/hsp.html
+    2: W3C recommandation https://www.w3.org/TR/AERT/#color-contrast
+    3: Luma sRGB https://en.wikipedia.org/wiki/Rec._709
+*/
+$briks-luminance-method:                3;
+/*
+    LUMINANCE THRESHOLD
+    Define the luminance threshold between light and dark. Float value between 0 and 1.
+    Float value between 0 and 1
+*/
+$briks-luminance-threshold:             0.5;
+
+/*
+.d8888b.           888                           
+d88P  Y88b          888                           
+888    888          888                           
+888         .d88b.  888  .d88b.  888d888 .d8888b  
+888        d88""88b 888 d88""88b 888P"   88K      
+888    888 888  888 888 888  888 888     "Y8888b. 
+Y88b  d88P Y88..88P 888 Y88..88P 888          X88 
+"Y8888P"   "Y88P"  888  "Y88P"  888      88888P' 
+    
+    COLORS
+    @type SASS map https://sass-lang.com/documentation/file.SASS_REFERENCE.html#maps
+*/
+$briks-colors: (
+);
+
+/*
+ .d8888b.                                                           d8b                            
+d88P  Y88b                                                          Y8P                            
+Y88b.                                                                                              
+ "Y888b.    .d8888b 888d888 .d88b.   .d88b.  88888b.       .d8888b  888 88888888  .d88b.  .d8888b  
+    "Y88b. d88P"    888P"  d8P  Y8b d8P  Y8b 888 "88b      88K      888    d88P  d8P  Y8b 88K      
+      "888 888      888    88888888 88888888 888  888      "Y8888b. 888   d88P   88888888 "Y8888b. 
+Y88b  d88P Y88b.    888    Y8b.     Y8b.     888  888           X88 888  d88P    Y8b.          X88 
+ "Y8888P"   "Y8888P 888     "Y8888   "Y8888  888  888       88888P' 888 88888888  "Y8888   88888P' 
+
+    @type SASS map https://sass-lang.com/documentation/file.SASS_REFERENCE.html#maps
+    @format [nameOfTheScreenSize]: [number]
+
+    Sets the **break points** of your responsive design system. 
+    Enter any amount of break point names and values to build your own screen sizes. 
+    It is recommended to use semantic names, easy to remenber and to use, 
+    they are used to name your CSS classes utilities. 
+    `0` value defines the smallest screen size.
+
+    // Example
+    $briks-screen-sizes: (
+        mini: 0, // Use '0' to define the smallest screen size
+        medium: 500,
+        maxi: 800
+    );
+    SCREEN SIZES
+*/
+$briks-screen-sizes: (
+);
+
+/*
+8888888888                888             
+888                       888             
+888                       888             
+8888888  .d88b.  88888b.  888888 .d8888b  
+888     d88""88b 888 "88b 888    88K      
+888     888  888 888  888 888    "Y8888b. 
+888     Y88..88P 888  888 Y88b.       X88 
+888      "Y88P"  888  888  "Y888  88888P' 
+
+    @type SASS map https://sass-lang.com/documentation/file.SASS_REFERENCE.html#maps
+    Fill the fonts assets informations for your design system. Supported font inclusions methods are:
+
+    ### Local or remote
+    // example
+    $briks-fonts: (
+        my-bold: ( // Your own font family name for the design system
+            type:        'local', // Sets the type
+            filename:    'montserrat-bold-webfont', // Name of the font file w/o extension
+            name:        'Montserrat Bold', // The display name used for compilation, can be any string
+            path:        '../fonts/', // Relative path to the file or remote URL
+            legacy:      false, // true means woff2 and woff, false means ttf+woff+svg
+            fallback:    'sans-serif', // Name of a websafe font family used as fallback
+            weight:      600, // Recommended but optional font weight
+        )
+    );
+
+    ### Google font
+    // example
+    $briks-fonts: (
+        my-light: ( // Your own font family name for the design system
+            type:        'google', // Sets the font type
+            name:        'Montserrat', // The Google font name
+            weight:      'Light', // Sets the weight of the font, leave empty '' for default weight
+            fallback:    'sans-serif' // Sets a web safe fallback font. Value can be any web safe font.
+        )
+    );
+
+    ### Websafe
+    // example
+    $briks-fonts: (
+        my-websafe: ( // Your own font family name for the design system
+            type:        'websafe', // Sets the font type
+            name:        'fantasy' // Sets the websafe font family name
+        )
+    );
+    FONTS
+*/
+$briks-fonts: (
+);
+
+/*
+    DO NOT EDIT BOOT
+*/
+@import '../engine/boot';
+
+                         
+/*
+8888888888                888                  d8b                   
+888                       888                  Y8P                   
+888                       888                                        
+8888888  .d88b.  88888b.  888888      .d8888b  888 88888888  .d88b.  
+888     d88""88b 888 "88b 888         88K      888    d88P  d8P  Y8b 
+888     888  888 888  888 888         "Y8888b. 888   d88P   88888888 
+888     Y88..88P 888  888 Y88b.            X88 888  d88P    Y8b.     
+888      "Y88P"  888  888  "Y888       88888P' 888 88888888  "Y8888  
+
+    @type SASS map https://sass-lang.com/documentation/file.SASS_REFERENCE.html#maps
+    @format [nameOfTheFontSize]: [number]    
+
+    Enter all the font sizes that are used in the design system.
+
+    // example
+    $briks-font-sizes: (
+        xs: 12,
+        sm: 16,
+        md: 20,
+        xl: 40
+    );
+    FONT SIZES
+*/
+$briks-font-sizes: (
+);
+
+/*
+88888888888                                                           888               
+    888                                                               888               
+    888                                                               888               
+    888  888  888 88888b.   .d88b.   .d88b.  888d888 8888b.  88888b.  88888b.  888  888 
+    888  888  888 888 "88b d88""88b d88P"88b 888P"      "88b 888 "88b 888 "88b 888  888 
+    888  888  888 888  888 888  888 888  888 888    .d888888 888  888 888  888 888  888 
+    888  Y88b 888 888 d88P Y88..88P Y88b 888 888    888  888 888 d88P 888  888 Y88b 888 
+    888   "Y88888 88888P"   "Y88P"   "Y88888 888    "Y888888 88888P"  888  888  "Y88888 
+              888 888                    888                 888                    888 
+         Y8b d88P 888               Y8b d88P                 888               Y8b d88P 
+          "Y88P"  888                "Y88P"                  888                "Y88P"  
+
+    Font size and font family are mandatory https://developer.mozilla.org/en-US/docs/Web/CSS/Shorthand_properties#Font_Properties
+    @format [typographyName]: [font-style optional] [font-variant optional] [font-weight optional] [font-size][/line-height optional] [font-family]
+    
+    An optional way to manage typography on your design system. 
+    Typography is equivalent to [CSS font shorthand](https://developer.mozilla.org/en-US/docs/Web/CSS/font).
+
+    * Use function `my-font-family(yourFontName)` from [$briks-fonts](#Fonts) to apply your own font family.
+    * Use function `my-font-size(yourFontSize)` from [$briks-font-sizes](#Font_sizes) to apply your own font size.
+
+    // example
+    $briks-typography: (
+        bold: my-font-family(my-bold), // Invalid
+        websafe: my-font-size(md) my-font-family(my-websafe), // Valid
+        light: 25px/1.8em my-font-family(my-light), // Valid
+        full: italic small-caps normal my-font-size(xl)/1.8em serif, // Valid
+        opentest: italic small-caps 700 my-font-size(md)/1.8em my-font-family(OpenSansBold) // Valid
+    );
+    TYPOGRAPHY
+*/
+$briks-typography: (
+);
+
+/*
+ .d8888b.                             d8b                            
+d88P  Y88b                            Y8P                            
+Y88b.                                                                
+ "Y888b.   88888b.   8888b.   .d8888b 888 88888b.   .d88b.  .d8888b  
+    "Y88b. 888 "88b     "88b d88P"    888 888 "88b d88P"88b 88K      
+      "888 888  888 .d888888 888      888 888  888 888  888 "Y8888b. 
+Y88b  d88P 888 d88P 888  888 Y88b.    888 888  888 Y88b 888      X88 
+ "Y8888P"  88888P"  "Y888888  "Y8888P 888 888  888  "Y88888  88888P' 
+           888                                          888          
+           888                                     Y8b d88P          
+           888                                      "Y88P"           
+
+    @type SASS map https://sass-lang.com/documentation/file.SASS_REFERENCE.html#maps
+    @format [customNameOfTheFontSize]: [number]
+
+    Enter all the spacings that will be used into your project. 
+    Spacings are used in margings, paddings, horizontal and vertical positionings like top, right, bottom, left.
+
+    // Example 
+    $briks-spacings: (
+        xs: 8,
+        sm: 12,
+        md: 18,
+        lg: 26
+    );
+    SPACINGS
+*/
+$briks-spacings: (
+);
+
+/*
+888888b.                        888                           
+888  "88b                       888                           
+888  .88P                       888                           
+8888888K.   .d88b.  888d888 .d88888  .d88b.  888d888 .d8888b  
+888  "Y88b d88""88b 888P"  d88" 888 d8P  Y8b 888P"   88K      
+888    888 888  888 888    888  888 88888888 888     "Y8888b. 
+888   d88P Y88..88P 888    Y88b 888 Y8b.     888          X88 
+8888888P"   "Y88P"  888     "Y88888  "Y8888  888      88888P' 
+  
+    @type SASS map https://sass-lang.com/documentation/file.SASS_REFERENCE.html#maps
+    @format [customBorderName]: [CSS shorthand]
+
+    * Use function `my-color(yourColorName)` from [$briks-colors](#Colors) to apply your own color.
+    
+    // example
+    $briks-borders: (
+        light: 1px solid my-color(myColorName), // With my-color() function
+        dark: 2px dashed green // Custom color
+    );
+    BORDERS
+*/
+$briks-borders: (
+);
+
+/*
+888888b.                        888                                            888 d8b                   
+888  "88b                       888                                            888 Y8P                   
+888  .88P                       888                                            888                       
+8888888K.   .d88b.  888d888 .d88888  .d88b.  888d888      888d888 8888b.   .d88888 888 888  888 .d8888b  
+888  "Y88b d88""88b 888P"  d88" 888 d8P  Y8b 888P"        888P"      "88b d88" 888 888 888  888 88K      
+888    888 888  888 888    888  888 88888888 888          888    .d888888 888  888 888 888  888 "Y8888b. 
+888   d88P Y88..88P 888    Y88b 888 Y8b.     888          888    888  888 Y88b 888 888 Y88b 888      X88 
+8888888P"   "Y88P"  888     "Y88888  "Y8888  888          888    "Y888888  "Y88888 888  "Y88888  88888P' 
+
+    @type SASS map https://sass-lang.com/documentation/file.SASS_REFERENCE.html#maps
+    @format [customBorderRadiusName]: [number]
+
+    Enter your border radius for your design system.
+
+    // example
+    $briks-border-radius: (
+        min: 2,
+        max: 30
+    );
+    BORDER RADIUS
+*/
+$briks-border-radius: (
+);
+
+
+/*
+.d8888b.  888                    888                                 
+d88P  Y88b 888                    888                                 
+Y88b.      888                    888                                 
+ "Y888b.   88888b.   8888b.   .d88888  .d88b.  888  888  888 .d8888b  
+    "Y88b. 888 "88b     "88b d88" 888 d88""88b 888  888  888 88K      
+      "888 888  888 .d888888 888  888 888  888 888  888  888 "Y8888b. 
+Y88b  d88P 888  888 888  888 Y88b 888 Y88..88P Y88b 888 d88P      X88 
+ "Y8888P"  888  888 "Y888888  "Y88888  "Y88P"   "Y8888888P"   88888P' 
+
+    @type SASS map https://sass-lang.com/documentation/file.SASS_REFERENCE.html#maps
+    @format [customBoxShadowName]: [CSS shorthand]
+
+    Enter your [box shadows](https://developer.mozilla.org/en-US/docs/Web/CSS/box-shadow) for your design system.
+
+    * Use function `my-color(yourColorName)` from [$briks-colors](#Colors) to apply your own color.
+    
+    // example
+    $briks-shadows: (
+        light: 0px 0px 10px 0px my-color(yourColorName), // With my-color() function
+        strong: 0px 2px 12px 0px rgba(black, 0.6) // Custom color
+    );
+    SHADOWS
+*/
+$briks-shadows: (
+);
+
+/*
+888     888 888    d8b 888 d8b 888    d8b                                                          
+888     888 888    Y8P 888 Y8P 888    Y8P                                                          
+888     888 888        888     888                                                                 
+888     888 888888 888 888 888 888888 888  .d88b.  .d8888b                                         
+888     888 888    888 888 888 888    888 d8P  Y8b 88K                                             
+888     888 888    888 888 888 888    888 88888888 "Y8888b.                                        
+Y88b. .d88P Y88b.  888 888 888 Y88b.  888 Y8b.          X88                                        
+ "Y88888P"   "Y888 888 888 888  "Y888 888  "Y8888   88888P'                                        
+
+*/
+
+/*
+    BACKGROUNDS UTILITIES
+    ---
+    Generates CSS classes of 'background' property from a user defined list of background names with their associated values.
+    For each {{ name }} and {{ value }} in briks-utilities__backgrounds__names-and-values:
+    .{{ briks-utilities-prefix }}{{ briks-utilities__backgrounds__background-prefix }}{{ name }} {
+        background: {{ value }} !important;
+    }
+*/
+$briks-utilities__backgrounds__enabled: false;
+$briks-utilities__backgrounds__background-prefix: 'bg-';
+$briks-utilities__backgrounds__names-and-values: (
+);
+$briks-utilities__backgrounds__responsive: false;
+
+/*
+    BACKGROUND SIZES
+    ---
+    Generates CSS classes of 'background-size' property from a user defined list of background sizes names with their associated values.
+    For each {{ name }} and {{ value }} in briks-utilities__background-sizes__names-and-values:
+    .{{ briks-utilities-prefix }}{{ briks-utilities__background-sizes__background-size-prefix }}{{ name }} {
+        background-size: {{ value }} !important;
+    }
+*/
+$briks-utilities__background-sizes__enabled: false;
+$briks-utilities__background-sizes__background-size-prefix: '';
+$briks-utilities__background-sizes__names-and-values: (
+);
+$briks-utilities__background-sizes__responsive: false;
+
+/*
+    BACKGROUND POSITIONS
+    ---
+    Generates CSS classes of 'background-position' property from a user defined list of background positions names with their associated values.
+    For each {{ name }} and {{ value }} in briks-utilities__background-positions__names-and-values:
+    .{{ briks-utilities-prefix }}{{ briks-utilities__background-positions__background-position-prefix }}{{ name }} {
+        background-position: {{ value }} !important;
+    }
+*/
+$briks-utilities__background-positions__enabled: false;
+$briks-utilities__background-positions__background-position-prefix: '';
+$briks-utilities__background-positions__names-and-values: (
+);
+$briks-utilities__background-positions__responsive: false;
+
+/*
+    BACKGROUND REPEATS
+    ---
+    Generates CSS classes of 'background-repeat' property from a user defined list of background repeats names with their associated values.
+    For each {{ name }} and {{ value }} in briks-utilities__background-repeats__names-and-values:
+    .{{ briks-utilities-prefix }}{{ briks-utilities__background-repeats__background-repeat-prefix }}{{ name }} {
+        background-repeat: {{ value }} !important;
+    }
+*/
+$briks-utilities__background-repeats__enabled: false;
+$briks-utilities__background-repeats__background-repeat-prefix: '';
+$briks-utilities__background-repeats__names-and-values: (
+);
+$briks-utilities__background-repeats__responsive: false;
+
+/*
+    BORDER RADIUS UTILITIES
+    ---
+    Generates CSS classes of 'border-radius', border-top-left-radius 'border-top-right-radius', 'border-bottom-right-radius', 'border-bottom-left-radius',
+    properties from $briks-border-radius names with associated values.
+    For each {{ name }} and {{ value }} in briks-border-radius:
+    .{{ briks-utilities-prefix }}{{ briks-utilities__border-radius__border-radius-prefix }}{{ name }} {
+        border-radius: {{ value }} !important;
+    }
+    same model for top left, top right etc.
+*/
+$briks-utilities__border-radius__enabled: false;
+$briks-utilities__border-radius__border-radius-prefix: 'brad-'; // false to disable
+$briks-utilities__border-radius__border-top-left-radius-prefix: 'bradtl-'; // false to disable
+$briks-utilities__border-radius__border-top-right-radius-prefix: 'bradtr-'; // false to disable
+$briks-utilities__border-radius__border-bottom-right-radius-prefix: 'bradbr-'; // false to disable
+$briks-utilities__border-radius__border-bottom-left-radius-prefix: 'bradbl-'; // false to disable
+$briks-utilities__border-radius__responsive: false; // true may increase significantly file size
+
+/*
+    BORDERS UTILITIES
+    ---
+    Generates CSS classes of 'border', 'border-top', 'border-right', 'border-bottom', 'border-left', 
+    properties from $briks-borders names with associated values.
+    For each {{ name }} and {{ value }} in briks-borders:
+    .{{ briks-utilities-prefix }}{{ briks-utilities__borders__border-prefix }}{{ name }} {
+        border: {{ value }} !important;
+    }
+    same model for top, right, bottom and left.
+*/
+$briks-utilities__borders__enabled: false;
+$briks-utilities__borders__border-prefix: 'b-'; // false to disable
+$briks-utilities__borders__border-top-prefix: 'bt-'; // false to disable
+$briks-utilities__borders__border-right-prefix: 'br-'; // false to disable
+$briks-utilities__borders__border-bottom-prefix: 'bb-'; // false to disable
+$briks-utilities__borders__border-left-prefix: 'bl-'; // false to disable
+$briks-utilities__borders__responsive: false; // true may increase significantly file size
+
+/*
+    COLORS UTILITIES
+    ---
+    Generates CSS classes of 'color' and 'background-color' properties from $briks-colors names with associated values.
+    For each {{ name }} and {{ value }} in briks-colors:
+    .{{ briks-utilities-prefix }}{{ briks-utilities__colors__color-prefix }}{{ name }} {
+        color: {{ value }} !important;
+    }
+    .{{ briks-utilities-prefix }}{{ briks-utilities__colors__background-color-prefix }}{{ name }} {
+        background-color: {{ value }} !important;
+    }
+*/
+$briks-utilities__colors__enabled: false;
+$briks-utilities__colors__color-prefix: 'c-';
+$briks-utilities__colors__background-color-prefix: 'bc-';
+$briks-utilities__colors__responsive: false; // true may increase significantly file size
+
+/*
+    CURSORS UTILITIES
+    ---
+    Generates CSS classes of 'cursor' property from a user defined list of cursor names with their associated values.
+    For each {{ name }} and {{ value }} in briks-utilities__cursors__names-and-values:
+    .{{ briks-utilities-prefix }}{{ briks-utilities__cursors__cursor-prefix }}{{ name }} {
+        cursor: {{ value }} !important;
+    }
+*/
+$briks-utilities__cursors__enabled: false;
+$briks-utilities__cursors__cursor-prefix: '';
+$briks-utilities__cursors__names-and-values: (
+);
+$briks-utilities__cursors__responsive: false;
+
+/*
+    DISPLAY UTILITIES
+    ---
+    Generates CSS classes of 'display' property from a list of possible display values.
+    .{{ briks-utilities-prefix }}{{ briks-utilities__display__global-prefix }}{{ briks-utilities__display__none-name }} {
+        display: none !important;
+    }
+    .{{ briks-utilities-prefix }}{{ briks-utilities__display__global-prefix }}{{ briks-utilities__display__inline-name }} {
+        display: inline !important;
+    }
+    etc
+*/
+$briks-utilities__display__enabled: false;
+$briks-utilities__display__global-prefix: '';
+$briks-utilities__display__none-name: 'none'; // false to disable
+$briks-utilities__display__inline-name: 'inline'; // false to disable
+$briks-utilities__display__inline-block-name: 'inline-block'; // false to disable
+$briks-utilities__display__block-name: 'block'; // false to disable
+$briks-utilities__display__inherit-name: 'inh'; // false to disable. To fix: cannot be 'inherit'
+$briks-utilities__display__initial-name: 'init'; // false to disable. To fix: cannot be 'initial'
+$briks-utilities__display__responsive: true;
+
+/*
+    FONT FAMILIES UTILITIES
+    ---
+    Generates CSS classes of 'font-family' property from $briks-fonts names with associated values.
+    For each {{ name }} and {{ value }} in briks-fonts:
+    .{{ briks-utilities-prefix }}{{ briks-utilities__font-families__font-family-prefix }}{{ name }} {
+        font-family: {{ value }} !important;
+    }
+*/
+$briks-utilities__font-families__enabled: false;
+$briks-utilities__font-families__font-family-prefix: 'ff-';
+$briks-utilities__font-families__responsive: false; // true may increase significantly file size
+
+/*
+    FONT SIZES UTILITIES
+    ---
+    Generates CSS classes of 'font-size' property from $briks-font-sizes names with associated values.
+    For each {{ name }} and {{ value }} in briks-font-sizes:
+    .{{ briks-utilities-prefix }}{{ briks-utilities__font-sizes__font-size-prefix }}{{ name }} {
+        font-size: {{ value }} !important;
+    }
+*/
+$briks-utilities__font-sizes__enabled: false;
+$briks-utilities__font-sizes__font-size-prefix: 'fs-';
+$briks-utilities__font-sizes__responsive: true; // true may increase significantly file size
+
+/*
+    HEIGHTS UTILITIES
+    ---
+    Generates CSS classes of 'height' property from a user defined list of heights names with their associated values.
+    For each {{ name }} and {{ value }} in briks-utilities__heights__names-and-values:
+    .{{ briks-utilities-prefix }}{{ briks-utilities__heights__height-prefix }}{{ name }} {
+        height: {{ value }} !important;
+    }
+*/
+$briks-utilities__heights__enabled: false;
+$briks-utilities__heights__height-prefix: 'h-';
+$briks-utilities__heights__names-and-values: (
+);
+$briks-utilities__heights__responsive: true;
+
+/*
+    LINE HEIGHTS UTILITIES
+    ---
+    Generates CSS classes of 'line-height' property from a user defined list of line heights names with their associated values.
+    For each {{ name }} and {{ value }} in briks-utilities__line-heights__names-and-values:
+    .{{ briks-utilities-prefix }}{{ briks-utilities__line-heights__line-height-prefix }}{{ name }} {
+        line-height: {{ value }} !important;
+    }
+*/
+$briks-utilities__line-heights__enabled: false;
+$briks-utilities__line-heights__line-height-prefix: 'lh-';
+$briks-utilities__line-heights__names-and-values: (
+);
+$briks-utilities__line-heights__responsive: false;
+
+
+/*
+    LIST STYLES UTILITIES
+    ---
+    Generates CSS classes of 'list-style' property from a user defined list of list styles names with their associated values.
+    For each {{ name }} and {{ value }} in briks-utilities__list-styles__names-and-values:
+    .{{ briks-utilities-prefix }}{{ briks-utilities__list-styles__list-style-prefix }}{{ name }} {
+        list-style: {{ value }} !important;
+    }
+*/
+$briks-utilities__list-styles__enabled: false;
+$briks-utilities__list-styles__list-style-prefix: 'ls-';
+$briks-utilities__list-styles__names-and-values: (
+);
+$briks-utilities__list-styles__responsive: false;
+
+/*
+    MARGINS UTILITIES
+    ---
+    Generates CSS classes of 'margin', 'margin-top', 'margin-right', 'margin-bottom', 'margin-left',
+    properties from $briks-spacings names with associated values.
+    For each {{ name }} and {{ value }} in briks-spacings:
+    .{{ briks-utilities-prefix }}{{ briks-utilities__margins__margin-prefix }}{{ name }} {
+        margin: {{ value }} !important;
+    }
+    .{{ briks-utilities-prefix }}{{ briks-utilities__margins__margin-top-prefix }}{{ name }} {
+        margin-top: {{ value }} !important;
+    }
+    etc
+*/
+$briks-utilities__margins__enabled: false;
+$briks-utilities__margins__margin-prefix: 'm-'; // false to disable 
+$briks-utilities__margins__margin-top-prefix: 'mt-'; // false to disable 
+$briks-utilities__margins__margin-right-prefix: 'mr-'; // false to disable 
+$briks-utilities__margins__margin-bottom-prefix: 'mb-'; // false to disable 
+$briks-utilities__margins__margin-left-prefix: 'ml-'; // false to disable 
+$briks-utilities__margins__zero-name: false; // Optional zero margin, set false to disable 
+$briks-utilities__margins__auto-name: 'auto'; // Optional auto margin, set false to disable 
+$briks-utilities__margins__responsive: true; // May increase file size significantly
+
+/*
+    MAX HEIGHTS UTILITIES
+    ---
+    Generates CSS classes of 'max-height' property from a user defined list of max heights names with their associated values.
+    For each {{ name }} and {{ value }} in briks-utilities__max-heights__names-and-values:
+    .{{ briks-utilities-prefix }}{{ briks-utilities__max-heights__max-height-prefix }}{{ name }} {
+        max-height: {{ value }} !important;
+    }
+*/
+$briks-utilities__max-heights__enabled: false;
+$briks-utilities__max-heights__max-height-prefix: 'mh-';
+$briks-utilities__max-heights__names-and-values: 
+);
+$briks-utilities__max-heights__responsive: false;
+
+/*
+    MAX WIDTHS UTILITIES
+    ---
+    Generates CSS classes of 'max-width' property from a user defined list of max widths names with their associated values.
+    For each {{ name }} and {{ value }} in briks-utilities__max-widths__names-and-values:
+    .{{ briks-utilities-prefix }}{{ briks-utilities__max-widths__max-width-prefix }}{{ name }} {
+        max-width: {{ value }} !important;
+    }
+*/
+$briks-utilities__max-widths__enabled: false;
+$briks-utilities__max-widths__max-width-prefix: 'mw-';
+$briks-utilities__max-widths__names-and-values: (
+);
+$briks-utilities__max-widths__responsive: false;
+
+/*
+    OPACITIES UTILITIES
+    ---
+    Generates CSS classes of 'opacity' property from a user defined list of opacities names with their associated values.
+    For each {{ name }} and {{ value }} in briks-utilities__opacities__names-and-values:
+    .{{ briks-utilities-prefix }}{{ briks-utilities__opacities__opacity-prefix }}{{ name }} {
+        opacity: {{ value }} !important;
+    }
+*/
+$briks-utilities__opacities__enabled: false;
+$briks-utilities__opacities__opacity-prefix: '';
+$briks-utilities__opacities__names-and-values: (
+);
+$briks-utilities__opacities__responsive: false;
+
+
+/*
+    OVERFLOWS UTILITIES
+    ---
+    Generates CSS classes of 'overflow', 'overflow-x', 'overflow-y', property from a user defined list of overflows names with their associated values.
+    For each {{ name }} and {{ value }} in briks-utilities__overflows__names-and-values:
+    .{{ briks-utilities-prefix }}{{ briks-utilities__overflows__overflow-prefix }}{{ name }} {
+        overflow: {{ value }} !important;
+    }
+    .{{ briks-utilities-prefix }}{{ briks-utilities__overflows__overflow-x-prefix }}{{ name }} {
+        overflow-x: {{ value }} !important;
+    }
+    .{{ briks-utilities-prefix }}{{ briks-utilities__overflows__overflow-y-prefix }}{{ name }} {
+        overflow-y: {{ value }} !important;
+    }
+*/
+$briks-utilities__overflows__enabled: false;
+$briks-utilities__overflows__overflow-prefix: 'o-'; // false to disable 
+$briks-utilities__overflows__overflow-x-prefix: false; // Optional, set false to disable
+$briks-utilities__overflows__overflow-y-prefix: false; // Optional, set false to disable
+$briks-utilities__overflows__names-and-values: (
+);
+$briks-utilities__overflows__responsive: false;
+
+/*
+    PADDINGS UTILITIES
+    ---
+    Generates CSS classes of 'padding', 'padding-top', 'padding-right', 'padding-bottom', 'padding-left',
+    properties from $briks-spacings names with associated values.
+    For each {{ name }} and {{ value }} in briks-spacings:
+    .{{ briks-utilities-prefix }}{{ briks-utilities__paddings__padding-prefix }}{{ name }} {
+        padding: {{ value }} !important;
+    }
+    .{{ briks-utilities-prefix }}{{ briks-utilities__paddings__padding-top-prefix }}{{ name }} {
+        padding-top: {{ value }} !important;
+    }
+    etc
+*/
+$briks-utilities__paddings__enabled: false;
+$briks-utilities__paddings__padding-prefix: 'p-'; // false to disable 
+$briks-utilities__paddings__padding-top-prefix: 'pt-'; // false to disable 
+$briks-utilities__paddings__padding-right-prefix: 'pr-'; // false to disable 
+$briks-utilities__paddings__padding-bottom-prefix: 'pb-'; // false to disable 
+$briks-utilities__paddings__padding-left-prefix: 'pl-'; // false to disable 
+$briks-utilities__paddings__zero-name: false; // Optional zero padding, set false to disable 
+$briks-utilities__paddings__responsive: true; // May increase file size significantly
+
+/*
+    POINTER EVENTS UTILITIES
+    ---
+    Generates CSS classes of 'pointer-events' property from a user defined list of pointer events names with their associated values.
+    For each {{ name }} and {{ value }} in briks-utilities__pointer-events__names-and-values:
+    .{{ briks-utilities-prefix }}{{ briks-utilities__pointer-events__pointer-events-prefix }}{{ name }} {
+        pointer-events: {{ value }} !important;
+    }
+*/
+$briks-utilities__pointer-events__enabled: false;
+$briks-utilities__pointer-events__pointer-events-prefix: 'pe-';
+$briks-utilities__pointer-events__names-and-values: (
+);
+$briks-utilities__pointer-events__responsive: false;
+
+/*
+    POSITIONS UTILITIES
+    ---
+    Generates CSS classes of 'position' property from a user defined list of positions values.
+    For each {{ value }} in briks-utilities__positions__values:
+    .{{ briks-utilities-prefix }}{{ briks-utilities__positions__position-prefix }}{{ name }} {
+        position: {{ value }} !important;
+    }
+*/
+$briks-utilities__positions__enabled: false;
+$briks-utilities__positions__position-prefix: '';
+$briks-utilities__positions__values: absolute, fixed, sticky, relative;
+$briks-utilities__positions__responsive: true;
+
+/*
+    POSITIONS PERCENTAGES UTILITIES
+    ---
+    Generates CSS classes of 'top', 'right', 'bottom', 'left' properties from a user defined list of percentages values.
+    For each {{ value }} in briks-utilities__positions-percentages__values:
+    .{{ briks-utilities-prefix }}{{ briks-utilities__positions-percentages__global-prefix }}{{ briks-utilities__positions-percentages__top-prefix }}{{ value }} {
+        top: {{ value }} !important;
+    }
+    .{{ briks-utilities-prefix }}{{ briks-utilities__positions-percentages__global-prefix }}{{ briks-utilities__positions-percentages__right-prefix }}{{ value }} {
+        right: {{ value }} !important;
+    }
+    .{{ briks-utilities-prefix }}{{ briks-utilities__positions-percentages__global-prefix }}{{ briks-utilities__positions-percentages__bottom-prefix }}{{ value }} {
+        bottom: {{ value }} !important;
+    }
+    .{{ briks-utilities-prefix }}{{ briks-utilities__positions-percentages__global-prefix }}{{ briks-utilities__positions-percentages__left-prefix }}{{ value }} {
+        left: {{ value }} !important;
+    }
+*/
+$briks-utilities__positions-percentages__enabled: false;
+$briks-utilities__positions-percentages__global-prefix: '';
+$briks-utilities__positions-percentages__values: 0, 100;
+$briks-utilities__positions-percentages__top-prefix: 'top-'; // false to disable 
+$briks-utilities__positions-percentages__right-prefix: 'right-'; // false to disable 
+$briks-utilities__positions-percentages__bottom-prefix: 'bottom-'; // false to disable 
+$briks-utilities__positions-percentages__left-prefix: 'left-'; // false to disable 
+$briks-utilities__positions-percentages__responsive: true;
+
+/*
+    POSITIONS SPACINGS UTILITIES
+    ---
+    Generates CSS classes of 'top', 'right', 'bottom', 'left' properties from $briks-spacings names with associated values.
+    For each {{ name }} and {{ value }} in briks-spacings:
+    .{{ briks-utilities-prefix }}{{ briks-utilities__positions-spacings__global-prefix }}{{ briks-utilities__positions-spacings__top-prefix }}{{ name }} {
+        top: {{ value }} !important;
+    }
+    .{{ briks-utilities-prefix }}{{ briks-utilities__positions-spacings__global-prefix }}{{ briks-utilities__positions-spacings__right-prefix }}{{ name }} {
+        right: {{ value }} !important;
+    }
+    .{{ briks-utilities-prefix }}{{ briks-utilities__positions-spacings__global-prefix }}{{ briks-utilities__positions-spacings__bottom-prefix }}{{ name }} {
+        bottom: {{ value }} !important;
+    }
+    .{{ briks-utilities-prefix }}{{ briks-utilities__positions-spacings__global-prefix }}{{ briks-utilities__positions-spacings__left-prefix }}{{ name }} {
+        left: {{ value }} !important;
+    }
+*/
+$briks-utilities__positions-spacings__enabled: false;
+$briks-utilities__positions-spacings__global-prefix: '';
+$briks-utilities__positions-spacings__top-prefix: 'top-'; // false to disable 
+$briks-utilities__positions-spacings__right-prefix: 'right-'; // false to disable 
+$briks-utilities__positions-spacings__bottom-prefix: 'bottom-'; // false to disable 
+$briks-utilities__positions-spacings__left-prefix: 'left-'; // false to disable 
+$briks-utilities__positions-spacings__responsive: true;
+
+/*
+    POSITIONS ANCHORS UTILITIES
+    ---
+    Place the element position in relation with its parent and itself.
+    The parent (container) and the element have each one 9 anchors: 
+
+    top left (default)  top center           top right
+    middle left         middle center        middle right
+    bottom left         bottom center        bottom right
+
+    Default anchor for the element and its container is top left.
+    You can assign the top left anchor of the element on any anchor of its container.
+    Example: The top left of the element is placed at the top center of its container (this could be called .u-pa-top-center)
+    .{{ briks-utilities-prefix }}{{ briks-utilities__positions-anchors__global-prefix }}{{ briks-utilities__positions-anchors__top-center-name }} {
+        top: 0% !important;
+        left: 50% !important;
+    }
+    You can assign any anchor of an element on any anchor of its container to place it according to your needs.
+    Example: The middle center of the element is placed at the top center of its container (this could be called .u-pa-top-center__middle-center)
+    The first anchor is relative to container's anchor, the second anchor is relative to the element's anchor.
+    .{{ briks-utilities-prefix }}{{ briks-utilities__positions-anchors__global-prefix }}{{ briks-utilities__positions-anchors__top-center-name }}{{ briks-utilities__positions-anchors__separator }}{{ briks-utilities__positions-anchors__middle-center-name }}{
+        top: 0% !important;
+        left: 0% !important;
+        transform: translateX(-50%) transformY(-50%) !important;
+    }
+*/
+$briks-utilities__positions-anchors__enabled: false;
+$briks-utilities__positions-anchors__global-prefix: '';
+$briks-utilities__positions-anchors__top-left-name: 'top-left'; // false to disable 
+$briks-utilities__positions-anchors__top-center-name: 'top-center'; // false to disable 
+$briks-utilities__positions-anchors__top-right-name: 'top-right'; // false to disable 
+$briks-utilities__positions-anchors__middle-left-name: 'middle-left'; // false to disable 
+$briks-utilities__positions-anchors__middle-center-name: 'middle-center'; // false to disable 
+$briks-utilities__positions-anchors__middle-right-name: 'middle-right'; // false to disable 
+$briks-utilities__positions-anchors__bottom-left-name: 'bottom-left'; // false to disable 
+$briks-utilities__positions-anchors__bottom-center-name: 'bottom-center'; // false to disable 
+$briks-utilities__positions-anchors__bottom-right-name: 'bottom-right'; // false to disable 
+$briks-utilities__positions-anchors__separator: '__';
+$briks-utilities__positions-anchors__responsive: true; // Increases file size significantly
+
+/*
+    SHADOWS UTILITIES
+    ---
+    Generates CSS classes of 'box-shadow' property from $briks-shadows names with associated values.
+    For each {{ name }} and {{ value }} in briks-shadows:
+    .{{ briks-utilities-prefix }}{{ briks-utilities__shadows__box-shadow-prefix }}{{ name }} {
+        box-shadow: {{ value }} !important;
+    }
+*/
+$briks-utilities__shadows__enabled: false;
+$briks-utilities__shadows__box-shadow-prefix: 'bs-';
+$briks-utilities__shadows__responsive: false;
+
+/*
+    TEXT ALIGNMENTS UTILITIES
+    ---
+    Generates CSS classes of 'text-align' property from a user defined list of text alignments values.
+    For each {{ value }} in briks-utilities__text-alignments__values:
+    .{{ briks-utilities-prefix }}{{ briks-utilities__text-alignments__text-align-prefix }}{{ value }} {
+        text-align: {{ value }} !important;
+    }
+*/
+$briks-utilities__text-alignments__enabled: false;
+$briks-utilities__text-alignments__text-align-prefix: 'ta-';
+$briks-utilities__text-alignments__values: left, center, right, justify;
+$briks-utilities__text-alignments__responsive: true;
+
+/*
+    TEXT DECORATIONS UTILITIES
+    ---
+    Generates CSS classes of 'text-decoration' property from a user defined list of text decorations names with their associated values.
+    For each {{ name }} and {{ value }} in briks-utilities__text-decorations__names-and-values:
+    .{{ briks-utilities-prefix }}{{ briks-utilities__text-decorations__text-decoration-prefix }}{{ name }} {
+        text-decoration: {{ value }} !important;
+    }
+*/
+$briks-utilities__text-decorations__enabled: false;
+$briks-utilities__text-decorations__text-decoration-prefix: 'td-';
+$briks-utilities__text-decorations__names-and-values: (
+);
+$briks-utilities__text-decorations__responsive: false;
+
+/*
+    TEXTS UTILITIES
+    ---
+    Generates CSS classes in relation with 'font-weight', 'white-space', 'font-style', 'text-transform', 'text-transform' and 'font-variant' properties.
+    .{{ briks-utilities-prefix }}{{ briks-utilities__texts__global-prefix }}{{ briks-utilities__texts__reset-name }} {
+        font-variant: inherit !important;
+        font-style: inherit !important;
+        font-weight: inherit !important;
+        text-transform: inherit !important;
+        white-space: inherit !important;
+    }
+    .{{ briks-utilities-prefix }}{{ briks-utilities__texts__global-prefix }}{{ briks-utilities__texts__bold-name }} {
+        font-weight: bold !important;
+    }
+    .{{ briks-utilities-prefix }}{{ briks-utilities__texts__global-prefix }}{{ briks-utilities__texts__nowrap-name }} {
+        white-space: nowrap !important;
+    }
+    .{{ briks-utilities-prefix }}{{ briks-utilities__texts__global-prefix }}{{ briks-utilities__texts__italic-name }} {
+        font-style: italic !important;
+    }
+    .{{ briks-utilities-prefix }}{{ briks-utilities__texts__global-prefix }}{{ briks-utilities__texts__uppercase-name }} {
+        text-transform: uppercase !important;
+    }
+    etc
+*/
+$briks-utilities__texts__enabled: false;
+$briks-utilities__texts__global-prefix: 'text-';
+$briks-utilities__texts__reset-name: 'reset'; // Sets 'inherit value for 'font-weight', 'white-space', 'font-style', 'text-transform', 'text-transform' and 'font-variant' properties.
+$briks-utilities__texts__bold-name: 'bold'; // false to disable 
+$briks-utilities__texts__nowrap-name: 'nowrap'; // false to disable 
+$briks-utilities__texts__italic-name: 'italic'; // false to disable 
+$briks-utilities__texts__lowercase-name: 'lowercase'; // false to disable 
+$briks-utilities__texts__uppercase-name: 'uppercase'; // false to disable 
+$briks-utilities__texts__capitalize-name: 'capitalize'; // false to disable 
+$briks-utilities__texts__small-caps-name: 'small-caps'; // false to disable 
+$briks-utilities__texts__supscript-name: 'sup'; // false to disable 
+$briks-utilities__texts__subscript-name: 'sub'; // false to disable 
+$briks-utilities__texts__responsive: false;
+
+/*
+    TEXT ELLIPSIS
+    ---
+    Generates proper CSS classes to limit the amount of lines of the content of an element.
+    For each {{ number }} between 1 and $briks-utilities__text-ellipsis__levels:
+    .{{ briks-utilities-prefix }}{{ briks-utilities__text-ellipsis__text-ellipsis-prefix }}{{ briks-utilities__text-ellipsis__levels-separator }}{{ number }}
+*/
+$briks-utilities__text-ellipsis__enabled: false;
+$briks-utilities__text-ellipsis__text-ellipsis-prefix: 'ellipsis'; // Cannot be empty
+$briks-utilities__text-ellipsis__levels: 4; // Sets the max number of lines
+$briks-utilities__text-ellipsis__levels-separator: '-';
+$briks-utilities__text-ellipsis__responsive: false;
+
+/*
+    TRANSITIONS UTILITIES
+    ---
+    Generates CSS classes of 'transition' property from a user defined list of transitions names with their associated values.
+    For each {{ name }} and {{ value }} in briks-utilities__transitions__names-and-values:
+    .{{ briks-utilities-prefix }}{{ briks-utilities__pointer-events__pointer-events-prefix }}{{ name }} {
+        transition: {{ value }} !important;
+    }
+*/
+$briks-utilities__transitions__enabled: false;
+$briks-utilities__transitions__transition-prefix: 'transition-';
+$briks-utilities__transitions__names-and-values: (
+);
+$briks-utilities__transitions__responsive: false;
+
+/*
+    TYPOGRAPHY UTILITIES
+    ---
+    Generates CSS classes of 'font' property from $briks-typography names with associated values.
+    For each {{ name }} and {{ value }} in briks-typography:
+    .{{ briks-utilities-prefix }}{{ briks-utilities__typography__font-prefix }}{{ name }} {
+        font: {{ value }} !important;
+    }
+*/
+$briks-utilities__typography__enabled: false;
+$briks-utilities__typography__font-prefix: 'typo-';
+$briks-utilities__typography__responsive: false;
+
+/*
+    VERTICAL ALIGNMENTS UTILITIES
+    ---
+    Generates CSS classes of 'vertical-align' property from a user defined list of vertical alignments names with their associated values.
+    For each {{ name }} and {{ value }} in briks-utilities__vertical-alignments__names-and-values:
+    .{{ briks-utilities-prefix }}{{ briks-utilities__vertical-alignments__vertical-align-prefix }}{{ name }} {
+        vertical-align: {{ value }} !important;
+    }
+*/
+$briks-utilities__vertical-alignments__enabled: false;
+$briks-utilities__vertical-alignments__vertical-align-prefix: 'va-';
+$briks-utilities__vertical-alignments__names-and-values: (
+);
+$briks-utilities__vertical-alignments__responsive: false;
+
+/*
+    VISIBILITIES UTILITIES
+    ---
+    Generates CSS classes of 'visibility' property from a user defined list of visibilities names with their associated values.
+    For each {{ name }} and {{ value }} in briks-utilities__visibilities__names-and-values:
+    .{{ briks-utilities-prefix }}{{ briks-utilities__visibilities__visibility-prefix }}{{ name }} {
+        visibility: {{ value }} !important;
+    }
+*/
+$briks-utilities__visibilities__enabled: false;
+$briks-utilities__visibilities__visibility-prefix: 'v-';
+$briks-utilities__visibilities__names-and-values: (
+);
+$briks-utilities__visibilities__responsive: false;
+
+/*
+    WIDTHS UTILITIES
+    ---
+    Generates CSS classes of 'width' property from a user defined list of widths names with their associated values.
+    For each {{ name }} and {{ value }} in briks-utilities__widths__names-and-values:
+    .{{ briks-utilities-prefix }}{{ briks-utilities__widths__width-prefix }}{{ name }} {
+        width: {{ value }} !important;
+    }
+*/
+$briks-utilities__widths__enabled: false;
+$briks-utilities__widths__width-prefix: 'w-';
+$briks-utilities__widths__names-and-values: (
+);
+$briks-utilities__widths__responsive: false;
+
+/*
+    Z INDEXES UTILITIES
+    ---
+    Generates CSS classes of 'z-index' property from a user defined list of z indexes names with their associated values.
+    For each {{ name }} and {{ value }} in briks-utilities__z-indexes__names-and-values:
+    .{{ briks-utilities-prefix }}{{ briks-utilities__z-indexes__z-index-prefix }}{{ name }} {
+        z-index: {{ value }} !important;
+    }
+*/
+$briks-utilities__z-indexes__enabled: false;
+$briks-utilities__z-indexes__z-index-prefix: '';
+$briks-utilities__z-indexes__names-and-values: (
+);
+$briks-utilities__z-indexes__responsive: false;
+
+
+/*
+.d8888b.                                                                      888             
+d88P  Y88b                                                                     888             
+888    888                                                                     888             
+888         .d88b.  88888b.d88b.  88888b.   .d88b.  88888b.   .d88b.  88888b.  888888 .d8888b  
+888        d88""88b 888 "888 "88b 888 "88b d88""88b 888 "88b d8P  Y8b 888 "88b 888    88K      
+888    888 888  888 888  888  888 888  888 888  888 888  888 88888888 888  888 888    "Y8888b. 
+Y88b  d88P Y88..88P 888  888  888 888 d88P Y88..88P 888  888 Y8b.     888  888 Y88b.       X88 
+ "Y8888P"   "Y88P"  888  888  888 88888P"   "Y88P"  888  888  "Y8888  888  888  "Y888  88888P' 
+                                  888                                                          
+                                  888                                                          
+                                  888                                                          
+
+*/
+
+/*
+    GRID
+    Briks component
+    ---
+    Versatile, customizable and cascadable flexbox grid component
+*/
+$briks-components__grid__enabled: false; // false to disable
+$briks-components__grid__name: 'grid'; // $briks-components-prefix will be added to this name
+/* 
+    GRID JUSTIFY CONTENT
+    Grid modifier
+    ---
+    Main flexbox axis management
+*/
+$briks-components__grid__justify-content-flex-start-name: 'left'; // false to disable, empty string not allowed
+$briks-components__grid__justify-content-flex-end-name: 'right'; // false to disable, empty string not allowed
+$briks-components__grid__justify-content-center-name: 'center'; // false to disable, empty string not allowed
+$briks-components__grid__justify-content-space-around-name: 'space-around'; // false to disable, empty string not allowed
+$briks-components__grid__justify-content-space-between-name: 'space-between'; // false to disable, empty string not allowed
+$briks-components__grid__justify-content-space-evenly-name: 'space-evenly'; // false to disable, empty string not allowed
+$briks-components__grid__justify-content-responsive: false; // false to disable
+/* 
+    GRID ALIGN ITEMS
+    Grid modifier
+    ---
+    Cross flexbox axis management
+*/
+$briks-components__grid__align-items-flex-start-name: 'top'; // false to disable, empty string not allowed
+$briks-components__grid__align-items-baseline-name: 'baseline'; // false to disable, empty string not allowed
+$briks-components__grid__align-items-center-name: 'middle'; // false to disable, empty string not allowed
+$briks-components__grid__align-items-flex-end-name: 'bottom'; // false to disable, empty string not allowed
+$briks-components__grid__align-items-responsive: false; // false to disable
+/* 
+    GRID REVERSE ORDER
+    Grid modifier
+    ---
+    Reverse order for all grid items
+*/
+$briks-components__grid__reverse-order-name: 'reverse'; // false to disable, empty string not allowed
+$briks-components__grid__reverse-order-responsive: true; // false to disable
+/* 
+    GRID COLUMN
+    Grid modifier
+    ---
+    Assigns column mode as flex-direction
+*/
+$briks-components__grid__column-name: 'column'; // false to disable, empty string not allowed
+$briks-components__grid__column-responsive: true; // false to disable
+/* 
+    GRID NOWRAP
+    Grid modifier
+    ---
+    Prevents grid to wrap: No carriage return when items width exceed container width
+*/
+$briks-components__grid__nowrap-name: 'nowrap'; // false to disable, empty string not allowed
+$briks-components__grid__nowrap-responsive: true; // false to disable
+/* 
+    GRID INLINE
+    Grid modifier
+    ---
+    Make the grid inline-flex
+*/
+$briks-components__grid__inline-name: 'inline'; // false to disable, empty string not allowed
+$briks-components__grid__inline-responsive: true; // false to disable
+/*
+    GRID GUTTER
+    Grid modifier
+    ---
+    Adds specified gutters on item widths
+    Affects widths percentages, max widths, fixed width and grow
+*/
+$briks-components__grid__gutters-prefix: 'gutter-'; // false to disable, empty string not allowed
+$briks-components__grid__gutters-names-and-values: (
+    // At least one custom name and its value
+    // Values must be integers
+    // $briks-unit will be added to values
+);
+$briks-components__grid__gutters-responsive: true; // false to disable
+/*
+    GRID ASPECT RATIO
+    Grid modifier
+    ---
+    Adds specified aspect ratio, based on widths, on all items
+    Example:
+    $briks-components__grid__aspect-ratios-names-and-values: (
+        square: 1,
+        tv: 1.44,
+        widescreen: 1.85,
+        scope: 2.35
+    );
+*/
+$briks-components__grid__aspect-ratios-prefix: 'ar-'; // false to disable, empty string not allowed
+$briks-components__grid__aspect-ratios-names-and-values: (
+    // At least one custom name and its value
+    // Values must be floatings or integers reflecting aspect ratio
+);
+$briks-components__grid__aspect-ratios-item-bypass-name: 'disabled'; // false to disable, empty string not allowed: Item modifier thats allows to bypass aspect ratio on specific item
+$briks-components__grid__aspect-ratios-responsive: false; // false to disable
+/* 
+    ITEM GROW
+    Item modifier
+    ---
+    Enable item grow: Make item grow according to free space around
+*/
+$briks-components__grid__item-grow-name: 'grow'; // false to disable, empty string not allowed
+$briks-components__grid__item-grow-responsive: true; // false to disable
+/* 
+    ITEM WIDTHS PERCENTAGES
+    Item modifier
+    ---
+    Widths percentages names and values for items. Example:
+    $briks-components__grid__item-widths-percentages-names-and-values: (
+        6: 50%,
+        12: 100%
+    );
+*/
+$briks-components__grid__item-widths-percentages-prefix: 'w-'; // false to disable, empty string not allowed
+$briks-components__grid__item-widths-percentages-names-and-values: (
+    // At least one custom name and its value
+    // Values must be CSS percentages
+);
+$briks-components__grid__item-widths-percentages-responsive: true; // false to disable
+/* 
+    ITEM MAX WIDTHS
+    Item modifier
+    ---
+    Assign max width names for items. Example:
+    $briks-components__grid__item-max-widths-names-and-values: (
+        mini: 200,
+        medium: 300
+    );
+*/
+$briks-components__grid__item-max-widths-prefix: 'mw-'; // false to disable, empty string not allowed
+$briks-components__grid__item-max-widths-names-and-values: (
+    // At least one custom name and its value
+    // Values must be integers
+    // $briks-unit will be added to values
+);
+$briks-components__grid__item-max-widths-responsive: true; // false to disable
+/* 
+    ITEM FIXED WIDTHS
+    Item modifier
+    ---
+    Assign fixed widths for items. Example:
+    $briks-components__grid__item-fixed-widths-names-and-values: (
+        mini: 200,
+        medium: 300
+    );
+*/
+$briks-components__grid__item-fixed-widths-prefix: 'fw-'; // false to disable, empty string not allowed
+$briks-components__grid__item-fixed-widths-names-and-values: (
+    // At least one custom name and its value
+    // Values must be integers
+    // $briks-unit will be added to values
+);
+$briks-components__grid__item-fixed-widths-responsive: true; // false to disable
+/* 
+    ITEM ASPECT RATIOS
+    Item modifier
+    ---
+    Assign custom aspect ratio on items. Example:
+    $briks-components__grid__item-aspect-ratios-names-and-values: (
+        square: 1,
+        tv: 1.44,
+        widescreen: 1.85,
+        scope: 2.35
+    );
+*/
+$briks-components__grid__item-aspect-ratios-prefix: 'ar-'; // false to disable, empty string not allowed
+$briks-components__grid__item-aspect-ratios-names-and-values: (
+    // At least one custom name and its value
+    // Values must be floatings or integers reflecting aspect ratio
+);
+$briks-components__grid__item-aspect-ratios-responsive: false; // false to disable
+/*
+    ITEM ORDER
+    Item modifier
+    ---
+    Based on flexbox order, assign an order value on an item. Example:
+    $briks-components__grid__item-orders-names-and-values: (
+        first: -1,
+        second: 0
+    );
+*/
+$briks-components__grid__item-orders-prefix: 'order-'; // false to disable, empty string not allowed
+$briks-components__grid__item-orders-names-and-values: (
+    // At least one custom name and its value
+    // Values must be integers in relation with flexbox ordering
+);
+$briks-components__grid__item-orders-responsive: true; // false to disable.
+
+
+/*
+    FORMS
+    Briks component
+    ---
+    Inputs, selects and textarea
+*/
+$briks-components__forms__enabled: false; // false to disable
+$briks-components__forms__name: 'form'; // $briks-components-prefix will be added to this name
+$briks-components__forms__gap: my-spacing(sm); // Space between 2 forms instances
+/*
+    FORMS COMMON INPUTS HOOKS
+    Briks component
+    ---
+    CSS declarations of common inputs applied on pre-defined hooks
+    Structure:
+    $briks-components__forms__common-inputs-hooks: (
+        // root-css hook sets list of CSS properties / values to apply on the form root component
+        root-css: (
+            property: value,
+            property: value
+            ...
+        ), 
+        // label-css hook sets list of CSS properties / values to apply on the form label
+        label-css: (
+            property: value,
+            property: value
+            ...
+        ),
+        // label-hover-css hook sets list of CSS properties / values to apply on the form label when the form component is hovered
+        label-hover-css: (
+            property: value,
+            property: value
+            ...
+        ),
+        // label-focus-css hook sets list of CSS properties / values to apply on the form label when the input is focused
+        label-focus-css: (
+            property: value,
+            property: value
+            ...
+        ),
+        // label-disabled-css hook sets list of CSS properties / values to apply on the form label when the input is disabled
+        label-disabled-css: (
+            property: value,
+            property: value
+            ...
+        ),
+        // input-css hook sets list of CSS properties / values to apply on the input/select/textarea
+        input-css: (
+            property: value,
+            property: value
+            ...
+        ),
+        // input-hover-css hook sets list of CSS properties / values to apply on the input/select/textarea when the form component is hovered
+        input-hover-css: (
+            property: value,
+            property: value
+            ...
+        ),
+        // input-focus-css hook sets list of CSS properties / values to apply on the input/select/textarea when the input is focused
+        input-focus-css: (
+            property: value,
+            property: value
+            ...
+        ),
+        // input-disabled-css hook sets list of CSS properties / values to apply on the input/select/textarea when the input is disabled
+        input-disabled-css: (
+            property: value,
+            property: value
+            ...
+        ),
+        // input-placeholder-css hook sets list of CSS properties / values to apply on the input/select/textarea placeholder
+        input-placeholder-css: (
+            property: value,
+            property: value
+            ...
+        )
+    );
+*/
+$briks-components__forms__common-inputs-hooks: (
+    // root-css hook sets list of CSS properties / values to apply on the form root component
+    root-css: (
+    ),
+    // label-css hook sets list of CSS properties / values to apply on the form label
+    label-css: (
+    ),
+    // label-hover-css hook sets list of CSS properties / values to apply on the form label when the form component is hovered
+    label-hover-css: (
+        // top: 0
+    ),
+    // label-focus-css hook sets list of CSS properties / values to apply on the form label when the input is focused
+    label-focus-css: (
+        // top: 0
+    ),
+    // label-disabled-css hook sets list of CSS properties / values to apply on the form label when the input is disabled
+    label-disabled-css: (
+    ),
+    // input-css hook sets list of CSS properties / values to apply on the input/select/textarea
+    input-css: (
+    ),
+    // input-focus-css hook sets list of CSS properties / values to apply on the input/select/textarea when the input is focused
+    input-focus-css: (
+    ),
+    // input-disabled-css hook sets list of CSS properties / values to apply on the input/select/textarea when the input is disabled
+    input-disabled-css: (
+    )
+);
+/*
+    FORMS SELECT OVERRIDES
+    Briks component
+    ---
+    Selects belongs to common inputs hooks, this list of CSS properties allows to override the select tag
+*/
+$briks-components__forms__common-inputs-select-overrides: (
+    // padding-right: my-spacing(lg),
+    // background: right 0px top 50% / 60px 10% no-repeat url(data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjUxIiBoZWlnaHQ9IjMyIiB2aWV3Qm94PSIwIDAgNTEgMzIiPjx0aXRsZT5jaGV2cm9uLWRvd248L3RpdGxlPjxwYXRoIGQ9Ik00NS4yMjcgMGw1Ljk3MyA2LjA1NC0yNS42IDI1Ljk0Ni0yNS42LTI1Ljk0NiA1Ljk3My02LjA1NCAxOS42MjcgMTkuODkyeiI+PC9wYXRoPjwvc3ZnPg==)
+);
+/*
+    FORMS TEXTAREA OVERRIDES
+    Briks component
+    ---
+    Textareas belongs to common inputs hooks, this list of CSS properties allows to override the textarea tag
+*/
+$briks-components__forms__common-inputs-textarea-overrides: (
+    // border-radius: my-border-radius(md),
+    // resize: none
+);
+/*
+    FORMS COMMON INPUTS HOOKS MODIFIERS
+    ---
+    Sets CSS declarations of common inputs hooks that change
+    Structure:
+    $briks-components__forms__common-inputs-hooks-modifiers: (
+        name-of-the-modifier: (
+            // root-css hook sets list of CSS properties / values to apply on the form root component
+            root-css: (
+                property: value,
+                property: value
+                ...
+            ), 
+            // label-css hook sets list of CSS properties / values to apply on the form label
+            label-css: (
+                property: value,
+                property: value
+                ...
+            ),
+            // label-hover-css hook sets list of CSS properties / values to apply on the form label when the form component is hovered
+            label-hover-css: (
+                property: value,
+                property: value
+                ...
+            ),
+            // label-focus-css hook sets list of CSS properties / values to apply on the form label when the input is focused
+            label-focus-css: (
+                property: value,
+                property: value
+                ...
+            ),
+            // label-disabled-css hook sets list of CSS properties / values to apply on the form label when the input is disabled
+            label-disabled-css: (
+                property: value,
+                property: value
+                ...
+            ),
+            // input-css hook sets list of CSS properties / values to apply on the input/select/textarea
+            input-css: (
+                property: value,
+                property: value
+                ...
+            ),
+            // input-hover-css hook sets list of CSS properties / values to apply on the input/select/textarea when the form component is hovered
+            input-hover-css: (
+                property: value,
+                property: value
+                ...
+            ),
+            // input-focus-css hook sets list of CSS properties / values to apply on the input/select/textarea when the input is focused
+            input-focus-css: (
+                property: value,
+                property: value
+                ...
+            ),
+            // input-disabled-css hook sets list of CSS properties / values to apply on the input/select/textarea when the input is disabled
+            input-disabled-css: (
+                property: value,
+                property: value
+                ...
+            ),
+            // input-placeholder-css hook sets list of CSS properties / values to apply on the input/select/textarea placeholder
+            input-placeholder-css: (
+                property: value,
+                property: value
+                ...
+            )
+        )
+    );
+    Example:
+    $briks-components__forms__common-inputs-hooks-modifiers: (
+        name-of-the-modifier: (
+            // Specify only hook that changes
+            label-css: (
+                color: my-color(support-success),
+                border: my-border(thin-support-success)
+            ),
+            input-css: (
+                color: my-color(support-success),
+                border: my-border(thin-support-success)
+            ),
+            input-focus-css: (
+                box-shadow: my-shadow(focus-success)
+            )
+        )
+    );
+*/
+$briks-components__forms__common-inputs-hooks-modifiers: (
+);
+
+/*
+    FORMS CHECKBOXES HOOKS
+    Briks component
+    ---
+    CSS declarations of input type checkbox applied on pre-defined hooks
+    Structure:
+    $briks-components__forms__checkboxes-hooks: (
+        // root-css hook is component root
+        root-css: (
+            property: value,
+            property: value
+            ...
+        ),
+        // Default state
+        // label-css hook is the label tag
+        label-css: (
+            property: value,
+            property: value
+            ...
+        ),
+        // label-before-css hook is dedicated to the checkbox background
+        label-before-css: (
+            property: value,
+            property: value
+            ...
+        ),
+        // label-after-css is dedicated to the checkbox mark
+        label-after-css: (
+            property: value,
+            property: value
+            ...
+        ),
+        // Focus state
+        // label-focus-css is the checkbox mark when input is focused
+        label-focus-css: (
+            property: value,
+            property: value
+            ...
+        ),
+        // label-before-focus-css is dedicated to the checkbox background when input is focused
+        label-before-focus-css: (
+            property: value,
+            property: value
+            ...
+        ),
+        // label-after-focus-css is dedicated to the checkbox mark when input is focused
+        label-after-focus-css: (
+            property: value,
+            property: value
+            ...
+        ),
+        // Checked state
+        // label-checked-css is the checkbox label when input is checked
+        label-checked-css: (
+            property: value,
+            property: value
+            ...
+        ),
+        // label-before-checked-css is dedicated to the checkbox background when input is checked
+        label-before-checked-css: (
+            property: value,
+            property: value
+            ...
+        ),
+        // label-after-checked-css is dedicated to the checkbox mark when input is checked
+        label-after-checked-css: (
+            property: value,
+            property: value
+            ...
+        ),
+        // Disabled state
+        // label-disabled-css is the checkbox label when input is disabled
+        label-disabled-css: (
+            property: value,
+            property: value
+            ...
+        ),
+        // label-before-checked-css is dedicated to the checkbox background when input is checked
+        label-before-disabled-css: (
+            property: value,
+            property: value
+            ...
+        ),
+        // label-after-checked-css is dedicated to the checkbox mark when input is checked
+        label-after-disabled-css: (
+            property: value,
+            property: value
+            ...
+        )
+    );
+*/
+$briks-components__forms__checkboxes-hooks: (
+    // root-css hook is component root
+    root-css: (
+    ),
+    // Default state
+    // label-css hook is the label tag
+    label-css: (
+    ),
+    // label-before-css hook is dedicated to the checkbox background
+    label-before-css: (
+    ),
+    // label-after-css is dedicated to the checkbox mark
+    label-after-css: (),
+    // Focus state
+    // label-focus-css is the checkbox mark when input is focused
+    label-focus-css: (),
+    // label-before-focus-css is dedicated to the checkbox background when input is focused
+    label-before-focus-css: (
+    ),
+    // label-after-focus-css is dedicated to the checkbox mark when input is focused
+    label-after-focus-css: (),
+    // Checked state
+    // label-checked-css is the checkbox label when input is checked
+    label-checked-css: (),
+    // label-before-checked-css is dedicated to the checkbox background when input is checked
+    label-before-checked-css: (
+    ),
+    // label-after-checked-css is dedicated to the checkbox mark when input is checked
+    label-after-checked-css: (),
+    // Disabled state
+    // label-disabled-css is the checkbox label when input is disabled
+    label-disabled-css: (
+    ),
+    // label-before-checked-css is dedicated to the checkbox background when input is checked
+    label-before-disabled-css: (
+    ),
+    // label-after-checked-css is dedicated to the checkbox mark when input is checked
+    label-after-disabled-css: ()
+);
+/*
+    FORMS CHECKBOXES HOOKS MODIFIERS
+    ---
+    Sets CSS declarations of input type checkbox hooks that change
+    Structure:
+    $briks-components__forms__checkboxes-hooks-modifiers: (
+        name-of-the-modifier: (
+            // root-css hook is component root
+            root-css: (
+                property: value,
+                property: value
+                ...
+            ),
+            // Default state
+            // label-css hook is the label tag
+            label-css: (
+                property: value,
+                property: value
+                ...
+            ),
+            // label-before-css hook is dedicated to the checkbox background
+            label-before-css: (
+                property: value,
+                property: value
+                ...
+            ),
+            // label-after-css is dedicated to the checkbox mark
+            label-after-css: (
+                property: value,
+                property: value
+                ...
+            ),
+            // Focus state
+            // label-focus-css is the checkbox mark when input is focused
+            label-focus-css: (
+                property: value,
+                property: value
+                ...
+            ),
+            // label-before-focus-css is dedicated to the checkbox background when input is focused
+            label-before-focus-css: (
+                property: value,
+                property: value
+                ...
+            ),
+            // label-after-focus-css is dedicated to the checkbox mark when input is focused
+            label-after-focus-css: (
+                property: value,
+                property: value
+                ...
+            ),
+            // Checked state
+            // label-checked-css is the checkbox label when input is checked
+            label-checked-css: (
+                property: value,
+                property: value
+                ...
+            ),
+            // label-before-checked-css is dedicated to the checkbox background when input is checked
+            label-before-checked-css: (
+                property: value,
+                property: value
+                ...
+            ),
+            // label-after-checked-css is dedicated to the checkbox mark when input is checked
+            label-after-checked-css: (
+                property: value,
+                property: value
+                ...
+            ),
+            // Disabled state
+            // label-disabled-css is the checkbox label when input is disabled
+            label-disabled-css: (
+                property: value,
+                property: value
+                ...
+            ),
+            // label-before-checked-css is dedicated to the checkbox background when input is checked
+            label-before-disabled-css: (
+                property: value,
+                property: value
+                ...
+            ),
+            // label-after-checked-css is dedicated to the checkbox mark when input is checked
+            label-after-disabled-css: (
+                property: value,
+                property: value
+                ...
+            )
+        )
+    );
+    Example:
+    $briks-components__forms__checkboxes-hooks-modifiers: (
+        name-of-the-modifier: (
+            // Specify only hook that changes
+            root-css: (
+                color: my-color(support-success)
+            )
+        )
+    );
+*/
+$briks-components__forms__checkboxes-hooks-modifiers: (
+);
+
+
+/*
+    FORMS RADIOS HOOKS
+    Briks component
+    ---
+    CSS declarations of input type radio applied on pre-defined hooks
+    Structure:
+    $briks-components__forms__radios-hooks: (
+        // root-css hook is component root
+        root-css: (
+            property: value,
+            property: value
+            ...
+        ),
+        // Default state
+        // label-css hook is the label tag
+        label-css: (
+            property: value,
+            property: value
+            ...
+        ),
+        // label-before-css hook is dedicated to the radio background
+        label-before-css: (
+            property: value,
+            property: value
+            ...
+        ),
+        // label-after-css is dedicated to the radio mark
+        label-after-css: (
+            property: value,
+            property: value
+            ...
+        ),
+        // Focus state
+        // label-focus-css is the radio mark when input is focused
+        label-focus-css: (
+            property: value,
+            property: value
+            ...
+        ),
+        // label-before-focus-css is dedicated to the radio background when input is focused
+        label-before-focus-css: (
+            property: value,
+            property: value
+            ...
+        ),
+        // label-after-focus-css is dedicated to the radio mark when input is focused
+        label-after-focus-css: (
+            property: value,
+            property: value
+            ...
+        ),
+        // Checked state
+        // label-checked-css is the radio label when input is checked
+        label-checked-css: (
+            property: value,
+            property: value
+            ...
+        ),
+        // label-before-checked-css is dedicated to the radio background when input is checked
+        label-before-checked-css: (
+            property: value,
+            property: value
+            ...
+        ),
+        // label-after-checked-css is dedicated to the radio mark when input is checked
+        label-after-checked-css: (
+            property: value,
+            property: value
+            ...
+        ),
+        // Disabled state
+        // label-disabled-css is the radio label when input is disabled
+        label-disabled-css: (
+            property: value,
+            property: value
+            ...
+        ),
+        // label-before-checked-css is dedicated to the radio background when input is checked
+        label-before-disabled-css: (
+            property: value,
+            property: value
+            ...
+        ),
+        // label-after-checked-css is dedicated to the radio mark when input is checked
+        label-after-disabled-css: (
+            property: value,
+            property: value
+            ...
+        )
+    );
+*/
+$briks-components__forms__radios-hooks: (
+    // root-css hook is component root
+    root-css: (
+    ),
+    // Default state
+    // label-css hook is the label tag
+    label-css: (
+    ),
+    // label-before-css hook is dedicated to the radio background
+    label-before-css: (
+    ),
+    // label-after-css is dedicated to the radio mark
+    label-after-css: (),
+    // Focus state
+    // label-focus-css is the radio mark when input is focused
+    label-focus-css: (),
+    // label-before-focus-css is dedicated to the radio background when input is focused
+    label-before-focus-css: (
+    ),
+    // label-after-focus-css is dedicated to the radio mark when input is focused
+    label-after-focus-css: (),
+    // Checked state
+    // label-checked-css is the radio label when input is checked
+    label-checked-css: (),
+    // label-before-checked-css is dedicated to the radio background when input is checked
+    label-before-checked-css: (
+    ),
+    // label-after-checked-css is dedicated to the radio mark when input is checked
+    label-after-checked-css: (),
+    // Disabled state
+    // label-disabled-css is the radio label when input is disabled
+    label-disabled-css: (
+    ),
+    // label-before-checked-css is dedicated to the radio background when input is checked
+    label-before-disabled-css: (
+    ),
+    // label-after-checked-css is dedicated to the radio mark when input is checked
+    label-after-disabled-css: ()
+);
+/*
+    FORMS RADIOS HOOKS MODIFIERS
+    ---
+    Sets CSS declarations of input type radio hooks that change
+    Structure:
+    $briks-components__forms__radios-hooks-modifiers: (
+        name-of-the-modifier: (
+            // root-css hook is component root
+            root-css: (
+                property: value,
+                property: value
+                ...
+            ),
+            // Default state
+            // label-css hook is the label tag
+            label-css: (
+                property: value,
+                property: value
+                ...
+            ),
+            // label-before-css hook is dedicated to the radio background
+            label-before-css: (
+                property: value,
+                property: value
+                ...
+            ),
+            // label-after-css is dedicated to the radio mark
+            label-after-css: (
+                property: value,
+                property: value
+                ...
+            ),
+            // Focus state
+            // label-focus-css is the radio mark when input is focused
+            label-focus-css: (
+                property: value,
+                property: value
+                ...
+            ),
+            // label-before-focus-css is dedicated to the radio background when input is focused
+            label-before-focus-css: (
+                property: value,
+                property: value
+                ...
+            ),
+            // label-after-focus-css is dedicated to the radio mark when input is focused
+            label-after-focus-css: (
+                property: value,
+                property: value
+                ...
+            ),
+            // Checked state
+            // label-checked-css is the radio label when input is checked
+            label-checked-css: (
+                property: value,
+                property: value
+                ...
+            ),
+            // label-before-checked-css is dedicated to the radio background when input is checked
+            label-before-checked-css: (
+                property: value,
+                property: value
+                ...
+            ),
+            // label-after-checked-css is dedicated to the radio mark when input is checked
+            label-after-checked-css: (
+                property: value,
+                property: value
+                ...
+            ),
+            // Disabled state
+            // label-disabled-css is the radio label when input is disabled
+            label-disabled-css: (
+                property: value,
+                property: value
+                ...
+            ),
+            // label-before-checked-css is dedicated to the radio background when input is checked
+            label-before-disabled-css: (
+                property: value,
+                property: value
+                ...
+            ),
+            // label-after-checked-css is dedicated to the radio mark when input is checked
+            label-after-disabled-css: (
+                property: value,
+                property: value
+                ...
+            )
+        )
+    );
+    Example:
+    $briks-components__forms__radios-hooks-modifiers: (
+        name-of-the-modifier: (
+            // Specify only hook that changes
+            root-css: (
+                color: my-color(support-success)
+            )
+        )
+    );
+*/
+$briks-components__forms__radios-hooks-modifiers: (
+);
+
+/*
+    FORMS RANGES HOOKS
+    Briks component
+    ---
+    CSS declarations of input type range applied on pre-defined hooks
+    Structure:
+    $briks-components__forms__ranges-hooks: (
+        // root-css hook is component root
+        root-css: (
+            property: value,
+            property: value
+            ...
+        ),
+        // Default state
+        // label-css hook is the label tag
+        label-css: (
+            property: value,
+            property: value
+            ...
+        )
+    );
+*/
+$briks-components__forms__ranges-hooks: (
+    // root-css is the component's root 
+    // List of CSS properties with their values
+    root-css: (),
+    // label-css is the CSS for the label tag
+    // List of CSS properties with their values
+    label-css: (
+    ),
+    // label-disabled-css is the CSS for the label tag when input range is disabled
+    // List of CSS properties with their values
+    label-disabled-css: (
+    ),
+    // label-focus-css is the CSS for the label tag when input range is focused
+    // List of CSS properties with their values
+    label-focus-css: (),
+    // input-disabled-css is the CSS for input range disabled
+    // List of CSS properties with their values
+    input-disabled-css: (
+    ),
+    // input-focus-css is the CSS for input range focused
+    // List of CSS properties with their values
+    input-focus-css: (
+    ),
+    // 'track-background': Background property for the range track
+    track-background: inherit,
+    // 'track-border': Border property for the range track
+    track-border: none,
+    // 'track-border-radius': Border radius property for the range track
+    track-border-radius: inherit,
+    // 'track-width': Width property for the range track
+    track-width: 100%,
+    // 'track-height': Height property for the range track
+    track-height: auto,
+    // 'track-cursor': Cursor property for the range track
+    track-cursor: inherit,
+    // 'thumb-width': Width property for the range thumb
+    thumb-width: inherit,
+    // 'thumb-height': Height property for the range thumb
+    thumb-height: inherit,
+    // 'thumb-background': Background property for the range thumb
+    thumb-background: inherit,
+    // 'thumb-border': Border property for the range thumb
+    thumb-border: inherit,
+    // 'thumb-border-radius': Border radius property for the range thumb
+    thumb-border-radius: inherit,
+    // 'thumb-cursor': Cursor property for the range thumb
+    thumb-cursor: inherit
+);
+/*
+    FORMS RANGES HOOKS MODIFIERS
+    ---
+    Sets CSS declarations of input type range hooks that change
+    Structure:
+    $briks-components__forms__ranges-hooks-modifiers: (
+        name-of-the-modifier: (
+            thumb-height: 54px,
+            thumb-width: 10px,
+            track-background: my-color(neutral-dark-1),
+            thumb-border: my-border(thin-neutral)
+        ),
+        name-of-the-modifier-2: (
+            root-css: (
+                opacity: 0.
+            )
+        )
+    );
+*/
+$briks-components__forms__ranges-hooks-modifiers: (
+);
+
+/*
+    BUTTONS
+    Briks component
+    ---
+    Buttons management
+*/
+$briks-components__buttons__enabled: false; // false to disable
+$briks-components__buttons__name: 'btn'; // $briks-components-prefix will be added to this name
+// Forced 'hover' state class name
+$briks-components__buttons__hover-class: false; // NO PREFIX WILL BE ADDED. False to disable, cannot be empty
+// Forced 'active' state class name
+$briks-components__buttons__active-class: 'active'; // NO PREFIX WILL BE ADDED. False to disable, cannot be empty
+// Forced 'focus' state class name
+$briks-components__buttons__focus-class: false; // NO PREFIX WILL BE ADDED. False to disable, cannot be empty
+// Forced 'visited' state class name
+$briks-components__buttons__visited-class: false; // NO PREFIX WILL BE ADDED. False to disable, cannot be empty
+// Forced 'disabled' state class name
+$briks-components__buttons__disabled-class: false; // NO PREFIX WILL BE ADDED. False to disable, cannot be empty
+/*
+    BUTTONS HOOKS
+    Briks component
+    ---
+    CSS declarations of buttons applied on pre-defined hooks
+    Structure:
+    $briks-components__buttons__hooks: (
+        // 'root-css' hook sets the component's root CSS declaration
+        root-css: (
+            property: value,
+            property: value
+        ),
+        // 'before-css' hook sets the :before pseudo class CSS declaration
+        // Note the content: '' is set by default
+        before-css: (
+            property: value,
+            property: value
+        ),
+        // 'after-css' hook sets the :after pseudo class CSS declaration
+        // Note the content: '' is set by default
+        after-css: (
+            property: value,
+            property: value
+        ),
+        // 'hover-css' hook sets the :hover pseudo class CSS declaration
+        hover-css: (
+            property: value,
+            property: value
+        ),
+        // 'hover-before-css' hook sets  CSS declaration ::before pseudo class on :hover state
+        hover-before-css: (
+            property: value,
+            property: value
+        ),
+        // 'hover-after-css' hook sets  CSS declaration ::after pseudo class on :focus state
+        hover-after-css: (
+            property: value,
+            property: value
+        ),
+        // 'focus-css' hook sets the :focus pseudo class CSS declaration
+        focus-css: (
+            property: value,
+            property: value
+        ),
+        // 'focus-before-css' hook sets  CSS declaration ::before pseudo class on :focus state
+        focus-before-css: (
+            property: value,
+            property: value
+        ),
+        // 'focus-after-css' hook sets  CSS declaration ::after pseudo class on :focus state
+        focus-after-css: (
+            property: value,
+            property: value
+        ),
+        // 'active-css' hook sets the :active pseudo class CSS declaration
+        active-css: (
+            property: value,
+            property: value
+        ),
+        // 'active-before-css' hook sets  CSS declaration ::before pseudo class on :active state
+        active-before-css: (
+            property: value,
+            property: value
+        ),
+        // 'active-after-css' hook sets  CSS declaration ::after pseudo class on :active state
+        active-after-css: (
+            property: value,
+            property: value
+        ),
+        // 'visited-css' hook sets the :visited pseudo class CSS declaration
+        visited-css: (
+            property: value,
+            property: value
+        ),
+        // 'visited-before-css' hook sets  CSS declaration ::before pseudo class on :visited state
+        visited-before-css: (
+            property: value,
+            property: value
+        ),
+        // 'visited-after-css' hook sets  CSS declaration ::after pseudo class on :visited state
+        visited-after-css: (
+            property: value,
+            property: value
+        ),
+        // 'disabled-css' hook sets the :disabled pseudo class CSS declaration
+        // Works only on <button> tags
+        disabled-css: (
+            property: value,
+            property: value
+        ),
+        // 'disabled-before-css' hook sets  CSS declaration ::before pseudo class on :disabled state
+        disabled-before-css: (
+            property: value,
+            property: value
+        ),
+        // 'disabled-after-css' hook sets  CSS declaration ::after pseudo class on :disabled state
+        disabled-after-css: (
+            property: value,
+            property: value
+        ),
+    );
+*/
+$briks-components__buttons__hooks: (
+    root-css: (),
+    before-css: (),
+    after-css: (),
+    hover-css: (),
+    hover-before-css: (),
+    hover-after-css: (),
+    focus-css: (),
+    focus-before-css: (),
+    focus-after-css: (),
+    active-css: (),
+    active-before-css: (),
+    active-after-css: (),
+    visited-css: (),
+    visited-before-css: (),
+    visited-after-css: (),
+    disabled-css: (),
+    disabled-before-css: (),
+    disabled-after-css: ()
+);
+/*
+    BUTTONS HOOKS MODIFIERS
+    ---
+    Sets CSS declarations of buttons hooks that change
+    Structure:
+    $briks-components__forms__ranges-hooks-modifiers: (
+        name-of-the-modifier-1: (
+            the-hook-name: (
+                property: value,
+                property: value
+            ),
+            the-hook-name: (
+                property: value,
+                property: value
+            )
+        ),
+        name-of-the-modifier-2: (
+            the-hook-name: (
+                property: value,
+                property: value
+            ),
+            the-hook-name: (
+                property: value,
+                property: value
+            )
+        )
+    );
+*/
+$briks-components__buttons__hooks-modifiers: (
+);
+
+/*
+    BADGES
+    Briks component
+    ---
+    Badges management
+*/
+$briks-components__badges__enabled: false; // false to disable
+$briks-components__badges__name: 'badge'; // $briks-components-prefix will be added to this name
+/*
+    BADGES CSS
+    Briks component
+    ---
+    CSS declarations of badges
+    Structure:
+    $briks-components__badges__css: (
+        property: value,
+        property: value
+        ...
+    );
+*/
+$briks-components__badges__css: ();
+/*
+    BADGES CSS MODIFIERS
+    ---
+    CSS declarations of what changes in badges
+    Structure:
+    $briks-components__badges__css-modifiers: (
+        name-of-the-modifier-1: (
+            property: value,
+            property: value
+        ),
+        name-of-the-modifier-2: (
+            property: value,
+            property: value
+        )
+    );
+*/
+$briks-components__badges__css-modifiers: ();
+
+/*
+    CONTAINERS
+    Briks component
+    ---
+    Containers management
+*/
+$briks-components__containers__enabled: false; // false to disable
+$briks-components__containers__name: 'container'; // $briks-components-prefix will be added to this name
+$briks-components__containers__responsive: true; // false to disable
+/*
+    CONTAINERS CSS
+    Briks component
+    ---
+    CSS declarations of containers
+    Structure:
+    $briks-components__containers__css: (
+        property: value,
+        property: value
+        ...
+    );
+*/
+$briks-components__containers__css: (
+);
+/*
+    CONTAINERS CSS MODIFIERS
+    ---
+    CSS declarations of what changes in containers
+    Structure:
+    $briks-components__containers__css-modifiers: (
+        name-of-the-modifier-1: (
+            property: value,
+            property: value
+        ),
+        name-of-the-modifier-2: (
+            property: value,
+            property: value
+        )
+    );
+*/
+$briks-components__containers__css-modifiers: (
+);
+
+/*
+    COLUMNS
+    Briks component
+    ---
+    Columns management
+*/
+$briks-components__columns__enabled: false; // false to disable
+$briks-components__columns__name: 'columns'; // $briks-components-prefix will be added to this name
+$briks-components__columns__responsive: true; // false to disable
+/*
+    COLUMNS CSS
+    Briks component
+    ---
+    CSS declarations of columns
+    Structure:
+    $briks-components__columns__css: (
+        property: value,
+        property: value
+        ...
+    );
+*/
+$briks-components__columns__css: ();
+/*
+    COLUMNS CSS MODIFIERS
+    ---
+    CSS declarations of what changes in columns
+    Structure:
+    $briks-components__columns__css-modifiers: (
+        name-of-the-modifier-1: (
+            property: value,
+            property: value
+        ),
+        name-of-the-modifier-2: (
+            property: value,
+            property: value
+        )
+    );
+*/
+$briks-components__columns__css-modifiers: (
+);

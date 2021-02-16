@@ -1,0 +1,75 @@
+---
+layout: styleguide/page
+---
+{{ content }}
+
+<ul class="c-grid u-bl-thin-dashed-alt">
+    <li class="m-w-12 c-form u-bt-thin-dashed-alt u-br-thin-dashed-alt u-bb-thin-dashed-alt">
+        <input type="search" id="asset-search" class="u-b-none u-bg-search">
+        <label for="asset-search">Quick search</label>
+    </li>
+    {% for file in site.static_files %}
+        {% if file.path contains page.specific_path %}
+            {% if file.path contains 'frames/' %}
+                
+            {% else %}
+                <li class="m-w-4 c-grid m-column m-space-between m-middle u-bb-thin-dashed-alt u-br-thin-dashed-alt u-p-md asset" m-nowrap="md,xl">
+                    {% assign extname_downcase = file.extname | downcase %}
+                    {% if page.files_filter contains extname_downcase %}{% endif %}
+                    <a  href="{{ site.url }}{{ site.baseurl }}{{ file.path }}" title="Preview {{ file.extname }}" 
+                        target="_blank" 
+                        class="m-grow c-btn m-block m-column m-translucid u-p-none u-bg-damier-hard {% if page.files_filter contains extname_downcase %}preview{% endif %}">
+                        {% if extname_downcase == '.svg' or extname_downcase == '.jpg' or extname_downcase == '.gif' or extname_downcase == '.png' or extname_downcase == '.webp' %}
+                            <img    src="{{ site.url }}{{ site.baseurl }}{{ file.path }}" 
+                                    loading="lazy" 
+                                    alt="{{ file.name }}" 
+                                    class="u-mh-100 u-mw-100">
+                        {% else %}
+                            
+                        {% endif %}
+                    </a>
+                    <nav class="u-m-none">
+                        <!-- <p class="u-o-auto u-m-none u-fs-xs u-c-primary-alt u-ff-monospace">{{ site.url }}{{ site.baseurl }}{{ file.path }}</p> -->
+                        <!-- <p class="u-m-none u-fs-xs u-c-primary-alt u-ff-monospace">Last modfied {{ file.modified_time }}</p> -->
+                        
+                        <p class="u-ta-center u-fs-xxs u-mt-sm u-c-primary-alt">{{ file.name }}</p> 
+                        <button class="c-btn m-translucid"
+                                title="Copy URL"
+                                onclick="styleGuide.copyToClipboard('{{ site.url }}{{ site.baseurl }}{{ file.path }}')">
+                            <span class="i-copy u-mr-xs"></span>
+                        </button>
+                        <a  href="{{ site.baseurl }}{{ file.path }}" 
+                            class="c-btn"
+                            title="Download file"
+                            download>
+                            <span class="i-download"></span>
+                        </a>
+                    </nav>
+                </li>
+            {% endif %}
+        {% endif %}
+    {% endfor %}
+</ul>
+
+
+<script>
+    jQuery(document).ready(function() {
+        jQuery('.preview').on('click', function(e) {
+            e.preventDefault();
+            let url = jQuery(this).attr('href');
+            jQuery('body')
+                .append(
+                    '<figure class="c-grid m-nowrap m-column m-middle m-center u-o-auto u-m-none u-fixed u-top-0 u-left-0 u-w-100 u-h-100 u-cur-pointer u-z-10 u-bg-damier-white-soft u-p-lg" onclick="jQuery(this).remove();">'+
+                        '<div style="background-image:url('+url+')" class="m-w-10 u-h-80vh u-contain"></div>'+
+                        '<figcaption class="c-text m-ellipsis u-o-auto u-c-primary-alt u-ff-monospace u-fs-xs u-pt-md">'+url+'</figcaption>'+
+                        '</div'+
+                    '</figure>'
+                );
+        });
+        jQuery('#asset-search').on('change', function() {
+            let textToSearch = jQuery(this).val();
+            jQuery('.asset:not(:contains("'+textToSearch+'"))').addClass('u-none');
+            jQuery('.asset:contains("'+textToSearch+'")').removeClass('u-none');
+        });
+    });
+</script>

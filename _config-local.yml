@@ -1,0 +1,32 @@
+# Jekyll LOCAL config for Design System
+url: "http://localhost" # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: "/scroll-line/_site" # the subpath of your site, e.g. /blog
+#destination: ../marcelrent/public/proto-app # Build relative path destination. The destination directory e.g. /blog
+# keep_files: [cache]
+title: Style guide # title of the documentation
+description: >- # Description of the docs. (>- means to ignore newlines until "baseurl:")
+  UI and UX documentation for my app.
+#sidebar_logo_url: https://itautomotive-dev.github.io/bymycar-www/img/logo-bymycar.svg # Image URL: Can be local e.g. '/img/logo-bymycar.png' or remote 'https://remotesite.com/img/logo-bymycar.png'
+#sidebar_logo_max_height: 30px # Logo image max height
+sidebar_text_logo_font_size: 32px # If no logo, font size of the site title 
+
+# Build settings - Do not edit excepting you do know what you do
+markdown: kramdown
+kramdown: 
+    syntax_highlighter_opts:
+        disable: true
+defaults:
+    -
+        values:
+            layout: "page"
+# plugins:
+#     - jekyll-toc
+sass:
+    style: compressed
+#exclude: ['/misc']
+
+#styleguide_additional_links:
+#    -   url: 'https://itautomotive-dev.github.io/bymycar-www/v1/'
+#        title: Design System v1
+#        order: 5000
+#        category: Archives

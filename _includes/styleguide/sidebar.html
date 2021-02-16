@@ -1,0 +1,50 @@
+{% assign page_paths = site.pages %}
+<div    class="c-position m-fixed m-top-left u-bc-primary-edge u-w-100 u-h-100 u-translucid u-z-11 m-anchor-top-right" 
+        u-none="xl"
+        id="sidebar-overlay"
+        onclick="sidebar();"></div>
+<nav    class="c-position m-top-left u-z-11 u-h-100vh u-bc-primary-max u-bb-thin-dashed-alt m-anchor-top-right--sm m-anchor-top-right--md" 
+        m-fw-medium="md,xl"
+        u-fixed="sm,md" 
+        u-sticky="xl"
+        id="sidebar">
+    <div class="c-position m-absolute m-top-0 m-right-0 u-h-100 u-bl-thin-dashed-alt" style="width:1px;"></div>
+    <button class="c-btn c-position m-absolute m-top-right m-anchor-top-left u-z-10" 
+            u-none="xl" 
+            onclick="sidebar()">
+        <span class="i-menu"></span>
+    </button>
+    <ul class="u-m-none u-p-none u-ls-none u-mh-100vh u-o-auto">
+        <li>
+            <a rel="author" href="{{ site.url }}{{ site.baseurl }}" class="c-btn m-translucid m-block-right u-p-md">
+                {% if site.sidebar_logo_url %}
+                    <img    src="{% if site.sidebar_logo_url contains 'https://' or site.sidebar_logo_url contains 'http://' %}{{ site.sidebar_logo_url }}{% else %}{{ site.url }}{{ site.baseurl }}{{ site.sidebar_logo_url }}{% endif %}" 
+                            {% if site.sidebar_logo_max_height %}
+                                style="max-height:{{ site.sidebar_logo_max_height }}; max-width: 100%;"
+                            {% else %}
+                                class="u-mh-100 u-mw-100"
+                            {% endif %}
+                            alt="{{ site.title }}">
+                {% else %}
+                    <!-- Without logo -->
+                    <span {% if site.sidebar_text_logo_font_size %}style="font-size:{{ site.sidebar_text_logo_font_size }}"{% endif %}>{{ site.title | escape }}</span>
+                {% endif %}
+            </a>
+        </li>
+{% if page_paths %}
+        <li>
+            <form class="c-form" action="{{ 'styleguide/search.html' | relative_url }}" method="get">
+                <input  type="text" 
+                        id="search-box" 
+                        name="query" 
+                        placeholder="Search" 
+                        class="u-bl-none u-bt-thin-dashed-alt u-br-none u-bb-none u-bg-search"
+                        u-fs-xs="sm,md"
+                        u-p-xs="sm,md">
+                <input type="submit" value="Search" class="u-none">
+            </form>
+        </li>
+        {% include styleguide/menu-basic.html %}
+{% endif %}
+    </ul>
+</nav>

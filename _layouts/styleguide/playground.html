@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        {% assign pagecontent_description = page.content | markdownify | replace: '.', '. ' | replace: '</h2>', ': ' | replace: '</h3>', ': ' | replace: '</h4>', ': ' | strip_html | strip_newlines | replace: '  ', ' ' | truncate: 160 %}
+        <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{% if pagecontent_description.size > 10 %}{{ pagecontent_description }}{% else %}{{ site.description }}{% endif %}{% endif %} ">
+{% for fontpath in page.fonts %}
+    {% if fontpath contains 'https://' or fontpath contains 'http://' %}
+        <link rel="stylesheet" href="{{ fontpath }}">
+    {% else %}
+        <link rel="stylesheet" href="{{ site.url }}{{ site.baseurl }}/fonts/{{ fontpath }}">
+    {% endif %}
+{% endfor %}
+{% for stylesheet in page.stylesheets %}
+    {% if stylesheet contains 'https://' or stylesheet contains 'http://' %}
+        <link rel="stylesheet" href="{{ stylesheet }}">
+    {% else %}
+        <link rel="stylesheet" href="{{ site.url }}{{ site.baseurl }}/css/{{ stylesheet }}">
+    {% endif %}
+{% endfor %}
+        <style>
+            body {
+                min-height: 100vh;
+            }
+        </style>
+        <script>
+            window.assetsserv = '{{site.assetsserv}}';
+            window.imgserv = '{{site.imgserv}}';
+        </script>
+    </head>
+    <body id="playground">
+        <div id="wrapper">
+            {{ content }}
+        </div>
+
+        <script type="text/javascript">
+            var bodyStyle = getComputedStyle(document.querySelector('body'));
+            document.addEventListener("DOMContentLoaded", function(event) {
+                //console.log("DOM fully loaded and parsed");
+
+                
+                
+            });
+            var hash = window.location.hash;
+                hash = hash.replace('#', ''),
+                stringifiedSentObject = atob(hash);
+            var sentObject = JSON.parse(stringifiedSentObject);
+            if (sentObject.options.padding) {
+                document.getElementsByTagName('body')[0].classList.add('padding');
+            }
+            if (sentObject.options.centered) {
+                document.getElementsByTagName('body')[0].classList.add('centered');
+            }
+            if (sentObject.options.forcePattern) {
+                document.getElementsByTagName('body')[0].classList.add('pattern');
+            }
+            if (sentObject.options.forceHardPattern) {
+                document.getElementsByTagName('body')[0].classList.add('hard-pattern');
+            }
+            var wrapper = document.getElementById('wrapper');
+            wrapper.innerHTML = sentObject.content;
+        </script>
+        {% for script in page.scripts %}
+            {% if script contains 'https://' or script contains 'http://' %}
+                <script type="text/javascript" src="{{ script }}"></script>
+            {% else %}
+                <script type="text/javascript" src="{{ site.url }}{{ site.baseurl }}/js/{{ script }}"></script>
+            {% endif %}
+        {% endfor %}
+    </body>
+</html>

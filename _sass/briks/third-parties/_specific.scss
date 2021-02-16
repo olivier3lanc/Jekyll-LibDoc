@@ -1,0 +1,68 @@
+.#{$briks-utilities-prefix}disabled,
+.disabled {
+    pointer-events: none !important;
+    opacity: 0.3 !important;
+}
+
+.daterangepicker {
+    font-family: my-font-family(lead);
+    width: 100%;
+    left: 0 !important;
+    top: 0px !important;
+    margin: 0;
+    .calendar-table {
+        th,
+        td {
+            height: 32px;
+            font-size: my-font-size(sm);
+        }
+        th {
+            font-family: my-font-family(lead-bold-2);
+        }
+    }
+    .calendar-time {
+        &:before {
+            content: 'Heure de départ';
+            display: block;
+        }
+    }
+    td {
+        &.active {
+            background-color: my-color(primary);
+            font-family: my-font-family(lead-bold-2);
+            &:hover  {
+                background-color: my-color(primary);
+            }
+        }
+    }
+    .drp-selected {
+        display: none;
+    }
+    .drp-calendar {
+        margin: auto;
+        padding: 0;
+    }
+    &.openscenter {
+        &:after,
+        &:before {
+            display: none;
+        }
+    }
+    select {
+        &.hourselect,
+        &.minuteselect,
+        &.secondselect,
+        &.ampmselect {
+            background: right my-spacing(sm) top 50% / my-font-size(sm) no-repeat my-color(neutral-light-max) url('../img/chevron-down.svg');
+            padding: my-spacing(sm, lg, sm, sm);
+            border: my-border(thin-neutral-light);
+            border-radius: my-border-radius(xl);
+            font-family: my-font-family(lead-bold-2);
+            font-size: my-font-size(md);
+            box-sizing: initial;
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+        }
+    }
+}

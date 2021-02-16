@@ -1,0 +1,77 @@
+---
+layout: styleguide/page
+global_patterns: 
+    -   title: Components prefix
+        description: The prefix which preceeds every component name
+        classname: 'briks-components-prefix'
+    -   title: Modifiers prefix
+        description: The prefix which preceeds every modifier name
+        classname: 'briks-modifiers-prefix'
+    -   title: Utilities prefix
+        description: The prefix which preceeds every utility name
+        classname: 'briks-utilities-prefix'
+    -   title: Responsive prefix
+        description: The prefix which preceeds every screen size name
+        classname: 'briks-responsive-prefix'
+    -   title: Unit
+        description: The default unit used into the entire design system
+        classname: 'briks-unit'
+main_patterns:
+    -   title: Colors
+        description: The colors used in the design system. 
+        classname: 'briks-colors'
+    -   title: Screen sizes
+        description: The break points of the responsive design system. 
+        classname: 'briks-screen-sizes'
+    -   title: Font Families
+        description: The fonts assets of the design system.
+        classname: 'briks-font-families'
+    -   title: Font sizes
+        description: The font sizes of the design system.
+        classname: 'briks-font-sizes'
+    -   title: Typography
+        description: The typography used into the design system. Typography is equivalent to the CSS font property.
+        classname: 'briks-typography'
+    -   title: Spacings
+        description: The spacings of the design system. Spacings are used in margins, paddings, horizontal and vertical positionings like top, right, bottom, left.
+        classname: 'briks-spacings'
+    -   title: Borders
+        description: The border available into the design system.
+        classname: 'briks-borders'
+    -   title: Border radius
+        description: The border radius available into the design system.
+        classname: 'briks-border-radius'
+    -   title: Box shadows
+        description: The box shadows available into the design system.
+        classname: 'briks-shadows'
+    -   title: Backgrounds
+        description: The backgrounds available into the design system.
+        classname: 'briks-backgrounds'
+content_id: 'homepage-content'
+---
+<section>
+    <article>
+        <ul class="c-grid u-bt-thin-dashed-alt u-bl-thin-dashed-alt">
+            {% for pattern in page.global_patterns %}
+                <li class="m-w-4 m-w-6--sm u-br-thin-dashed-alt u-bb-thin-dashed-alt u-p-sm">
+                    <header class="c-text m-bold">
+                        <h3 class="u-m-none u-fs-lg u-ff-monospace u-c-hilight notoc {{ pattern.classname }}"></h3>
+                        <p>{{ pattern.title }}</p>
+                    </header>
+                    <p>{{ pattern.description }}</p>
+                </li>
+            {% endfor %}
+        </ul>
+    </article>
+    {% for pattern in page.main_patterns %}
+        <article class="user-pattern u-mt-xl">
+            <header>
+                <h2>{{ pattern.title }}</h2>
+                <p>{{ pattern.description }}</p>
+            </header>
+            <div class="patterns-{{ pattern.classname }}"></div>
+        </article>
+    {% endfor %}
+</section>
+
+

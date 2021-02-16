@@ -1,0 +1,19 @@
+<ul class="playground-responsive-commands u-ls-none u-p-none u-m-none" data-playground-id="{{ include.target_id }}" data-playground-instance-id="{{ include.target_id }}-instance">
+    {% for value in include.screen_sizes %}
+        <li class="c-form u-inline-block u-mt-none u-mr-sm">
+            <input  type="checkbox" 
+                    value="{{ value }}" 
+                    class="playground-responsive"
+                    id="{{ include.target_id }}-{{ value }}" 
+                    name="{{ include.target_id }}" 
+                    onchange="playground.update('{{ include.target_id }}')">
+            <label for="{{ include.target_id }}-{{ value }}">{{ value }}</label>
+        </li>
+    {% endfor %}
+    <li class="c-form u-inline-block u-mt-none">
+        <input  type="checkbox" 
+                id="{{ include.target_id }}-shorthand" 
+                onchange="playground.update('{{ include.target_id }}')">
+        <label for="{{ include.target_id }}-shorthand">Shorthand</label>
+    </li>
+</ul>

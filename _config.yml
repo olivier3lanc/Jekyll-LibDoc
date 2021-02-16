@@ -1,0 +1,46 @@
+# Jekyll REMOTE config for Design System
+url: "https://itautomotive-dev.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: "/marcel-rent-app-proto" # the subpath of your site, e.g. /blog
+# destination: ../_site # Build relative path destination. The destination directory e.g. /blog
+# keep_files: [cache]
+title: Prototype App Marcel Rent # title of the documentation
+description: >- # Description of the docs. (>- means to ignore newlines until "baseurl:")
+  Documentation UI/UX de l'application Marcel Rent.
+sidebar_logo_url: /img/logo-marcel-rent.png # Image URL: Can be local e.g. '/img/logo-bymycar.png' or remote 'https://remotesite.com/img/logo-bymycar.png'
+#sidebar_logo_max_height: '100px' # Logo image max height
+# Text strings to display
+texts:
+    pages: Patterns
+    posts: Change log
+
+# Build settings - Do not edit excepting you do know what you do
+markdown: kramdown
+kramdown: 
+    syntax_highlighter_opts:
+        disable: true
+defaults:
+    -
+        values:
+            layout: "page"
+# plugins:
+#     - jekyll-toc
+sass:
+    style: compressed
+#exclude: ['/misc']
+# image server
+#imgserv: https://imgserv.aphael.com
+#imgserv: https://images.weserv.nl
+# BMC key
+# PPROD
+#imgserv: https://imgservpprod.bymycar.fr/image/?apikey=aacfda9d077c3df8b4cf4831cd730eae&url=
+#PROD
+imgserv: https://imgservprod.bymycar.fr/image/?apikey=a15340303ea62780ec69802bda357e12&url=
+# iThis key
+#imgserv: https://imgservpprod.bymycar.fr/image/?apikey=cc94ffec2aadb7c19f57513266f8bcf2&url=
+assetsserv: 'https://feassets.bymycar.fr'
+
+#styleguide_additional_links:
+#    -   url: 'https://itautomotive-dev.github.io/bymycar-www/v1/'
+#        title: Design System v1
+#        order: 5000
+#        category: Archives

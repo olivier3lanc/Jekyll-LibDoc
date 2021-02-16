@@ -1,0 +1,45 @@
+
+<code class="u-p-xxs u-fs-xxs u-bc-primary-edge u-lh-base u-b-thin-dashed-alt c-text m-nowrap u-c-primary-alt">
+    <span class="i-code u-va-middle"></span> playground
+</code>
+<ul class="c-grid m-space-between u-b-thin-dashed-alt" data-playground-commands="{{ include.target_id }}">
+    <li class="m-grow u-p-sm u-bb-thin-dashed-alt">
+        {% if include.responsive == true %}
+            <ul class="u-ls-none u-p-none u-m-none" data-playground-id="{{ include.target_id }}" data-playground-instance-id="{{ include.target_id }}-instance">
+                {% for value in include.screen_sizes %}
+                    <li class="c-form u-inline-block u-mt-none u-mr-sm">
+                        <input  type="checkbox" 
+                                value="{{ value }}" 
+                                class="playground-responsive"
+                                id="{{ include.target_id }}-{{ value }}" 
+                                name="{{ include.target_id }}" 
+                                onchange="playground.update('{{ include.target_id }}')">
+                        <label for="{{ include.target_id }}-{{ value }}">{{ value }}</label>
+                    </li>
+                {% endfor %}
+                <li class="c-form u-inline-block u-mt-none">
+                    <input  type="checkbox" 
+                            id="{{ include.target_id }}-shorthand" 
+                            onchange="playground.update('{{ include.target_id }}')">
+                    <label for="{{ include.target_id }}-shorthand">Shorthand</label>
+                </li>
+            </ul>
+        {% endif %}
+    </li>
+    <li class="c-grid">
+        <a href="#" class="c-btn u-p-sm u-bl-thin-dashed-alt u-bb-thin-dashed-alt" title="Open in a new tab" target="_blank" data-playground-new-tab="{{ include.target_id }}">
+            <span class="i-external-link"></span>
+        </a>
+        <button class="c-btn u-p-sm u-bl-thin-dashed-alt u-bb-thin-dashed-alt maximize" title="Maximize playground" onclick="playground.expand('{{ include.target_id }}')">
+            <span class="i-maximize-2"></span>
+        </button>
+        <button class="c-btn u-p-sm u-bl-thin-dashed-alt u-bb-thin-dashed-alt u-none minimize" title="Minimize playground" onclick="playground.expand('{{ include.target_id }}')">
+            <span class="i-minimize-2"></span>
+        </button>
+    </li>
+    <!-- <li class="m-w-12 u-pt-sm u-pb-sm u-relative">
+        <div class="c-form c-position m-absolute m-middle-center m-anchor-middle-center u-w-100 u-z-1">
+            <input type="range" class="playground-resizer" title="Playground resizer" data-playground-resizer-value="{{ include.target_id }}" value="100" min="1" max="100" data-target="{{ include.target_id }}-wrapper" data-playground-id="{{ include.target_id }}">
+        </div>
+    </li> -->
+</ul>

@@ -1,0 +1,17 @@
+{% if page.tags.size > 0 %}
+<nav>
+    Tags
+    {% if page.layout == 'post' %}
+        {% assign pagetags = page.tags %}
+    {% else %}
+        {% assign pagetags = page.tags | split: " " %}
+    {% endif %}
+    {% for tag in pagetags %}
+    <a  href="{{ site.url }}{{ site.baseurl}}/search.html?query={{ tag }}"
+        class=""
+        rel="tag">
+        {{ tag }}
+    </a>
+    {% endfor %}
+</nav>
+{% endif %}

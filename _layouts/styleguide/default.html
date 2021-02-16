@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: 'en' }}">
+    {% include styleguide/head.html %}
+    <body class="u-bc-primary-edge">
+        <div class="c-grid m-nowrap">
+            {% include styleguide/sidebar.html %}
+            <main class="m-grow m-center m-w-1 c-grid m-nowrap" u-ml-md="xl">
+                {{ content }}
+            </main>
+        </div>
+        <footer class="u-p-lg u-fs-sm u-bc-primary-max u-c-primary-alt u-bt-thin-dashed-alt u-mt-md">
+            <nav class="c-grid m-space-between m-bottom">
+                <ul class="u-ls-none">
+                    <li>
+                        <a href="{{ site.url }}{{ site.baseurl }}" class="c-btn m-translucid u-pl-none">{{ site.title | escape }}</a><br>
+                        {{ site.description | escape }}
+                    </li>
+                </ul>
+                <ul class="u-ls-none">
+                    <li>Powered by <a href="#">Briks</a></li>
+                </ul>
+            </nav>
+        </footer>
+        {% include styleguide/common-js.html %}
+    </body>
+</html>
