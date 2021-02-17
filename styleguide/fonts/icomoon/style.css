@@ -1,9 +1,9 @@
 @font-face {
   font-family: 'icomoon';
   src:
-    url('fonts/icomoon.ttf?beijnm') format('truetype'),
-    url('fonts/icomoon.woff?beijnm') format('woff'),
-    url('fonts/icomoon.svg?beijnm#icomoon') format('svg');
+    url('fonts/icomoon.ttf?uv54d4') format('truetype'),
+    url('fonts/icomoon.woff?uv54d4') format('woff'),
+    url('fonts/icomoon.svg?uv54d4#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -24,6 +24,48 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.i-zip:before {
+  content: "\e914";
+}
+.i-ts:before {
+  content: "\e915";
+  color: #007acc;
+}
+.i-scss:before {
+  content: "\e916";
+  color: #c69;
+}
+.i-css:before {
+  content: "\e917";
+  color: #1572b6;
+}
+.i-js:before {
+  content: "\e918";
+  color: #f7df1e;
+}
+.i-xd:before {
+  content: "\e919";
+  color: #ff2bc2;
+}
+.i-psd:before {
+  content: "\e91a";
+  color: #00c8ff;
+}
+.i-ai:before {
+  content: "\e91b";
+  color: #ff7c00;
+}
+.i-figma:before {
+  content: "\e91c";
+  color: #f24e1e;
+}
+.i-sketch:before {
+  content: "\e91d";
+  color: #f7b500;
+}
+.i-file:before {
+  content: "\e91e";
+}
 .i-list:before {
   content: "\e913";
 }

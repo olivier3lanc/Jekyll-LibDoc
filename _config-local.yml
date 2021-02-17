@@ -20,6 +20,14 @@ playground:
         - https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js
         - styleguide/js/my-toggles.js
 
+assets:
+    image_extensions: #Array list of image extensions to support without point
+        - svg
+        - jpg
+        - jpeg
+        - gif
+        - png
+        - webp
 # Build settings - Do not edit excepting you do know what you do
 markdown: kramdown
 kramdown: 
