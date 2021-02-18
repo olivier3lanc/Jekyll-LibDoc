@@ -1,189 +1,320 @@
 ---
 layout: styleguide/page
 ---
-
-# github.🏄‍♂️
-
-## Features
-
-- ✅ Github support - Surf GitHub repository on browser with vscode environment
-- ✅ Gist support - Surf Gist repository on browser with vscode environment ([DEMO](https://gist.github.surf/softmarshmallow/9659717bf0a876940b65ee3cdaef0655))
-- ✅ Official Chrome extension - Launch surf with extension button
-- ✅ Official CLI - `surf .` command for opening surf on terminal
-- Gitlab & Bitbucket support ([gitlab.surf](https://gitlab.surf)) ([bitbucket.surf](https://bitbucket.surf))  (enhance)
-- [surf.codes](https://surf.codes) for private, custom scm (enhance)
-- Remote compile & terminal support in browser (comming soon)
+# Markdown: Syntax
 
 
-## Chrome extension
+* [x] Finish my changes
+* [ ] Push my commits to GitHub
+* [ ] Open a pull request
 
-Download our official chrome [here](chrome_link) (It's currently under review)
+~~This was mistaken text~~
 
-![surf chrome extension](./docs/gifs/surf-extension-chrome-demo.gif)
+*   [Overview](#overview)
+    *   [Philosophy](#philosophy)
+    *   [Inline HTML](#html)
+    *   [Automatic Escaping for Special Characters](#autoescape)
+*   [Block Elements](#block)
+    *   [Paragraphs and Line Breaks](#p)
+    *   [Headers](#header)
+    *   [Blockquotes](#blockquote)
+    *   [Lists](#list)
+    *   [Code Blocks](#precode)
+    *   [Horizontal Rules](#hr)
+*   [Span Elements](#span)
+    *   [Links](#link)
+    *   [Emphasis](#em)
+    *   [Code](#code)
+    *   [Images](#img)
+*   [Miscellaneous](#misc)
+    *   [Backslash Escapes](#backslash)
+    *   [Automatic Links](#autolink)
 
-[Building and installing chrome extension on your own](./chrome-extension/README.md)
 
-**This also works for the GIST too**
+**Note:** This document is itself written using Markdown; you
+can [see the source for it by adding '.text' to the URL](/projects/markdown/syntax.text).
 
-![gist surf](./docs/gifs/gist-surf-chrome-demo.gif)
+----
+
+## Overview
+
+### Philosophy
+
+Markdown is intended to be as easy-to-read and easy-to-write as is feasible.
+
+Readability, however, is emphasized above all else. A Markdown-formatted
+document should be publishable as-is, as plain text, without looking
+like it's been marked up with tags or formatting instructions. While
+Markdown's syntax has been influenced by several existing text-to-HTML
+filters -- including [Setext](http://docutils.sourceforge.net/mirror/setext.html), [atx](http://www.aaronsw.com/2002/atx/), [Textile](http://textism.com/tools/textile/), [reStructuredText](http://docutils.sourceforge.net/rst.html),
+[Grutatext](http://www.triptico.com/software/grutatxt.html), and [EtText](http://ettext.taint.org/doc/) -- the single biggest source of
+inspiration for Markdown's syntax is the format of plain text email.
+
+## Block Elements
+
+### Paragraphs and Line Breaks
+
+A paragraph is simply one or more consecutive lines of text, separated
+by one or more blank lines. (A blank line is any line that looks like a
+blank line -- a line containing nothing but spaces or tabs is considered
+blank.) Normal paragraphs should not be indented with spaces or tabs.
+
+The implication of the "one or more consecutive lines of text" rule is
+that Markdown supports "hard-wrapped" text paragraphs. This differs
+significantly from most other text-to-HTML formatters (including Movable
+Type's "Convert Line Breaks" option) which translate every line break
+character in a paragraph into a `<br />` tag.
+
+When you *do* want to insert a `<br />` break tag using Markdown, you
+end a line with two or more spaces, then type return.
+
+### Headers
+
+Markdown supports two styles of headers, [Setext] [1] and [atx] [2].
+
+Optionally, you may "close" atx-style headers. This is purely
+cosmetic -- you can use this if you think it looks better. The
+closing hashes don't even need to match the number of hashes
+used to open the header. (The number of opening hashes
+determines the header level.)
 
 
+### Blockquotes
 
-## 🏄‍♂️ `surf` CLI
+Markdown uses email-style `>` characters for blockquoting. If you're
+familiar with quoting passages of text in an email message, then you
+know how to create a blockquote in Markdown. It looks best if you hard
+wrap the text and put a `>` before every line:
 
-<p align="center"><image src="./branding/surf-cli-cover.png"/></p>
+> This is a blockquote with two paragraphs. Lorem ipsum dolor sit amet,
+> consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus.
+> Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.
+> 
+> Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse
+> id sem consectetuer libero luctus adipiscing.
+
+Markdown allows you to be lazy and only put the `>` before the first
+line of a hard-wrapped paragraph:
+
+> This is a blockquote with two paragraphs. Lorem ipsum dolor sit amet,
+consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus.
+Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.
+
+> Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse
+id sem consectetuer libero luctus adipiscing.
+
+Blockquotes can be nested (i.e. a blockquote-in-a-blockquote) by
+adding additional levels of `>`:
+
+> This is the first level of quoting.
+>
+> > This is nested blockquote.
+>
+> Back to the first level.
+
+Blockquotes can contain other Markdown elements, including headers, lists,
+and code blocks:
+
+> ## This is a header.
+> 
+> 1.   This is the first list item.
+> 2.   This is the second list item.
+> 
+> Here's some example code:
+> 
+>     return shell_exec("echo $input | $markdown_script");
+
+Any decent text editor should make email-style quoting easy. For
+example, with BBEdit, you can make a selection and choose Increase
+Quote Level from the Text menu.
 
 
+### Lists
 
-<p align="center"><image src="./docs/gifs/cli-demo.gif"/></p>
+Markdown supports ordered (numbered) and unordered (bulleted) lists.
 
-Like vscode's `code .`, we support our command `surf`
+Unordered lists use asterisks, pluses, and hyphens -- interchangably
+-- as list markers:
 
-```shell
-# === install the cli ===
-npm -g install @bridged.xyz/surf
-		# or with yarn
-		yarn global add @bridged.xyz/surf
+*   Red
+*   Green
+*   Blue
 
-# and surf 🏄 !
-surf .
+is equivalent to:
+
++   Red
++   Green
++   Blue
+
+and:
+
+-   Red
+-   Green
+-   Blue
+
+Ordered lists use numbers followed by periods:
+
+1.  Bird
+2.  McHale
+3.  Parish
+
+It's important to note that the actual numbers you use to mark the
+list have no effect on the HTML output Markdown produces. The HTML
+Markdown produces from the above list is:
+
+If you instead wrote the list in Markdown like this:
+
+1.  Bird
+1.  McHale
+1.  Parish
+
+or even:
+
+3. Bird
+1. McHale
+8. Parish
+
+you'd get the exact same HTML output. The point is, if you want to,
+you can use ordinal numbers in your ordered Markdown lists, so that
+the numbers in your source match the numbers in your published HTML.
+But if you want to be lazy, you don't have to.
+
+To make lists look nice, you can wrap items with hanging indents:
+
+*   Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+    Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi,
+    viverra nec, fringilla in, laoreet vitae, risus.
+*   Donec sit amet nisl. Aliquam semper ipsum sit amet velit.
+    Suspendisse id sem consectetuer libero luctus adipiscing.
+
+But if you want to be lazy, you don't have to:
+
+*   Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi,
+viverra nec, fringilla in, laoreet vitae, risus.
+*   Donec sit amet nisl. Aliquam semper ipsum sit amet velit.
+Suspendisse id sem consectetuer libero luctus adipiscing.
+
+List items may consist of multiple paragraphs. Each subsequent
+paragraph in a list item must be indented by either 4 spaces
+or one tab:
+
+1.  This is a list item with two paragraphs. Lorem ipsum dolor
+    sit amet, consectetuer adipiscing elit. Aliquam hendrerit
+    mi posuere lectus.
+
+    Vestibulum enim wisi, viverra nec, fringilla in, laoreet
+    vitae, risus. Donec sit amet nisl. Aliquam semper ipsum
+    sit amet velit.
+
+2.  Suspendisse id sem consectetuer libero luctus adipiscing.
+
+It looks nice if you indent every line of the subsequent
+paragraphs, but here again, Markdown will allow you to be
+lazy:
+
+*   This is a list item with two paragraphs.
+
+    This is the second paragraph in the list item. You're
+only required to indent the first line. Lorem ipsum dolor
+sit amet, consectetuer adipiscing elit.
+
+*   Another item in the same list.
+
+To put a blockquote within a list item, the blockquote's `>`
+delimiters need to be indented:
+
+*   A list item with a blockquote:
+
+    > This is a blockquote
+    > inside a list item.
+
+To put a code block within a list item, the code block needs
+to be indented *twice* -- 8 spaces or two tabs:
+
+*   A list item with a code block:
+
+        <code goes here>
+
+### Code Blocks
+
+Pre-formatted code blocks are used for writing about programming or
+markup source code. Rather than forming normal paragraphs, the lines
+of a code block are interpreted literally. Markdown wraps a code block
+in both `<pre>` and `<code>` tags.
+
+To produce a code block in Markdown, simply indent every line of the
+block by at least 4 spaces or 1 tab.
+
+This is a normal paragraph:
+
+    This is a code block.
+
+Here is an example of AppleScript:
+
+    tell application "Foo"
+        beep
+    end tell
+
+A code block continues until it reaches a line that is not indented
+(or the end of the article).
+
+Within a code block, ampersands (`&`) and angle brackets (`<` and `>`)
+are automatically converted into HTML entities. This makes it very
+easy to include example HTML source code using Markdown -- just paste
+it and indent it, and Markdown will handle the hassle of encoding the
+ampersands and angle brackets. For example, this:
+
+    <div class="footer">
+        &copy; 2004 Foo Corporation
+    </div>
+
+Regular Markdown syntax is not processed within code blocks. E.g.,
+asterisks are just literal asterisks within a code block. This means
+it's also easy to use Markdown to write about Markdown's own syntax.
+
+```
+tell application "Foo"
+    beep
+end tell
 ```
 
-You can use this as you sub editor, which can be useful when you're exploring your master/main repository when you are at your own branch on your local machine
+## Span Elements
 
-```sh
-# different branch
-surf -b <branch-name>
-```
+### Links
 
+Markdown supports two style of links: *inline* and *reference*.
 
+In both styles, the link text is delimited by [square brackets].
 
-Learn more at [surf-cli](https://github.com/bridgedxyz/surf-cli)
+To create an inline link, use a set of regular parentheses immediately
+after the link text's closing square bracket. Inside the parentheses,
+put the URL where you want the link to point, along with an *optional*
+title for the link, surrounded in quotes. For example:
 
+This is [an example](http://example.com/) inline link.
 
+[This link](http://example.net/) has no title attribute.
 
+### Emphasis
 
+Markdown treats asterisks (`*`) and underscores (`_`) as indicators of
+emphasis. Text wrapped with one `*` or `_` will be wrapped with an
+HTML `<em>` tag; double `*`'s or `_`'s will be wrapped with an HTML
+`<strong>` tag. E.g., this input:
 
-## Notes
+*single asterisks*
 
-For unlimited usage, you must provide github token in `key` icon tab
+_single underscores_
 
-You can generate new token for github.surf on [here](https://github.com/settings/tokens/new?scopes=repo&description=githubsurf)
+**double asterisks**
 
-![provide oauth token for unlimited usage on github.surf](./docs/images/tutorial-provide-oauth-token.png)
+__double underscores__
 
+### Code
 
+To indicate a span of code, wrap it with backtick quotes (`` ` ``).
+Unlike a pre-formatted code block, a code span indicates code within a
+normal paragraph. For example:
 
-## Limitations
-
-**Max requests per hour**
-
-- [github](https://docs.github.com/en/rest/reference/rate-limit) - 60 requests per hour if no token provided (5000 when provided)
-- [gitlab](https://docs.gitlab.com/ee/security/rate_limits.html#:~:text=Introduced%20in%20GitLab%2012.9.,requests%20per%20minute%20per%20user.) - 5 reqests per **minute**
-- [bitbucket](https://support.atlassian.com/bitbucket-cloud/docs/api-request-limits/) - 60 requests per hour
-
-[Learn more about providing a token for unlimited usage](./docs/guide.md)
-
-
-
-**Github Enterprise usage**
-
-You have to modify [api.ts](https://github.com/bridgedxyz/github.surf/blob/main/extensions/githubsurf/src/api.ts) and deploy as-your-own via Deploy on vercel button on the top of this document. api.guthub.com shall point to your-server.example.com
-
-
-
-## Supported languages / frameworks extensions (themes)
-
-[As listed here](./extensions) and [surf-code-extensions](https://github.com/bridgedxyz/surf-code-extensions) here, we support below extensions in-the-box
-
-- Vue
-- JS/TS/JSX/TSX (React, Svelete, and other js based frrameworks)
-- Dart & Flutter
-- Elm
-- Kotlin
-- Scala
-- Ocaml
-- Vetur
-- Jupyter Notebook - [deepmind/deepmind-research demo](https://github.surf/deepmind/deepmind-research)
-- Material theme
-
-
-
-## What's Next?
-
-- PWA Support
-- Enterprise account support (github enterprise)
-- Cusom extensions support
-- Mobile screen support
-- Remote cli & build support
-- More powerful Private repository experience
-
-
-
-## Remote compile / App preview (for ui applications) & CLI Capabilities.
-
-For repositories containing project such like flutter, react and other main ui frameworks we are planning to suport live-compile-preview feature of the application. the main issue with this will be the pricing and performance limitation. since we are going to keep this project free / fast for everyone
-
-The technology behind this is under development in [appbox](https://github.com/bridgedyxz/appbox) and [console](https://github.com/bridgedxyz/console.bridged.xyz). you can see the remote-compile demo on [assistant](https://github.com/bridgedxyz/assistant)
-
-
-
-
-## Contribution
-
-### Join the community
-
-- join slack - [here on notion](https://www.notion.so/bridgedxyz/Bridged-OSS-Community-c6983f668e3e4204aed8856da0e73483)
-- view design - [here on figma](https://www.figma.com/file/R3U3OHaoPVd4D7Z9mcaqIE/github.surf?node-id=14%3A0)
-- view the project board - [here on github](https://github.com/bridgedxyz/github.surf/projects)
-
-Learn more about contribution at [CONTRIBUTING.md](./CONTRIBUTING.md)
-
-
-
-## Disclamer
-
-this project is inspired from [cdr/code-server](https://github.com/cdr/code-server) and [conwnet/github1s](https://github.com/conwnet/github1s). the base code was forked from github1s (MIT License at the point of fork), which we are replacing it with our own implementations and approaches.
-
-
-
-## See Also
-
-- [surf.codes](https://surf.codes)
-- [surf-code-extensions](https://github.com/bridgedxyz/surf-code-extensions)
-
-
-
-
-
-## References & Blogs / Translations
-
-**References**
-
-- [cdr/code-server](https://github.com/cdr/code-server)
-- [microsoft/vscode](https://github.com/microsoft/vscode)
-- [conwnet/github1s](https://github.com/conwnet/github1s)
-- [bridgedxyz/node-services](https://github.com/bridgedxyz/node-services)
-- [bridgedxyz/assistant](https://github.com/bridgedxyz/assistant)
-- [bridgedxyz/console.bridged.xyz](https://github.com/bridgedxyz/console.bridged.xyz)
-- [bridgedxyz/appbox](https://github.com/bridgedxyz/appbox)
-
-**Blogs / Translations**
-
-![medium github surf](./branding/blog-cover.png)
-
-- 🌍 - [🏄‍♂️ Introducing github.surf Fastest and most elegant way to surf your code (CLI, Extension included)](https://medium.com/bridgedxyz/%EF%B8%8F-introducing-github-surf-bcc8ef9bf594)
-- 🇰🇷 - [(ko) 🏄‍♂️ Github.surf 를 소개합니다! — 코드를 서핑하기 가장 빠르고 쿨한 방법 (CLI, Extension 지원)](https://medium.com/bridgedxyz/ko-%EF%B8%8F-github-surf%EB%A5%BC-%EC%86%8C%EA%B0%9C%ED%95%A9%EB%8B%88%EB%8B%A4-%EC%BD%94%EB%93%9C%EB%A5%BC-%EC%84%9C%ED%95%91%ED%95%98%EA%B8%B0-%EA%B0%80%EC%9E%A5-%EB%B9%A0%EB%A5%B4%EA%B3%A0-%EC%BF%A8%ED%95%9C-%EB%B0%A9%EB%B2%95-cli-extension-%EC%A7%80%EC%9B%90-65e6a9a07bd5)
-- 🇩🇪 - WIP
-- 🇨🇳 - WIP
-
-
-
-[![get-chrome-ext][chrome_badge]][chrome_link]
-[![get-firefox-addon][firefox_badge]][firefox_link]
-
-
-[chrome_link]: https://chrome.google.com/webstore/detail/aipkghikndfblkikafmbahbekkhmppia
-[chrome_badge]: ./branding/badges/chrome-badge.png
-[firefox_link]: https://addons.mozilla.org/firefox/addon/
-[firefox_badge]: ./branding/badges/firefox-badge.png
+Use the `printf()` function.

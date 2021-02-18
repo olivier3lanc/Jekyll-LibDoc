@@ -11,7 +11,7 @@
                 var item = store[results[i].ref];
                 appendString +=
                     '<li>'+
-                        '<a href="..' +item.url +'" class="c-text m-bold u-fs-lg">'+
+                        '<a href="..' +item.url +'">'+
                             item.title+
                         '</a>'+
                         '<p class="u-mt-none u-fs-sm u-c-primary-alt">'+item.content.substring(0, 150) + '...</p>'+

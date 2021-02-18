@@ -8,6 +8,7 @@
    color: #ABB2BF;
    background: none;
    font-family: var(--sg-font-family-monospace);
+   font-size: var(--sg-font-size-sm);
    text-align: left;
    white-space: pre;
    word-spacing: normal;

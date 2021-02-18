@@ -160,6 +160,19 @@ $briks-screen-sizes: (
             name:        'fantasy' // Sets the websafe font family name
         )
     );
+
+    ### May Help
+    https://developer.mozilla.org/en-US/docs/Web/CSS/font-weight#common_weight_name_mapping
+    100 	Thin (Hairline)
+    200 	Extra Light (Ultra Light)
+    300 	Light
+    400 	Normal
+    500 	Medium
+    600 	Semi Bold (Demi Bold)
+    700 	Bold
+    800 	Extra Bold (Ultra Bold)
+    900 	Black (Heavy)
+
     FONTS
 */
 $briks-fonts: (
@@ -171,11 +184,27 @@ $briks-fonts: (
         path:        '../fonts/',
         fallback:    'sans-serif'
     ),
+    lead-em: (
+        type:        'local',
+        filename:    'RedHatDisplay-MediumItalic',
+        name:        'RedHatDisplay-MediumItalic',
+        weight:      500,
+        path:        '../fonts/',
+        fallback:    'sans-serif'
+    ),
+    lead-strong: (
+        type:        'local',
+        filename:    'RedHatDisplay-Bold',
+        name:        'RedHatDisplay-Bold',
+        weight:      700,
+        path:        '../fonts/',
+        fallback:    'sans-serif'
+    ),
     headline: (
         type:        'local',
-        filename:    'RedHatDisplay-bold',
-        name:        'RedHatDisplay-bold',
-        weight:      600,
+        filename:    'RedHatDisplay-Black',
+        name:        'RedHatDisplay-Black',
+        weight:      900,
         path:        '../fonts/',
         fallback:    'sans-serif'
     ),
@@ -1234,7 +1263,6 @@ $briks-components__forms__common-inputs-hooks: (
         padding: my-spacing(none, xs),
         color: my-color(primary),
         font-size: my-font-size(sm),
-        font-weight: bold,
         background-color: my-color(primary-max),
         white-space: nowrap
     ),
@@ -2129,7 +2157,7 @@ $briks-components__buttons__hooks: (
         background: my-background(stripes),
         border: none,
         color: my-color(primary),
-        font-family: my-font-family(headline),
+        font-family: my-font-family(lead-strong),
         font-weight: bold,
         font-size: my-font-size(sm),
         text-shadow: unquote('0px 0px 2px white, 0px 0px 2px white, 0px 0px 2px white'),
@@ -2559,6 +2587,12 @@ $briks-components__texts__css-modifiers: (
     ),
     ff-lead: (
         font-family: my-font-family(lead)
+    ),
+    ff-lead-em: (
+        font-family: my-font-family(lead-em)
+    ),
+    ff-lead-strong: (
+        font-family: my-font-family(lead-strong)
     ),
     ff-headline: (
         font-family: my-font-family(headline)

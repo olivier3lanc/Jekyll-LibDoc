@@ -127,3 +127,16 @@
         }
     }
 }
+
+#sidebar-item-search {
+    &+.sidebar-item {
+        border-top: my-border(thin-dashed-alt);
+    }
+}
+
+// GFM
+.task-list-item {
+    input {
+        margin-right: my-spacing(sm);
+    }
+}

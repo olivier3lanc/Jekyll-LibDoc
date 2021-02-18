@@ -4,9 +4,9 @@ jQuery(document).ready(function() {
         let url = jQuery(this).attr('href');
         jQuery('body')
             .append(
-                '<figure class="c-grid m-nowrap m-column m-middle m-center u-o-auto u-m-none u-fixed u-top-0 u-left-0 u-w-100 u-h-100 u-cur-pointer u-z-10 u-bg-damier-white-soft u-p-lg" onclick="jQuery(this).remove();">'+
-                    '<div style="background-image:url('+url+')" class="m-w-10 u-h-80vh u-contain"></div>'+
-                    '<figcaption class="c-text m-ellipsis u-o-auto u-c-primary-alt u-ff-monospace u-fs-xs u-pt-md">'+url+'</figcaption>'+
+                '<figure class="c-grid m-nowrap m-column m-middle m-center u-o-auto u-m-none u-fixed u-top-0 u-left-0 u-w-100 u-h-100 u-cur-pointer u-z-100 u-bg-damier-white-soft u-p-lg" onclick="jQuery(this).remove();">'+
+                    '<img src="'+url+'" class="u-mh-100 u-mw-100">'+
+                    '<figcaption class="c-text u-c-primary-alt u-ff-monospace u-fs-xs u-pt-md">'+url+'</figcaption>'+
                     '</div'+
                 '</figure>'
             );
