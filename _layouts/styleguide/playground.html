@@ -18,11 +18,6 @@
                 <link rel="stylesheet" href="{{ site.url }}{{ site.baseurl }}/{{ stylesheet_url }}">
             {% endif %}
         {% endfor %}
-        <style>
-            body {
-                min-height: 100vh;
-            }
-        </style>
         {% for script_url in site.playground.scripts_head %}
             {% if script_url contains 'https://' or script_url contains 'http://' %}
                 <script type="text/javascript" src="{{ script_url }}"></script>

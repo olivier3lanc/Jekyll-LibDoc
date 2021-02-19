@@ -67,5 +67,13 @@
             var results = idx.search(searchTerm); // Get lunr to perform a search
             displaySearchResults(results, window.store); // We'll write this in the next section
         }
+
+        document.querySelectorAll('.search-query').forEach(function(el) {
+            el.innerText = searchTerm;
+            const href = el.getAttribute('href');
+            if (href !== null) {
+                el.setAttribute('href', href+searchTerm);
+            }
+        });
     }
 })();

@@ -1,9 +1,9 @@
 @font-face {
   font-family: 'icomoon';
   src:
-    url('fonts/icomoon.ttf?uv54d4') format('truetype'),
-    url('fonts/icomoon.woff?uv54d4') format('woff'),
-    url('fonts/icomoon.svg?uv54d4#icomoon') format('svg');
+    url('fonts/icomoon.ttf?7qpi5y') format('truetype'),
+    url('fonts/icomoon.woff?7qpi5y') format('woff'),
+    url('fonts/icomoon.svg?7qpi5y#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -26,6 +26,10 @@
 
 .i-zip:before {
   content: "\e914";
+}
+.i-pdf:before {
+  content: "\e91f";
+  color: #ee3f24;
 }
 .i-ts:before {
   content: "\e915";

@@ -89,7 +89,7 @@ let playground = {
             // Set to base64
             var sentObject64 = btoa(stringifiedSentObject);
             // Build the iframe HTML string
-            var iframeStr = '<iframe id="'+playgroundId+'-iframe" data-src="'+site.url+site.baseurl+'/styleguide/playground.html#'+sentObject64+'" class="playground-iframe not-rendered u-transition-none u-h-100 u-minh-main u-b-none u-w-100"></iframe>';
+            var iframeStr = '<iframe id="'+playgroundId+'-iframe" data-src="'+site.url+site.baseurl+'/styleguide/playground.html#'+sentObject64+'" class="playground-iframe not-rendered u-transition-none u-h-100 u-b-none u-w-100"></iframe>';
             // Sets the href attribute on the open new tab button link
             // jQuery('[data-playground-new-tab="'+playgroundId+'"]').attr('href', site.url+site.baseurl+'/styleguide/playground.html#'+sentObject64);
             var iframeUrl = site.url+site.baseurl+'/styleguide/playground.html#'+sentObject64;
@@ -120,7 +120,7 @@ let playground = {
                     '</li>'+
                 '</ul>'+
                 '<div class="playground-instance" id="'+playgroundId+'-instance">'+
-                    '<div class="u-relative u-transition-none u-bl-thin-dashed-alt u-br-thin-dashed-alt u-o-auto u-resize-both u-mw-100" id="'+playgroundId+'-wrapper">'+
+                    '<div class="u-relative u-transition-none u-bl-thin-dashed-alt u-br-thin-dashed-alt u-o-auto u-resize-both u-mw-100" id="'+playgroundId+'-wrapper" style="min-height: '+window.site.playground.min_height+'">'+
                         iframeStr+
                         '<div class="playground-preview c-position m-absolute m-top-left u-w-100 u-h-100 u-bg-play u-cur-pointer" onclick="playground.loadIframe(\''+playgroundId+'-iframe\')"></div>'+
                     '</div>'+
@@ -137,9 +137,9 @@ let playground = {
             Prism.highlightAll();
         }
         // Manage playground top position to match the bottom of the commands
-        playground.adjustPlaygroundInstanceMaximized();
+        // playground.adjustPlaygroundInstanceMaximized();
         jQuery(window).on('resize', function() {
-            playground.adjustPlaygroundInstanceMaximized();
+            // playground.adjustPlaygroundInstanceMaximized();
         });
     },
     /**

@@ -21,4 +21,11 @@ Voici un extrait de code avec playground
 ```html
 <h1>Test</h1>
 ```
-{:.playground #playground_test }
+{:.playground }
+
+Voici un autre extrait de code avec playground
+
+```html
+<h1>autre test</h1>
+```
+{:.playground }

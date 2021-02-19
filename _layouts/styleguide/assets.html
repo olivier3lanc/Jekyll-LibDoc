@@ -25,7 +25,7 @@ layout: styleguide/page
     {% assign all_images_extensions =  all_images_extensions | prepend: '.' %}
 
     {%- comment -%} Supported icon files {%- endcomment -%}
-    {% assign supported_icon_files =  '.zip .ts .scss .css .js .xd .psd .ai .figma .sketch' %}
+    {% assign supported_icon_files =  '.pdf .zip .ts .scss .css .js .xd .psd .ai .figma .sketch' %}
 
     {%- comment -%} Iterate all static files{%- endcomment -%}
     {% for file in site.static_files %}
@@ -77,8 +77,8 @@ layout: styleguide/page
                         {% else %}
                             <span class="c-grid m-middle m-center">
                                 <span class="u-relative">
-                                    <span class="i-file u-fs-thumb u-c-hilight-alt"></span>
-                                    <span class="c-position m-absolute m-bottom-sm m-right-0 u-block u-pl-xxs u-pr-xxs u-fs-sm u-ff-headline u-bc-hilight-alt u-lh-base u-c-primary-max">{{ file.extname }}</span>
+                                    <span class="i-file u-fs-thumb"></span>
+                                    <span class="c-position m-absolute m-bottom-sm m-right-0 u-block u-pl-xxs u-pr-xxs u-fs-sm u-ff-headline u-bc-primary u-lh-base u-c-primary-max">{{ file.extname }}</span>
                                 </span>
                             </span>
                         {% endif %}

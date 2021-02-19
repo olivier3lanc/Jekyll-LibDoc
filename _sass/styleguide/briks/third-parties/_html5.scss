@@ -16,7 +16,8 @@ a {
     color: my-color(primary);
     font-family: my-font-family(lead-strong);
     text-decoration: none;
-    &:not([class]) {
+    &:not([class]),
+    &.link {
         position: relative;
         &::before,
         &::after {
@@ -38,7 +39,8 @@ a {
     }
     &:hover {
         color: my-color(primary-alt);
-        &:not([class]) {
+        &:not([class]),
+        &.link {
             position: relative;
             &::after {
                 width: 100%;
@@ -126,6 +128,9 @@ blockquote {
     }
     &>blockquote {
         border: my-border(thin-solid-alt);
+    }
+    code {
+        white-space: initial;
     }
 }
 table {
