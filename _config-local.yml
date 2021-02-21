@@ -20,8 +20,8 @@ sidebar: # Settings for the sidebar
         url: /styleguide/img/favicon/android-chrome-512x512.png # Image URL: Can be local e.g. '/img/logo.png' or remote 'https://remotesite.com/img/logo.png'
         max_height: 40px # Logo image max height
     additional_links:
-        -   url: https://itautomotive-dev.github.io/bymycar-www/v1/
-            title: Design System v1
+        -   url: '#'
+            title: Other Link
             order: 1000
             category: Archives
 
