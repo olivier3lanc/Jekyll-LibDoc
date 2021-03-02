@@ -14,10 +14,10 @@
             </li>
         {% endif %}
         {% assign previous_category = sorted_page.category %}
-            {% if sorted_page.offline != true %}
+            {% if sorted_page.unlisted != true %}
                 <li class="u-relative u-o-hidden sidebar-item">
                     {% if page.title == sorted_page.title %}{% endif %}
-                    <a  href="{% if sorted_page.offline != true %}{{ sorted_page.url | relative_url }}{% else %}#{% endif %}"
+                    <a  href="{% if sorted_page.unlisted != true %}{{ sorted_page.url | relative_url }}{% else %}#{% endif %}"
                         class="c-btn m-translucid m-block-right {% if page.url == sorted_page.url %}u-br-large-solid{% endif %}"
                         u-fs-xs="sm,md"
                         u-p-xs="sm,md"

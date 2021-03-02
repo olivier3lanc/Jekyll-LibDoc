@@ -1,11 +1,11 @@
 # Jekyll LOCAL config
 url: "http://localhost" # the base hostname & protocol for your site, e.g. http://example.com
-baseurl: "/scroll-line/_site" # the subpath of your site, e.g. /blog
+baseurl: "/Jekyll-LibDoc/_site" # the subpath of your site, e.g. /blog
 #destination: ../marcelrent/public/proto-app # Build relative path destination. The destination directory e.g. /blog
 # keep_files: [cache]
-title: StyleGuy # title of the documentation
+title: LibDoc # title of the documentation
 description: >- # Description of the docs. (>- means to ignore newlines until next param)
-  A Jekyll style guide theme with built-in playground
+  A Jekyll documentation theme with built-in search and playground
 
 metadata:
     lang: en
@@ -24,6 +24,13 @@ sidebar: # Settings for the sidebar
             title: Other Link
             order: 1000
             category: Archives
+
+shields:
+    # https://shields.io image html and url
+    -   image_html: <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/olivier3lanc/Jekyll-LibDoc?logo=github&style=flat-square">
+        link_url: 'https://test1.com'
+    -   image_html: <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/olivier3lanc/Jekyll-LibDoc?logo=github&style=flat-square">
+        link_url: 'https://test4.com'
 
 playground:
     #min_height: 600px

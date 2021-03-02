@@ -13,11 +13,16 @@
                 <ul class="u-ls-none u-mb-md--sm">
                     <li>
                         <a href="{{ site.url }}{{ site.baseurl }}" class="c-btn m-translucid u-pl-none">{{ site.title | escape }}</a><br>
-                        {{ site.description | escape }}
+                        {{ site.description | escape }} {% if site.metadata.author %}© {{ site.metadata.author }}{% endif %}
                     </li>
+                    {% if site.shields %}
+                        <li class="u-mt-md">
+                            {% include styleguide/shields.html %}
+                        </li>
+                    {% endif %}
                 </ul>
                 <ul class="u-ls-none">
-                    <li class="u-fs-xxs">Powered by <a href="#" class="u-c-primary-alt">StyleGuy Jekyll theme</a></li>
+                    <li class="u-fs-xxs">Powered by <a href="#" class="u-c-primary-alt">LibDoc Jekyll theme</a></li>
                 </ul>
             </nav>
         </footer>
