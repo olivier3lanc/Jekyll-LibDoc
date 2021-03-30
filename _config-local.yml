@@ -1,12 +1,12 @@
 # Jekyll LOCAL config
-url: "http://localhost" # the base hostname & protocol for your site, e.g. http://example.com
-baseurl: "/Jekyll-LibDoc/_site" # the subpath of your site, e.g. /blog
-#destination: ../marcelrent/public/proto-app # Build relative path destination. The destination directory e.g. /blog
-# keep_files: [cache]
 title: LibDoc # title of the documentation
 description: >- # Description of the docs. (>- means to ignore newlines until next param)
   A Jekyll documentation theme with built-in search and playground
-
+baseurl: "/Jekyll-LibDoc/_site" # the subpath of your site, e.g. /blog
+url: "http://localhost" # the base hostname & protocol for your site, e.g. http://example.com
+#permalink: /:path/:basename/:output_ext
+#destination: ../marcelrent/public/proto-app # Build relative path destination. The destination directory e.g. /blog
+# keep_files: [cache]
 metadata:
     lang: en
     #favicon: # PNG favicon URL <link rel="icon" type="image/png" href="[link_rel_icon]"> Can be either relative URL from site root, absolute URL starting with 'http'
