@@ -33,10 +33,31 @@ and length($briks-components-generic) > 0 {
                     @each $modifier_name, $modifier_data in map-get($component_data, modifiers) {
                         &.#{$briks-modifiers-prefix}#{$modifier_name} {
                             @each $property, $value in $modifier_data {
-                                @if type-of($value) == 'string' {
-                                    $value: unquote($value);
+                                // Exclude pseudo classes map
+                                @if $property != 'pseudo-classes' {
+                                    @if type-of($value) == 'string' {
+                                        $value: unquote($value);
+                                    }
+                                    #{$property}: $value;
                                 }
-                                #{$property}: $value;
+                            }
+                        }
+                        // If pseudo classes map is set
+                        @if (type-of(map-get($modifier_data, pseudo-classes)) == list or type-of(map-get($modifier_data, pseudo-classes)) == string) and length(map-get($modifier_data, pseudo-classes)) > 0 {
+                            @each $pseudo_class, $enabled in map-get($modifier_data, pseudo-classes) {
+                                @each $property, $value in $modifier_data {
+                                    &.#{$briks-modifiers-prefix}#{$modifier_name}\:#{$pseudo_class} {
+                                        &:#{$pseudo_class} {
+                                            // Exclude pseudo classes map
+                                            @if $property != 'pseudo-classes' {
+                                                @if type-of($value) == 'string' {
+                                                    $value: unquote($value);
+                                                }
+                                                #{$property}: $value;
+                                            }
+                                        }
+                                    }
+                                }
                             }
                         }
                     }
@@ -56,6 +77,25 @@ and length($briks-components-generic) > 0 {
                                                 $value: unquote($value);
                                             }
                                             #{$property}: $value;
+                                        }
+                                    }
+                                    // If pseudo classes map is set
+                                    @if (type-of(map-get($modifier_data, pseudo-classes)) == list or type-of(map-get($modifier_data, pseudo-classes)) == string) and length(map-get($modifier_data, pseudo-classes)) > 0 {
+                                        @each $pseudo_class, $enabled in map-get($modifier_data, pseudo-classes) {
+                                            @each $property, $value in $modifier_data {
+                                                &.#{$briks-modifiers-prefix}#{$modifier_name}\:#{$pseudo_class}#{$briks-responsive-prefix}#{$screen},
+                                                &[#{$briks-modifiers-prefix}#{$modifier_name}\:#{$pseudo_class}*="#{$screen}"]  {
+                                                    &:#{$pseudo_class} {
+                                                        // Exclude pseudo classes map
+                                                        @if $property != 'pseudo-classes' {
+                                                            @if type-of($value) == 'string' {
+                                                                $value: unquote($value);
+                                                            }
+                                                            #{$property}: $value;
+                                                        }
+                                                    }
+                                                }
+                                            }
                                         }
                                     }
                                 }
