@@ -21,10 +21,65 @@ and length($briks-components-generic) > 0 {
                 // If component defaults are set
                 @if length(map-get($component_data, defaults)) > 0 {
                     @each $property, $value in map-get($component_data, defaults) {
-                        @if type-of($value) == 'string' {
-                            $value: unquote($value);
+                        // Default pseudo classes
+                        @if $property == 'pseudo-classes' and type-of($value) == map {
+                            @each $pseudo_class_name, $pseudo_class_data in $value {
+                                @if type-of($pseudo_class_data) == map {
+                                    // Pseudo class
+                                    &:#{$pseudo_class_name} {
+                                        @each $pseudo_class_property, $pseudo_class_value in $pseudo_class_data {
+                                            @if $pseudo_class_property == 'pseudo-elements' and type-of($pseudo_class_value) == map {
+                                                // If pseudo class is combined with pseudo element (for example :hover::after)
+                                                @each $pseudo_element_name, $pseudo_element_names_and_values in $pseudo_class_value {
+                                                    // Pseudo element
+                                                    &::#{$pseudo_element_name} {
+                                                        @each $pseudo_element_property, $pseudo_element_value in $pseudo_element_names_and_values {
+                                                            // Unquote value excepting 'content' property
+                                                            @if type-of($pseudo_element_value) == 'string' and $pseudo_element_property != 'content' {
+                                                                $pseudo_element_value: unquote($pseudo_element_value);
+                                                            }
+                                                            #{$pseudo_element_property}: $pseudo_element_value;
+                                                        }
+                                                    }
+                                                }
+                                            } @else {
+                                                // Standard CSS property
+                                                @if type-of($pseudo_class_value) == 'string' {
+                                                    $pseudo_class_value: unquote($pseudo_class_value);
+                                                }
+                                                #{$pseudo_class_property}: $pseudo_class_value;
+                                            }
+                                        }
+                                    }
+                                }
+                            } 
+                        } 
+                        // Default pseudo elements
+                        @else if $property == 'pseudo-elements' and type-of($value) == map {
+                            @each $pseudo_element_name, $pseudo_element_names_and_values in $value {
+                                @if type-of($pseudo_element_names_and_values) == map {
+                                    // Pseudo element
+                                    &::#{$pseudo_element_name} {
+                                        @each $pseudo_element_property, $pseudo_element_value in $pseudo_element_names_and_values {
+                                            // Unquote value excepting 'content' property
+                                            @if type-of($pseudo_element_value) == 'string' and $pseudo_element_property != 'content' {
+                                                $pseudo_element_value: unquote($pseudo_element_value);
+                                            }
+                                            #{$pseudo_element_property}: $pseudo_element_value;
+                                        }
+                                    }
+                                }
+                            } 
+                        } 
+                        // Default properties and values
+                        @else {
+                            @if type-of($value) != map {
+                                @if type-of($value) == 'string' {
+                                    $value: unquote($value);
+                                }
+                                #{$property}: $value;
+                            }
                         }
-                        #{$property}: $value;
                     }
                 }
                 // If modifiers are set
@@ -33,29 +88,63 @@ and length($briks-components-generic) > 0 {
                     @each $modifier_name, $modifier_data in map-get($component_data, modifiers) {
                         &.#{$briks-modifiers-prefix}#{$modifier_name} {
                             @each $property, $value in $modifier_data {
-                                // Exclude pseudo classes map
-                                @if $property != 'pseudo-classes' {
-                                    @if type-of($value) == 'string' {
-                                        $value: unquote($value);
-                                    }
-                                    #{$property}: $value;
-                                }
-                            }
-                        }
-                        // If pseudo classes map is set
-                        @if (type-of(map-get($modifier_data, pseudo-classes)) == list or type-of(map-get($modifier_data, pseudo-classes)) == string) and length(map-get($modifier_data, pseudo-classes)) > 0 {
-                            @each $pseudo_class, $enabled in map-get($modifier_data, pseudo-classes) {
-                                @each $property, $value in $modifier_data {
-                                    &.#{$briks-modifiers-prefix}#{$modifier_name}\:#{$pseudo_class} {
-                                        &:#{$pseudo_class} {
-                                            // Exclude pseudo classes map
-                                            @if $property != 'pseudo-classes' {
-                                                @if type-of($value) == 'string' {
-                                                    $value: unquote($value);
+                                // Modifier pseudo classes
+                                @if $property == 'pseudo-classes' and type-of($value) == map {
+                                    @each $pseudo_class_name, $pseudo_class_data in $value {
+                                        @if type-of($pseudo_class_data) == map {
+                                            // Modifier pseudo class
+                                            &:#{$pseudo_class_name} {
+                                                @each $pseudo_class_property, $pseudo_class_value in $pseudo_class_data {
+                                                    @if $pseudo_class_property == 'pseudo-elements' and type-of($pseudo_class_value) == map {
+                                                        // If pseudo class is combined with pseudo element (for example :hover::after)
+                                                        @each $pseudo_element_name, $pseudo_element_names_and_values in $pseudo_class_value {
+                                                            // Modifier pseudo element
+                                                            &::#{$pseudo_element_name} {
+                                                                @each $pseudo_element_property, $pseudo_element_value in $pseudo_element_names_and_values {
+                                                                    // Unquote value excepting 'content' property
+                                                                    @if type-of($pseudo_element_value) == 'string' and $pseudo_element_property != 'content' {
+                                                                        $pseudo_element_value: unquote($pseudo_element_value);
+                                                                    }
+                                                                    #{$pseudo_element_property}: $pseudo_element_value;
+                                                                }
+                                                            }
+                                                        }
+                                                    } @else {
+                                                        // Standard CSS property
+                                                        @if type-of($pseudo_class_value) == 'string' {
+                                                            $pseudo_class_value: unquote($pseudo_class_value);
+                                                        }
+                                                        #{$pseudo_class_property}: $pseudo_class_value;
+                                                    }
                                                 }
-                                                #{$property}: $value;
                                             }
                                         }
+                                    } 
+                                } 
+                                // Modifier pseudo elements
+                                @else if $property == 'pseudo-elements' and type-of($value) == map {
+                                    @each $pseudo_element_name, $pseudo_element_names_and_values in $value {
+                                        @if type-of($pseudo_element_names_and_values) == map {
+                                            // Modifier pseudo element
+                                            &::#{$pseudo_element_name} {
+                                                @each $pseudo_element_property, $pseudo_element_value in $pseudo_element_names_and_values {
+                                                    // Unquote value excepting 'content' property
+                                                    @if type-of($pseudo_element_value) == 'string' and $pseudo_element_property != 'content' {
+                                                        $pseudo_element_value: unquote($pseudo_element_value);
+                                                    }
+                                                    #{$pseudo_element_property}: $pseudo_element_value;
+                                                }
+                                            }
+                                        }
+                                    } 
+                                } 
+                                // Modifier properties and values
+                                @else {
+                                    @if type-of($value) != map {
+                                        @if type-of($value) == 'string' {
+                                            $value: unquote($value);
+                                        }
+                                        #{$property}: $value;
                                     }
                                 }
                             }
@@ -73,27 +162,63 @@ and length($briks-components-generic) > 0 {
                                     &.#{$briks-modifiers-prefix}#{$modifier_name}#{$briks-responsive-prefix}#{$screen},
                                     &[#{$briks-modifiers-prefix}#{$modifier_name}*="#{$screen}"] {
                                         @each $property, $value in $modifier_data {
-                                            @if type-of($value) == 'string' {
-                                                $value: unquote($value);
-                                            }
-                                            #{$property}: $value;
-                                        }
-                                    }
-                                    // If pseudo classes map is set
-                                    @if (type-of(map-get($modifier_data, pseudo-classes)) == list or type-of(map-get($modifier_data, pseudo-classes)) == string) and length(map-get($modifier_data, pseudo-classes)) > 0 {
-                                        @each $pseudo_class, $enabled in map-get($modifier_data, pseudo-classes) {
-                                            @each $property, $value in $modifier_data {
-                                                &.#{$briks-modifiers-prefix}#{$modifier_name}\:#{$pseudo_class}#{$briks-responsive-prefix}#{$screen},
-                                                &[#{$briks-modifiers-prefix}#{$modifier_name}\:#{$pseudo_class}*="#{$screen}"]  {
-                                                    &:#{$pseudo_class} {
-                                                        // Exclude pseudo classes map
-                                                        @if $property != 'pseudo-classes' {
-                                                            @if type-of($value) == 'string' {
-                                                                $value: unquote($value);
+                                            // Responsive modifier pseudo classes
+                                            @if $property == 'pseudo-classes' and type-of($value) == map {
+                                                @each $pseudo_class_name, $pseudo_class_data in $value {
+                                                    @if type-of($pseudo_class_data) == map {
+                                                        // Responsive modifier pseudo class
+                                                        &:#{$pseudo_class_name} {
+                                                            @each $pseudo_class_property, $pseudo_class_value in $pseudo_class_data {
+                                                                @if $pseudo_class_property == 'pseudo-elements' and type-of($pseudo_class_value) == map {
+                                                                    // If pseudo class is combined with pseudo element (for example :hover::after)
+                                                                    @each $pseudo_element_name, $pseudo_element_names_and_values in $pseudo_class_value {
+                                                                        // Responsive modifier pseudo element
+                                                                        &::#{$pseudo_element_name} {
+                                                                            @each $pseudo_element_property, $pseudo_element_value in $pseudo_element_names_and_values {
+                                                                                // Unquote value excepting 'content' property
+                                                                                @if type-of($pseudo_element_value) == 'string' and $pseudo_element_property != 'content' {
+                                                                                    $pseudo_element_value: unquote($pseudo_element_value);
+                                                                                }
+                                                                                #{$pseudo_element_property}: $pseudo_element_value;
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                } @else {
+                                                                    // Standard CSS property
+                                                                    @if type-of($pseudo_class_value) == 'string' {
+                                                                        $pseudo_class_value: unquote($pseudo_class_value);
+                                                                    }
+                                                                    #{$pseudo_class_property}: $pseudo_class_value;
+                                                                }
                                                             }
-                                                            #{$property}: $value;
                                                         }
                                                     }
+                                                } 
+                                            } 
+                                            // Responsive modifier pseudo elements
+                                            @else if $property == 'pseudo-elements' and type-of($value) == map {
+                                                @each $pseudo_element_name, $pseudo_element_names_and_values in $value {
+                                                    @if type-of($pseudo_element_names_and_values) == map {
+                                                        // Responsive modifier pseudo element
+                                                        &::#{$pseudo_element_name} {
+                                                            @each $pseudo_element_property, $pseudo_element_value in $pseudo_element_names_and_values {
+                                                                // Unquote value excepting 'content' property
+                                                                @if type-of($pseudo_element_value) == 'string' and $pseudo_element_property != 'content' {
+                                                                    $pseudo_element_value: unquote($pseudo_element_value);
+                                                                }
+                                                                #{$pseudo_element_property}: $pseudo_element_value;
+                                                            }
+                                                        }
+                                                    }
+                                                } 
+                                            } 
+                                            // Responsive modifier properties and values
+                                            @else {
+                                                @if type-of($value) != map {
+                                                    @if type-of($value) == 'string' {
+                                                        $value: unquote($value);
+                                                    }
+                                                    #{$property}: $value;
                                                 }
                                             }
                                         }
