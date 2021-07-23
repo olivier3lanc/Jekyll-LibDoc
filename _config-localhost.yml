@@ -36,7 +36,6 @@ playground:
     #min_height: 600px
     stylesheets: # Style sheets in <head>. Can be either relative URL from site root, absolute URL starting with 'http'
         - styleguide/css/normalize.css
-        - styleguide/css/prism.css
     #scripts_head: # Javascript files in <head>. Can be either relative URL from site root, absolute URL starting with 'http'
     #    - https://test.com/jquery.min.js
     #    - script-head.js
