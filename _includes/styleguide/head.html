@@ -90,8 +90,11 @@
     <link rel="stylesheet" href="{{ '/styleguide/css/normalize.css' | relative_url }}">
     <link rel="stylesheet" href="{{ '/styleguide/fonts/icomoon/style.css' | relative_url }}">
     <link rel="stylesheet" href="{{ '/styleguide/css/styleguide.css' | relative_url }}">
-    <link rel="stylesheet" href="{{ '/styleguide/css/prism.css' | relative_url }}">
-
+    {% if site.prism.theme %}
+        <link rel="stylesheet" href="{{ site.url }}{{ site.baseurl }}/styleguide/css/prism/prism-{{ site.prism.theme }}.css">
+    {% else %}
+        <link rel="stylesheet" href="{{ site.url }}{{ site.baseurl }}/styleguide/css/prism/prism.css">
+    {% endif %}
     <script type="text/javascript" src="{{ '/styleguide/js/jquery-3.5.1.slim.min.js' | relative_url }}"></script>
     <script>
         window.site = {

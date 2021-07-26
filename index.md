@@ -5,6 +5,106 @@ permalink: index.html
 * 
 {:toc}
 
+
+## test
+
+```yaml
+# Jekyll LOCAL config
+title: LibDoc # title of the documentation
+description: >- # Description of the docs. (>- means to ignore newlines until next param)
+  A Jekyll documentation theme with built-in search and playground
+baseurl: "/Jekyll-LibDoc/_site" # the subpath of your site, e.g. /blog
+url: "http://localhost" # the base hostname & protocol for your site, e.g. http://example.com
+#permalink: /:path/:basename/:output_ext
+#destination: ../marcelrent/public/proto-app # Build relative path destination. The destination directory e.g. /blog
+# keep_files: [cache]
+metadata:
+    lang: en
+    #favicon: # PNG favicon URL <link rel="icon" type="image/png" href="[link_rel_icon]"> Can be either relative URL from site root, absolute URL starting with 'http'
+    author: Olivier Blanc # The author 
+    #color: '#323b44' # HEX format color to display
+    #image: /styleguide/img/meta-image.png # Open Graph image file. Can be either relative URL from site root, absolute URL starting with 'http'
+
+sidebar: # Settings for the sidebar
+    search_enabled: true # enable or not the search box
+    logo:
+        font_size: 32px # If no logo_url, font size of the site title, ignored if url is enabled
+        url: /styleguide/img/favicon/android-chrome-512x512.png # Image URL: Can be local e.g. '/img/logo.png' or remote 'https://remotesite.com/img/logo.png'
+        max_height: 40px # Logo image max height
+    additional_links:
+        -   url: '#'
+            title: Other Link
+            order: 1000
+            category: Archives
+
+shields:
+    # https://shields.io image html and url
+    -   image_html: <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/olivier3lanc/Jekyll-LibDoc?logo=github&style=flat-square">
+        link_url: 'https://test1.com'
+    -   image_html: <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/olivier3lanc/Jekyll-LibDoc?logo=github&style=flat-square">
+        link_url: 'https://test4.com'
+
+playground:
+    #min_height: 600px
+    stylesheets: # Style sheets in <head>. Can be either relative URL from site root, absolute URL starting with 'http'
+        - styleguide/css/normalize.css
+    #scripts_head: # Javascript files in <head>. Can be either relative URL from site root, absolute URL starting with 'http'
+    #    - https://test.com/jquery.min.js
+    #    - script-head.js
+    scripts_body: # Javascript files near </body>. Can be either relative URL from site root, absolute URL starting with 'http'
+        - https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js
+        - styleguide/js/my-toggles.js
+
+assets: # Files types to display in 'styleguide/assets' layout
+    path_from_root: / # The path from which files are available do download. '/' id the root
+    extensions_enabled: # File extension to display
+        - pdf
+        - js
+        - css
+        - ttf
+        - woff
+        - woff2
+        - otf
+        - zip
+        - sketch
+        - svg
+        - jpg
+        - jpeg
+        - gif
+        - png
+        - webp
+        - psd
+        - ai
+        - heic
+        - mp4
+        - webm
+        - ogv
+    image_extensions: # Array list of image extensions (without point) to display as image into asset template
+        - svg
+        - jpg
+        - jpeg
+        - gif
+        - png
+        - webp
+    
+
+
+
+# Build settings - Do not edit excepting you do know what you do
+#markdown: kramdown
+kramdown:
+    syntax_highlighter_opts:
+        disable: true
+
+sass:
+    style: compressed
+#exclude: ['/misc']
+
+
+```
+
+
+
 * [x] Finish my changes
 * [ ] Push my commits to GitHub
 * [ ] Open a pull request
