@@ -90,6 +90,10 @@ sass:
 prism:
     # dark, funky, okaidia, twilight, solarizedlight, tomorrow, 
     theme: okaidia
+    # CSS font-size property override for <code>
+    font_size: 0.9em
+    # CSS line-height property override for <code>
+    # line_height: 1em
     # Uncomment lines to enable language
     languages:
         - markup
@@ -229,7 +233,7 @@ prism:
         #- lolcode
         #- lua
         #- makefile
-        #- markdown
+        - markdown
         #- markup-templating
         #- matlab
         #- mel
