@@ -17,7 +17,7 @@ LibDoc comes with the following optional parameters that can be set into the fro
 
 Dedicated LibDoc settings for the front matter on a [page layout](libdoc-layouts.html)
 
-* `unlisted` *boolean* removes page link into the sidebar
+* `unlisted` *boolean* removes page link from the sidebar
 * `category` *string* adds a separator above the page link with the name of the category
 * `order` *integer* specifies the sidebar pages links order
 

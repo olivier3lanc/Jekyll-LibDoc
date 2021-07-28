@@ -100,9 +100,9 @@ let playground = {
                 buf.unshift(['&#', content[i].charCodeAt(), ';'].join(''));
             }
             trimmed = buf.join('');
-            if (document.getElementById('page-single-playground') !== null) {
+            if (document.getElementById('page-featured-playground') !== null && playgroundIndex == 0) {
                 // Insert into dedicated container
-                jQuery('#page-single-playground').html(
+                jQuery('#page-featured-playground').html(
                     '<ul class="m-w-12 c-grid m-space-between u-br-thin-dashed-alt u-bt-thin-dashed-alt u-br-thin-dashed-alt" data-playground-commands="'+playgroundId+'">'+
                         '<li class="m-grow u-p-sm u-bb-thin-dashed-alt"></li>'+
                         '<li class="c-grid">'+
