@@ -57,6 +57,7 @@ body {
 }
 em {
     font-family: my-font-family(lead-em);
+    font-style: normal; /* otherwise it makes too much italic */
 }
 strong {
     font-family: my-font-family(lead-strong);

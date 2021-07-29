@@ -25,12 +25,12 @@
                             alt="{{ site.title }}">
                 {% else %}
                     <!-- Without logo -->
-                    <span {% if site.sidebar.logo.font_size %}style="font-size:{{ site.sidebar.logo.font_size }}"{% endif %}>{{ site.title | escape }}</span>
+                    <span style="font-size: {{ site.sidebar.logo.font_size | default: 'var(--sg-font-size-lg)' }}; line-height: 1em;">{{ site.title }}</span>
                 {% endif %}
             </a>
         </li>
         {% if page_paths %}
-            {% if site.sidebar.search_enabled %}
+            {% if site.sidebar.disable_search != true %}
                 <li id="sidebar-item-search">
                     <form class="c-form" action="{{ 'styleguide/search.html' | relative_url }}" method="get">
                         <input  type="search" 

@@ -161,8 +161,6 @@ main {
     h4,
     h5,
     h6 { 
-        &:not(:first-of-type) {
-            margin-top: 2em;
-        }
+        margin-top: 2em;
     }
 }
