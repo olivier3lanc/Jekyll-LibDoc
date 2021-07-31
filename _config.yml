@@ -30,7 +30,7 @@ metadata:
 # Sidebar 
 sidebar:
     # Uncomment to disable search
-    disable_search: true
+    #disable_search: true
     # Top left branding/homepage link, specified image URL or site title if no URL is set
     logo:
         # Image URL: Can be local e.g. '/img/logo.png' or remote 'https://remotesite.com/img/logo.png'
@@ -132,7 +132,7 @@ assets:
 # https://prismjs.com/
 prism:
     # dark, funky, okaidia, twilight, solarizedlight, tomorrow, 
-    theme: okaidia
+    theme: tomorrow
     # CSS font-size property override for <code>
     font_size: 0.9em
     # CSS line-height property override for <code>
@@ -277,7 +277,7 @@ prism:
         #- lua
         #- makefile
         - markdown
-        #- markup-templating
+        # - markup-templating
         #- matlab
         #- mel
         #- mizar
@@ -345,7 +345,7 @@ prism:
         #- rust
         #- sas
         #- sass
-        #- scss
+        - scss
         #- scala
         #- scheme
         #- shell-session
@@ -392,7 +392,7 @@ prism:
         #- wiki
         #- wolfram
         #- xeora
-        #- xml-doc
+        # - xml-doc
         #- xojo
         #- xquery
         - yaml
