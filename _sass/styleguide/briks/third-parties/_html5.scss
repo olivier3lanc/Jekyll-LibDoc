@@ -110,6 +110,7 @@ code {
         position: relative;
         background-color: my-color(primary);
         color: my-color(primary-max);
+        white-space: nowrap;
         &::after,
         &::before {
             content: '';
@@ -172,7 +173,7 @@ table {
             border-bottom: my-border(large-solid-edge);
             font-size: my-font-size(sm);
             code {
-                word-break: break-all;
+                // word-break: break-all;
                 &:not([class]) {
                     font-size: my-font-size(sm);
                 }

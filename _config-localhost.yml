@@ -102,7 +102,7 @@ playground:
 # Settings for the assets layout
 assets:
     # The path from which files are available do download. '/' is the root
-    path_from_root: /
+    #path_from_root: /
     # File extension to display
     extensions_enabled: 
         - pdf
@@ -138,7 +138,7 @@ assets:
 # Settings for Prism syntax highlighter used in LibDoc
 # https://prismjs.com/
 prism:
-    # dark, funky, okaidia, twilight, solarizedlight, tomorrow, 
+    # coy, dark, funky, okaidia, twilight, solarizedlight, tomorrow, 
     theme: tomorrow
     # CSS font-size property override for <code>
     font_size: 0.9em

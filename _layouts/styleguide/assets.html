@@ -12,8 +12,10 @@ layout: styleguide/page
     {%- comment -%} Base URL to compare if it is contained into the root URL {%- endcomment -%}
     {% if page.assets.path_from_root %}
         {% assign user_filter_path = base_filter_path | append: page.assets.path_from_root %}
-    {% else %}
+    {% elsif site.assets.path_from_root %}
         {% assign user_filter_path = base_filter_path | append: site.assets.path_from_root %}
+    {% else %}
+        {% assign user_filter_path = base_filter_path | append: '/' %}
     {% endif %}
 
     {%- comment -%} Make a string of images extensions {%- endcomment -%}

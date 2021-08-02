@@ -131,7 +131,7 @@ assets:
 # Settings for Prism syntax highlighter used in LibDoc
 # https://prismjs.com/
 prism:
-    # dark, funky, okaidia, twilight, solarizedlight, tomorrow, 
+    # coy, dark, funky, okaidia, twilight, solarizedlight, tomorrow, 
     theme: tomorrow
     # CSS font-size property override for <code>
     font_size: 0.9em

@@ -9,9 +9,23 @@ order: 200
 assets:
     path_from_root: /styleguide
     extensions_enabled: # File extension to display
-        - js
-        - css
+        - jpg
+        - gif
+        - webp
+        - png
 ---
-Assets layout with custom settings taht override default settings of [config file](libdoc-config.html): Into this page, we display all the .js and .css files contained into the /styleguide folder.
+Assets layout with custom settings that override default settings of [config file](libdoc-config.html#assets): Into this page, we display all the images files contained into the /styleguide folder.
+
+```yaml
+assets:
+    path_from_root: /styleguide
+    extensions_enabled: # File extension to display
+        - jpg
+        - gif
+        - webp
+        - png
+```
+
+
 
 
