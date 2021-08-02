@@ -12,6 +12,11 @@ order: 200
 #        - js
 #        - css
 ---
+
+```yaml
+layout: styleguide/assets
+```
+
 This layout adds a grid of assets that can be anywhere into the project. The settings are available in the [config file](libdoc-config.html) which can be overridden for each page.
 
 

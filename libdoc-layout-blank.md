@@ -12,6 +12,10 @@ order: 200
 #        - js
 #        - css
 ---
+
+```yaml
+layout: styleguide/blank
+```
 # Blank layout
 
 Simple html render of the current page. [Go back to layouts page](libdoc-layouts.html#blank)

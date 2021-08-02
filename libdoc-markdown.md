@@ -98,10 +98,23 @@ after the link text's closing square bracket. Inside the parentheses,
 put the URL where you want the link to point, along with an *optional*
 title for the link, surrounded in quotes. For example:
 
-This is [an example](http://example.com/) inline link.
+This is [an example of local link](libdoc-markdown.html) inline link.
 
-[This link](http://example.net/) has no title attribute.
+[Local link](libdoc-markdown.html) has no title attribute.
 
+This is [an example of outgoing link](https://jekyllrb.com) inline link.
+
+[Outgoing link](https://jekyllrb.com) has no title attribute.
+
+```markdown
+This is [an example of local link](libdoc-markdown.html) inline link.
+
+[Local link](libdoc-markdown.html) has no title attribute.
+
+This is [an example of outgoing link](https://jekyllrb.com) inline link.
+
+[Outgoing link](https://jekyllrb.com) has no title attribute.
+```
 ### Backward link
 
 Defining a reference link:
@@ -524,14 +537,21 @@ To create a task list, preface list items with a regular space character followe
     - [ ] \(Optional) Open a followup issue
 ```
 
-## Mentioning people and teams
+## Images and media
 
-You can mention a person or team on GitHub by typing @ plus their username or team name. This will trigger a notification and bring their attention to the conversation. People will also receive a notification if you edit a comment to mention their username or team name.
+![Alt text](https://via.placeholder.com/150x150) This is a text next to an image that is not as large as the page width.
 
-@github/support What do you think about these updates?
+![Alt text](https://via.placeholder.com/850x150) This is a text next to an image that is at least as large as the page width.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/iWowJBRMtpc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ```markdown
-    @github/support What do you think about these updates?
+![Alt text](https://via.placeholder.com/150x150) This is a text next to an image that is not as large as the page width.
+
+![Alt text](https://via.placeholder.com/850x150) This is a text next to an image that is at least as large as the page width.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/iWowJBRMtpc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 ```
 
 ## Ignoring Markdown formatting

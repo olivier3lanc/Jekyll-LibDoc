@@ -14,18 +14,20 @@ assets:
         - webp
         - png
 ---
-Assets layout with custom settings that override default settings of [config file](libdoc-config.html#assets): Into this page, we display all the images files contained into the /styleguide folder.
 
 ```yaml
+layout: styleguide/assets
 assets:
     path_from_root: /styleguide
     extensions_enabled: # File extension to display
         - jpg
+        - jpeg
         - gif
         - webp
         - png
 ```
 
+Assets layout with custom settings that override default settings of [config file](libdoc-config.html#assets): Into this page, we display all the images files contained into the /styleguide folder.
 
 
 

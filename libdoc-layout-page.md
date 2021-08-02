@@ -10,6 +10,9 @@ order: 200
 * 
 {:toc}
 
+```yaml
+layout: styleguide/page
+```
 ## Playground example
 
 ```html

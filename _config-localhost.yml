@@ -50,7 +50,7 @@ sidebar:
     additional_links:
         #-   #url: # Local or remote URL
              #title: # Link text
-             #order: # Like pages, integer that sets the position of the link into the sidebar, higher values give bottom position
+             #order: # Sets the rank of the page link into the sidebar, higher values give lower rank for the page link
              #category: # Add this this link into a category just like pages
         # Example URL
         -   url: ./libdoc-layout-page.html
@@ -83,9 +83,7 @@ playground:
     # Relative URL from site root starting with slash /
     # Absolute URL starting with 'http'
     stylesheets: 
-        - https://cdn.jsdelivr.net/npm/@exampledev/new.css@1.1.2/new.min.css
-        #- /styleguide/css/normalize.css
-        # - /another/relative/style-sheet.css
+        - /example-project/css/tailwind.min.css
     # Javascript in <head>. Can be either:
     # Relative URL from site root starting with slash /
     # Absolute URL starting with 'http'

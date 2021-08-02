@@ -1,6 +1,6 @@
 ---
 title: Front matter
-description: Additional parameters available.
+description: Optional LibDoc specific parameters available.
 layout: styleguide/page
 
 #LibDoc specific below
@@ -11,24 +11,35 @@ order: 100
 * 
 {:toc}
 
-LibDoc comes with the following optional parameters that can be set into the front matter
+## Common
 
-## Page 
+LibDoc comes with the following optional parameters that can be set into the front matter of each page and every layout.
 
-Dedicated LibDoc settings for the front matter on a [page layout](libdoc-layouts.html)
-
-* `unlisted` *boolean* removes page link from the sidebar
-* `category` *string* adds a separator above the page link with the name of the category
-* `order` *integer* specifies the sidebar pages links order
-
-```yaml
-layout: styleguide/page
-# Example of LibDoc secific optional settings
-category: My category name
-order: 100
-unlisted: false
-```
+| Parameter | Type | Description |
+| - | - | - |
+| `unlisted` | *boolean* | If true, removes page link from the sidebar |
+| `category` | *string* | Adds a separator above the page link with the name of the category |
+| `order` | *integer* | Sets the rank of the page link into the sidebar, higher values give lower rank for the page link |
 
 ## Assets
 
-Dedicated LibDoc settings for the front matter on a [assets layout](libdoc-layouts.html)
+The following front matter parameters are available only for the [assets layout](libdoc-layouts.html#assets)
+
+| `assets.` | Type | Description |
+| - | - | - |
+| `path_from_root` | *string* | The path from which files are available do download. `/` is the root |
+| `extensions_enabled` | *Array* | Array of file extensions to display |
+
+Example of custom assets layout configuration on a page: [view example](libdoc-layout-assets-alt.html)
+
+```yaml
+layout: styleguide/assets
+# Example of LibDoc secific optional settings
+assets:
+    path_from_root: /styleguide
+    extensions_enabled: # File extension to display
+        - jpg
+        - gif
+        - webp
+        - png
+```

@@ -185,6 +185,9 @@ hr {
     border: none;
     border-top: my-border(thin-dashed);
 }
+iframe {
+    max-width: 100%;
+}
 @include my-screen-size(sm) {
     body {
         font-size: my-font-size(sm);

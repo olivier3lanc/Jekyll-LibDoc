@@ -43,7 +43,7 @@ sidebar:
     additional_links:
         #-   #url: # Local or remote URL
              #title: # Link text
-             #order: # Like pages, integer that sets the position of the link into the sidebar, higher values give bottom position
+             #order: # Sets the rank of the page link into the sidebar, higher values give lower rank for the page link
              #category: # Add this this link into a category just like pages
         # Example URL
         -   url: ./libdoc-layout-page.html

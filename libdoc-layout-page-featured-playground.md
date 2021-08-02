@@ -15,6 +15,10 @@ order: 200
 * 
 {:toc}
 
+```yaml
+layout: styleguide/page-featured-playground
+```
+
 Intended to be used for featuring a playground, the page featured playground layout extends the syntax highlighter by running the first highlighted code found onto a right sided panel.
 
 ```html

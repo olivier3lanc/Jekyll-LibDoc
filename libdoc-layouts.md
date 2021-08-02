@@ -16,8 +16,6 @@ order: 100
 * 
 {:toc}
 
-LibDoc comes with the following optional parameters that can be set into the front matter
-
 ## Page 
 
 The most common LibDoc's layout to display content. [View an example](libdoc-layout-page.html)
@@ -29,8 +27,8 @@ layout: styleguide/page
 
 ## Assets
 
-The same as styleguide/page. This layout adds a grid of user specified assets folder available for download that are included into the project.
-The default path of the assets source is set in the [config file](libdoc-config.html) which can be overridden for each page.
+The same as `styleguide/page`. This layout adds a grid of user specified assets folder available for download that are included into the project.
+The default path of the assets source is set in the [config file](libdoc-config.html#assets) which can be overridden for each page.
 
 [Example 1 - default](libdoc-layout-assets.html)
 
@@ -56,17 +54,6 @@ assets: # Only for styleguide/assets layout
         - css
 ```
 
-## Blank
-
-Just a simple html render of the current page
-
-[Example](libdoc-layout-blank.html)
-
-```yaml
-# Front matter
-layout: styleguide/blank
-```
-
 ## Page featured playground
 
 Based on page layout, splits the main content in two sides: On the left, the page render, on the right, the first playground found on the page.
@@ -76,4 +63,15 @@ Based on page layout, splits the main content in two sides: On the left, the pag
 ```yaml
 # Front matter
 layout: styleguide/page-featured-playground
+```
+
+## Blank
+
+Just a simple html render of the current page
+
+[Example](libdoc-layout-blank.html)
+
+```yaml
+# Front matter
+layout: styleguide/blank
 ```
