@@ -1,5 +1,5 @@
 jQuery(document).ready(function() {
-    jQuery('.preview').on('click', function(e) {
+    jQuery('.libdoc-preview').on('click', function(e) {
         e.preventDefault();
         let url = jQuery(this).attr('href');
         jQuery('body')
@@ -11,9 +11,9 @@ jQuery(document).ready(function() {
                 '</figure>'
             );
     });
-    jQuery('#asset-search').on('change', function() {
+    jQuery('#libdoc-asset-search').on('change', function() {
         let textToSearch = jQuery(this).val();
-        jQuery('.asset:not(:contains("'+textToSearch+'"))').addClass('u-none');
-        jQuery('.asset:contains("'+textToSearch+'")').removeClass('u-none');
+        jQuery('.libdoc-asset:not(:contains("'+textToSearch+'"))').addClass('u-none');
+        jQuery('.libdoc-asset:contains("'+textToSearch+'")').removeClass('u-none');
     });
 });

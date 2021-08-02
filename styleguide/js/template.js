@@ -1,12 +1,12 @@
 // SIDEBAR
 let sidebar = function() {
-    jQuery('#sidebar').toggleClass('m-anchor-top-right--sm m-anchor-top-right--md');
-    jQuery('#sidebar-overlay').toggleClass('m-anchor-top-right');
+    jQuery('#libdoc-sidebar').toggleClass('m-anchor-top-right--sm m-anchor-top-right--md');
+    jQuery('#libdoc-sidebar-overlay').toggleClass('m-anchor-top-right');
 }
 // TOC
 let tocbar = function() {
-    jQuery('#toc-container').toggleClass('m-anchor-top-left m-anchor-top-right');
-    jQuery('#toc-overlay').toggleClass('m-anchor-top-left m-anchor-top-right m-top-left m-top-right');
+    jQuery('#libdoc-toc-container').toggleClass('m-anchor-top-left m-anchor-top-right');
+    jQuery('#libdoc-toc-overlay').toggleClass('m-anchor-top-left m-anchor-top-right m-top-left m-top-right');
 }
 // COPY TO CLIPBOARD
 let copyToClipboard = function(value) {
@@ -52,7 +52,7 @@ jQuery(window).on('load', function() {
 jQuery(document).ready(function() {
     myToggle.update();
     //Manage external links
-    jQuery('main a[href^="http"], .sidebar-item a[href^="http"]').each(function(){
+    jQuery('main a[href^="http"], .libdoc-sidebar-item a[href^="http"]').each(function(){
         // Only if link is not in .playground
         if (jQuery(this).closest('.playground').length == 0) {
             var link = jQuery(this).attr('href');
@@ -85,8 +85,8 @@ jQuery(document).ready(function() {
         jQ_kramdownToc.children('li').addClass('u-bt-thin-dashed-alt');
         jQ_kramdownToc.find('ol,ul').addClass('u-ls-none u-m-none u-pl-xs');
         jQ_kramdownToc.find('a').addClass('c-btn m-translucid m-block-left m-xs c-text m-ff-lead m-reset');
-        jQuery('#toc-container').html(
-            '<div class="c-position m-absolute m-top-left m-anchor-top-left u-bc-primary-edge u-w-100vw u-h-100vh u-translucid u-z-10" u-none="md,xl" id="toc-overlay" onclick="tocbar();"></div>'+
+        jQuery('#libdoc-toc-container').html(
+            '<div class="c-position m-absolute m-top-left m-anchor-top-left u-bc-primary-edge u-w-100vw u-h-100vh u-translucid u-z-10" u-none="md,xl" id="libdoc-toc-overlay" onclick="tocbar();"></div>'+
             // '<button class="c-btn u-z-10 c-position m-fixed m-top-left m-anchor-top-right" u-none="md,xl" onclick="tocbar()">'+
             //     '<span class="i-list"></span>'+
             // '</button>'+

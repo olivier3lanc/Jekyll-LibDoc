@@ -4,8 +4,8 @@ layout: styleguide/page
 {{ content }}
 <ul class="c-grid u-bl-thin-dashed-alt">
     <li class="m-w-12 c-form u-bt-thin-dashed-alt u-br-thin-dashed-alt u-bb-thin-dashed-alt">
-        <input type="search" id="asset-search" class="u-b-none u-bg-search">
-        <label for="asset-search">Quick search</label>
+        <input type="search" id="libdoc-asset-search" class="u-b-none u-bg-search">
+        <label for="libdoc-asset-search">Quick search</label>
     </li>
     {%- comment -%} Init the root URL of the current Jekyll theme instance {%- endcomment -%}
     {% assign base_filter_path = site.url | append: site.baseurl %}
@@ -63,10 +63,10 @@ layout: styleguide/page
             {% if all_images_extensions contains extname_downcase %}
                 {% assign file_is_an_image = true %}
             {% endif %}
-            <li class="m-w-4 c-grid m-column m-space-between m-middle u-bb-thin-dashed-alt u-br-thin-dashed-alt u-p-md asset" m-nowrap="md,xl" m-w-6="sm" u-p-sm="sm">
+            <li class="m-w-4 c-grid m-column m-space-between m-middle u-bb-thin-dashed-alt u-br-thin-dashed-alt u-p-md libdoc-asset" m-nowrap="md,xl" m-w-6="sm" u-p-sm="sm">
                 <a  href="{{ site.url }}{{ site.baseurl }}{{ file.path }}" title="Preview {{ file.extname }}" 
                     target="_blank" 
-                    class="c-grid m-middle m-center m-grow u-p-none {% if file_is_an_image == true %}preview{% endif %}">
+                    class="c-grid m-middle m-center m-grow u-p-none {% if file_is_an_image == true %}libdoc-preview{% endif %}">
                     {% if file_is_an_image == true %}
                         <span class="u-bg-damier-hard u-lh-0">
                             <img    src="{{ site.url }}{{ site.baseurl }}{{ file.path }}" 

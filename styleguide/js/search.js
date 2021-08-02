@@ -1,6 +1,6 @@
 (function() {
     function displaySearchResults(results, store) {
-        var searchResults = document.getElementById("search-results");
+        var searchResults = document.getElementById("libdoc-search-results");
 
         if (results.length) {
             // Are there any results?
@@ -40,7 +40,7 @@
     var searchTerm = getQueryVariable("query");
 
     if (searchTerm) {
-        document.getElementById("search-box").setAttribute("value", searchTerm);
+        document.getElementById("libdoc-search-box").setAttribute("value", searchTerm);
 
         // Initalize lunr with the fields it will be searching on. I've given title
         // a boost of 10 to indicate matches on this field are more important.
@@ -68,7 +68,7 @@
             displaySearchResults(results, window.store); // We'll write this in the next section
         }
 
-        document.querySelectorAll('.search-query').forEach(function(el) {
+        document.querySelectorAll('.libdoc-search-query').forEach(function(el) {
             el.innerText = searchTerm;
             const href = el.getAttribute('href');
             if (href !== null) {
