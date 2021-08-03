@@ -107,7 +107,7 @@ let playground = {
                         '<li class="m-grow u-p-sm u-bb-thin-dashed-alt"></li>'+
                         '<li class="c-grid">'+
                             '<a href="'+iframeUrl+'" class="c-btn u-p-sm u-bl-thin-dashed-alt u-bb-thin-dashed-alt" title="Open in a new tab" target="_blank" data-playground-new-tab="'+playgroundId+'">'+
-                                '<span class="i-external-link"></span>'+
+                                'New tab <span class="i-external-link u-ml-xs"></span>'+
                             '</a>'+
                         '</li>'+
                     '</ul>'+
@@ -136,13 +136,13 @@ let playground = {
                         '<li class="m-grow u-p-sm u-bb-thin-dashed-alt"></li>'+
                         '<li class="c-grid">'+
                             '<a href="'+iframeUrl+'" class="c-btn u-p-sm u-bl-thin-dashed-alt u-bb-thin-dashed-alt" title="Open in a new tab" target="_blank" data-playground-new-tab="'+playgroundId+'">'+
-                                '<span class="i-external-link"></span>'+
+                                'New tab <span class="i-external-link u-ml-xs"></span>'+
                             '</a>'+
                             '<button class="c-btn u-p-sm u-bl-thin-dashed-alt u-bb-thin-dashed-alt maximize" title="Maximize playground" onclick="playground.expand(\''+playgroundId+'\')">'+
-                                '<span class="i-maximize-2"></span>'+
+                                'Maximize <span class="i-maximize-2 u-ml-xs"></span>'+
                             '</button>'+
                             '<button class="c-btn u-p-sm u-bl-thin-dashed-alt u-bb-thin-dashed-alt u-none minimize" title="Minimize playground" onclick="playground.expand(\''+playgroundId+'\')">'+
-                                '<span class="i-minimize-2"></span>'+
+                                'Minimize <span class="i-minimize-2 u-ml-xs"></span>'+
                             '</button>'+
                         '</li>'+
                     '</ul>'+

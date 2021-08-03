@@ -172,6 +172,7 @@ table {
             padding: my-spacing(xs);
             border-bottom: my-border(large-solid-edge);
             font-size: my-font-size(sm);
+            line-height: 1.5em;
             code {
                 // word-break: break-all;
                 &:not([class]) {

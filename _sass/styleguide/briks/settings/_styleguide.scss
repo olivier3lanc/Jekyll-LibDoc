@@ -69,7 +69,7 @@ Y88b  d88P Y88..88P 888 Y88..88P 888          X88
     COLORS
     @type SASS map https://sass-lang.com/documentation/file.SASS_REFERENCE.html#maps
 */
-$primary-color: #323b44;
+$primary-color:             #323b44;
 $briks-colors: (
     primary:                $primary-color,
     primary-alt:            briks-smart-contrast(30, $primary-color),

@@ -50,7 +50,7 @@ Settings for the sidebar.
 
 | `sidebar.` | Type | Default | Description |
 | - | - | - | - |
-| `disable_search` | *boolean* | commented/false | Uncomment or set true to disable search |
+| `disable_search` | *boolean* | false | Uncomment or set true to disable search |
 | `logo.url` | *string* | LibDoc's logo URL | Image URL which can be local '/img/logo.png' or remote 'https://remotesite.com/img/logo.png' |
 | `logo.max_height` | *CSS* | 40px | Logo image max height, applies only of url is set |
 | `logo.font_size` | *CSS* | 32px | If no logo url, font size of the site title, ignored if `url` is set |

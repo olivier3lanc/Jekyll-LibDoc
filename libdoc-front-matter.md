@@ -21,6 +21,62 @@ LibDoc comes with the following optional parameters that can be set into the fro
 | `category` | *string* | Adds a separator above the page link with the name of the category |
 | `order` | *integer* | Sets the rank of the page link into the sidebar, higher values give lower rank for the page link |
 
+Example with few pages with LibDoc's specific front matter:
+
+```yaml
+# Page 1
+title: Markdown
+# LibDoc secific optional settings
+category: Features
+order: 100
+#unlisted: true
+
+# Page 2
+title: Configuration
+# LibDoc secific optional settings
+category: Features
+order: 100
+#unlisted: true
+
+# Page 3
+title: Front matter
+# LibDoc secific optional settings
+category: Features
+order: 100
+#unlisted: true
+
+# Page 4
+title: Page layout
+# LibDoc secific optional settings
+category: Examples
+order: 200
+#unlisted: true
+
+# Page 5
+title: Assets layout
+# LibDoc secific optional settings
+category: Examples
+order: 200
+#unlisted: true
+
+# Page 6
+title: Blank layout
+# LibDoc secific optional settings
+category: Examples
+order: 200
+#unlisted: true
+
+# Page 7 unlisted
+title: Page unlisted title
+# LibDoc secific optional settings
+#category: Features
+#order: 100
+unlisted: true
+```
+Screenshot of the sidebar's result:
+
+![Example of category and order settings](styleguide/img/order-and-category.webp)
+
 ## Assets
 
 The following front matter parameters are available only for the [assets layout](libdoc-layouts.html#assets)
