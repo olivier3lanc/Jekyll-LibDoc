@@ -1,13 +1,13 @@
 ---
 title: Playground
 description: Standalone configurable code playground.
-layout: styleguide/page
+layout: libdoc/page
 
 #LibDoc specific below
 category: Features
 order: 100
 #unlisted: true
-#assets: # Only for styleguide/assets layout
+#assets: # Only for libdoc/assets layout
 #    path_from_root: /
 #    extensions_enabled: # File extension to display
 #        - js
@@ -93,10 +93,10 @@ playground:
     #min_height: 600px
     stylesheets: 
         - https://cdn.jsdelivr.net/npm/@exampledev/new.css@1.1.2/new.min.css
-        - /styleguide/css/normalize.css
+        - /libdoc/css/normalize.css
     scripts_head:
         - https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js
-        - /styleguide/js/my-toggles.js
+        - /libdoc/js/my-toggles.js
     scripts_body: # Javascript files near </body>. Can be either relative URL from site root, absolute URL starting with 'http'
         - https://anyurl.script.js
         - /scripts/any-script.js

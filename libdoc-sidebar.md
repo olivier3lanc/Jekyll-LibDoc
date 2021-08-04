@@ -1,7 +1,7 @@
 ---
 title: Sidebar
 description: Available settings of the sidebar.
-layout: styleguide/page
+layout: libdoc/page
 
 #LibDoc specific below
 category: Features
@@ -31,7 +31,7 @@ Example with a local logo
 sidebar:
     logo:
         # Image URL: Can be local e.g. '/img/logo.png' or remote 'https://remotesite.com/img/logo.png'
-        url: /styleguide/img/favicon/android-chrome-512x512.png
+        url: /libdoc/img/favicon/android-chrome-512x512.png
         # Logo image max height, applies only of url is set
         max_height: 40px
         # If no logo url, font size of the site title, ignored if url is set
@@ -44,7 +44,7 @@ Example with text only
 sidebar:
     logo:
         # Image URL: Can be local e.g. '/img/logo.png' or remote 'https://remotesite.com/img/logo.png'
-        #url: /styleguide/img/favicon/android-chrome-512x512.png
+        #url: /libdoc/img/favicon/android-chrome-512x512.png
         # Logo image max height, applies only of url is set
         #max_height: 40px
         # If no logo url, font size of the site title, ignored if url is set

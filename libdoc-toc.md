@@ -1,7 +1,7 @@
 ---
 title: Table Of Content
 description: LibDoc supports default kramdown toc.
-layout: styleguide/page
+layout: libdoc/page
 category: Features
 order: 100
 ---

@@ -1,13 +1,13 @@
 ---
 title: Layouts
 description: Available Jekyll theme layouts.
-layout: styleguide/page
+layout: libdoc/page
 
 #LibDoc specific below
 category: Features
 order: 100
 #unlisted: true
-#assets: # Only for styleguide/assets layout
+#assets: # Only for libdoc/assets layout
 #    path_from_root: /
 #    extensions_enabled: # File extension to display
 #        - js
@@ -22,20 +22,20 @@ The most common LibDoc's layout to display content. [View an example](libdoc-lay
 
 ```yaml
 # Front matter
-layout: styleguide/page
+layout: libdoc/page
 ```
 
 ## Assets
 
-The same as `styleguide/page`. This layout adds a grid of user specified assets folder available for download that are included into the project.
+The same as `libdoc/page`. This layout adds a grid of user specified assets folder available for download that are included into the project.
 The default path of the assets source is set in the [config file](libdoc-config.html#assets) which can be overridden for each page.
 
 [Example 1 - default](libdoc-layout-assets.html)
 
 ```yaml
 # Front matter
-layout: styleguide/assets
-#assets: # Only for styleguide/assets layout
+layout: libdoc/assets
+#assets: # Only for libdoc/assets layout
 #    path_from_root: /
 #    extensions_enabled: # File extension to display
 #        - js
@@ -46,8 +46,8 @@ layout: styleguide/assets
 
 ```yaml
 # Front matter
-layout: styleguide/assets
-assets: # Only for styleguide/assets layout
+layout: libdoc/assets
+assets: # Only for libdoc/assets layout
     path_from_root: /
     extensions_enabled: # File extension to display
         - js
@@ -62,7 +62,7 @@ Based on page layout, splits the main content in two sides: On the left, the pag
 
 ```yaml
 # Front matter
-layout: styleguide/page-featured-playground
+layout: libdoc/page-featured-playground
 ```
 
 ## Blank
@@ -73,5 +73,5 @@ Just a simple html render of the current page
 
 ```yaml
 # Front matter
-layout: styleguide/blank
+layout: libdoc/blank
 ```

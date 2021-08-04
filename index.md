@@ -1,5 +1,5 @@
 ---
-layout: styleguide/page
+layout: libdoc/page
 permalink: index.html
 ---
 * 
@@ -23,13 +23,13 @@ metadata:
     #favicon: # PNG favicon URL <link rel="icon" type="image/png" href="[link_rel_icon]"> Can be either relative URL from site root, absolute URL starting with 'http'
     author: Olivier Blanc # The author 
     #color: '#323b44' # HEX format color to display
-    #image: /styleguide/img/meta-image.png # Open Graph image file. Can be either relative URL from site root, absolute URL starting with 'http'
+    #image: /libdoc/img/meta-image.png # Open Graph image file. Can be either relative URL from site root, absolute URL starting with 'http'
 
 sidebar: # Settings for the sidebar
     disable_search: true # enable or not the search box
     logo:
         font_size: 32px # If no logo_url, font size of the site title, ignored if url is enabled
-        url: /styleguide/img/favicon/android-chrome-512x512.png # Image URL: Can be local e.g. '/img/logo.png' or remote 'https://remotesite.com/img/logo.png'
+        url: /libdoc/img/favicon/android-chrome-512x512.png # Image URL: Can be local e.g. '/img/logo.png' or remote 'https://remotesite.com/img/logo.png'
         max_height: 40px # Logo image max height
     additional_links:
         -   url: '#'
@@ -47,15 +47,15 @@ shields:
 playground:
     #min_height: 600px
     stylesheets: # Style sheets in <head>. Can be either relative URL from site root, absolute URL starting with 'http'
-        - styleguide/css/normalize.css
+        - libdoc/css/normalize.css
     #scripts_head: # Javascript files in <head>. Can be either relative URL from site root, absolute URL starting with 'http'
     #    - https://test.com/jquery.min.js
     #    - script-head.js
     scripts_body: # Javascript files near </body>. Can be either relative URL from site root, absolute URL starting with 'http'
         - https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js
-        - styleguide/js/my-toggles.js
+        - libdoc/js/my-toggles.js
 
-assets: # Files types to display in 'styleguide/assets' layout
+assets: # Files types to display in 'libdoc/assets' layout
     path_from_root: / # The path from which files are available do download. '/' id the root
     extensions_enabled: # File extension to display
         - pdf

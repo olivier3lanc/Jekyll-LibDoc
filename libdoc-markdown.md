@@ -1,7 +1,7 @@
 ---
 title: Markdown
 description: Page example for Github Flavoured Markdown
-layout: styleguide/page
+layout: libdoc/page
 
 #LibDoc specific below
 category: Features

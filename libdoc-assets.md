@@ -1,7 +1,7 @@
 ---
 title: Assets
 description: A layout that displays a grid of assets with copy link and download buttons.
-layout: styleguide/page
+layout: libdoc/page
 
 #LibDoc specific below
 category: Features
@@ -14,7 +14,7 @@ LibDoc comes with an assets layout which is the same as [page layout](libdoc-lay
 
 ```yaml
 # Front matter
-layout: styleguide/assets
+layout: libdoc/assets
 assets:
     extensions_enabled: [pdf,js,css,ttf,woff,woff2,otf,zip,sketch,svg,jpg,jpeg,gif,png,webp,psd,ai,heic,mp4,webm,ogv]
     image_extensions: [svg,jpg,jpeg,gif,png,webp]
@@ -24,9 +24,9 @@ assets:
 
 ```yaml
 # Front matter
-layout: styleguide/assets
+layout: libdoc/assets
 assets:
-    path_from_root: /styleguide
+    path_from_root: /libdoc
     extensions_enabled: [jpg,jpeg,gif,webp,png]
 ```
 
@@ -38,4 +38,4 @@ Settings available for assets in [config.yml](libdoc-config.html).
 | `extensions_enabled` | *Array* |  | List of file extensions (without point) to display |
 | `image_extensions` | *Array* |  | List of image extensions (without point) to display as image into asset grid |
 
-The settings above can be overridden on each page onto which `styleguide/assets` layout is assigned.
+The settings above can be overridden on each page onto which `libdoc/assets` layout is assigned.

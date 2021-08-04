@@ -1,7 +1,7 @@
 ---
 title: Metadata
 description: Social data for the project.
-layout: styleguide/page
+layout: libdoc/page
 
 #LibDoc specific below
 category: Features
@@ -26,14 +26,14 @@ metadata:
     # Sets the language of the project, default is en
     lang: en
     # PNG favicon URL. Can be either relative URL from site root or absolute URL starting with 'http'. Default is LibDoc's favicon
-    favicon: /styleguide/img/favicon/android-chrome-512x512.png
+    favicon: /libdoc/img/favicon/android-chrome-512x512.png
     # Name of the author of the project, used into various places of the theme like footer. Default is empty
     author: John Smith
     # Theme color metadata used in some browsers like Chrome that applies this color on browser address bar.
     # Color must be in HEX, default is LibDoc's color
     color: '#123456'
     # Open Graph image file. Can be either relative URL from site root, absolute URL starting with 'http'. Default is LibDoc's splash screen
-    image: /styleguide/img/meta-image.png
+    image: /libdoc/img/meta-image.png
 ```
 
 Snippet of social networks metadata markup of LibDoc based on @joshbuchea [HEAD](https://github.com/joshbuchea/HEAD).

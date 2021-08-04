@@ -7,10 +7,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         {% assign pagecontent_description = page.content | markdownify | replace: '.', '. ' | replace: '</h2>', ': ' | replace: '</h3>', ': ' | replace: '</h4>', ': ' | strip_html | strip_newlines | replace: '  ', ' ' | truncate: 160 %}
         <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{% if pagecontent_description.size > 10 %}{{ pagecontent_description }}{% else %}{{ site.description }}{% endif %}{% endif %} ">
-        <link rel="apple-touch-icon" sizes="180x180" href="{{ site.url }}{{ site.baseurl }}/styleguide/img/favicon/apple-touch-icon.png">
-        <link rel="icon" type="image/png" sizes="32x32" href="{{ site.url }}{{ site.baseurl }}/styleguide/img/favicon/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="{{ site.url }}{{ site.baseurl }}/styleguide/img/favicon/favicon-16x16.png">
-        <!-- <link rel="manifest" href="{{ site.url }}{{ site.baseurl }}/styleguide/img/favicon/site.webmanifest"> -->
+        <link rel="apple-touch-icon" sizes="180x180" href="{{ site.url }}{{ site.baseurl }}/libdoc/img/favicon/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="{{ site.url }}{{ site.baseurl }}/libdoc/img/favicon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="{{ site.url }}{{ site.baseurl }}/libdoc/img/favicon/favicon-16x16.png">
+        <!-- <link rel="manifest" href="{{ site.url }}{{ site.baseurl }}/libdoc/img/favicon/site.webmanifest"> -->
         {% for stylesheet_url in site.playground.stylesheets %}
             {% if stylesheet_url contains 'https://' or stylesheet_url contains 'http://' %}
                 <link rel="stylesheet" href="{{ stylesheet_url }}">

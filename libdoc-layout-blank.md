@@ -1,20 +1,20 @@
 ---
 title: Blank layout
 description: Simple html render of the current page
-layout: styleguide/blank
+layout: libdoc/blank
 
 #LibDoc specific below
 category: Examples
 order: 200
 #assets:
-#    path_from_root: /styleguide
+#    path_from_root: /libdoc
 #    extensions_enabled: # File extension to display
 #        - js
 #        - css
 ---
 
 ```yaml
-layout: styleguide/blank
+layout: libdoc/blank
 ```
 # Blank layout
 

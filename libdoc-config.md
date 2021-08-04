@@ -1,13 +1,13 @@
 ---
 title: Configuration
 description: Settings YAML for LibDoc Jekyll Theme.
-layout: styleguide/page
+layout: libdoc/page
 
 #LibDoc specific below
 category: Features
 order: 100
 #unlisted: true
-#assets: # Only for styleguide/assets layout
+#assets: # Only for libdoc/assets layout
 #    path_from_root: /
 #    extensions_enabled: # File extension to display
 #        - js
@@ -35,14 +35,14 @@ metadata:
     # Sets the language of the project, default is en
     lang: en
     # PNG favicon URL. Can be either relative URL from site root or absolute URL starting with 'http'. Default is LibDoc's favicon
-    favicon: /styleguide/img/favicon/android-chrome-512x512.png
+    favicon: /libdoc/img/favicon/android-chrome-512x512.png
     # Name of the author of the project, used into various places of the theme like footer. Default is empty
     author: John Smith
     # Theme color metadata used in some browsers like Chrome that applies this color on browser address bar.
     # Color must be in HEX, default is LibDoc's color
     color: '#123456'
     # Open Graph image file. Can be either relative URL from site root, absolute URL starting with 'http'. Default is LibDoc's splash screen
-    image: /styleguide/img/meta-image.png
+    image: /libdoc/img/meta-image.png
 ```
 ## Sidebar 
 
@@ -69,7 +69,7 @@ sidebar:
     # Top left branding/homepage link, specified image URL or site title if no URL is set
     logo:
         # Image URL: Can be local e.g. '/img/logo.png' or remote 'https://remotesite.com/img/logo.png'
-        url: /styleguide/img/favicon/android-chrome-512x512.png
+        url: /libdoc/img/favicon/android-chrome-512x512.png
         # Logo image max height, applies only of url is set
         max_height: 40px
         # If no logo url, font size of the site title, ignored if url is set
@@ -134,10 +134,10 @@ playground:
     #min_height: 600px
     stylesheets: 
         - https://cdn.jsdelivr.net/npm/@exampledev/new.css@1.1.2/new.min.css
-        - /styleguide/css/normalize.css
+        - /libdoc/css/normalize.css
     scripts_head:
         - https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js
-        - /styleguide/js/my-toggles.js
+        - /libdoc/js/my-toggles.js
     scripts_body: # Javascript files near </body>. Can be either relative URL from site root, absolute URL starting with 'http'
         - https://anyurl.script.js
         - /scripts/any-script.js

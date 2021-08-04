@@ -1,7 +1,7 @@
 ---
 title: Front matter
 description: Optional LibDoc specific parameters available.
-layout: styleguide/page
+layout: libdoc/page
 
 #LibDoc specific below
 category: Features
@@ -75,7 +75,7 @@ unlisted: true
 ```
 Screenshot of the sidebar's result:
 
-![Example of category and order settings](styleguide/img/order-and-category.webp)
+![Example of category and order settings](libdoc/img/order-and-category.webp)
 
 ## Assets
 
@@ -89,10 +89,10 @@ The following front matter parameters are available only for the [assets layout]
 Example of custom assets layout configuration on a page: [view example](libdoc-layout-assets-alt.html)
 
 ```yaml
-layout: styleguide/assets
+layout: libdoc/assets
 # Example of LibDoc secific optional settings
 assets:
-    path_from_root: /styleguide
+    path_from_root: /libdoc
     extensions_enabled: # File extension to display
         - jpg
         - gif

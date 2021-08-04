@@ -1,7 +1,7 @@
 ---
 title: Page layout
 description: An example of LibDoc's page layout.
-layout: styleguide/page
+layout: libdoc/page
 
 #LibDoc specific below
 category: Examples
@@ -11,7 +11,7 @@ order: 200
 {:toc}
 
 ```yaml
-layout: styleguide/page
+layout: libdoc/page
 ```
 ## Playground example
 
