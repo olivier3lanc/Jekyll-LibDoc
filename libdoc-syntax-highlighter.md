@@ -1,140 +1,46 @@
-# Jekyll configuration
-# ---
-title: LibDoc # title of the documentation
-description: >- # Description of the docs. (>- means to ignore newlines until next param)
-  A Jekyll documentation theme with built-in search and playground
-kramdown:
-    syntax_highlighter_opts:
-        disable: true
-sass:
-    style: compressed
+---
+title: Syntax highlighter
+description: LibDoc uses customizable Prismjs to highlight the code.
+layout: libdoc/page
 
+#LibDoc specific below
+category: Features
+order: 100
+#unlisted: true
+---
+* 
+{:toc}
 
-# LibDoc configuration
-# ---
+LibDoc uses [prismjs](https://prismjs.com/) as syntax highlighter for both [playground](libdoc-playground.html) and simple code highlight.
 
-# Metadata informations for the project
-metadata:
-    # Sets the language of the project, default is en
-    #lang: en
-    # PNG favicon URL. Can be either relative URL from site root or absolute URL starting with 'http'. Default is LibDoc's favicon
-    #favicon: 
-    # Name of the author of the project, used into various places of the theme like footer. Default is empty
-    author: Olivier Blanc
-    # Theme color metadata used in some browsers like Chrome that applies this color on browser address bar.
-    # Color must be in HEX, default is LibDoc's color
-    #color: '#323b44'
-    # Open Graph image file. Can be either relative URL from site root, absolute URL starting with 'http'. Default is LibDoc's splash screen
-    #image: /libdoc/img/meta-image.png
+```javascript
+// Example with Javascript
+let myFunction = function() {
+    document.querySelectorAll('.selector').forEach(function(element) {
+        element.classList.add('passed');
+    });
+}
+```
 
-# Sidebar 
-sidebar:
-    # Uncomment to disable search
-    #disable_search: true
-    # Top left branding/homepage link, specified image URL or site title if no URL is set
-    logo:
-        # Image URL: Can be local e.g. '/img/logo.png' or remote 'https://remotesite.com/img/logo.png'
-        url: /libdoc/img/favicon/android-chrome-512x512.png
-        # Logo image max height, applies only of url is set
-        max_height: 40px
-        # If no logo url, font size of the site title, ignored if url is set
-        #font_size: 32px
-    # Display additional links anywhere into the sidebar
-    additional_links:
-        #-   #url: # Local or remote URL
-             #title: # Link text
-             #order: # Sets the rank of the page link into the sidebar, higher values give lower rank for the page link
-             #category: # Add this this link into a category just like pages
-        # Example URL
-        -   url: ./libdoc-layout-page.html
-            title: Relative link 1
-            order: 500
-            category: Archives
-        -   url: ./libdoc-layouts.html
-            title: Relative link 2
-            order: 500
-            category: Archives
-        # Example remote URL
-        -   url: https://www.wikipedia.org/
-            title: Wikipedia
-            order: 510
-            category: External resources
+LibDoc loads only the syntax languages specified in the config.yml. Official PrismJS themes can be assigned. Here are the settings:
 
-# Badges
-# Feature that allows to display badges into the footer https://shields.io image html and url
-shields:
-    -   image_html: <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/olivier3lanc/Jekyll-LibDoc?logo=github&style=flat-square">
-        link_url: https://github.com/olivier3lanc/Jekyll-LibDoc
-    -   image_html: <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/olivier3lanc/Jekyll-LibDoc?logo=github&style=flat-square">
-        link_url: https://github.com/olivier3lanc/Jekyll-LibDoc
-test: '#123456'
-# Settings for the playground context
-playground:
-    # Sets a minimum height for each playground, default is 300px
-    #min_height: 600px
-    # Style sheets in <head>. Can be either:
-    # Relative URL from site root starting with slash /
-    # Absolute URL starting with 'http'
-    stylesheets: 
-        - /example-project/css/tailwind.min.css
-    # Javascript in <head>. Can be either:
-    # Relative URL from site root starting with slash /
-    # Absolute URL starting with 'http'
-    scripts_head:
-        #- https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js
-        #- /libdoc/js/my-toggles.js
-    # Javascript at the end of <body>. Can be either:
-    # Relative URL from site root starting with slash /
-    # Absolute URL starting with 'http'
-    scripts_body: # Javascript files near </body>. Can be either relative URL from site root, absolute URL starting with 'http'
-        #- https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js
-        #- /libdoc/js/my-toggles.js
+| `prism.` | Type | Default | Description |
+| - | - | - | - |
+| `theme` | *string* | tomorrow | The exact name of the theme: `coy`, `dark`, `funky`, `okaidia`, `twilight`, `solarizedlight`, `tomorrow` |
+| `font_size` | *CSS* | 1em | CSS font-size property override for `<code>` |
+| `font_line_height` | *CSS* | 1em | CSS line-height property override for `<code>` |
+| `languages` | *Array* | markup, css, clike, javascript | List of available languages to enable, just uncomment to enable |
 
-# Settings for the assets layout
-assets:
-    # The path from which files are available do download. '/' is the root
-    #path_from_root: /
-    # File extension to display
-    extensions_enabled: 
-        - pdf
-        - js
-        - css
-        - ttf
-        - woff
-        - woff2
-        - otf
-        - zip
-        - sketch
-        - svg
-        - jpg
-        - jpeg
-        - gif
-        - png
-        - webp
-        - psd
-        - ai
-        - heic
-        - mp4
-        - webm
-        - ogv
-    # Array list of image extensions (without point) to display as image into asset grid
-    image_extensions: 
-        - svg
-        - jpg
-        - jpeg
-        - gif
-        - png
-        - webp
+Example of Prism's configuration.
 
-# Settings for Prism syntax highlighter used in LibDoc
-# https://prismjs.com/
+```yaml
 prism:
     # coy, dark, funky, okaidia, twilight, solarizedlight, tomorrow, 
     theme: tomorrow
     # CSS font-size property override for <code>
     font_size: 0.9em
     # CSS line-height property override for <code>
-    # line_height: 1em
+    line_height: 1em
     # Uncomment lines to enable language
     languages:
         - markup
@@ -396,6 +302,4 @@ prism:
         - yaml
         #- yang
         #- zig
-
-# Link powered by LibDoc 
-#disable_powered_by_link: true
+```

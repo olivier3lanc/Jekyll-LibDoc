@@ -199,7 +199,7 @@ LibDoc uses [prismjs](https://prismjs.com/) as syntax highlighter, here are the 
 | `theme` | *string* | tomorrow | The exact name of the theme: `coy`, `dark`, `funky`, `okaidia`, `twilight`, `solarizedlight`, `tomorrow` |
 | `font_size` | *CSS* | 1em | CSS font-size property override for `<code>` |
 | `font_line_height` | *CSS* | 1em | CSS line-height property override for `<code>` |
-| `languages` | *Array* |  | List of available languages to enable, just uncomment to enable |
+| `languages` | *Array* | markup, css, clike, javascript | List of available languages to enable, just uncomment to enable |
 
 Example of Prism's configuration part.
 
