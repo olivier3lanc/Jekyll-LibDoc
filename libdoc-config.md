@@ -18,7 +18,7 @@ order: 100
 
 ## Metadata 
 
-Additional informations for the project.
+Social networks metadata into written into `<head>` part of each generated HTML page to enable proper social sharing.
 
 | `metadata.` | Type | Default | Description |
 | - | - | - | - |

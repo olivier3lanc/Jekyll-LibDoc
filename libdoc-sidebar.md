@@ -15,7 +15,7 @@ LibDoc's sidebar contains all necessary UI components to navigate through the pr
 
 ## Logo
 
-The top left of the LibDoc's theme is a homepage link the can display simple text with site title or a custom logo.
+The top left of the LibDoc's theme is a homepage link that can display just site title or a custom logo.
 
 Settings in [config.yml](libdoc-config.html):
 

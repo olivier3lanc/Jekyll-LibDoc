@@ -9,7 +9,7 @@ order: 100
 #unlisted: true
 ---
 
-LibDoc supports social network metadata into its document `<head>` to enable proper social sharing. Here are the [config.yml](libdoc-config.html) settings:
+LibDoc supports social networks metadata into its document `<head>` to enable proper social sharing. Here are the [config.yml](libdoc-config.html) settings:
 
 | `metadata.` | Type | Default | Description |
 | - | - | - | - |
