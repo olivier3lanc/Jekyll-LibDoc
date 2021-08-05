@@ -1,4 +1,5 @@
 ---
+unlisted: true
 ---
 <h3>Playground settings</h3>
 <p>Here is the list of resources applied into the playground.</p>
@@ -7,6 +8,7 @@
         <tr>
             <th>Resource URL</th>
             <th>Type</th>
+            <th>Placement</th>
             <th>Actions</th>
         </tr>
     </thead>
@@ -15,6 +17,7 @@
             <tr>
                 <td data-title="Resource URL">{{ item | absolute_url }}</td>
                 <td data-title="Type"><span class="u-fs-lg i-css"></span></td>
+                <td data-title="Placement">head</td>
                 <td data-title="Actions">
                     <button class="c-btn m-translucid u-p-sm" 
                             title="Copy URL" 
@@ -30,7 +33,8 @@
         {% for item in site.playground.scripts_head %}
             <tr>
                 <td data-title="Resource URL">{{ item | absolute_url }}</td>
-                <td data-title="Type"><span class="u-fs-lg i-js"></span> <code>&lt;head&gt;</code></td>
+                <td data-title="Type"><span class="u-fs-lg i-js"></span></td>
+                <td data-title="Placement">head</td>
                 <td data-title="Actions">
                     <button class="c-btn m-translucid u-p-sm" 
                             title="Copy URL" 
@@ -46,7 +50,8 @@
         {% for item in site.playground.scripts_body %}
             <tr>
                 <td data-title="Resource URL">{{ item | absolute_url }}</td>
-                <td data-title="Type"><span class="u-fs-lg i-js"></span> <code>&lt;/body&gt;</code></td>
+                <td data-title="Type"><span class="u-fs-lg i-js"></span></td>
+                <td data-title="Placement">End body</td>
                 <td data-title="Actions">
                     <button class="c-btn m-translucid u-p-sm" 
                             title="Copy URL" 
