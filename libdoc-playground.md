@@ -20,10 +20,12 @@ A major feature of the LibDoc Jekyll theme is its own built-in and configurable 
 It extends the syntax highlighter by running the specified code into a configurable context with user defined style sheets and scripts.
 Just add `{: .playground}` below the syntax highlight markdown code.
 
+## Usage
+
 How to add a playground with markdown:
 
 ```markdown
-    ```html
+    ```name_of_the_language
         <the code>
     ```
     {:.playground}

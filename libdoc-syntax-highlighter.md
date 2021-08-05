@@ -11,7 +11,9 @@ order: 100
 * 
 {:toc}
 
-LibDoc uses [prismjs](https://prismjs.com/) as syntax highlighter for both [playground](libdoc-playground.html) and simple code highlight.
+LibDoc uses [prismjs](https://prismjs.com/) with [markdown](libdoc-markdown.html) as syntax highlighter for both [playground](libdoc-playground.html) and simple code highlight.
+
+Example
 
 ```javascript
 // Example with Javascript
@@ -20,6 +22,19 @@ let myFunction = function() {
         element.classList.add('passed');
     });
 }
+```
+
+Source in markdown
+
+```markdown
+    ```javascript
+    // Example with Javascript
+    let myFunction = function() {
+        document.querySelectorAll('.selector').forEach(function(element) {
+            element.classList.add('passed');
+        });
+    }
+    ```
 ```
 
 LibDoc loads only the syntax languages specified in the config.yml. Official PrismJS themes can be assigned. Here are the settings:

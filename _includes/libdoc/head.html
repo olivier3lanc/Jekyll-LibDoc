@@ -115,7 +115,22 @@
             url: '{{ site.url }}',
             baseurl: '{{ site.baseurl }}',
             playground: {
-                min_height: '{% if site.playground.min_height %}{{ site.playground.min_height }}{% else %}300px{% endif %}'
+                min_height: '{{ site.playground.min_height | default: "300px" }}',
+                stylesheets: [
+                    {% for item in site.playground.stylesheets %}
+                        '{{ item }}'
+                    {% endfor %}
+                ],
+                scripts_head: [
+                    {% for item in site.playground.scripts_head %}
+                        '{{ item }}'
+                    {% endfor %}
+                ],
+                scripts_body: [
+                    {% for item in site.playground.scripts_body %}
+                        '{{ item }}'
+                    {% endfor %}
+                ]
             }
         }
     </script>

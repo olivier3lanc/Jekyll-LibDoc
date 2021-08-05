@@ -8,6 +8,18 @@ let tocbar = function() {
     jQuery('#libdoc-toc-container').toggleClass('m-anchor-top-left m-anchor-top-right');
     jQuery('#libdoc-toc-overlay').toggleClass('m-anchor-top-left m-anchor-top-right m-top-left m-top-right');
 }
+// MODAL AJAX
+let modalAjax = function(file) {
+    const el_modal_content = document.querySelector('#libdoc-modal-content');
+    if (typeof file == 'string' && el_modal_content !== null) {
+        const url = site.url+site.baseurl+'/libdoc/ajax/'+file+'.html';
+        fetch(url)
+            .then(data => data.text())
+            .then(data => {
+                el_modal_content.innerHTML = data;
+            })
+    }
+};
 // COPY TO CLIPBOARD
 let copyToClipboard = function(value) {
     if (typeof value == 'string') {

@@ -33,5 +33,17 @@
         <script type="text/javascript" src="{{ '/libdoc/js/my-toggles.js' | relative_url }}"></script>
         <script type="text/javascript" src="{{ '/libdoc/js/template.js' | relative_url }}"></script>
         <script type="text/javascript" src="{{ '/libdoc/js/playground.js' | relative_url }}"></script>
+
+        <aside my-toggle-name="libdoc-modal" class="c-position m-fixed m-top-left u-w-100 u-h-100 u-z-100">
+            <div class="c-grid m-center m-middle m-position m-fixed m-top-left u-w-100 u-h-100">
+                <div class="c-position m-fixed m-top-left u-w-100 u-h-100 u-cur-pointer u-bc-primary-alt u-faded" my-toggle="libdoc-modal"></div>
+                <div class="u-p-xl u-bc-primary-max u-brad-md u-relative u-b-thin-dashed-alt u-mh-100vh u-o-auto" u-pl-md="sm" u-pr-md="sm">
+                    <nav class="c-position m-absolute m-top-0 m-right-0">
+                        <button class="c-btn u-bl-thin-dashed-alt u-bb-thin-dashed-alt" my-toggle="libdoc-modal">Close <span class="i-x u-ml-xs"></span></button>
+                    </nav>
+                    <div id="libdoc-modal-content">content</div>
+                </div>
+            </div>
+        </aside>
     </body>
 </html>

@@ -144,6 +144,9 @@ let playground = {
                             '<button class="c-btn u-p-sm u-bl-thin-dashed-alt u-bb-thin-dashed-alt u-none minimize" title="Minimize playground" onclick="playground.expand(\''+playgroundId+'\')">'+
                                 'Minimize <span class="i-minimize-2 u-ml-xs"></span>'+
                             '</button>'+
+                            '<button class="c-btn u-p-sm u-bl-thin-dashed-alt u-bb-thin-dashed-alt" title="View settings of the playground" my-toggle="libdoc-modal" onclick="modalAjax(\'playground-settings\')">'+
+                                'Settings <span class="i-info u-ml-xs"></span>'+
+                            '</button>'+
                         '</li>'+
                     '</ul>'+
                     '<div class="playground-instance" id="'+playgroundId+'-instance">'+
