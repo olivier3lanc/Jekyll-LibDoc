@@ -42,7 +42,7 @@ metadata:
     # Color must be in HEX, default is LibDoc's color
     color: '#123456'
     # Open Graph image file. Can be either relative URL from site root, absolute URL starting with 'http'. Default is LibDoc's splash screen
-    image: /libdoc/img/meta-image.png
+    image: /libdoc/img/libdoc.png
 ```
 ## Sidebar 
 

@@ -6,7 +6,7 @@ layout: libdoc/default
         <header class="u-bb-thin-dashed-alt u-pb-lg u-mb-md">
             <h1 class="u-pt-lg u-mt-none u-mb-xs">{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</h1>
             <p class="u-fs-lg u-m-none u-lh-base" u-fs-md="sm">{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}
-                {% if page.title == 'Search results' %} <a href="{{ page.url | absolute_url }}?query=" class="link search-query">query</a>{% endif %}</p>
+                {% if page.title == 'Search results' %} <a href="{{ page.url | absolute_url }}?query=" class="link libdoc-search-query">query</a>{% endif %}</p>
         </header>
         {{ content }}
     </div>

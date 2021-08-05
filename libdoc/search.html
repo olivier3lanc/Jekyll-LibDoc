@@ -8,26 +8,15 @@ unlisted: true
 <script>
     window.store = {
         {% for post in site.html_pages %}
-            "{{ post.url | slugify }}": {
-                "title": "{{ post.title | default: post.name }}",
-                "author": "{{ post.author }}",
-                "category": "{{ post.category }}",
-                "tags": "{{ post.tags }}",
-                "content": {{ post.content | strip_html | strip_newlines | jsonify }},
-                "url": "{{ post.url }}"
-            }
-            {% unless forloop.last %},{% endunless %}
-        {% endfor %},
-		{% for post in site.posts %}
-            "{{ post.url | slugify }}": {
-                "title": "{{ post.title }}",
-                "author": "{{ post.author }}",
-                "category": "{{ post.category }}",
-                "tags": "{{ post.tags }}",
-                "content": {{ post.content | strip_html | strip_newlines | jsonify }},
-                "url": "{{ post.url }}"
-            }
-            {% unless forloop.last %},{% endunless %}
+            {% if post.unlisted != true %}
+                "{{ post.url | slugify }}": {
+                    "title": "{{ post.title | default: post.name }}",
+                    "author": "{{ post.author }}",
+                    "category": "{{ post.category }}",
+                    "content": {{ post.content | strip_html | strip_newlines | jsonify }},
+                    "url": "{{ post.url }}"
+                }{% unless forloop.last %},{% endunless %}
+            {% endif %}
         {% endfor %}
     };
 </script>
