@@ -1,9 +1,9 @@
 @font-face {
   font-family: 'icomoon';
   src:
-    url('fonts/icomoon.ttf?7qpi5y') format('truetype'),
-    url('fonts/icomoon.woff?7qpi5y') format('woff'),
-    url('fonts/icomoon.svg?7qpi5y#icomoon') format('svg');
+    url('fonts/icomoon.ttf?8aviqm') format('truetype'),
+    url('fonts/icomoon.woff?8aviqm') format('woff'),
+    url('fonts/icomoon.svg?8aviqm#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -66,6 +66,9 @@
 .i-sketch:before {
   content: "\e91d";
   color: #f7b500;
+}
+.i-info:before {
+  content: "\e920";
 }
 .i-file:before {
   content: "\e91e";
