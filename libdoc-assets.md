@@ -1,14 +1,14 @@
 ---
 title: Assets
-description: A layout that displays a grid of assets with copy link and download buttons.
-layout: libdoc/page
+description: A layout that displays a grid of seearchable assets with copy link and download buttons.
+layout: libdoc/assets
 
 #LibDoc specific below
 category: Features
 order: 100
 #unlisted: true
 ---
-LibDoc comes with an assets layout which is the same as [page layout](libdoc-layouts.html#page) with a configurable grid of assets added after the content of the page. Assets settings are available in [config.yml](libdoc-config.html) which can be overridden for each page. Each asset is displayed with an icon, a download link and a copy URL button.
+Built to allow visitors to download necessary resources of the project, LibDoc comes with a **searchable assets layout** which is the same as [page layout](libdoc-layouts.html#page) with a configurable grid of assets added after the content of the page. Assets settings are available in [config.yml](libdoc-config.html) which can be overridden for each page. Each asset is displayed with an icon, a download link and a copy URL button.
 
 [Example 1 - default](libdoc-layout-assets.html)
 
@@ -30,7 +30,7 @@ assets:
     extensions_enabled: [jpg,jpeg,gif,webp,png]
 ```
 
-Settings available for assets in [config.yml](libdoc-config.html).
+Settings available for assets in [config.yml](libdoc-config.html#assets).
 
 | `assets.` | Type | Default | Description |
 | - | - | - | - |

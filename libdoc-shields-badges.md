@@ -1,6 +1,6 @@
 ---
 title: Shields - Badges
-description: Easyly add shields.io badges into the footer.
+description: Easily add shields.io badges into the footer.
 layout: libdoc/page
 
 #LibDoc specific below

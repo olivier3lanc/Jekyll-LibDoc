@@ -109,12 +109,12 @@ let playground = {
                             '<a href="'+iframeUrl+'" class="c-btn u-p-sm u-bl-thin-dashed-alt u-bb-thin-dashed-alt" title="Open in a new tab" target="_blank" data-playground-new-tab="'+playgroundId+'">'+
                                 '<span class="i-external-link u-fs-md"></span>'+
                             '</a>'+
-                            '<button class="c-btn u-p-sm u-bl-thin-dashed-alt u-bb-thin-dashed-alt maximize" title="Maximize playground" onclick="playground.expand(\''+playgroundId+'\')">'+
-                                '<span class="i-maximize-2 u-fs-md"></span>'+
-                            '</button>'+
-                            '<button class="c-btn u-p-sm u-bl-thin-dashed-alt u-bb-thin-dashed-alt u-none minimize" title="Minimize playground" onclick="playground.expand(\''+playgroundId+'\')">'+
-                                '<span class="i-minimize-2 u-fs-md"></span>'+
-                            '</button>'+
+                            // '<button class="c-btn u-p-sm u-bl-thin-dashed-alt u-bb-thin-dashed-alt maximize" title="Maximize playground" onclick="playground.expand(\''+playgroundId+'\')">'+
+                            //     '<span class="i-maximize-2 u-fs-md"></span>'+
+                            // '</button>'+
+                            // '<button class="c-btn u-p-sm u-bl-thin-dashed-alt u-bb-thin-dashed-alt u-none minimize" title="Minimize playground" onclick="playground.expand(\''+playgroundId+'\')">'+
+                            //     '<span class="i-minimize-2 u-fs-md"></span>'+
+                            // '</button>'+
                             '<button class="c-btn u-p-sm u-bl-thin-dashed-alt u-bb-thin-dashed-alt" title="View settings of the playground" my-toggle="libdoc-modal" onclick="modalAjax(\'playground-settings\')">'+
                                 '<span class="i-info u-fs-md"></span>'+
                             '</button>'+
@@ -190,6 +190,7 @@ let playground = {
     expand: function(playgroundId) {
         if (typeof playgroundId === 'string') {
             let jQ_playground = jQuery('#'+playgroundId),
+                jQ_nav = jQuery('#libdoc-sidebar'),
                 jQ_instance = jQuery('#'+playgroundId+'-instance'),
                 jQ_commands = jQuery('[data-playground-commands="'+playgroundId+'"]'),
                 instanceClasses = 'c-position m-fixed m-left-0 u-w-100 u-o-auto u-z-11 u-bc-primary-max u-pb-md',
