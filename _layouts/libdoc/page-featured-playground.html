@@ -2,11 +2,78 @@
 layout: libdoc/default
 ---
 <style>
-    .resizer { width: 5px; height: 100%; background: blue; position:absolute; right: 0px; top: 0%; cursor: e-resize; z-index: 1000; }
-    .resizer:hover { background: green; width: 200px; right: -100px }
+    .resizer { display: flex; align-items: center; justify-content: center; position:absolute; z-index: 100; }
+    /* .resizer:hover { background: green; } */
+    
+    .resizer.resizer-width { top: 0%; right: 0px; width: 0px; height: 100%; cursor: col-resize; }
+    .resizer.resizer-width:hover { width: 100px; right: -50px; }
+    .resizer.resizer-width::after {
+        content: '';
+        position: fixed;
+        top: 50%;
+        width: 6px;
+        height: 50px;
+        background: var(--sg-background-stripes) var(--sg-color-primary-edge);
+        border: var(--sg-border-thin-solid-alt);
+        /* transform: translateX(-50%) translateY(-50%); */
+        border-radius: var(--sg-border-radius-xl);
+    }
+    .resizer.resizer-height { bottom: 0%; left: 0px; width: 100%; height: 0px; cursor: row-resize; }
+    .resizer.resizer-height:hover { height: 100px; bottom: -50px; }
+    .resizer.resizer-height::after {
+        content: '';
+        height: 6px;
+        width: 50px;
+        background: var(--sg-background-stripes) var(--sg-color-primary-edge);
+        border: var(--sg-border-thin-solid-alt);
+        /* transform: translateX(-50%) translateY(-50%); */
+        border-radius: var(--sg-border-radius-xl);
+    }
+    .resizer.resizer-width.resizer-height {
+        top: inherit;
+        bottom: -8px;
+        right: -8px;
+        left: inherit;
+        width: 16px;
+        height: 16px;
+        cursor: nwse-resize; 
+    }
+    .resizer.resizer-width.resizer-height:hover {
+        top: inherit;
+        bottom: -16px;
+        right: -16px;
+        left: inherit;
+        width: 32px;
+        height: 32px;
+    }
+    .resizer.resizer-width.resizer-height::after {
+        content: '';
+        position: absolute;
+        height: 16px;
+        width: 16px;
+        top: inherit;
+        left: inherit;
+        background: var(--sg-background-stripes) var(--sg-color-primary-edge);
+        border: var(--sg-border-thin-solid-alt);
+        border-top-left-radius: var(--sg-border-radius-xl);
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 0;
+        border-top-right-radius: 0;
+    }
+    .resizer.resizer-width.resizer-height::before {
+        content: '';
+        position: absolute;
+        width: 36px;
+        height: 36px;
+        border-bottom: var(--sg-border-thin-dashed-alt);
+        right: 7px;
+        bottom: 7px;
+        border-right: var(--sg-border-thin-dashed-alt);
+    } 
+    
 </style>
 <main class="m-grow m-w-1 c-grid" m-nowrap="md,xl" id="page-featured-playground-container">
-    <div class="{{ page.content_class | default: 'm-w-12--sm u-bc-primary-max u-br-thin-dashed-alt u-bb-thin-dashed-alt u-relative' }}">
+    <div class="{{ page.content_class | default: 'm-w-12--sm u-bc-primary-max u-br-thin-dashed-alt u-bb-thin-dashed-alt u-relative resizeable resizeable-width' }}" style="width:30%">
         <header class="u-bb-thin-dashed-alt u-p-lg" u-p-sm="sm">
             <h1 class="u-mt-none u-mb-xs u-lh-1">{{ page.title | default: site.title }}</h1>
             <p class="u-fs-lg u-m-none u-lh-base" u-fs-md="sm">{{ page.description | default: site.description }}</p>

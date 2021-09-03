@@ -112,32 +112,93 @@ jQuery(document).ready(function() {
     }
 });
 
-var p = document.querySelector('#page-featured-playground-container > div');
-
-p.className = p.className + ' resizable';
-var resizer = document.createElement('div');
-resizer.className = 'resizer';
-p.appendChild(resizer);
-resizer.addEventListener('mousedown', initDrag, false);
-
-var startX, startY, startWidth, startHeight;
-
-function initDrag(e) {
-   startX = e.clientX;
-   startY = e.clientY;
-   startWidth = parseInt(document.defaultView.getComputedStyle(p).width, 10);
-   startHeight = parseInt(document.defaultView.getComputedStyle(p).height, 10);
-   document.documentElement.addEventListener('mousemove', doDrag, false);
-   document.documentElement.addEventListener('mouseup', stopDrag, false);
+let resizer = {
+    update: function() {
+        document.querySelectorAll('.resizeable').forEach(function(el, index) {
+            const assigned_id = 'resizer_'+index;
+            resizer.instances[assigned_id] = {
+                el_resizer: document.createElement('div'),
+                el_resizeable: el,
+                startX: 0,
+                startY: 0,
+                startWidth: 0,
+                startHeight: 0
+            };
+            resizer.instances[assigned_id].el_resizer.id = 'resizer_'+index;
+            if (el.classList.contains('resizeable-width') && el.classList.contains('resizeable-height')) {
+                resizer.instances[assigned_id].el_resizer.classList.add('resizer', 'resizer-width', 'resizer-height');
+            } else if (el.classList.contains('resizeable-width')) {
+                resizer.instances[assigned_id].el_resizer.classList.add('resizer', 'resizer-width');
+            } else if (el.classList.contains('resizeable-height')) {
+                resizer.instances[assigned_id].el_resizer.classList.add('resizer', 'resizer-height');
+            } else {
+                resizer.instances[assigned_id].el_resizer.classList.add('resizer', 'resizer-width', 'resizer-height');
+            }
+            if (document.defaultView.getComputedStyle(resizer.instances[assigned_id].el_resizeable).position == 'static') {
+                resizer.instances[assigned_id].el_resizeable.style.position = 'relative';
+            }
+            el.appendChild(resizer.instances[assigned_id].el_resizer);
+            resizer.instances[assigned_id].el_resizer.addEventListener('mousedown', resizer.initDrag, false);
+        })
+    },
+    instances: {},
+    initDrag: function(e) {
+        // console.log('initDrag: ');
+        resizer.instances[e.target.id].startX = e.clientX;
+        resizer.instances[e.target.id].startY = e.clientY;
+        if (e.target.classList.contains('resizer-width')) {
+            resizer.instances[e.target.id].startWidth = parseInt(document.defaultView.getComputedStyle(resizer.instances[e.target.id].el_resizeable).width, 10);
+        }
+        if (e.target.classList.contains('resizer-height')) {
+            resizer.instances[e.target.id].startHeight = parseInt(document.defaultView.getComputedStyle(resizer.instances[e.target.id].el_resizeable).height, 10);
+        }
+        document.documentElement.addEventListener('mousemove', resizer.doDrag, false);
+        document.documentElement.addEventListener('mouseup', resizer.stopDrag, false);
+        // console.log(resizer.instances[e.target.id]);
+     },
+     
+     doDrag: function(e) {
+        if (e.target.classList.contains('resizer-width')) {
+            resizer.instances[e.target.id].el_resizeable.style.width = (resizer.instances[e.target.id].startWidth + e.clientX - resizer.instances[e.target.id].startX) + 'px';
+        }
+        if (e.target.classList.contains('resizer-height')) {
+            resizer.instances[e.target.id].el_resizeable.style.height = (resizer.instances[e.target.id].startHeight + e.clientY - resizer.instances[e.target.id].startY) + 'px';
+        }
+     },
+     
+     stopDrag: function(e) {
+        document.documentElement.removeEventListener('mousemove', resizer.doDrag, false);    
+        document.documentElement.removeEventListener('mouseup', resizer.stopDrag, false);
+     }
 }
+resizer.update();
 
-function doDrag(e) {
-   p.style.width = (startWidth + e.clientX - startX) + 'px';
-//    p.style.height = (startHeight + e.clientY - startY) + 'px';
-}
+// var p = document.querySelector('#page-featured-playground-container > div');
 
-function stopDrag(e) {
-    console.log(e.target);
-    document.documentElement.removeEventListener('mousemove', doDrag, false);    
-    document.documentElement.removeEventListener('mouseup', stopDrag, false);
-}
+// p.className = p.className + ' resizable';
+// var resizer = document.createElement('div');
+// resizer.className = 'resizer';
+// p.appendChild(resizer);
+// resizer.addEventListener('mousedown', initDrag, false);
+
+// var startX, startY, startWidth, startHeight;
+
+// function initDrag(e) {
+//    startX = e.clientX;
+//    startY = e.clientY;
+//    startWidth = parseInt(document.defaultView.getComputedStyle(p).width, 10);
+//    startHeight = parseInt(document.defaultView.getComputedStyle(p).height, 10);
+//    document.documentElement.addEventListener('mousemove', doDrag, false);
+//    document.documentElement.addEventListener('mouseup', stopDrag, false);
+// }
+
+// function doDrag(e) {
+//    p.style.width = (startWidth + e.clientX - startX) + 'px';
+// //    p.style.height = (startHeight + e.clientY - startY) + 'px';
+// }
+
+// function stopDrag(e) {
+//     console.log(e.target);
+//     document.documentElement.removeEventListener('mousemove', doDrag, false);    
+//     document.documentElement.removeEventListener('mouseup', stopDrag, false);
+// }
