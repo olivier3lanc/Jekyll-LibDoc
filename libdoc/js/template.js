@@ -50,17 +50,17 @@ let copyToClipboard = function(value) {
     }
 }
 // Auto scroll to hash anchor
-jQuery(window).on('load', function() {
-    if (document.location.hash != "") {
-        var id = document.location.hash;
-        console.log(jQuery(id).length);
-        if (jQuery(id).length == 1) {
-            var amountOfScroll = jQuery(id).offset().top;
-            console.log(amountOfScroll);
-            jQuery(window).scrollTop(amountOfScroll);
-        }
-    }
-});
+// jQuery(window).on('load', function() {
+//     if (document.location.hash != "") {
+//         var id = document.location.hash;
+//         // console.log(jQuery(id).length);
+//         if (jQuery(id).length == 1) {
+//             var amountOfScroll = jQuery(id).offset().top;
+//             console.log(amountOfScroll);
+//             jQuery(window).scrollTop(amountOfScroll);
+//         }
+//     }
+// });
 jQuery(document).ready(function() {
     myToggle.update();
     //Manage external links
@@ -271,3 +271,29 @@ resizer.update();
 //     document.documentElement.removeEventListener('mousemove', doDrag, false);    
 //     document.documentElement.removeEventListener('mouseup', stopDrag, false);
 // }
+
+// PAGE FEATURED PLAYGROUND
+// Get content from the URL and apply the playground
+// iframe next to the code syntax highlighter  
+const pageFeaturedPlayground = {
+    update: function() {
+        const   el_iframe_container = document.getElementById('page-featured-playground'),
+                el_code = document.getElementById('page-featured-playground-content'),
+                hash = window.location.hash.replace('#', '');
+
+        if (el_iframe_container !== null && el_code !== null && hash.length > 0) {
+            const   stringified_sent_object = atob(hash),
+                    sent_object = JSON.parse(stringified_sent_object),
+                    sent_object_escaped = sent_object.content.replace(/&/g, "&amp;")
+                                                .replace(/</g, "&lt;")
+                                                .replace(/>/g, "&gt;")
+                                                .replace(/"/g, "&quot;")
+                                                .replace(/'/g, "&#039;");
+            // console.log(`<pre><code class="language-html">${sent_object.content}</code></pre>`);
+            el_code.innerHTML = `<pre class="playground"><code class="language-html">${sent_object_escaped}</code></pre>`;
+            // Prism.highlightAll();
+            // el_iframe_container.innerHTML = '<iframe src="'+site.url+site.baseurl+'/libdoc/playground.html#'+hash+'" class="u-transition-none u-absolute u-h-100 u-b-none u-w-100"></iframe>';
+        }
+    }
+}
+pageFeaturedPlayground.update();

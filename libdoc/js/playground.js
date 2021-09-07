@@ -93,6 +93,7 @@ let playground = {
             // Sets the href attribute on the open new tab button link
             // jQuery('[data-playground-new-tab="'+playgroundId+'"]').attr('href', site.url+site.baseurl+'/libdoc/playground.html#'+sentObject64);
             var iframeUrl = site.url+site.baseurl+'/libdoc/playground.html#'+sentObject64;
+            var pageFeaturedPlaygroundUrl = site.url+site.baseurl+'/libdoc/page-featured-playground.html#'+sentObject64;
             // Trim to remove unwanted white spaces
             var trimmed = content.replace(/ /g,'');
             var buf = [];
@@ -147,12 +148,16 @@ let playground = {
                             '<a href="'+iframeUrl+'" class="c-btn u-p-sm u-bl-thin-dashed-alt u-bb-thin-dashed-alt" title="Open in a new tab" target="_blank" data-playground-new-tab="'+playgroundId+'">'+
                                 '<span class="i-external-link u-fs-md"></span>'+
                             '</a>'+
-                            '<button class="c-btn u-p-sm u-bl-thin-dashed-alt u-bb-thin-dashed-alt maximize" title="Maximize playground" onclick="playground.expand(\''+playgroundId+'\')">'+
+                            '<a href="'+pageFeaturedPlaygroundUrl+'" class="c-btn u-p-sm u-bl-thin-dashed-alt u-bb-thin-dashed-alt" title="Feature this playground">'+
                                 '<span class="i-maximize-2 u-fs-md"></span>'+
-                            '</button>'+
-                            '<button class="c-btn u-p-sm u-bl-thin-dashed-alt u-bb-thin-dashed-alt u-none minimize" title="Minimize playground" onclick="playground.expand(\''+playgroundId+'\')">'+
-                                '<span class="i-minimize-2 u-fs-md"></span>'+
-                            '</button>'+
+                            '</a>'+
+                            
+                            // '<button class="c-btn u-p-sm u-bl-thin-dashed-alt u-bb-thin-dashed-alt maximize" title="Maximize playground" onclick="playground.expand(\''+playgroundId+'\')">'+
+                            //     '<span class="i-maximize-2 u-fs-md"></span>'+
+                            // '</button>'+
+                            // '<button class="c-btn u-p-sm u-bl-thin-dashed-alt u-bb-thin-dashed-alt u-none minimize" title="Minimize playground" onclick="playground.expand(\''+playgroundId+'\')">'+
+                            //     '<span class="i-minimize-2 u-fs-md"></span>'+
+                            // '</button>'+
                             '<button class="c-btn u-p-sm u-bl-thin-dashed-alt u-bb-thin-dashed-alt" title="View settings of the playground" my-toggle="libdoc-modal" onclick="modalAjax(\'playground-settings\')">'+
                                 '<span class="i-info u-fs-md"></span>'+
                             '</button>'+
@@ -176,64 +181,6 @@ let playground = {
         if (typeof Prism !== undefined) {
             Prism.highlightAll();
         }
-        // Manage playground top position to match the bottom of the commands
-        // playground.adjustPlaygroundInstanceMaximized();
-        jQuery(window).on('resize', function() {
-            // playground.adjustPlaygroundInstanceMaximized();
-        });
-    },
-    /**
-    * EXPAND
-    * Expands the specified playground
-    * @playgroundId - string - ID of the playground
-    */
-    expand: function(playgroundId) {
-        if (typeof playgroundId === 'string') {
-            let jQ_playground = jQuery('#'+playgroundId),
-                jQ_nav = jQuery('#libdoc-sidebar'),
-                jQ_instance = jQuery('#'+playgroundId+'-instance'),
-                jQ_commands = jQuery('[data-playground-commands="'+playgroundId+'"]'),
-                instanceClasses = 'c-position m-fixed m-left-0 u-w-100 u-o-auto u-z-11 u-bc-primary-max u-pb-md',
-                commandsClasses = 'c-position m-fixed m-top-left u-w-100 u-z-11 u-bc-primary-max';
-            if (jQ_playground.length === 1) {
-                jQ_commands.find('.maximize, .minimize').addClass('u-none');
-                // Playground already expanded
-                if (jQ_instance.hasClass('expanded')) {
-                    jQ_instance.removeClass(instanceClasses+' expanded');
-                    jQ_commands.removeClass(commandsClasses).find('.maximize').removeClass('u-none');
-                    jQ_playground.removeAttr('data-expand');
-                }
-                // If not already expanded, apply specified classes above
-                else {
-                    jQ_instance.addClass(instanceClasses+' expanded');
-                    jQ_commands.addClass(commandsClasses).find('.minimize').removeClass('u-none');
-                    jQ_playground.attr('data-expand', instanceClasses+' expanded');
-                }
-                playground.adjustPlaygroundInstanceMaximized();
-            }
-        }
-    },
-    // Adjust CSS top of expanded playground to fit playground commands at bottom
-    adjustPlaygroundInstanceMaximized: function() {
-        jQuery('.playground-instance').each(function() {
-            if (jQuery(this).hasClass('expanded')) {
-                // Get commands height
-                let playgroundId = jQuery(this).attr('id');
-                playgroundId = playgroundId.replace('-instance', '');
-                const commandsHeight = jQuery('[data-playground-commands="'+playgroundId+'"]').outerHeight();
-                // Set the playground height window height minus commands height
-                const playgroundInstanceHeight = jQuery(window).height() - commandsHeight;
-                jQuery(this).css({
-                    top: commandsHeight+'px',
-                    height: playgroundInstanceHeight+'px'
-                });
-            } else {
-                jQuery(this).css({
-                    top: 'inherit',
-                    height: 'inherit'
-                });
-            }
-        });
     },
     // true if lazy loading is started
     lazyLoadingInit: false,
