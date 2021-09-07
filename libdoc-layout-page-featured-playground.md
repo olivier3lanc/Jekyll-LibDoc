@@ -19,23 +19,7 @@ order: 200
 layout: libdoc/page-featured-playground
 ```
 
-Test resizeable
-{:.resizeable}
-
----
-
-Test resizeable width
-{:.resizeable .resizeable-width}
-
----
-
-Test resizeable height
-{:.resizeable .resizeable-height}
-
----
-
 Intended to be used for featuring a playground, the page featured playground layout extends the syntax highlighter by running the first highlighted code found onto a right sided panel.
-{:.resizeable .resizeable-width .resizeable-height}
 
 ```html
     <h1>My custom playground</h1>

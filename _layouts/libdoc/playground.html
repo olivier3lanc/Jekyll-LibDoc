@@ -39,6 +39,7 @@
                 stringifiedSentObject = atob(hash);
             var sentObject = JSON.parse(stringifiedSentObject);
             el_wrapper.innerHTML = sentObject.content;
+            // console.log('HTML included');
         </script>
         {% for script_url in site.playground.scripts_body %}
             {% if script_url contains 'https://' or script_url contains 'http://' %}
@@ -46,6 +47,7 @@
             {% else %}
                 <script type="text/javascript" src="{{ site.url }}{{ site.baseurl }}{{ script_url }}"></script>
             {% endif %}
+            <!-- <script>console.log('{{ script_url }} included')</script> -->
         {% endfor %}
     </body>
 </html>

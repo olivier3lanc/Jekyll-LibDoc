@@ -111,9 +111,77 @@ jQuery(document).ready(function() {
         );
     }
 });
-
 let resizer = {
     update: function() {
+        const resizer_style = `
+            <style>
+                .resizer { display: flex; align-items: center; justify-content: center; position:absolute; z-index: 12; }                
+                .resizer.resizer-width { top: 0%; right: 0px; width: 0px; height: 100%; cursor: col-resize; }
+                .resizer.resizer-width:hover { width: 100px; right: -50px; }
+                .resizer.resizer-width::after {
+                    content: '';
+                    position: fixed;
+                    top: 50%;
+                    width: 6px;
+                    height: 50px;
+                    background: var(--sg-background-stripes) var(--sg-color-primary-edge);
+                    border: var(--sg-border-thin-solid-alt);
+                    border-radius: var(--sg-border-radius-xl);
+                }
+                .resizer.resizer-height { bottom: 0%; left: 0px; width: 100%; height: 0px; cursor: row-resize; }
+                .resizer.resizer-height:hover { height: 100px; bottom: -50px; }
+                .resizer.resizer-height::after {
+                    content: '';
+                    height: 6px;
+                    width: 50px;
+                    background: var(--sg-background-stripes) var(--sg-color-primary-edge);
+                    border: var(--sg-border-thin-solid-alt);
+                    border-radius: var(--sg-border-radius-xl);
+                }
+                .resizer.resizer-width.resizer-height {
+                    top: inherit;
+                    bottom: -8px;
+                    right: -8px;
+                    left: inherit;
+                    width: 16px;
+                    height: 16px;
+                    cursor: nwse-resize; 
+                }
+                .resizer.resizer-width.resizer-height:hover {
+                    top: inherit;
+                    bottom: -16px;
+                    right: -16px;
+                    left: inherit;
+                    width: 32px;
+                    height: 32px;
+                }
+                .resizer.resizer-width.resizer-height::after {
+                    content: '';
+                    position: absolute;
+                    height: 16px;
+                    width: 16px;
+                    top: inherit;
+                    left: inherit;
+                    background: var(--sg-background-stripes) var(--sg-color-primary-edge);
+                    border: var(--sg-border-thin-solid-alt);
+                    border-top-left-radius: var(--sg-border-radius-xl);
+                    border-bottom-right-radius: 0;
+                    border-bottom-left-radius: 0;
+                    border-top-right-radius: 0;
+                }
+                .resizer.resizer-width.resizer-height::before {
+                    content: '';
+                    position: absolute;
+                    width: 36px;
+                    height: 36px;
+                    border-bottom: var(--sg-border-thin-dashed-alt);
+                    right: 7px;
+                    bottom: 7px;
+                    border-right: var(--sg-border-thin-dashed-alt);
+                } 
+            </style>
+        `;
+        document.head.insertAdjacentHTML('beforeend', resizer_style);
         document.querySelectorAll('.resizeable').forEach(function(el, index) {
             const assigned_id = 'resizer_'+index;
             resizer.instances[assigned_id] = {
@@ -126,13 +194,13 @@ let resizer = {
             };
             resizer.instances[assigned_id].el_resizer.id = 'resizer_'+index;
             if (el.classList.contains('resizeable-width') && el.classList.contains('resizeable-height')) {
-                resizer.instances[assigned_id].el_resizer.classList.add('resizer', 'resizer-width', 'resizer-height');
+                resizer.instances[assigned_id].el_resizer.classList.add('resizer', 'resizer-width', 'resizer-height', 'u-none--sm');
             } else if (el.classList.contains('resizeable-width')) {
-                resizer.instances[assigned_id].el_resizer.classList.add('resizer', 'resizer-width');
+                resizer.instances[assigned_id].el_resizer.classList.add('resizer', 'resizer-width', 'u-none--sm');
             } else if (el.classList.contains('resizeable-height')) {
-                resizer.instances[assigned_id].el_resizer.classList.add('resizer', 'resizer-height');
+                resizer.instances[assigned_id].el_resizer.classList.add('resizer', 'resizer-height', 'u-none--sm');
             } else {
-                resizer.instances[assigned_id].el_resizer.classList.add('resizer', 'resizer-width', 'resizer-height');
+                resizer.instances[assigned_id].el_resizer.classList.add('resizer', 'resizer-width', 'resizer-height', 'u-none--sm');
             }
             if (document.defaultView.getComputedStyle(resizer.instances[assigned_id].el_resizeable).position == 'static') {
                 resizer.instances[assigned_id].el_resizeable.style.position = 'relative';
@@ -154,6 +222,7 @@ let resizer = {
         }
         document.documentElement.addEventListener('mousemove', resizer.doDrag, false);
         document.documentElement.addEventListener('mouseup', resizer.stopDrag, false);
+        resizer.instances[e.target.id].el_resizer.addEventListener('mouseleave', resizer.stopDrag, false);
         // console.log(resizer.instances[e.target.id]);
      },
      
