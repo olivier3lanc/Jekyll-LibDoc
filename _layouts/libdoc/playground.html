@@ -27,15 +27,18 @@
         {% endfor %}
     </head>
     <body>
-        <div id="wp3r"></div>
+        <div id="wp3r">{{content}}</div>
         <script type="text/javascript">
             var el_body = document.querySelector('body');
             var el_wrapper = document.getElementById('wp3r');
             var hash = window.location.hash;
+            if (hash != '') {
                 hash = hash.replace('#', ''),
                 stringifiedSentObject = atob(hash);
-            var sentObject = JSON.parse(stringifiedSentObject);
-            el_wrapper.innerHTML = sentObject.content;
+                var sentObject = JSON.parse(stringifiedSentObject);
+                el_wrapper.innerHTML = sentObject.content;
+            }
+                
             // console.log('HTML included');
         </script>
         {% for script_url in site.playground.scripts_body %}

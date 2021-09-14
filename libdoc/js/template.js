@@ -297,3 +297,14 @@ const pageFeaturedPlayground = {
     }
 }
 pageFeaturedPlayground.update();
+
+// IFRAME MODE
+document.querySelectorAll('#libdoc-sidebar a[data-iframe-mode="true"]').forEach(function(el) {
+    el.addEventListener('click', function(e) {
+        e.preventDefault();
+        const el_main = document.querySelector('main');
+        if (el_main !== null) {
+            el_main.innerHTML = '<iframe src="'+el.href+'" class="u-h-100vh u-w-100 u-bl-none u-bt-none u-br-none u-bb-thin-dashed-alt"></iframe>';
+        }
+    })
+})
