@@ -54,15 +54,15 @@ assets: # Only for libdoc/assets layout
         - css
 ```
 
-## Page featured playground
+## Page split
 
 Based on page layout, splits the main content in two sides: On the left, the page render, on the right, the first playground found on the page.
 
-[Example](libdoc-layout-page-featured-playground.html)
+[Example](libdoc-layout-page-split.html)
 
 ```yaml
 # Front matter
-layout: libdoc/page-featured-playground
+layout: libdoc/page-split
 ```
 
 ## Blank

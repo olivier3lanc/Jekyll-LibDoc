@@ -74,7 +74,7 @@ shields:
         link_url: https://github.com/olivier3lanc/Jekyll-LibDoc
     -   image_html: <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/olivier3lanc/Jekyll-LibDoc?logo=github&style=flat-square">
         link_url: https://github.com/olivier3lanc/Jekyll-LibDoc
-test: '#123456'
+
 # Settings for the playground context
 playground:
     # Sets a minimum height for each playground, default is 300px

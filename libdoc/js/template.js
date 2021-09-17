@@ -242,7 +242,7 @@ let resizer = {
 }
 resizer.update();
 
-// var p = document.querySelector('#page-featured-playground-container > div');
+// var p = document.querySelector('#page-split-container > div');
 
 // p.className = p.className + ' resizable';
 // var resizer = document.createElement('div');
@@ -277,8 +277,8 @@ resizer.update();
 // iframe next to the code syntax highlighter  
 const pageFeaturedPlayground = {
     update: function() {
-        const   el_iframe_container = document.getElementById('page-featured-playground'),
-                el_code = document.getElementById('page-featured-playground-content'),
+        const   el_iframe_container = document.getElementById('page-split'),
+                el_code = document.getElementById('page-split-content'),
                 hash = window.location.hash.replace('#', '');
 
         if (el_iframe_container !== null && el_code !== null && hash.length > 0) {

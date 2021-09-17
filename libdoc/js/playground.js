@@ -93,7 +93,7 @@ let playground = {
             // Sets the href attribute on the open new tab button link
             // jQuery('[data-playground-new-tab="'+playgroundId+'"]').attr('href', site.url+site.baseurl+'/libdoc/playground.html#'+sentObject64);
             var iframeUrl = site.url+site.baseurl+'/libdoc/playground.html#'+sentObject64;
-            var pageFeaturedPlaygroundUrl = site.url+site.baseurl+'/libdoc/page-featured-playground.html#'+sentObject64;
+            var pageFeaturedPlaygroundUrl = site.url+site.baseurl+'/libdoc/page-split.html#'+sentObject64;
             // Trim to remove unwanted white spaces
             var trimmed = content.replace(/ /g,'');
             var buf = [];
@@ -101,9 +101,9 @@ let playground = {
                 buf.unshift(['&#', content[i].charCodeAt(), ';'].join(''));
             }
             trimmed = buf.join('');
-            if (document.getElementById('page-featured-playground') !== null && playgroundIndex == 0) {
+            if (document.getElementById('page-split') !== null && playgroundIndex == 0) {
                 // Insert into dedicated container
-                jQuery('#page-featured-playground').html(
+                jQuery('#page-split').html(
                     '<ul class="m-w-12 c-grid m-space-between u-br-thin-dashed-alt u-bt-thin-dashed-alt u-br-thin-dashed-alt" data-playground-commands="'+playgroundId+'">'+
                         '<li class="m-grow u-p-sm u-bb-thin-dashed-alt"></li>'+
                         '<li class="c-grid">'+
@@ -148,7 +148,7 @@ let playground = {
                             '<a href="'+iframeUrl+'" class="c-btn u-p-sm u-bl-thin-dashed-alt u-bb-thin-dashed-alt" title="Open in a new tab" target="_blank" data-playground-new-tab="'+playgroundId+'">'+
                                 '<span class="i-external-link u-fs-md"></span>'+
                             '</a>'+
-                            '<a href="'+pageFeaturedPlaygroundUrl+'" class="c-btn u-p-sm u-bl-thin-dashed-alt u-bb-thin-dashed-alt" title="Feature this playground">'+
+                            '<a href="'+pageFeaturedPlaygroundUrl+'" class="c-btn u-p-sm u-bl-thin-dashed-alt u-bb-thin-dashed-alt" title="Expand and split this playground">'+
                                 '<span class="i-maximize-2 u-fs-md"></span>'+
                             '</a>'+
                             

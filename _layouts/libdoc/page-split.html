@@ -1,15 +1,15 @@
 ---
 layout: libdoc/default
 ---
-<main class="m-grow m-w-1 c-grid" m-nowrap="md,xl" id="page-featured-playground-container">
+<main class="m-grow m-w-1 c-grid" m-nowrap="md,xl" id="page-split-container">
     <div class="{{ page.content_class | default: 'm-w-6 m-w-12--sm u-bc-primary-max u-br-thin-dashed-alt u-bb-thin-dashed-alt u-relative resizeable resizeable-width' }}">
         <header class="u-bb-thin-dashed-alt u-p-lg" u-p-sm="sm">
             <h1 class="u-mt-none u-mb-xs u-lh-1">{{ page.title | default: site.title }}</h1>
             <p class="u-fs-lg u-m-none u-lh-base" u-fs-md="sm">{{ page.description | default: site.description }}</p>
         </header>
-        <div id="page-featured-playground-content" class="{% if page.playground_expand == true %}{% else %}u-pl-lg u-pr-lg u-pl-sm--sm u-pr-sm--sm{% endif %}">
+        <div id="page-split-content" class="{% if page.playground_expand == true %}{% else %}u-pl-lg u-pr-lg u-pl-sm--sm u-pr-sm--sm{% endif %}">
             {{ content }}
         </div>        
     </div>
-    <div class="m-grow c-position m-sticky m-top-0 c-grid u-bc-primary-max u-o-hidden u-bb-thin-dashed-alt u-z-10" m-w-12="sm" m-order--1="sm" u-h-100vh="md,xl" u-h-50vh="sm" id="page-featured-playground"></div>
+    <div class="m-grow c-position m-sticky m-top-0 c-grid u-bc-primary-max u-o-hidden u-bb-thin-dashed-alt u-z-10" m-w-12="sm" m-order--1="sm" u-h-100vh="md,xl" u-h-50vh="sm" id="page-split"></div>
 </main>

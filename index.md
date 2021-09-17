@@ -1,5 +1,5 @@
 ---
-layout: libdoc/page-featured-playground
+layout: libdoc/page-split
 permalink: index.html # To avoid: Warning: Empty `slug` generated for '/'.
 unlisted: true
 ---
@@ -72,7 +72,7 @@ LibDoc has 4 main layouts available for multiple purposes. [Learn more](libdoc-l
 
 LibDoc supports `{:toc}` automatically generated kramdown - markdown engine - TOC styling the table of content onto a right sidebar as follows. [Learn more](libdoc-toc.html)
 
-This homepage is an example of [libdoc/page-featured-playground](libdoc-layouts.html) layout
+This homepage is an example of [libdoc/page-split](libdoc-layouts.html) layout
 
 ```html
 <header class="px-8 py-8 mx-auto bg-blue-100 text-center">
