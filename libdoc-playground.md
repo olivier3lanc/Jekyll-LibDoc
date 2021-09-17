@@ -29,7 +29,7 @@ Here is an example of playground:
     </nav>
 </header>
 ```
-{:.playground}
+{:.playground title="My custom title for this playground"}
 
 Here is the markdown for the example above:
 

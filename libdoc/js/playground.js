@@ -62,12 +62,17 @@ let playground = {
         }
         // Iterate each playgournd from selector
         jQuery(mainSelector).each(function(playgroundIndex) {
-            var jQ_this = jQuery(this);
-                playgroundId = jQ_this.attr('id'); // Playground id
+            var jQ_this = jQuery(this),
+                playgroundId = jQ_this.attr('id'), // Playground id
+                playgroundTitle = jQ_this.attr('title'); // Playground title (optional)
             if (playgroundId === undefined) {
                 // If playground id is not set, apply one based on index
                 playgroundId = 'playground-'+playgroundIndex;
                 jQ_this.attr('id', playgroundId);
+            }
+            // Optional playground title
+            if (playgroundTitle === undefined) {
+                playgroundTitle = 'Playground';
             }
             // The HTML content of the current playground
             // var content = jQ_this.html();
@@ -77,6 +82,7 @@ let playground = {
             // Set up the final opbject that will be base64 and stringified
             var sentObject = {
                 options: {
+                    title: playgroundTitle
                     // padding: optionPadding,
                     // forcePattern: optionForcePattern,
                     // forceHardPattern: optionForceHardPattern,
@@ -102,11 +108,15 @@ let playground = {
             }
             trimmed = buf.join('');
             if (document.getElementById('page-split') !== null && playgroundIndex == 0) {
+                // Remove header if playground expand
+                if (window.location.href.indexOf('page-split.html#') > 0) {
+                    jQuery('#libdoc-page-split-header').remove();
+                }
                 // Insert into dedicated container
                 jQuery('#page-split').html(
-                    '<ul class="m-w-12 c-grid m-space-between u-br-thin-dashed-alt u-bt-thin-dashed-alt u-br-thin-dashed-alt" data-playground-commands="'+playgroundId+'">'+
-                        '<li class="m-grow u-p-sm u-bb-thin-dashed-alt"></li>'+
-                        '<li class="c-grid">'+
+                    '<ul class="m-w-12 c-grid m-right u-bt-thin-dashed-alt u-br-thin-dashed-alt u-bc-primary-edge" m-nowrap="md,xl" data-playground-commands="'+playgroundId+'">'+
+                        '<li class="m-grow u-p-sm u-bb-thin-dashed-alt c-text m-ff-monospace u-bc-primary-edge">'+playgroundTitle+'</li>'+
+                        '<li class="c-grid m-nowrap m-order--1--sm">'+
                             '<a href="'+iframeUrl+'" class="c-btn u-p-sm u-bl-thin-dashed-alt u-bb-thin-dashed-alt" title="Open in a new tab" target="_blank" data-playground-new-tab="'+playgroundId+'">'+
                                 '<span class="i-external-link u-fs-md"></span>'+
                             '</a>'+
@@ -121,7 +131,7 @@ let playground = {
                             '</button>'+
                         '</li>'+
                     '</ul>'+
-                    '<div class="m-w-12 playground-instance u-h-100" id="'+playgroundId+'-instance">'+
+                    '<div class="m-w-12 playground-instance" u-h-100="md,xl" u-h-50vh="sm" id="'+playgroundId+'-instance">'+
                         '<div class="u-relative u-transition-none u-br-thin-dashed-alt u-o-auto u-h-100 u-mw-100" id="'+playgroundId+'-wrapper">'+
                             iframeStr+
                             '<div class="playground-preview c-position m-absolute m-top-left u-w-100 u-h-100 u-bg-play u-cur-pointer" onclick="playground.loadIframe(\''+playgroundId+'-iframe\')"></div>'+
@@ -139,12 +149,12 @@ let playground = {
             } else {
                 // Insert HTML after hidden playground
                 jQuery(this).after(
-                    '<code class="u-p-xxs u-fs-xxs u-bc-primary-edge u-lh-base u-bl-thin-dashed-alt u-bt-thin-dashed-alt u-br-thin-dashed-alt c-text m-nowrap u-c-primary-alt">'+
-                        '<span class="i-code u-va-middle"></span> playground'+
-                    '</code>'+
-                    '<ul class="c-grid m-space-between u-bl-thin-dashed-alt u-bt-thin-dashed-alt u-br-thin-dashed-alt" data-playground-commands="'+playgroundId+'">'+
-                        '<li class="m-grow u-p-sm u-bb-thin-dashed-alt"></li>'+
-                        '<li class="c-grid">'+
+                    // '<code class="u-p-xxs u-fs-xxs u-bc-primary-edge u-lh-base u-bl-thin-dashed-alt u-bt-thin-dashed-alt u-br-thin-dashed-alt c-text m-nowrap u-c-primary-alt">'+
+                    //     '<span class="i-code u-va-middle"></span> playground'+
+                    // '</code>'+
+                    '<ul class="c-grid m-nowrap u-bl-thin-dashed-alt u-bt-thin-dashed-alt u-br-thin-dashed-alt u-bc-primary-edge" data-playground-commands="'+playgroundId+'">'+
+                        '<li class="m-grow u-p-sm u-bb-thin-dashed-alt c-text m-ff-monospace u-bc-primary-edge">'+playgroundTitle+'</li>'+
+                        '<li class="c-grid m-nowrap">'+
                             '<a href="'+iframeUrl+'" class="c-btn u-p-sm u-bl-thin-dashed-alt u-bb-thin-dashed-alt" title="Open in a new tab" target="_blank" data-playground-new-tab="'+playgroundId+'">'+
                                 '<span class="i-external-link u-fs-md"></span>'+
                             '</a>'+
