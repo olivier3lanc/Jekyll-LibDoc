@@ -118,17 +118,17 @@
                 min_height: '{{ site.playground.min_height | default: "300px" }}',
                 stylesheets: [
                     {% for item in site.playground.stylesheets %}
-                        '{{ item }}'
+                        '{{ item }}'{% if forloop.last == false %},{% endif %}
                     {% endfor %}
                 ],
                 scripts_head: [
                     {% for item in site.playground.scripts_head %}
-                        '{{ item }}'
+                        '{{ item }}'{% if forloop.last == false %},{% endif %}
                     {% endfor %}
                 ],
                 scripts_body: [
                     {% for item in site.playground.scripts_body %}
-                        '{{ item }}'
+                        '{{ item }}'{% if forloop.last == false %},{% endif %}
                     {% endfor %}
                 ]
             }
