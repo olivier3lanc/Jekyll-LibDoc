@@ -27,16 +27,37 @@
         {% endfor %}
     </head>
     <body>
-        <div id="wp3r">{{content}}</div>
+        {{content}}
         <script type="text/javascript">
-            var el_body = document.querySelector('body');
-            var el_wrapper = document.getElementById('wp3r');
-            var hash = window.location.hash;
+            function isJson(str) {
+                try {
+                    return JSON.parse(str);
+                } catch (e) {
+                    return false;
+                }
+            }
+            function isBase64(str) {
+                try {
+                    return atob(str);
+                } catch (e) {
+                    return false;
+                }
+            }
+            let hash = window.location.hash;
             if (hash != '') {
-                hash = hash.replace('#', ''),
-                stringifiedSentObject = atob(hash);
-                var sentObject = JSON.parse(stringifiedSentObject);
-                el_wrapper.innerHTML = sentObject.content;
+                hash = hash.replace('#', '');
+                if (isBase64(hash)) {
+                    const stringifiedSentObject = atob(hash);
+                    if (isJson(stringifiedSentObject)) {
+                        const sentObject = JSON.parse(stringifiedSentObject);
+                        document.body.insertAdjacentHTML('afterbegin', sentObject.content);
+                        // console.log('code included');
+                    } else {
+                        // console.log('no valid JSON');
+                    }
+                } else {
+                    // console.log('not base64');
+                }
             }
                 
             // console.log('HTML included');
