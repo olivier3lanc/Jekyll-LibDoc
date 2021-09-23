@@ -1,12 +1,17 @@
 // SIDEBAR
-let sidebar = function() {
-    jQuery('#libdoc-sidebar').toggleClass('m-anchor-top-right--sm m-anchor-top-right--md');
-    jQuery('#libdoc-sidebar-overlay').toggleClass('m-anchor-top-right');
-}
-// TOC
-let tocbar = function() {
-    jQuery('#libdoc-toc-container').toggleClass('m-anchor-top-left m-anchor-top-right');
-    jQuery('#libdoc-toc-overlay').toggleClass('m-anchor-top-left m-anchor-top-right m-top-left m-top-right');
+let sidebar = function(cmd) {
+    if (cmd === undefined) {
+        jQuery('#libdoc-sidebar').toggleClass('m-anchor-top-right--sm m-anchor-top-right--md');
+        jQuery('#libdoc-sidebar-overlay').toggleClass('m-anchor-top-right');
+    }
+    if (cmd == 'close') {
+        jQuery('#libdoc-sidebar').addClass('m-anchor-top-right--sm m-anchor-top-right--md');
+        jQuery('#libdoc-sidebar-overlay').addClass('m-anchor-top-right');
+    }
+    if (cmd == 'open') {
+        jQuery('#libdoc-sidebar').removeClass('m-anchor-top-right--sm m-anchor-top-right--md');
+        jQuery('#libdoc-sidebar-overlay').removeClass('m-anchor-top-right');
+    }
 }
 // MODAL AJAX
 let modalAjax = function(file) {
@@ -98,10 +103,6 @@ jQuery(document).ready(function() {
         jQ_kramdownToc.find('ol,ul').addClass('u-ls-none u-m-none u-pl-xs');
         jQ_kramdownToc.find('a').addClass('c-btn m-translucid m-block-left m-xs c-text m-ff-lead m-reset');
         jQuery('#libdoc-toc-container').html(
-            '<div class="c-position m-absolute m-top-left m-anchor-top-left u-bc-primary-edge u-w-100vw u-h-100vh u-translucid u-z-10" u-none="md,xl" id="libdoc-toc-overlay" onclick="tocbar();"></div>'+
-            // '<button class="c-btn u-z-10 c-position m-fixed m-top-left m-anchor-top-right" u-none="md,xl" onclick="tocbar()">'+
-            //     '<span class="i-list"></span>'+
-            // '</button>'+
             '<nav id="toc" class="u-sticky u-top-0 u-mh-100vh u-o-auto u-z-10">'+
                 '<ol class="u-ls-none u-m-none u-p-none">'+
                     '<li><a href="#" class="c-btn m-translucid m-block-left u-pl-sm">'+page_title+'</a></li>'+
@@ -269,12 +270,28 @@ const pageFeaturedPlayground = {
 pageFeaturedPlayground.update();
 
 // IFRAME MODE
+const iframeModeEmbed = function(url) {
+    if (typeof url == 'string') {
+        const el_main = document.querySelector('main');
+        if (el_main !== null) {
+            el_main.innerHTML = '<iframe src="'+url+'" class="u-h-100vh u-w-100 u-bl-none u-bt-none u-br-none u-bb-thin-dashed-alt"></iframe>';
+            sidebar('close');
+            history.pushState(null, null, '?iframe_mode='+url);
+        }
+    }
+}
 document.querySelectorAll('#libdoc-sidebar a[data-iframe-mode="true"]').forEach(function(el) {
     el.addEventListener('click', function(e) {
         e.preventDefault();
-        const el_main = document.querySelector('main');
-        if (el_main !== null) {
-            el_main.innerHTML = '<iframe src="'+el.href+'" class="u-h-100vh u-w-100 u-bl-none u-bt-none u-br-none u-bb-thin-dashed-alt"></iframe>';
-        }
+        iframeModeEmbed(el.href);
     })
-})
+});
+
+// LOAD IFRAME AT PAGE LOAD
+// If URL has iframe_mode as GET param
+const searchParams = new URLSearchParams(location.search);
+const iframe_mode_url = searchParams.get('iframe_mode');
+if (iframe_mode_url !== null) {
+    iframeModeEmbed(iframe_mode_url);
+}
+
