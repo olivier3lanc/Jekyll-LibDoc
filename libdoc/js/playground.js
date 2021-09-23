@@ -115,7 +115,7 @@ let playground = {
                 // Insert into dedicated container
                 jQuery('#libdoc-page-split').html(
                     '<ul class="m-w-12 c-grid m-right u-bt-thin-dashed-alt u-br-thin-dashed-alt u-bc-primary-edge" m-nowrap="md,xl" data-playground-commands="'+playgroundId+'">'+
-                        '<li class="m-grow u-p-sm u-bb-thin-dashed-alt c-text m-ff-monospace u-bc-primary-edge">'+playgroundTitle+'</li>'+
+                        '<li class="u-p-sm u-bb-thin-dashed-alt c-text m-ff-monospace u-bc-primary-edge" m-grow="md,xl" m-w-12="sm">'+playgroundTitle+'</li>'+
                         '<li class="c-grid m-nowrap m-order--1--sm">'+
                             '<a href="'+iframeUrl+'" class="c-btn u-p-sm u-bl-thin-dashed-alt u-bb-thin-dashed-alt" title="Open in a new tab" target="_blank" data-playground-new-tab="'+playgroundId+'">'+
                                 '<span class="i-external-link u-fs-md"></span>'+
