@@ -131,7 +131,7 @@ let playground = {
                             '</button>'+
                         '</li>'+
                     '</ul>'+
-                    '<div class="m-w-12 playground-instance" u-h-100="md,xl" u-h-50vh="sm" id="'+playgroundId+'-instance">'+
+                    '<div class="m-grow m-w-12 playground-instance" u-h-50vh="sm" id="'+playgroundId+'-instance">'+
                         '<div class="u-relative u-transition-none u-br-thin-dashed-alt u-o-auto u-h-100 u-mw-100" id="'+playgroundId+'-wrapper">'+
                             iframeStr+
                             '<div class="playground-preview c-position m-absolute m-top-left u-w-100 u-h-100 u-bg-play u-cur-pointer" onclick="playground.loadIframe(\''+playgroundId+'-iframe\')"></div>'+
