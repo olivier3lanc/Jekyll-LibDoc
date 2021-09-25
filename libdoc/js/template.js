@@ -216,6 +216,7 @@ let resizer = {
                 startHeight: 0
             };
             resizer.instances[assigned_id].el_resizer.id = 'resizer_'+index;
+            resizer.instances[assigned_id].el_resizer.setAttribute('title', 'Resize');
             if (el.classList.contains('resizeable-width') && el.classList.contains('resizeable-height')) {
                 resizer.instances[assigned_id].el_resizer.classList.add('resizer', 'resizer-width', 'resizer-height', 'u-none--sm');
             } else if (el.classList.contains('resizeable-width')) {
