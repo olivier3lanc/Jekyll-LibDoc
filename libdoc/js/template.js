@@ -117,17 +117,39 @@ let resizer = {
         const resizer_style = `
             <style>
                 .resizer { display: flex; align-items: center; justify-content: center; position:absolute; z-index: 12; }                
-                .resizer.resizer-width { top: 0%; right: 0px; width: 0px; height: 100%; cursor: col-resize; }
-                .resizer.resizer-width:hover { width: 100px; right: -50px; }
-                .resizer.resizer-width::after {
-                    content: '';
-                    position: fixed;
-                    top: 50%;
-                    width: 6px;
-                    height: 50px;
+                .resizer.resizer-width { 
+                    top: 0%;
+                    right: 0px;
+                    width: 10px;
+                    height: 100%;
+                    cursor: col-resize;
                     background: var(--sg-background-stripes) var(--sg-color-primary-edge);
-                    border: var(--sg-border-thin-solid-alt);
-                    border-radius: var(--sg-border-radius-xl);
+                    transition: none;
+                }
+                .resizer.resizer-width::before { 
+                    content: '';
+                    right: 10px;
+                    position: absolute;
+                    height: 100%;
+                    border-left: var(--sg-border-thin-dashed-alt);
+                }
+                .resizer.resizer-width:hover { 
+                    width: 100px; 
+                    right: -50px;
+                    background: transparent;
+                    border-left: none;
+                }
+                .resizer.resizer-width:hover::before { 
+                    right: calc(50% + 10px);
+                }
+                .resizer.resizer-width:hover::after { 
+                    content: '';
+                    width: 10px;
+                    left: calc(50% - 10px);
+                    position: absolute;
+                    height: 100%;
+                    cursor: col-resize;
+                    background: var(--sg-background-stripes) var(--sg-color-primary-alt);
                 }
                 .resizer.resizer-height { bottom: 0%; left: 0px; width: 100%; height: 0px; cursor: row-resize; }
                 .resizer.resizer-height:hover { height: 100px; bottom: -50px; }
