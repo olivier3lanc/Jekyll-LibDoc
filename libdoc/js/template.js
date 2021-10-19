@@ -300,6 +300,15 @@ const iframeModeEmbed = function(url) {
             el_main.innerHTML = '<iframe src="'+url+'" class="u-h-100vh u-w-100 u-bl-none u-bt-none u-br-none u-bb-thin-dashed-alt"></iframe>';
             sidebar('close');
             history.pushState(null, null, '?iframe_mode='+url);
+            // Update link states into libdoc's navbar
+            document.querySelectorAll('.libdoc-sidebar-item a').forEach(function(el) {
+                const href = el.href;
+                if (href == url) {
+                    el.classList.add('u-br-large-solid');
+                } else {
+                    el.classList.remove('u-br-large-solid');
+                }
+            });
         }
     }
 }
