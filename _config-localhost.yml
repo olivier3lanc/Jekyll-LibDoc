@@ -84,19 +84,21 @@ playground:
     # Absolute URL starting with 'http'
     stylesheets: 
         #- /example-project/css/tailwind.min.css
-        - https://unpkg.com/tailwindcss@2.2.7/dist/tailwind.min.css
+        - https://unpkg.com/@tabler/core@1.0.0-beta3/dist/css/tabler.min.css
+        - https://unpkg.com/@tabler/core@1.0.0-beta3/dist/css/tabler-flags.min.css
+        - https://unpkg.com/@tabler/core@1.0.0-beta3/dist/css/tabler-payments.min.css
+        - https://unpkg.com/@tabler/core@1.0.0-beta3/dist/css/tabler-vendors.min.css
     # Javascript in <head>. Can be either:
     # Relative URL from site root starting with slash /
     # Absolute URL starting with 'http'
     scripts_head:
-        - https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js
         # - /libdoc/js/my-toggles.js
     # Javascript at the end of <body>. Can be either:
     # Relative URL from site root starting with slash /
     # Absolute URL starting with 'http'
     scripts_body: # Javascript files near </body>. Can be either relative URL from site root, absolute URL starting with 'http'
         # - https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js
-        - /libdoc/js/my-toggles.js
+        - https://unpkg.com/@tabler/core@1.0.0-beta3/dist/js/tabler.min.js
 
 # Settings for the assets layout
 assets:
