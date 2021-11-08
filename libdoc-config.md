@@ -118,10 +118,15 @@ shields:
 
 ## Playground
 
-LibDoc has its own code playground, here are the settings:
+LibDoc has its own code playground and its own metadata. Here are the settings:
 
 | `playground.` | Type | Default | Description |
 | - | - | - | - |
+| `metadata.cache` | *Boolean* | true | Enable or disable browser cache on playground |
+| `metadata.favicon` | *string* | - | PNG favicon URL. Can be either relative URL from site root or absolute URL starting with 'http' |
+| `metadata.author` | *string* | - | Name of the author of the project, used into various places of the theme like footer. |
+| `metadata.color` | *string* | - | Theme color metadata used in some browsers like Chrome that applies this color on browser address bar. Color must be in HEX |
+| `metadata.image` | *string* | - | Open Graph image file. Can be either relative URL from site root, absolute URL starting with 'http' |
 | `min_height` | *CSS* | 300px | Sets a minimum height for each playground |
 | `stylesheets` | *Array* |  | Array of `<head>` stylesheets URL. Relative URL starts with slash `/`. Absolute URL starts with `http` |
 | `scripts_head` | *Array* |  | Array of `<head>` javascript URL. Relative URL starts with slash `/`. Absolute URL starts with `http` |
@@ -131,6 +136,20 @@ Example of playground's configuration part.
 
 ```yaml
 playground:
+    metadata:
+        # Enable or not browser cache
+        cache: false
+        # Square at least 192x192 pixels icon png format
+        #favicon: /img/favicons/test-icon-192x192.png
+        favicon: https://olivier3lanc.github.io/folio-casa-de-papel/img/favicons/android-icon-192x192.png
+        # Name of the author of the project, used into various places of the theme like footer. Default is empty
+        author: Olivier Blanc 9
+        # Theme color metadata used in some browsers like Chrome that applies this color on browser address bar.
+        # Color must be in HEX, default is LibDoc's color
+        color: '#123123'
+        # Open Graph image file. Can be either relative URL from site root, absolute URL starting with 'http'. Default is LibDoc's splash screen
+        #image: /img/html5_la_casa_de_papel.webp
+        image: https://olivier3lanc.github.io/folio-casa-de-papel/img/html5_la_casa_de_papel.webp
     #min_height: 600px
     stylesheets: 
         - https://cdn.jsdelivr.net/npm/@exampledev/new.css@1.1.2/new.min.css

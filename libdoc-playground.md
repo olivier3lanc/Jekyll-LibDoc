@@ -21,15 +21,51 @@ A major feature of the [LibDoc Jekyll theme](https://github.com/olivier3lanc/Jek
 Here is an example of playground:
 
 ```html
-<header class="px-8 py-8 max-w-screen-lg mx-auto bg-blue-100 text-center">
-    <h1 class="text-4xl sm:text-6xl lg:text-7xl leading-none font-extrabold tracking-tight text-gray-900 mt-0 mb-8">My custom project.</h1>
-    <p class="max-w-screen-lg text-lg sm:text-2xl sm:leading-10 font-medium mb-10 sm:mb-11">Here is a fully crafted code playground with its own resources set in <a href="../libdoc-config.html#playground" target="_parent" class="text-blue-500 hover:text-blue-800">configuration</a>.</p>
-    <nav class="flex justify-center">
-        <a class="w-full sm:w-auto flex-none bg-blue-500 hover:bg-blue-600 text-white text-lg leading-6 font-semibold py-3 px-6 border border-transparent rounded-md focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-blue-600 focus:outline-none transition-colors duration-200" href="#">Get started</a>
-    </nav>
-</header>
+<div class="row g-2 align-items-center mb-n3">
+    <div class="col-12 col-xl-2 mb-3 font-weight-semibold">Normal</div>
+    <div class="col-6 col-sm-4 col-md-2 col-xl mb-3">
+    <a href="#" class="btn btn-primary w-100">
+        Primary
+    </a>
+    </div>
+    <div class="col-6 col-sm-4 col-md-2 col-xl mb-3">
+    <a href="#" class="btn btn-secondary w-100">
+        Secondary
+    </a>
+    </div>
+    <div class="col-6 col-sm-4 col-md-2 col-xl mb-3">
+    <a href="#" class="btn btn-success w-100">
+        Success
+    </a>
+    </div>
+    <div class="col-6 col-sm-4 col-md-2 col-xl mb-3">
+    <a href="#" class="btn btn-warning w-100">
+        Warning
+    </a>
+    </div>
+    <div class="col-6 col-sm-4 col-md-2 col-xl mb-3">
+    <a href="#" class="btn btn-danger w-100">
+        Danger
+    </a>
+    </div>
+    <div class="col-6 col-sm-4 col-md-2 col-xl mb-3">
+    <a href="#" class="btn btn-info w-100">
+        Info
+    </a>
+    </div>
+    <div class="col-6 col-sm-4 col-md-2 col-xl mb-3">
+    <a href="#" class="btn btn-light w-100">
+        Light
+    </a>
+    </div>
+    <div class="col-6 col-sm-4 col-md-2 col-xl mb-3">
+    <a href="#" class="btn btn-dark w-100">
+        Dark
+    </a>
+    </div>
+</div>
 ```
-{:.playground title="My custom title for this playground"}
+{:.playground title="Tabler buttons <a href="https://preview.tabler.io/buttons.html">website</a>"}
 
 Here is the markdown for the example above:
 
