@@ -78,11 +78,14 @@ shields:
 # Settings for the playground context
 playground:
     metadata:
+        # Sets the language of the playground, default is en
+        # lang: en
         # Enable or not browser cache
         cache: false
         # Square at least 192x192 pixels icon png format
         #favicon: /img/favicons/test-icon-192x192.png
         favicon: https://preview.tabler.io/favicon.ico
+        # favicon: https://olivier3lanc.github.io/folio-casa-de-papel/img/favicons/android-icon-192x192.png
         # Name of the author of the project, used into various places of the theme like footer. Default is empty
         author: Olivier Blanc 9
         # Theme color metadata used in some browsers like Chrome that applies this color on browser address bar.
