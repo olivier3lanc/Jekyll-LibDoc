@@ -66,7 +66,7 @@ LibDoc uses customizeable [Prismjs](https://prismjs.com/) syntax highlighter for
 
 ## Layouts
 
-LibDoc has 4 main layouts available for multiple purposes. [Learn more](libdoc-layouts.html)
+LibDoc has 5 main layouts available for multiple purposes. [Learn more](libdoc-layouts.html)
 
 ## TOC - Table Of Content
 

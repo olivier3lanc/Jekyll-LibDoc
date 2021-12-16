@@ -24,7 +24,7 @@ and length($briks-components-generic) > 0 {
             .#{$briks-components-prefix}#{$component_name}#{unquote($optional_selector_defaults)} {
                 // Iterate component default properties
                 // If component defaults are set
-                @if length(map-get($component_data, defaults)) > 0 {
+                @if type-of(map-get($component_data, defaults)) == map and length(map-get($component_data, defaults)) > 0 {
                     @each $property, $value in map-get($component_data, defaults) {
                         // Default pseudo classes
                         @if $property == 'pseudo-classes' and type-of($value) == map {
@@ -111,7 +111,7 @@ and length($briks-components-generic) > 0 {
                     }
                 }
                 // If modifiers are set
-                @if length(map-get($component_data, modifiers)) > 0 {
+                @if type-of(map-get($component_data, modifiers)) == map and length(map-get($component_data, modifiers)) > 0 {
                     // Iterate component modifiers properties
                     @each $modifier_name, $modifier_data in map-get($component_data, modifiers) {
                         // Optional selector for this modifier
@@ -212,7 +212,7 @@ and length($briks-components-generic) > 0 {
                     @each $screen, $value in $briks-screen-sizes {
                         @include my-screen-size($screen) {
                             // If modifiers are set
-                            @if length(map-get($component_data, modifiers)) > 0 {
+                            @if type-of(map-get($component_data, modifiers)) == map and length(map-get($component_data, modifiers)) > 0 {
                                 // Iterate component modifiers properties
                                 @each $modifier_name, $modifier_data in map-get($component_data, modifiers) {
                                     // Optional selector for defaults
