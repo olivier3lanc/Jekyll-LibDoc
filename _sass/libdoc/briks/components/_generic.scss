@@ -57,7 +57,9 @@ and length($briks-components-generic) > 0 {
                                                             @if ($pseudo_element_property == 'content') {
                                                                 $pseudo_element_value: quote($pseudo_element_value);
                                                             }
-                                                            #{$pseudo_element_property}: $pseudo_element_value;
+                                                            @if ($pseudo_element_property != 'selector') {
+                                                                #{$pseudo_element_property}: $pseudo_element_value;
+                                                            }
                                                         }
                                                     }
                                                 }
@@ -66,7 +68,9 @@ and length($briks-components-generic) > 0 {
                                                 @if type-of($pseudo_class_value) == 'string' {
                                                     $pseudo_class_value: unquote($pseudo_class_value);
                                                 }
-                                                #{$pseudo_class_property}: $pseudo_class_value;
+                                                @if ($pseudo_class_property != 'selector') {
+                                                    #{$pseudo_class_property}: $pseudo_class_value;
+                                                }
                                             }
                                         }
                                     }
@@ -93,7 +97,9 @@ and length($briks-components-generic) > 0 {
                                             @if ($pseudo_element_property == 'content') {
                                                 $pseudo_element_value: quote($pseudo_element_value);
                                             }
-                                            #{$pseudo_element_property}: $pseudo_element_value;
+                                            @if ($pseudo_element_property != 'selector') {
+                                                #{$pseudo_element_property}: $pseudo_element_value;
+                                            }
                                         }
                                     }
                                 }
@@ -105,7 +111,9 @@ and length($briks-components-generic) > 0 {
                                 @if type-of($value) == 'string' {
                                     $value: unquote($value);
                                 }
-                                #{$property}: $value;
+                                @if ($property != 'selector') {
+                                    #{$property}: $value;
+                                }
                             }
                         }
                     }
@@ -152,7 +160,9 @@ and length($briks-components-generic) > 0 {
                                                                     @if ($pseudo_element_property == 'content') {
                                                                         $pseudo_element_value: quote($pseudo_element_value);
                                                                     }
-                                                                    #{$pseudo_element_property}: $pseudo_element_value;
+                                                                    @if ($pseudo_element_property != 'selector') {
+                                                                        #{$pseudo_element_property}: $pseudo_element_value;
+                                                                    }
                                                                 }
                                                             }
                                                         }
@@ -161,7 +171,9 @@ and length($briks-components-generic) > 0 {
                                                         @if type-of($pseudo_class_value) == 'string' {
                                                             $pseudo_class_value: unquote($pseudo_class_value);
                                                         }
-                                                        #{$pseudo_class_property}: $pseudo_class_value;
+                                                        @if ($pseudo_class_property != 'selector') {
+                                                            #{$pseudo_class_property}: $pseudo_class_value;
+                                                        }
                                                     }
                                                 }
                                             }
@@ -188,7 +200,9 @@ and length($briks-components-generic) > 0 {
                                                     @if ($pseudo_element_property == 'content') {
                                                         $pseudo_element_value: quote($pseudo_element_value);
                                                     }
-                                                    #{$pseudo_element_property}: $pseudo_element_value;
+                                                    @if ($pseudo_element_property != 'selector') {
+                                                        #{$pseudo_element_property}: $pseudo_element_value;
+                                                    }
                                                 }
                                             }
                                         }
@@ -200,7 +214,9 @@ and length($briks-components-generic) > 0 {
                                         @if type-of($value) == 'string' {
                                             $value: unquote($value);
                                         }
-                                        #{$property}: $value;
+                                        @if ($property != 'selector') {
+                                            #{$property}: $value;
+                                        }
                                     }
                                 }
                             }
@@ -254,7 +270,9 @@ and length($briks-components-generic) > 0 {
                                                                                 @if ($pseudo_element_property == 'content') {
                                                                                     $pseudo_element_value: quote($pseudo_element_value);
                                                                                 }
-                                                                                #{$pseudo_element_property}: $pseudo_element_value;
+                                                                                @if ($pseudo_element_property != 'selector') {
+                                                                                    #{$pseudo_element_property}: $pseudo_element_value;
+                                                                                }
                                                                             }
                                                                         }
                                                                     }
@@ -263,7 +281,9 @@ and length($briks-components-generic) > 0 {
                                                                     @if type-of($pseudo_class_value) == 'string' {
                                                                         $pseudo_class_value: unquote($pseudo_class_value);
                                                                     }
-                                                                    #{$pseudo_class_property}: $pseudo_class_value;
+                                                                    @if ($pseudo_class_property != 'selector') {
+                                                                        #{$pseudo_class_property}: $pseudo_class_value;
+                                                                    }
                                                                 }
                                                             }
                                                         }
@@ -290,7 +310,9 @@ and length($briks-components-generic) > 0 {
                                                                 @if ($pseudo_element_property == 'content') {
                                                                     $pseudo_element_value: quote($pseudo_element_value);
                                                                 }
-                                                                #{$pseudo_element_property}: $pseudo_element_value;
+                                                                @if ($pseudo_element_property != 'selector') {
+                                                                    #{$pseudo_element_property}: $pseudo_element_value;
+                                                                }
                                                             }
                                                         }
                                                     }
@@ -302,7 +324,9 @@ and length($briks-components-generic) > 0 {
                                                     @if type-of($value) == 'string' {
                                                         $value: unquote($value);
                                                     }
-                                                    #{$property}: $value;
+                                                    @if ($property != 'selector') {
+                                                        #{$property}: $value;
+                                                    }
                                                 }
                                             }
                                         }
