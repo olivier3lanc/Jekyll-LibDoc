@@ -9,4 +9,4 @@ iframe_mode: true
 <style>
     body { background: lightgreen}
 </style>
-Just add `layout: libdoc/playground` into the front matter of the page, the target page is loaded through an iframe.
+Just add `iframe_mode: true` into the front matter of the page, the target page is loaded through an iframe.
