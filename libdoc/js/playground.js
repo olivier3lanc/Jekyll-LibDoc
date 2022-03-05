@@ -141,13 +141,23 @@ let playground = {
                         '</div>'+
                     '</div>'
                 );
-                jQuery('#libdoc-featured-code').after(
-                    '<pre id="'+playgroundId+'-iframe-code" class="u-m-none">'+
-                        '<code class="language-html">'+
-                            trimmed+
-                        '</code>'+
-                    '</pre>'
-                );
+                if (jQ_this.hasClass('playground-pin')) {
+                    jQuery('#libdoc-featured-code').after(
+                        '<pre id="'+playgroundId+'-iframe-code" class="u-m-none">'+
+                            '<code class="language-html">'+
+                                trimmed+
+                            '</code>'+
+                        '</pre>'
+                    );
+                } else {
+                    jQ_this.after(
+                        '<pre id="'+playgroundId+'-iframe-code" class="u-m-none">'+
+                            '<code class="language-html">'+
+                                trimmed+
+                            '</code>'+
+                        '</pre>'
+                    );
+                }
 
             } else {
                 // Insert HTML after hidden playground
