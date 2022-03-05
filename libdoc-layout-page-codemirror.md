@@ -4,7 +4,7 @@ description: Code mirror the entire page as playground on the right panel.
 layout: libdoc/page-codemirror
 
 #LibDoc specific below
-category: Examples
+category: Layouts
 order: 200
 #assets:
 #    path_from_root: /libdoc

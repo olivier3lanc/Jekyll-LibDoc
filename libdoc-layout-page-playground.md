@@ -4,7 +4,7 @@ description: Sidebar and only the first playground.
 layout: libdoc/page-playground
 
 #LibDoc specific below
-category: Examples
+category: Layouts
 order: 200
 #assets:
 #    path_from_root: /libdoc

@@ -4,7 +4,7 @@ description: An example of LibDoc's assets layout with custom parameters sets on
 layout: libdoc/assets
 
 #LibDoc specific below
-category: Examples
+category: Layouts
 order: 200
 assets:
     path_from_root: /libdoc

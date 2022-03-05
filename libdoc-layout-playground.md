@@ -4,7 +4,7 @@ description: An example of LibDoc's playground layout.
 layout: libdoc/playground
 
 #LibDoc specific below
-category: Examples
+category: Layouts
 order: 200
 ---
 This page looks like your config!

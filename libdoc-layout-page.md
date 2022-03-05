@@ -4,7 +4,7 @@ description: An example of LibDoc's page layout.
 layout: libdoc/page
 
 #LibDoc specific below
-category: Examples
+category: Layouts
 order: 200
 ---
 * 

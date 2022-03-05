@@ -4,7 +4,7 @@ description: Simple html render of the current page
 layout: libdoc/blank
 
 #LibDoc specific below
-category: Examples
+category: Layouts
 order: 200
 #assets:
 #    path_from_root: /libdoc

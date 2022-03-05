@@ -48,21 +48,21 @@ order: 100
 # Page 4
 title: Page layout
 # LibDoc secific optional settings
-category: Examples
+category: Layouts
 order: 200
 #unlisted: true
 
 # Page 5
 title: Assets layout
 # LibDoc secific optional settings
-category: Examples
+category: Layouts
 order: 200
 #unlisted: true
 
 # Page 6
 title: Blank layout
 # LibDoc secific optional settings
-category: Examples
+category: Layouts
 order: 200
 #unlisted: true
 
