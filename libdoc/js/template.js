@@ -133,26 +133,26 @@ let resizer = {
                     height: 100%;
                     border-left: var(--sg-border-thin-dashed-alt);
                 }
-                .resizer.resizer-width:hover { 
-                    width: 100px; 
-                    right: -50px;
+                .resizer.resizer-width.hover { 
+                    width: 100vw; 
+                    right: -50vw;
                     background: transparent;
                     border-left: none;
                 }
-                .resizer.resizer-width:hover::before { 
-                    right: calc(50% + 10px);
+                .resizer.resizer-width.hover::before { 
+                    right: calc(-50vw + 10px);
                 }
-                .resizer.resizer-width:hover::after { 
+                .resizer.resizer-width.hover::after { 
                     content: '';
                     width: 10px;
-                    left: calc(50% - 10px);
+                    left: calc(50vw - 10px);
                     position: absolute;
                     height: 100%;
                     cursor: col-resize;
                     background: var(--sg-background-stripes) var(--sg-color-primary-alt);
                 }
                 .resizer.resizer-height { bottom: 0%; left: 0px; width: 100%; height: 0px; cursor: row-resize; }
-                .resizer.resizer-height:hover { height: 100px; bottom: -50px; }
+                .resizer.resizer-height.hover { height: 100px; bottom: -50px; }
                 .resizer.resizer-height::after {
                     content: '';
                     height: 6px;
@@ -170,7 +170,7 @@ let resizer = {
                     height: 16px;
                     cursor: nwse-resize; 
                 }
-                .resizer.resizer-width.resizer-height:hover {
+                .resizer.resizer-width.resizer-height.hover {
                     top: inherit;
                     bottom: -16px;
                     right: -16px;
@@ -236,6 +236,7 @@ let resizer = {
     instances: {},
     initDrag: function(e) {
         // console.log('initDrag: ');
+        e.target.classList.add('hover');
         resizer.instances[e.target.id].startX = e.clientX;
         resizer.instances[e.target.id].startY = e.clientY;
         if (e.target.classList.contains('resizer-width')) {
@@ -260,6 +261,7 @@ let resizer = {
      },
      
      stopDrag: function(e) {
+        e.target.classList.remove('hover');
         document.documentElement.removeEventListener('mousemove', resizer.doDrag, false);    
         document.documentElement.removeEventListener('mouseup', resizer.stopDrag, false);
      }
