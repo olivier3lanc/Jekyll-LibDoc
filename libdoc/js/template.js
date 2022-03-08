@@ -252,6 +252,7 @@ let resizer = {
      },
      
      doDrag: function(e) {
+        resizer.instances[e.target.id].el_resizeable.style.maxWidth = 'inherit';
         if (e.target.classList.contains('resizer-width')) {
             resizer.instances[e.target.id].el_resizeable.style.width = (resizer.instances[e.target.id].startWidth + e.clientX - resizer.instances[e.target.id].startX) + 'px';
         }
