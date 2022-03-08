@@ -8,7 +8,7 @@ layout: libdoc/default
             <p class="u-fs-lg u-m-none u-lh-base" u-fs-md="sm">{{ page.description | default: site.description }}</p>
         </header>
         <div id="libdoc-featured-code"></div>
-        <div class="{% if page.playground_expand == true %}{% else %}u-pl-lg u-pr-lg u-pl-sm--sm u-pr-sm--sm{% endif %}">
+        <div id="libdoc-content" class="{% if page.playground_expand == true %}{% else %}u-p-lg u-p-sm--sm{% endif %}">
             {{ content }}
         </div>        
     </div>

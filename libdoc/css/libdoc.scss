@@ -39,6 +39,6 @@
     Requires _core.scss
     Files that build CSS from Briks settings
 */
-// @import 'libdoc/briks/third-parties/html5';
-// @import 'libdoc/briks/third-parties/toggles';
-// @import 'libdoc/briks/third-parties/specific';
+@import 'libdoc/briks/third-parties/html5';
+@import 'libdoc/briks/third-parties/toggles';
+@import 'libdoc/briks/third-parties/specific';
