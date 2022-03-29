@@ -84,7 +84,7 @@
         <meta property="og:url" content="{{ site_url }}{{ page.url }}">
         <meta property="og:title" content="{{ page.title | default: site.title }}">
         <meta property="og:description" content="{{ page.description | default: site.description }}">
-        {% if page.metadata.image contains 'https://' or page.metadata.image contains 'http://' %}
+        {% if page.playground.metadata.image contains 'https://' or site.playground.metadata.image contains 'https://' or page.playground.metadata.image contains 'http://' or site.playground.metadata.image contains 'http://' %}
             <meta property="og:image" content="{{ page.playground.metadata.image | default: site.playground.metadata.image }}">
         {% else %}
             {% if page.playground.metadata.image.size > 0 or site.playground.metadata.image.size > 0 %}
@@ -97,7 +97,7 @@
         <meta name="twitter:title" content="{{ page.title | default: site.title }}">
         <meta name="twitter:description" content="{{ page.description | default: site.description }}">
         <meta name="twitter:url" content="{{ site_url }}{{ page.url }}">
-        {% if page.metadata.image contains 'https://' or page.metadata.image contains 'http://' %}
+        {% if page.playground.metadata.image contains 'https://' or site.playground.metadata.image contains 'https://' or page.playground.metadata.image contains 'http://' or site.playground.metadata.image contains 'http://' %}
             <meta name="twitter:image" content="{{ page.playground.metadata.image | default: site.playground.metadata.image }}">
         {% else %}
             {% if page.playground.metadata.image.size > 0 or site.playground.metadata.image.size > 0 %}
