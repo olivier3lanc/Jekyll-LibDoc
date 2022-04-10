@@ -130,7 +130,10 @@ LibDoc has its own code playground and its own metadata. Here are the settings:
 | `min_height` | *CSS* | 300px | Sets a minimum height for each playground |
 | `stylesheets` | *Array* |  | Array of `<head>` stylesheets URL. Relative URL starts with slash `/`. Absolute URL starts with `http` |
 | `scripts_head` | *Array* |  | Array of `<head>` javascript URL. Relative URL starts with slash `/`. Absolute URL starts with `http` |
+| `scripts_body_modules` <sup>1</sup> | *Array* |  | Array of `</body>` javascript moduels URL. Relative URL starts with slash `/`. Absolute URL starts with `http` |
 | `scripts_body` | *Array* |  | Array of `</body>` javascript URL. Relative URL starts with slash `/`. Absolute URL starts with `http` |
+
+(1) Javascript `type="module"` are set before text/javascript files, do not work with a `file://` URL. JS modules need a web server.
 
 Example of playground's configuration part.
 
@@ -157,6 +160,9 @@ playground:
     scripts_head:
         - https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js
         - /libdoc/js/my-toggles.js
+    scripts_body_modules: # Javascript modulesfiles near </body>. Can be either relative URL from site root, absolute URL starting with 'http'
+        - https://anyurl.script.js
+        - /scripts/any-script.js
     scripts_body: # Javascript files near </body>. Can be either relative URL from site root, absolute URL starting with 'http'
         - https://anyurl.script.js
         - /scripts/any-script.js
