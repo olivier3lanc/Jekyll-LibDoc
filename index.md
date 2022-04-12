@@ -7,7 +7,30 @@ unlisted: true
 
 LibDoc is a lightweight Gem free, plugin free and Github Pages compatitble Jekyll theme. LibDoc is dedicated to documentation of CSS and Javascript libraries. It comes with a [built-in playground](libdoc-playground.html) and [local search engine](libdoc-sidebar.html#search).
 
-* **Dual context** <br>LibDoc was made to make documentation with its own embedded demos and examples. Set up your CSS and JS resources into the [config.yml](libdoc-config.html#playground)<br><br>
+
+* **Dual context: LibDoc + Playground** <br>LibDoc was made to craft documentation with its own embedded demos and examples which have their own CSS and JS resources defined into the [config.yml](libdoc-config.html#playground), just like any code sandbox.
+    ```html
+    Playground - User defined context set up into config.yml
+    └── html
+        ├── head
+        │   ├── playground.stylesheets in front matter config.yml
+        │   │   ├── file.css
+        │   │   ├── file.css
+        │   │   └── ...
+        │   └── playground.scripts_head in front matter config.yml
+        │       ├── file.js
+        │       ├── file.js
+        │       └── ...
+        └── body
+            ├── playground.scripts_body_modules in front matter config.yml
+            │   ├── js_module.js
+            │   ├── js_module.js
+            │   └── ...
+            └── playground.scripts_body in front matter config.yml
+                ├── file.js
+                ├── file.js
+                └── ...
+    ``` 
 * **Can work without the Internet** <br>LibDoc can run locally with Jekyll serve or any http host - *assuming you set up local resources.*<br><br>
 * **Customizeable settings**<br> LibDoc has its own settings editable on needs in the configuration file [config.yml](libdoc-config.html).<br><br>
 * **Github Pages compatible** <br>LibDoc runs **without Gem, without plugin**, it is lightweight and can run locally, depending on the resources you set into the [configuration](libdoc-config.html). **LibDoc is 100% compatible with** [Github Pages](https://pages.github.com/).<br><br>
@@ -32,7 +55,7 @@ This homepage is an example of [libdoc/page-split](libdoc-layouts.html) layout
 
 ```html
 <header>
-    <h1>Playground example</h1>
+    <h1>Playground example with PhotoSwipe</h1>
     <p>This is a user context playground that uses its own resources set into <a href="../libdoc-config.html#playground" title="Documentation page" target="_parent">config.yml</a></p>
 </header>
 <ul>
