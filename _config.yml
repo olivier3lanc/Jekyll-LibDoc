@@ -4,7 +4,7 @@ title: LibDoc # title of the documentation
 description: >- # Description of the docs. (>- means to ignore newlines until next param)
   A Jekyll documentation theme with built-in search and playground
 # baseurl: "/Jekyll-LibDoc/_site" # the subpath of your site, e.g. /blog
-# url: "http://192.168.1.54" # the base hostname & protocol for your site, e.g. http://example.com
+# url: "http://localhost" # the base hostname & protocol for your site, e.g. http://example.com
 #permalink: /:path/:basename/:output_ext
 #destination: ../marcelrent/public/proto-app # Build relative path destination. The destination directory e.g. /blog
 #keep_files: [cache]
@@ -54,10 +54,15 @@ sidebar:
         #font_size: 32px
     # Display additional links anywhere into the sidebar
     additional_links:
-        #-   #url: # Local or remote URL
-             #title: # Link text
-             #order: # Sets the rank of the page link into the sidebar, higher values give lower rank for the page link
-             #category: # Add this this link into a category just like pages
+        -   url: https://github.com/olivier3lanc/Jekyll-LibDoc # Local or remote URL
+            title: <span class="i-github u-mr-xxs"></span> View on GitHub # Link text
+            order: 0 # Sets the rank of the page link into the sidebar, higher values give lower rank for the page link
+            # category: Showcase # Add this this link into a category just like pages
+        -   url: https://www.youtube.com/embed/iWowJBRMtpc # Local or remote URL
+            title: Iframe mode example # Link text
+            order: 100 # Sets the rank of the page link into the sidebar, higher values give lower rank for the page link
+            iframe_mode: true
+            category: Features
         # Example URL
         -   url: ./libdoc-layout-page.html
             title: Relative link 1
