@@ -1,8 +1,5 @@
----
-layout: libdoc/page-split
-permalink: index.html # To avoid: Warning: Empty `slug` generated for '/'.
-unlisted: true
----
+# Jekyll LibDoc
+
 ![LibDoc splash screen](libdoc/img/libdoc.png)
 
 LibDoc is a lightweight Gem free, plugin free and Github Pages compatitble Jekyll theme. LibDoc is dedicated to documentation of CSS and Javascript libraries. It comes with a [built-in playground](libdoc-playground.html) and [local search engine](libdoc-sidebar.html#search).
@@ -52,61 +49,3 @@ LibDoc is a lightweight Gem free, plugin free and Github Pages compatitble Jekyl
 * **TOC - Table Of Content**<br> LibDoc supports `{:toc}` automatically generated kramdown - markdown engine - TOC styling the table of content onto a right sidebar as follows. [Learn more](libdoc-toc.html)<br><br>
 * **Shields and badges**<br>![Badge example](https://shields.io/badge/style-for--the--badge-green?logo=appveyor&style=for-the-badge) <br>
 Easily add [shields.io](https://shields.io/) badges into the footer. Create your own badges and add it through the config.yml. [Learn more](libdoc-shields-badges.html)<br><br>
-
-This homepage is an example of [libdoc/page-split](libdoc-layouts.html) layout
-
-```html
-<header>
-    <h1>Playground example with PhotoSwipe</h1>
-    <p>This is a user context playground that uses its own resources set into <a href="../libdoc-config.html#playground" title="Documentation page" target="_parent">config.yml</a></p>
-</header>
-<ul>
-    <li>Add your own CSS files</li>
-    <li>Add your own Javascript <code>type="text/javascript"</code> into head part of HTML</li>
-    <li>Add your own Javascript <code>type="module"</code> near end body part of HTML</li>
-    <li>Add your own Javascript <code>type="text/javascript"</code> near end body part of HTML</li>
-</ul>
-<div class="pswp-gallery pswp-gallery--single-column" id="gallery--getting-started">
-    <a href="https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg" 
-        data-pswp-width="1669" 
-        data-pswp-height="2500" 
-        target="_blank">
-        <img src="https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-200.jpg" alt="" />
-    </a>
-    <!-- cropped thumbnail: -->
-    <a href="https://cdn.photoswipe.com/photoswipe-demo-images/photos/7/img-2500.jpg" 
-          data-pswp-width="1875" 
-          data-pswp-height="2500" 
-          data-cropped="true" 
-          target="_blank">
-          <img src="https://cdn.photoswipe.com/photoswipe-demo-images/photos/7/img-200.jpg" alt="" />
-          Cropped
-    </a>
-    <!-- data-pswp-src with custom URL in href -->
-    <a  href="https://unsplash.com" 
-        data-pswp-src="https://cdn.photoswipe.com/photoswipe-demo-images/photos/3/img-2500.jpg"
-        data-pswp-width="2500" 
-        data-pswp-height="1666" 
-        target="_blank">
-        <img src="https://cdn.photoswipe.com/photoswipe-demo-images/photos/3/img-200.jpg" alt="" />
-    </a>
-    <!-- Without thumbnail: -->
-    <a  href="http://example.com" 
-        data-pswp-src="https://cdn.photoswipe.com/photoswipe-demo-images/photos/5/img-2500.jpg"
-        data-pswp-width="2500" 
-        data-pswp-height="1668" 
-        target="_blank">
-        No thumbnail
-    </a>
-    <!-- wrapped with any element: -->
-    <div>
-        <a  href="https://cdn.photoswipe.com/photoswipe-demo-images/photos/6/img-2500.jpg"
-            data-pswp-width="2500" 
-            data-pswp-height="1667" 
-            target="_blank">
-            <img src="https://cdn.photoswipe.com/photoswipe-demo-images/photos/6/img-200.jpg" alt="" />
-        </a>
-    </div>
-</div>
-```
-{:.playground title="User context into iframe"}
