@@ -114,7 +114,8 @@ playground:
     # Absolute URL starting with 'http'
     stylesheets: 
         #- /example-project/css/tailwind.min.css
-        - /user-context/css/simple.css
+        - /user-context/css/new.css
+        - /user-context/css/night.css
         - /user-context/css/photoswipe.css
     # Javascript in <head>. Can be either:
     # Relative URL from site root starting with slash /
