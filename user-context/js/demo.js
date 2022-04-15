@@ -5,7 +5,7 @@ import PhotoSwipeLightbox from '{{ site.baseurl }}/user-context/js/photoswipe-li
 
 const lightbox = new PhotoSwipeLightbox({
     // may select multiple "galleries"
-    gallery: '#gallery--getting-started',
+    gallery: '#gallery',
 
     // Elements within gallery (slides)
     children: 'a',

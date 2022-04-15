@@ -57,56 +57,23 @@ This homepage is an example of [libdoc/page-split](libdoc-layouts.html) layout
 
 ```html
 <header>
-    <h1>Playground example with PhotoSwipe</h1>
-    <p>This is a user context playground that uses its own resources set into <a href="../libdoc-config.html#playground" title="Documentation page" target="_parent">config.yml</a></p>
+    <h1>Playground Example</h1>
+    <p>This is a user context playground <em>iframe</em> that uses its own CSS, standard Javascript and modules set into <a href="../libdoc-config.html#playground" title="Documentation page" target="_parent">config.yml</a></p>
+    <p>This demo uses <a href="https://photoswipe.com" target="_blank">PhotoSwipe lightbox</a></p>
 </header>
-<ul>
-    <li>Add your own CSS files</li>
-    <li>Add your own Javascript <code>type="text/javascript"</code> into head part of HTML</li>
-    <li>Add your own Javascript <code>type="module"</code> near end body part of HTML</li>
-    <li>Add your own Javascript <code>type="text/javascript"</code> near end body part of HTML</li>
-</ul>
-<div class="pswp-gallery pswp-gallery--single-column" id="gallery--getting-started">
-    <a href="https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg" 
-        data-pswp-width="1669" 
-        data-pswp-height="2500" 
+<div id="gallery">
+    <a  href="https://olivier3lanc.github.io/photographies/paysages/automne/lac_thuile_automne_mg_6008__mg_6012-5-images_size_3200x1600.webp" 
+        data-pswp-width="3200" 
+        data-pswp-height="1600" 
         target="_blank">
-        <img src="https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-200.jpg" alt="" />
+        <img src="https://images.weserv.nl/?url=https://olivier3lanc.github.io/photographies/paysages/automne/lac_thuile_automne_mg_6008__mg_6012-5-images_size_3200x1600.webp&output=webp&w=200" alt="Lac de La Thuile en Automne">
     </a>
-    <!-- cropped thumbnail: -->
-    <a href="https://cdn.photoswipe.com/photoswipe-demo-images/photos/7/img-2500.jpg" 
-          data-pswp-width="1875" 
-          data-pswp-height="2500" 
-          data-cropped="true" 
-          target="_blank">
-          <img src="https://cdn.photoswipe.com/photoswipe-demo-images/photos/7/img-200.jpg" alt="" />
-          Cropped
-    </a>
-    <!-- data-pswp-src with custom URL in href -->
-    <a  href="https://unsplash.com" 
-        data-pswp-src="https://cdn.photoswipe.com/photoswipe-demo-images/photos/3/img-2500.jpg"
-        data-pswp-width="2500" 
-        data-pswp-height="1666" 
+    <a  href="https://images.weserv.nl/?url=https://i.ibb.co/sqBQHSJ/DCIM-100-GOPRO-GOPR5375.jpg&output=webp&q=50" 
+        data-pswp-width="4000" 
+        data-pswp-height="3000" 
         target="_blank">
-        <img src="https://cdn.photoswipe.com/photoswipe-demo-images/photos/3/img-200.jpg" alt="" />
+        <img src="https://images.weserv.nl/?url=https://i.ibb.co/sqBQHSJ/DCIM-100-GOPRO-GOPR5375.jpg&output=webp&w=200" alt="Combe de Savoie">
     </a>
-    <!-- Without thumbnail: -->
-    <a  href="http://example.com" 
-        data-pswp-src="https://cdn.photoswipe.com/photoswipe-demo-images/photos/5/img-2500.jpg"
-        data-pswp-width="2500" 
-        data-pswp-height="1668" 
-        target="_blank">
-        No thumbnail
-    </a>
-    <!-- wrapped with any element: -->
-    <div>
-        <a  href="https://cdn.photoswipe.com/photoswipe-demo-images/photos/6/img-2500.jpg"
-            data-pswp-width="2500" 
-            data-pswp-height="1667" 
-            target="_blank">
-            <img src="https://cdn.photoswipe.com/photoswipe-demo-images/photos/6/img-200.jpg" alt="" />
-        </a>
-    </div>
 </div>
 ```
-{:.playground title="User context into iframe"}
+{:.playground title="Playground example - User defined context into an iframe"}
