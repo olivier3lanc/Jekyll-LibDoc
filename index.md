@@ -53,11 +53,14 @@ LibDoc is a lightweight Gem free, plugin free and Github Pages compatitble Jekyl
 * **Shields and badges**<br>![Badge example](https://shields.io/badge/style-for--the--badge-green?logo=appveyor&style=for-the-badge) <br>
 Easily add [shields.io](https://shields.io/) badges into the footer. Create your own badges and add it through the config.yml. [Learn more](libdoc-shields-badges.html)<br><br>
 
-This homepage is an example of [libdoc/page-split](libdoc-layouts.html) layout
+#### Playground example
+
+This homepage is an example of [libdoc/page-split](libdoc-layouts.html) layout. The following playground is automatically built and displayed on the right side of the screen. Playground settings are set into [config.yml](libdoc-config.html). The following code is included into the `<body>` part of the playground.
 
 ```html
 <header>
     <h1>Playground Example</h1>
+    <p>This playground was automatically build from a LibDoc page layout: <a href="../#playground-example" title="Source page" target="_parent">See the source of this playground</a></p>
     <p>This is a user context playground <em>iframe</em> that uses its own CSS, standard Javascript and modules set into <a href="../libdoc-config.html#playground" title="Documentation page" target="_parent">config.yml</a></p>
     <p>This demo uses <a href="https://photoswipe.com" target="_blank">PhotoSwipe lightbox</a></p>
 </header>
@@ -66,13 +69,25 @@ This homepage is an example of [libdoc/page-split](libdoc-layouts.html) layout
         data-pswp-width="3200" 
         data-pswp-height="1600" 
         target="_blank">
-        <img src="https://images.weserv.nl/?url=https://olivier3lanc.github.io/photographies/paysages/automne/lac_thuile_automne_mg_6008__mg_6012-5-images_size_3200x1600.webp&output=webp&w=200" alt="Lac de La Thuile en Automne">
+        <img src="https://images.weserv.nl/?url=https://olivier3lanc.github.io/photographies/paysages/automne/lac_thuile_automne_mg_6008__mg_6012-5-images_size_3200x1600.webp&output=webp&w=500&h=500&fit=cover" alt="Lac de La Thuile en Automne">
     </a>
-    <a  href="https://images.weserv.nl/?url=https://i.ibb.co/sqBQHSJ/DCIM-100-GOPRO-GOPR5375.jpg&output=webp&q=50" 
-        data-pswp-width="4000" 
-        data-pswp-height="3000" 
+    <a  href="https://olivier3lanc.github.io/photographies/paysages/automne/le_monal_en_automne_mg_3662_mg_3670-9-img_size_4243x1600.webp" 
+        data-pswp-width="4243" 
+        data-pswp-height="1600" 
         target="_blank">
-        <img src="https://images.weserv.nl/?url=https://i.ibb.co/sqBQHSJ/DCIM-100-GOPRO-GOPR5375.jpg&output=webp&w=200" alt="Combe de Savoie">
+        <img src="https://images.weserv.nl/?url=https://olivier3lanc.github.io/photographies/paysages/automne/le_monal_en_automne_mg_3662_mg_3670-9-img_size_4243x1600.webp&output=webp&w=500&h=500&fit=cover" alt="Le Monal en Automne">
+    </a>
+    <a  href="https://olivier3lanc.github.io/photographies/paysages/automne/ruisseau_clou_automne_1_mg_5701_size_2560x1706.webp" 
+        data-pswp-width="2560" 
+        data-pswp-height="1706" 
+        target="_blank">
+        <img src="https://images.weserv.nl/?url=https://olivier3lanc.github.io/photographies/paysages/automne/ruisseau_clou_automne_1_mg_5701_size_2560x1706.webp&output=webp&w=500&h=500&fit=cover" alt="Le Ruisseau du Clou en Automne">
+    </a>
+    <a  href="https://olivier3lanc.github.io/photographies/paysages/automne/paysage_automne_monal_1_mg_5750__mg_5754-5-images_size_2560x1706.webp" 
+        data-pswp-width="2560" 
+        data-pswp-height="1706" 
+        target="_blank">
+        <img src="https://images.weserv.nl/?url=https://olivier3lanc.github.io/photographies/paysages/automne/paysage_automne_monal_1_mg_5750__mg_5754-5-images_size_2560x1706.webp&w=500&h=500&fit=cover" alt="Le Mont Pourri du Monal">
     </a>
 </div>
 ```

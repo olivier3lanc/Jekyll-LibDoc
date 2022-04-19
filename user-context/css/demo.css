@@ -2,9 +2,9 @@
 /* :root {} */
 @import url('https://fonts.googleapis.com/css2?family=Akshar:wght@300&display=swap');
 
-* {
+/* * {
     box-sizing: border-box;
-}
+} */
 body {
     margin: auto;
     max-width: 70ch;
@@ -22,4 +22,16 @@ h1 {
 }
 a {
     color: deepskyblue;
+}
+#gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2em;
+}
+#gallery a {
+    text-decoration: none;
+    width: calc(50% - 1em);
+}
+#gallery a img {
+    width: 100%;
 }
