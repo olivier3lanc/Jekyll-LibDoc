@@ -155,7 +155,9 @@
                     if (isJson(stringifiedSentObject)) {
                         const sentObject = JSON.parse(stringifiedSentObject);
                         document.body.insertAdjacentHTML('afterbegin', sentObject.content);
-                        // console.log('code included');
+                        // console.log(sentObject.options);
+                        // Sets the optional title of the Playground
+                        document.title = sentObject.options.title;
                     }
                 }
             }
