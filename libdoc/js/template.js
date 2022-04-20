@@ -301,32 +301,6 @@ let resizer = {
 }
 resizer.update();
 
-// PAGE FEATURED PLAYGROUND
-// Get content from the URL and apply the playground
-// iframe next to the code syntax highlighter  
-const pageFeaturedPlayground = {
-    update: function() {
-        const   el_iframe_container = document.getElementById('libdoc-page-split'),
-                el_featured_code = document.getElementById('libdoc-featured-code'),
-                hash = window.location.hash.replace('#', '');
-
-        if (el_iframe_container !== null && el_featured_code !== null && hash.length > 0) {
-            const   stringified_sent_object = atob(hash),
-                    sent_object = JSON.parse(stringified_sent_object),
-                    sent_object_escaped = sent_object.content.replace(/&/g, "&amp;")
-                                                .replace(/</g, "&lt;")
-                                                .replace(/>/g, "&gt;")
-                                                .replace(/"/g, "&quot;")
-                                                .replace(/'/g, "&#039;");
-            // console.log(`<pre><code class="language-html">${sent_object.content}</code></pre>`);
-            el_featured_code.innerHTML = `<pre class="playground" title="${sent_object.options.title}"><code class="language-html">${sent_object_escaped}</code></pre>`;
-            // Prism.highlightAll();
-            // el_iframe_container.innerHTML = '<iframe src="'+site.url+site.baseurl+'/libdoc/playground.html#'+hash+'" class="u-transition-none u-absolute u-h-100 u-b-none u-w-100"></iframe>';
-        }
-    }
-}
-pageFeaturedPlayground.update();
-
 // IFRAME MODE
 const iframeModeEmbed = function(url) {
     if (typeof url == 'string') {
