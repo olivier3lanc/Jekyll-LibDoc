@@ -13,6 +13,11 @@ body {
     font-family: 'Akshar', sans-serif;
     padding: 2em;
     font-size: 18px;
+    background-image: url(../img/layered-waves-haikei.svg);
+    background-position: bottom center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
 }
 h1, h2, h3 {
     font-weight: normal;
