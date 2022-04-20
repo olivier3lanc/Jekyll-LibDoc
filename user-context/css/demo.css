@@ -19,6 +19,7 @@ h1, h2, h3 {
 }
 h1 {
     border-bottom: 1px solid #FFF;
+    padding-bottom: 0.5em;
 }
 a {
     color: deepskyblue;
@@ -27,6 +28,7 @@ a {
     display: flex;
     flex-wrap: wrap;
     gap: 2em;
+    margin-top: 2em;
 }
 #gallery a {
     text-decoration: none;

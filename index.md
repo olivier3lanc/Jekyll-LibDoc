@@ -65,29 +65,29 @@ This homepage is an example of [libdoc/page-split](libdoc-layouts.html) layout. 
     <p>This demo uses <a href="https://photoswipe.com" target="_blank">PhotoSwipe lightbox</a></p>
 </header>
 <div id="gallery">
-    <a  href="https://olivier3lanc.github.io/photographies/paysages/automne/lac_thuile_automne_mg_6008__mg_6012-5-images_size_3200x1600.webp" 
-        data-pswp-width="3200" 
-        data-pswp-height="1600" 
-        target="_blank">
-        <img src="https://images.weserv.nl/?url=https://olivier3lanc.github.io/photographies/paysages/automne/lac_thuile_automne_mg_6008__mg_6012-5-images_size_3200x1600.webp&output=webp&w=500" alt="Lac de La Thuile en Automne">
-    </a>
-    <a  href="https://olivier3lanc.github.io/photographies/paysages/automne/le_monal_en_automne_mg_3662_mg_3670-9-img_size_4243x1600.webp" 
-        data-pswp-width="4243" 
-        data-pswp-height="1600" 
-        target="_blank">
-        <img src="https://images.weserv.nl/?url=https://olivier3lanc.github.io/photographies/paysages/automne/le_monal_en_automne_mg_3662_mg_3670-9-img_size_4243x1600.webp&output=webp&w=500" alt="Le Monal en Automne">
-    </a>
-    <a  href="https://olivier3lanc.github.io/photographies/paysages/automne/ruisseau_clou_automne_1_mg_5701_size_2560x1706.webp" 
+    <a  href="https://olivier3lanc.github.io/photographies/paysages/ete/fin_journee_ete_beaufortain_size_2560x1706.webp" 
         data-pswp-width="2560" 
         data-pswp-height="1706" 
         target="_blank">
-        <img src="https://images.weserv.nl/?url=https://olivier3lanc.github.io/photographies/paysages/automne/ruisseau_clou_automne_1_mg_5701_size_2560x1706.webp&output=webp&w=500" alt="Le Ruisseau du Clou en Automne">
+        <img src="https://images.weserv.nl/?url=https://olivier3lanc.github.io/photographies/paysages/ete/fin_journee_ete_beaufortain_size_2560x1706.webp&output=webp&w=500&q=30" alt="Fin de journée d'été dans le Beaufortain">
     </a>
-    <a  href="https://olivier3lanc.github.io/photographies/paysages/automne/paysage_automne_monal_1_mg_5750__mg_5754-5-images_size_2560x1706.webp" 
+    <a  href="https://olivier3lanc.github.io/photographies/paysages/ete/le_lac_de_roselend_et_ses_chalets_size_2560x1706.webp" 
         data-pswp-width="2560" 
         data-pswp-height="1706" 
         target="_blank">
-        <img src="https://images.weserv.nl/?url=https://olivier3lanc.github.io/photographies/paysages/automne/paysage_automne_monal_1_mg_5750__mg_5754-5-images_size_2560x1706.webp&w=500" alt="Le Mont Pourri du Monal">
+        <img src="https://images.weserv.nl/?url=https://olivier3lanc.github.io/photographies/paysages/ete/le_lac_de_roselend_et_ses_chalets_size_2560x1706.webp&output=webp&w=500&q=30" alt="Le Lac de Roselend et ses Chalets">
+    </a>
+    <a  href="https://olivier3lanc.github.io/photographies/paysages/ete/le_planay_en_ete_mg_1350_size_2560x1706.webp" 
+        data-pswp-width="2560" 
+        data-pswp-height="1706" 
+        target="_blank">
+        <img src="https://images.weserv.nl/?url=https://olivier3lanc.github.io/photographies/paysages/ete/le_planay_en_ete_mg_1350_size_2560x1706.webp&output=webp&w=500&q=30" alt="Le Planay en été">
+    </a>
+    <a  href="https://olivier3lanc.github.io/photographies/paysages/ete/route_de_roselend_en_ete_img_1104_size_2560x1706.webp" 
+        data-pswp-width="2560" 
+        data-pswp-height="1706" 
+        target="_blank">
+        <img src="https://images.weserv.nl/?url=https://olivier3lanc.github.io/photographies/paysages/ete/route_de_roselend_en_ete_img_1104_size_2560x1706.webp&w=500&q=30" alt="Route de Roselend en été">
     </a>
 </div>
 ```

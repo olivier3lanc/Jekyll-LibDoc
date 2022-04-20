@@ -12,46 +12,33 @@ order: 200
 #        - js
 #        - css
 ---
-
-<div class="pswp-gallery pswp-gallery--single-column" id="gallery--getting-started">
-    <a href="https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg" 
-        data-pswp-width="1669" 
-        data-pswp-height="2500" 
+<header>
+    <h1>Playground with codemirror</h1>
+    <p>This playground is editable, play with it!</p>
+</header>
+<div id="gallery">
+    <a  href="https://olivier3lanc.github.io/photographies/paysages/automne/lac_thuile_automne_mg_6008__mg_6012-5-images_size_3200x1600.webp" 
+        data-pswp-width="3200" 
+        data-pswp-height="1600" 
         target="_blank">
-        <img src="https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-200.jpg" alt="" />
+        <img src="https://images.weserv.nl/?url=https://olivier3lanc.github.io/photographies/paysages/automne/lac_thuile_automne_mg_6008__mg_6012-5-images_size_3200x1600.webp&output=webp&w=500" alt="Lac de La Thuile en Automne">
     </a>
-    <!-- cropped thumbnail: -->
-    <a href="https://cdn.photoswipe.com/photoswipe-demo-images/photos/7/img-2500.jpg" 
-          data-pswp-width="1875" 
-          data-pswp-height="2500" 
-          data-cropped="true" 
-          target="_blank">
-          <img src="https://cdn.photoswipe.com/photoswipe-demo-images/photos/7/img-200.jpg" alt="" />
-          Cropped
-    </a>
-    <!-- data-pswp-src with custom URL in href -->
-    <a  href="https://unsplash.com" 
-        data-pswp-src="https://cdn.photoswipe.com/photoswipe-demo-images/photos/3/img-2500.jpg"
-        data-pswp-width="2500" 
-        data-pswp-height="1666" 
+    <a  href="https://olivier3lanc.github.io/photographies/paysages/automne/le_monal_en_automne_mg_3662_mg_3670-9-img_size_4243x1600.webp" 
+        data-pswp-width="4243" 
+        data-pswp-height="1600" 
         target="_blank">
-        <img src="https://cdn.photoswipe.com/photoswipe-demo-images/photos/3/img-200.jpg" alt="" />
+        <img src="https://images.weserv.nl/?url=https://olivier3lanc.github.io/photographies/paysages/automne/le_monal_en_automne_mg_3662_mg_3670-9-img_size_4243x1600.webp&output=webp&w=500" alt="Le Monal en Automne">
     </a>
-    <!-- Without thumbnail: -->
-    <a  href="http://example.com" 
-        data-pswp-src="https://cdn.photoswipe.com/photoswipe-demo-images/photos/5/img-2500.jpg"
-        data-pswp-width="2500" 
-        data-pswp-height="1668" 
+    <a  href="https://olivier3lanc.github.io/photographies/paysages/automne/ruisseau_clou_automne_1_mg_5701_size_2560x1706.webp" 
+        data-pswp-width="2560" 
+        data-pswp-height="1706" 
         target="_blank">
-        No thumbnail
+        <img src="https://images.weserv.nl/?url=https://olivier3lanc.github.io/photographies/paysages/automne/ruisseau_clou_automne_1_mg_5701_size_2560x1706.webp&output=webp&w=500" alt="Le Ruisseau du Clou en Automne">
     </a>
-    <!-- wrapped with any element: -->
-    <div>
-        <a  href="https://cdn.photoswipe.com/photoswipe-demo-images/photos/6/img-2500.jpg"
-            data-pswp-width="2500" 
-            data-pswp-height="1667" 
-            target="_blank">
-            <img src="https://cdn.photoswipe.com/photoswipe-demo-images/photos/6/img-200.jpg" alt="" />
-        </a>
-    </div>
+    <a  href="https://olivier3lanc.github.io/photographies/paysages/automne/paysage_automne_monal_1_mg_5750__mg_5754-5-images_size_2560x1706.webp" 
+        data-pswp-width="2560" 
+        data-pswp-height="1706" 
+        target="_blank">
+        <img src="https://images.weserv.nl/?url=https://olivier3lanc.github.io/photographies/paysages/automne/paysage_automne_monal_1_mg_5750__mg_5754-5-images_size_2560x1706.webp&w=500" alt="Le Mont Pourri du Monal">
+    </a>
 </div>
