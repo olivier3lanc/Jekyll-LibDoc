@@ -20,6 +20,55 @@ sass:
 # LibDoc configuration
 # ---
 
+# Settings for the playground context
+playground:
+    # Metadata for the playground only
+    metadata:
+        # Sets the language of the playground, default is en
+        # lang: en
+        # Enable or not browser cache for the playground
+        cache: false
+        # PNG favicon file path from root or absolute/remote URL - Square 32x32 pixels icon png format or .ico for old browsers
+        favicon: /user-context/img/android-chrome-512x512.png
+        # SVG favicon example - NOT supported on Safari
+        # favicon: data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22256%22 height=%22256%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%237d6ee7%22></rect><path fill=%22%23fff%22 d=%22M36.63 22.42L66.52 22.42Q66.78 22.87 67.06 23.63Q67.32 24.40 67.32 25.30L67.32 25.30Q67.32 26.83 66.60 27.73Q65.88 28.63 64.53 28.63L64.53 28.63L40.05 28.63L40.05 47.35L63.36 47.35Q63.63 47.80 63.91 48.56Q64.17 49.33 64.17 50.23L64.17 50.23Q64.17 51.76 63.45 52.66Q62.73 53.56 61.38 53.56L61.38 53.56L40.05 53.56L40.05 77.05Q39.60 77.23 38.66 77.41Q37.71 77.59 36.72 77.59L36.72 77.59Q32.67 77.59 32.67 74.34L32.67 74.34L32.67 26.38Q32.67 24.58 33.75 23.50Q34.84 22.42 36.63 22.42L36.63 22.42Z%22></path></svg>
+        # favicon_auto must be a public URL image file with a minimum 192x192 pixels 
+        # favicon_auto: https://i.ibb.co/cNmfL3D/android-chrome-512x512.png
+        # Name of the author of the playground, used into various places of the theme like footer. Default is empty
+        # author: Olivier 3lanc
+        # Theme color metadata used in some browsers like Chrome that applies this color on browser address bar.
+        # Color must be in HEX, default is LibDoc's color
+        # color: '#556e1e'
+        # Open Graph image file. Can be either relative URL from site root, absolute URL starting with 'http'. Default is LibDoc's splash screen
+        #image: /img/html5_la_casa_de_papel.webp
+        image: /user-context/img/meta-image-playground.jpg
+    # Sets a minimum height for each playground, default is 300px
+    # min_height: 600px
+    # Style sheets in <head>. Can be either:
+    # Relative URL from site root starting with slash /
+    # Absolute URL starting with 'http'
+    stylesheets: 
+        #- /example-project/css/tailwind.min.css
+        - /user-context/css/normalize.css
+        - /user-context/css/demo.css
+        - /user-context/css/photoswipe.css
+    # Javascript in <head>. Can be either:
+    # Relative URL from site root starting with slash /
+    # Absolute URL starting with 'http'
+    scripts_head:
+        # - /libdoc/js/my-toggles.js
+    # Javascript type="module" are set before text/javascript files
+    # JS modules do not work with a file:// URL 
+    # JS modules need a web server.
+    scripts_body_modules: 
+        - /user-context/js/demo.js
+    # Javascript type="text/javascript" near </body>. Can be either:
+    # Relative URL from site root starting with slash /
+    # Absolute URL starting with 'http'
+    scripts_body: # Javascript files near </body>. Can be either relative URL from site root, absolute URL starting with 'http'
+        # - https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js
+        # - /user-context/js/demo.js
+
 # Metadata informations for the project
 metadata:
     # Sets the language of LibDoc, default is en
@@ -38,7 +87,7 @@ metadata:
     color: '#123456'
     # Open Graph image file. Can be either relative URL from site root, absolute URL starting with 'http'. Default is LibDoc's splash screen
     #image: /img/html5_la_casa_de_papel.webp
-    image: https://og-image.vercel.app/**Lib**Doc.jpeg?theme=light&md=1&fontSize=200px&images=https%3A%2F%2Fassets.vercel.com%2Fimage%2Fupload%2Ffront%2Fassets%2Fdesign%2Fvercel-triangle-black.svg
+    image: /libdoc/img/libdoc.png
 
 # Sidebar 
 sidebar:
@@ -86,53 +135,6 @@ shields:
     -   image_html: <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/olivier3lanc/Jekyll-LibDoc?logo=github&style=flat-square">
         link_url: https://github.com/olivier3lanc/Jekyll-LibDoc
 
-# Settings for the playground context
-playground:
-    metadata:
-        # Sets the language of the playground, default is en
-        # lang: en
-        # Enable or not browser cache
-        cache: false
-        # Square 32x32 pixels icon png format or .ico
-        # favicon: https://preview.tabler.io/favicon.ico
-        # favicon: data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22256%22 height=%22256%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%237d6ee7%22></rect><path fill=%22%23fff%22 d=%22M36.63 22.42L66.52 22.42Q66.78 22.87 67.06 23.63Q67.32 24.40 67.32 25.30L67.32 25.30Q67.32 26.83 66.60 27.73Q65.88 28.63 64.53 28.63L64.53 28.63L40.05 28.63L40.05 47.35L63.36 47.35Q63.63 47.80 63.91 48.56Q64.17 49.33 64.17 50.23L64.17 50.23Q64.17 51.76 63.45 52.66Q62.73 53.56 61.38 53.56L61.38 53.56L40.05 53.56L40.05 77.05Q39.60 77.23 38.66 77.41Q37.71 77.59 36.72 77.59L36.72 77.59Q32.67 77.59 32.67 74.34L32.67 74.34L32.67 26.38Q32.67 24.58 33.75 23.50Q34.84 22.42 36.63 22.42L36.63 22.42Z%22></path></svg>
-        # favicon: /libdoc/img/favicon/favicon-32x32.png
-        #  favicon_auto must be a public URL image file with a minimum 192x192 pixels 
-        # favicon_auto: https://raw.githubusercontent.com/tabler/tabler/dev/demo/favicon.ico
-        # Name of the author of the project, used into various places of the theme like footer. Default is empty
-        author: Paweł Kuna
-        # Theme color metadata used in some browsers like Chrome that applies this color on browser address bar.
-        # Color must be in HEX, default is LibDoc's color
-        color: '#346cbe'
-        # Open Graph image file. Can be either relative URL from site root, absolute URL starting with 'http'. Default is LibDoc's splash screen
-        #image: /img/html5_la_casa_de_papel.webp
-        image: https://preview.tabler.io/static/og.png
-    # Sets a minimum height for each playground, default is 300px
-    #min_height: 600px
-    # Style sheets in <head>. Can be either:
-    # Relative URL from site root starting with slash /
-    # Absolute URL starting with 'http'
-    stylesheets: 
-        #- /example-project/css/tailwind.min.css
-        - /user-context/css/normalize.css
-        - /user-context/css/demo.css
-        - /user-context/css/photoswipe.css
-    # Javascript in <head>. Can be either:
-    # Relative URL from site root starting with slash /
-    # Absolute URL starting with 'http'
-    scripts_head:
-        # - /libdoc/js/my-toggles.js
-    # Javascript type="module" are set before text/javascript files
-    # JS modules do not work with a file:// URL 
-    # JS modules need a web server.
-    scripts_body_modules: 
-        - /user-context/js/demo.js
-    # Javascript type="text/javascript" near </body>. Can be either:
-    # Relative URL from site root starting with slash /
-    # Absolute URL starting with 'http'
-    scripts_body: # Javascript files near </body>. Can be either relative URL from site root, absolute URL starting with 'http'
-        # - https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js
-        # - /user-context/js/demo.js
 
 # Settings for the assets layout
 assets:
