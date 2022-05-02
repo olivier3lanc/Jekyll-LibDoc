@@ -13,13 +13,13 @@ LibDoc supports social networks metadata into its document `<head>` to enable pr
 
 ## Site's metadata
 
- [Site's metadata](libdoc-config.html#metadata) settings for the each page of your LibDoc's site:
+[Site's metadata](libdoc-config.html#metadata) settings for the each page of your LibDoc's site:
 
 | `metadata.` | Type | Default | Description |
 | - | - | - | - |
 | `lang` | *string* | en | Sets the language of the project |
 | `favicon` | *string* | LibDoc's favicon URL | A single file URL for every PNG favicon. Can be either relative URL from site root or absolute URL starting with 'http' |
-| `favicon_auto` | *string* | | Automatic generation of multiple PNG favicons URL. Generates proper favicon files sizes for multiple devices. Must be an absolute URL starting with 'http' |
+| `favicon_auto` | *string* | | Automatic generation of multiple PNG favicons URL. Generates proper favicon files sizes for multiple devices. Must be an absolute URL starting with 'http'. Must be a public URL image file with a minimum 192x192 pixels |
 | `author` | *string* | | Name of the author of the project, used into various places of the theme like footer. |
 | `color` | *string* | #323b44 | Theme color metadata used in some browsers like Chrome that applies this color on browser address bar. Color must be in HEX |
 | `image` | *string* | LibDoc's splash screen | Open Graph image file. Can be either relative URL from site root, absolute URL starting with 'http' |
@@ -32,7 +32,7 @@ LibDoc supports social networks metadata into its document `<head>` to enable pr
 | - | - | - | - |
 | `lang` | *string* | en | Sets the language of the playground |
 | `favicon` | *string* | LibDoc's favicon URL | A single file URL for every PNG favicon. Can be either relative URL from site root or absolute URL starting with 'http' |
-| `favicon_auto` | *string* | | Automatic generation of multiple PNG favicons URL. Generates proper favicon files sizes for multiple devices. Must be an absolute URL starting with 'http' |
+| `favicon_auto` | *string* | | Automatic generation of multiple PNG favicons URL. Generates proper favicon files sizes for multiple devices. Must be an absolute URL starting with 'http'. Must be a public URL image file with a minimum 192x192 pixels |
 | `author` | *string* | | Name of the author of the project, used into various places of the theme like footer. |
 | `color` | *string* | | Theme color metadata used in some browsers like Chrome that applies this color on browser address bar. Color must be in HEX |
 | `image` | *string* | LibDoc's playground image | Open Graph image file. Can be either relative URL from site root, absolute URL starting with 'http' |

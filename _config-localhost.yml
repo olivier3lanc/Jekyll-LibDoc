@@ -1,10 +1,12 @@
-# Jekyll configuration
-# ---
+# ---------
+# JEKYLL CONFIGURATION
+# ---------
+
 title: LibDoc # title of the documentation
 description: >- # Description of the docs. (>- means to ignore newlines until next param)
   A Jekyll documentation theme with built-in search and playground
-baseurl: "/Jekyll-LibDoc/_site" # the subpath of your site, e.g. /blog
-url: "http://localhost" # the base hostname & protocol for your site, e.g. http://example.com
+url: http://localhost # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: /Jekyll-LibDoc/_site # the subpath of your site, e.g. /blog
 #permalink: /:path/:basename/:output_ext
 #destination: ../marcelrent/public/proto-app # Build relative path destination. The destination directory e.g. /blog
 #keep_files: [cache]
@@ -16,34 +18,54 @@ sass:
     style: compressed
 #exclude: ['/misc']
 
+# ---------
+# LIBDOC CONFIGURATION
+# ---------
 
-# LibDoc configuration
-# ---
-
-# Settings for the playground context
+# PLAYGROUND
+# The user context entirely separated from LibDoc theme
 playground:
     # Metadata for the playground only
     metadata:
-        # Sets the language of the playground, default is en
+        # PLAYGROUND LANGUAGE
+        # Change the language of the playground, default is en
         # lang: en
+
+        # PLAYGROUND CACHE
         # Enable or not browser cache for the playground
         cache: false
-        # PNG favicon file path from root or absolute/remote URL - Square 32x32 pixels icon png format or .ico for old browsers
+        
+        # PLAYGROUND PNG favicon file 
+        # Path from root or absolute/remote URL - Square 32x32 pixels icon png format or .ico for old browsers
         favicon: /user-context/img/android-chrome-512x512.png
-        # SVG favicon example - NOT supported on Safari
+
+        # PLAYGROUND SVG favicon example - NOT supported on Safari
         # favicon: data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22256%22 height=%22256%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%237d6ee7%22></rect><path fill=%22%23fff%22 d=%22M36.63 22.42L66.52 22.42Q66.78 22.87 67.06 23.63Q67.32 24.40 67.32 25.30L67.32 25.30Q67.32 26.83 66.60 27.73Q65.88 28.63 64.53 28.63L64.53 28.63L40.05 28.63L40.05 47.35L63.36 47.35Q63.63 47.80 63.91 48.56Q64.17 49.33 64.17 50.23L64.17 50.23Q64.17 51.76 63.45 52.66Q62.73 53.56 61.38 53.56L61.38 53.56L40.05 53.56L40.05 77.05Q39.60 77.23 38.66 77.41Q37.71 77.59 36.72 77.59L36.72 77.59Q32.67 77.59 32.67 74.34L32.67 74.34L32.67 26.38Q32.67 24.58 33.75 23.50Q34.84 22.42 36.63 22.42L36.63 22.42Z%22></path></svg>
+        
+        # PLAYGROUND AUTOMATIC FAVICON 
+        # Automatic generation of multiple PNG favicons URL. Generates proper favicon files sizes for multiple devices. Must be an absolute URL starting with 'http'
         # favicon_auto must be a public URL image file with a minimum 192x192 pixels 
         # favicon_auto: https://i.ibb.co/cNmfL3D/android-chrome-512x512.png
+        
+        # PLAYGROUND AUTHOR NAME
         # Name of the author of the playground, used into various places of the theme like footer. Default is empty
         # author: Olivier 3lanc
+
+        # PLAYGROUND THEME COLOR
         # Theme color metadata used in some browsers like Chrome that applies this color on browser address bar.
         # Color must be in HEX, default is LibDoc's color
         # color: '#556e1e'
+
+        # PLAYGROUND IMAGE
         # Open Graph image file. Can be either relative URL from site root, absolute URL starting with 'http'. Default is LibDoc's splash screen
-        #image: /img/html5_la_casa_de_papel.webp
+        # image: /img/custom_image.webp
         image: /user-context/img/meta-image-playground.jpg
+
+    # PLAYGROUND MINIMUM HEIGHT
     # Sets a minimum height for each playground, default is 300px
     # min_height: 600px
+
+    # PLAYGROUND STYLESHEETS
     # Style sheets in <head>. Can be either:
     # Relative URL from site root starting with slash /
     # Absolute URL starting with 'http'
@@ -52,16 +74,24 @@ playground:
         - /user-context/css/normalize.css
         - /user-context/css/demo.css
         - /user-context/css/photoswipe.css
+    
+    # PLAYGROUND HEAD JAVASCRIPTS
     # Javascript in <head>. Can be either:
     # Relative URL from site root starting with slash /
     # Absolute URL starting with 'http'
     scripts_head:
         # - /libdoc/js/my-toggles.js
+
+    # PLAYGROUND MODULES JAVASCRIPTS
     # Javascript type="module" are set before text/javascript files
     # JS modules do not work with a file:// URL 
     # JS modules need a web server.
     scripts_body_modules: 
+        - /user-context/js/ola.min.js
+        - /user-context/js/scroll-btween.js
         - /user-context/js/demo.js
+
+    # PLAYGROUND BODY JAVASCRIPTS
     # Javascript type="text/javascript" near </body>. Can be either:
     # Relative URL from site root starting with slash /
     # Absolute URL starting with 'http'
@@ -69,38 +99,66 @@ playground:
         # - https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js
         # - /user-context/js/demo.js
 
-# Metadata informations for the project
+# METADATA
+# Metadata informations for the site/project
 metadata:
-    # Sets the language of LibDoc, default is en
+    # LANGUAGE
+    # Change the language of the playground, default is en
     # lang: en
-    # Enable or not browser cache
+
+    # CACHE
+    # Enable or not browser cache for the playground
     cache: false
-    # Square 32x32 pixels icon png format
-    # favicon: data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22256%22 height=%22256%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%237d6ee7%22></rect><path fill=%22%23fff%22 d=%22M36.63 22.42L66.52 22.42Q66.78 22.87 67.06 23.63Q67.32 24.40 67.32 25.30L67.32 25.30Q67.32 26.83 66.60 27.73Q65.88 28.63 64.53 28.63L64.53 28.63L40.05 28.63L40.05 47.35L63.36 47.35Q63.63 47.80 63.91 48.56Q64.17 49.33 64.17 50.23L64.17 50.23Q64.17 51.76 63.45 52.66Q62.73 53.56 61.38 53.56L61.38 53.56L40.05 53.56L40.05 77.05Q39.60 77.23 38.66 77.41Q37.71 77.59 36.72 77.59L36.72 77.59Q32.67 77.59 32.67 74.34L32.67 74.34L32.67 26.38Q32.67 24.58 33.75 23.50Q34.84 22.42 36.63 22.42L36.63 22.42Z%22></path></svg>
+
+    # PNG favicon file 
+    # Path from root or absolute/remote URL - Square 32x32 pixels icon png format or .ico for old browsers
     favicon: /libdoc/img/favicon/favicon-32x32.png
-    #  favicon_auto must be a public URL image file with a minimum 192x192 pixels 
-    # favicon_auto: https://itautomotive-dev.github.io/bymycar-ui/img/favicons/android-icon-192x192.png
-    # Name of the author of the project, used into various places of the theme like footer. Default is empty
+
+    # SVG favicon example - NOT supported on Safari
+    # favicon: data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22256%22 height=%22256%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%237d6ee7%22></rect><path fill=%22%23fff%22 d=%22M36.63 22.42L66.52 22.42Q66.78 22.87 67.06 23.63Q67.32 24.40 67.32 25.30L67.32 25.30Q67.32 26.83 66.60 27.73Q65.88 28.63 64.53 28.63L64.53 28.63L40.05 28.63L40.05 47.35L63.36 47.35Q63.63 47.80 63.91 48.56Q64.17 49.33 64.17 50.23L64.17 50.23Q64.17 51.76 63.45 52.66Q62.73 53.56 61.38 53.56L61.38 53.56L40.05 53.56L40.05 77.05Q39.60 77.23 38.66 77.41Q37.71 77.59 36.72 77.59L36.72 77.59Q32.67 77.59 32.67 74.34L32.67 74.34L32.67 26.38Q32.67 24.58 33.75 23.50Q34.84 22.42 36.63 22.42L36.63 22.42Z%22></path></svg>
+    
+    # AUTOMATIC FAVICON 
+    # Automatic generation of multiple PNG favicons URL. Generates proper favicon files sizes for multiple devices. Must be an absolute URL starting with 'http'
+    # favicon_auto must be a public URL image file with a minimum 192x192 pixels 
+    # favicon_auto: https://i.ibb.co/cNmfL3D/android-chrome-512x512.png
+    
+    # AUTHOR NAME
+    # Name of the author of the playground, used into various places of the theme like footer. Default is empty
     author: Olivier 3lanc
+
+    # THEME COLOR
     # Theme color metadata used in some browsers like Chrome that applies this color on browser address bar.
     # Color must be in HEX, default is LibDoc's color
     color: '#123456'
+
+    # IMAGE
     # Open Graph image file. Can be either relative URL from site root, absolute URL starting with 'http'. Default is LibDoc's splash screen
-    #image: /img/html5_la_casa_de_papel.webp
+    # image: /img/custom_image.webp
     image: /libdoc/img/libdoc.png
 
-# Sidebar 
+# SIDEBAR 
 sidebar:
-    # Uncomment to disable search
-    #disable_search: true
+    # SEARCH FEATURE
+    # Uncomment and set true to disable search feature
+    # disable_search: true
+
+    # LOGO
     # Top left branding/homepage link, specified image URL or site title if no URL is set
     logo:
+        # LOGO URL
         # Image URL: Can be local e.g. '/img/logo.png' or remote 'https://remotesite.com/img/logo.png'
         url: /libdoc/img/favicon/android-chrome-512x512.png
-        # Logo image max height, applies only of url is set
+
+        # LOGO MAX HEIGHT
+        # Logo image max height, applies only if url is set
         max_height: 40px
+
+        # LOGO FONT SIZE FALLBACK
         # If no logo url, font size of the site title, ignored if url is set
         #font_size: 32px
+
+    # ADDITIONAL LINKS
+    # Allows to add links that are not pages included into the project
     # Display additional links anywhere into the sidebar
     additional_links:
         -   url: https://github.com/olivier3lanc/Jekyll-LibDoc # Local or remote URL
@@ -127,7 +185,7 @@ sidebar:
             order: 510
             category: External resources
 
-# Badges
+# BADGES
 # Feature that allows to display badges into the footer https://shields.io image html and url
 shields:
     -   image_html: <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/olivier3lanc/Jekyll-LibDoc?logo=github&style=flat-square">
@@ -135,12 +193,13 @@ shields:
     -   image_html: <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/olivier3lanc/Jekyll-LibDoc?logo=github&style=flat-square">
         link_url: https://github.com/olivier3lanc/Jekyll-LibDoc
 
-
+# ASSETS
 # Settings for the assets layout
 assets:
+    # START PATH
     # The path from which files are available do download. '/' is the root
-    #path_from_root: /
-    # File extension to display
+    # path_from_root: /
+    # List of extension files you wish to display on assets layout
     extensions_enabled: 
         - pdf
         - js
@@ -163,6 +222,8 @@ assets:
         - mp4
         - webm
         - ogv
+    
+    # IMAGES
     # Array list of image extensions (without point) to display as image into asset grid
     image_extensions: 
         - svg
@@ -172,15 +233,23 @@ assets:
         - png
         - webp
 
+# SYNTAX HIGHLIGHTER / PRISM
 # Settings for Prism syntax highlighter used in LibDoc
 # https://prismjs.com/
 prism:
+    # THEME
     # coy, dark, funky, okaidia, twilight, solarizedlight, tomorrow, 
     theme: tomorrow
+
+    # FONT SIZE
     # CSS font-size property override for <code>
     font_size: 0.9em
+
+    # LINE HEIGHT 
     # CSS line-height property override for <code>
     # line_height: 1em
+
+    # LANGUAGES TO ENABLE
     # Uncomment lines to enable language
     languages:
         - markup
@@ -443,5 +512,6 @@ prism:
         #- yang
         #- zig
 
-# Link powered by LibDoc 
-#disable_powered_by_link: true
+# LIBDOC BACKLINK
+# Link powered by LibDoc - Uncomment to remove
+# disable_powered_by_link: true

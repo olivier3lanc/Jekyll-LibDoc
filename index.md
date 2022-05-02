@@ -3,7 +3,7 @@ layout: libdoc/page-split
 permalink: index.html # To avoid: Warning: Empty `slug` generated for '/'.
 unlisted: true
 ---
-![LibDoc splash screen](libdoc/img/libdoc.png)
+![LibDoc layout](mockup-1.png)
 
 LibDoc is a lightweight Gem free, plugin free and Github Pages compatitble Jekyll theme. LibDoc is dedicated to documentation of CSS and Javascript libraries. It comes with a [built-in playground](libdoc-playground.html) and [local search engine](libdoc-sidebar.html#search).
 
@@ -58,37 +58,84 @@ Easily add [shields.io](https://shields.io/) badges into the footer. Create your
 This homepage is an example of [libdoc/page-split](libdoc-layouts.html) layout. The following playground is automatically built and displayed on the right side of the screen. Playground settings are set into [config.yml](libdoc-config.html). The following code is included into the `<body>` part of the playground.
 
 ```html
-<header>
-    <h1>Playground Example</h1>
-    <p>This playground was automatically build from a <a href="../libdoc-layout-page-split.html" target="_blank" title="Documentation for page split layout">libdoc/page-split layout</a>: <a href="../#playground-example" title="Source page" target="_parent">See the source of this playground</a></p>
-    <p>This is a user context playground <em>iframe</em> that uses its own CSS, standard Javascript and modules set into <a href="../libdoc-config.html#playground" title="Documentation page" target="_parent">config.yml</a></p>
-    <p>This demo uses <a href="https://photoswipe.com" target="_blank">PhotoSwipe lightbox</a></p>
-</header>
-<div id="gallery">
-    <a  href="https://olivier3lanc.github.io/photographies/paysages/ete/fin_journee_ete_beaufortain_size_2560x1706.webp" 
-        data-pswp-width="2560" 
-        data-pswp-height="1706" 
-        target="_blank">
-        <img src="https://images.weserv.nl/?url=https://olivier3lanc.github.io/photographies/paysages/ete/fin_journee_ete_beaufortain_size_2560x1706.webp&output=webp&w=500&q=30" alt="Fin de journée d'été dans le Beaufortain">
-    </a>
-    <a  href="https://olivier3lanc.github.io/photographies/paysages/ete/le_lac_de_roselend_et_ses_chalets_size_2560x1706.webp" 
-        data-pswp-width="2560" 
-        data-pswp-height="1706" 
-        target="_blank">
-        <img src="https://images.weserv.nl/?url=https://olivier3lanc.github.io/photographies/paysages/ete/le_lac_de_roselend_et_ses_chalets_size_2560x1706.webp&output=webp&w=500&q=30" alt="Le Lac de Roselend et ses Chalets">
-    </a>
-    <a  href="https://olivier3lanc.github.io/photographies/paysages/ete/le_planay_en_ete_mg_1350_size_2560x1706.webp" 
-        data-pswp-width="2560" 
-        data-pswp-height="1706" 
-        target="_blank">
-        <img src="https://images.weserv.nl/?url=https://olivier3lanc.github.io/photographies/paysages/ete/le_planay_en_ete_mg_1350_size_2560x1706.webp&output=webp&w=500&q=30" alt="Le Planay en été">
-    </a>
-    <a  href="https://olivier3lanc.github.io/photographies/paysages/ete/route_de_roselend_en_ete_img_1104_size_2560x1706.webp" 
-        data-pswp-width="2560" 
-        data-pswp-height="1706" 
-        target="_blank">
-        <img src="https://images.weserv.nl/?url=https://olivier3lanc.github.io/photographies/paysages/ete/route_de_roselend_en_ete_img_1104_size_2560x1706.webp&w=500&q=30" alt="Route de Roselend en été">
-    </a>
-</div>
+<article>
+    <p>
+        <span scroll-btween="w1" 
+                data-detector="detector-w1" 
+                data-opacity="|0:1 to 98:1 to 100:0|" 
+                data-transform="scale(|0:1 to 98:1 to 100:2|)" 
+                data-letter-spacing="|0:-0.05 to 100:0|em">Scroll</span>
+        <span scroll-btween="w2" 
+                data-detector="detector-w2" 
+                data-opacity="|0:0 to 2:1 to 98:1 to 100:0|" 
+                data-transform="scale(|0:0 to 2:1 to 98:1 to 100:2|)" 
+                data-letter-spacing="|0:-0.1 to 100:0|em">down</span>
+        <span scroll-btween="w3" 
+                data-detector="detector-w3" 
+                data-opacity="|0:0 to 2:1 to 98:1 to 100:0|" 
+                data-transform="scale(|0:0 to 2:1 to 98:1 to 100:2|)" 
+                data-letter-spacing="|0:-0.1 to 100:0|em">spacing</span>
+        <span scroll-btween="w4" 
+                data-detector="detector-w4" 
+                data-opacity="|0:0 to 2:1 to 98:1 to 100:0|" 
+                data-transform="scale(|0:0 to 2:1 to 98:1 to 100:2|)" 
+                data-letter-spacing="|0:-0.1 to 100:0|em">effect</span>
+        <span scroll-btween="w5" 
+                data-detector="detector-w5" 
+                data-opacity="|0:0 to 2:1 to 98:1 to 100:0|" 
+                data-transform="scale(|0:0 to 2:1 to 98:1 to 100:2|)" 
+                data-letter-spacing="|0:-0.1 to 100:0|em">on your</span>
+        <span scroll-btween="w6" 
+                data-detector="detector-w6" 
+                data-opacity="|0:0 to 2:1 to 98:1 to 100:0|" 
+                data-transform="scale(|0:0 to 2:1 to 98:1 to 100:2|)" 
+                data-letter-spacing="|0:-0.1 to 100:0|em">screen</span>
+    </p>
+</article>
+<div id="detector-w1" class="detector">&nbsp;</div>
+<div id="detector-w2" class="detector">&nbsp;</div>
+<div id="detector-w3" class="detector">&nbsp;</div>
+<div id="detector-w4" class="detector">&nbsp;</div>
+<div id="detector-w5" class="detector">&nbsp;</div>
+<div id="detector-w6" class="detector">&nbsp;</div>
+        
+<style>
+    body {
+        margin: 0; padding:0;
+        background-color: black;
+        color: white;
+    }
+    article {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+    p {
+        font-size: 20vmin;
+        font-weight: bold;
+        letter-spacing: -0.1em;
+        margin: 0;
+        text-align: center;
+        white-space: nowrap;
+        position: relative;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        height: 20vmin;
+        line-height: 1em;
+    }
+    p > span {
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: block;
+        width: 100%;
+        opacity: 0;
+    }
+    .detector { margin-top: 95vh; margin-bottom: 95vh; }
+    #scroll-btween-debugbar { display: none; }
+</style>
 ```
-{:.playground title="Playground example - User defined context into an iframe"}
+{:.playground title="Playground example"}
