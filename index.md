@@ -3,7 +3,7 @@ layout: libdoc/page-split
 permalink: index.html # To avoid: Warning: Empty `slug` generated for '/'.
 unlisted: true
 ---
-![LibDoc layout](mockup-1.png)
+![LibDoc layout](libdoc/img/libdoc-layout-page.webp)
 
 LibDoc is a lightweight Gem free, plugin free and Github Pages compatitble Jekyll theme. LibDoc is dedicated to documentation of CSS and Javascript libraries. It comes with a [built-in playground](libdoc-playground.html) and [local search engine](libdoc-sidebar.html#search).
 
