@@ -1,48 +1,39 @@
 /* Global variables. */
 /* :root {} */
-@import url('https://fonts.googleapis.com/css2?family=Akshar:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kufam:wght@600&display=swap');
 
-/* * {
-    box-sizing: border-box;
-} */
 body {
-    margin: auto;
-    max-width: 70ch;
-    background-color: #111;
     color: #FFF;
-    font-family: 'Akshar', sans-serif;
-    padding: 2em;
-    font-size: 18px;
-    background-image: url(../img/layered-waves-haikei.svg);
-    background-position: bottom center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
+    font-family: 'Kufam', sans-serif;
+    background: radial-gradient(circle at 50% 50%, #ffb56b, #f39060, #e16b5c, #ca485c, #ac255e, #870160, #5b0060, #1f005c);
 }
-h1, h2, h3 {
-    font-weight: normal;
-}
-h1 {
-    border-bottom: 1px solid #FFF;
-    padding-bottom: 0.5em;
-    font-size: 3em;
-    text-align: center;
-}
-a {
-    color: deepskyblue;
-}
-#gallery {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2em;
-    margin-top: 2em;
-}
-#gallery a {
-    text-decoration: none;
-    width: calc(50% - 1em);
-}
-#gallery a img {
+
+article {
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
-    border-radius: 4px;
-    border: 1px solid white;
+    height: 100%;
 }
+p {
+    font-size: 10vmin;
+    letter-spacing: -0.1em;
+    margin: 0;
+    text-align: center;
+    white-space: nowrap;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    height: 20vmin;
+    line-height: 1em;
+}
+p > span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    opacity: 0;
+}
+.detector { margin-top: 95vh; margin-bottom: 95vh; }

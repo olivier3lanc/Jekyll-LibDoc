@@ -87,8 +87,6 @@ playground:
     # JS modules do not work with a file:// URL 
     # JS modules need a web server.
     scripts_body_modules: 
-        - /user-context/js/ola.min.js
-        - /user-context/js/scroll-btween.js
         - /user-context/js/demo.js
 
     # PLAYGROUND BODY JAVASCRIPTS
@@ -96,6 +94,8 @@ playground:
     # Relative URL from site root starting with slash /
     # Absolute URL starting with 'http'
     scripts_body: # Javascript files near </body>. Can be either relative URL from site root, absolute URL starting with 'http'
+        - /user-context/js/ola.min.js
+        - /user-context/js/scroll-btween.js
         # - https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js
         # - /user-context/js/demo.js
 
