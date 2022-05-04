@@ -69,7 +69,7 @@ let copyToClipboard = function(value) {
 jQuery(document).ready(function() {
     myToggle.update();
     // EXTERNAL LINKS MANAGEMENT
-    jQuery('main a[href^="http"]:not(#libdoc-codemirror-external-link), .libdoc-sidebar-item a[href^="http"]').each(function(){
+    jQuery('main a[href^="http"]:not(#libdoc-codemirror-external-link), .libdoc-sidebar-item a[href^="http"]:not([href*="/?iframe_mode="])').each(function(){
         // Only if link is not in .playground
         if (jQuery(this).closest('.playground, [data-playground-commands], #libdoc-assets').length == 0) {
             var link = jQuery(this).attr('href');
@@ -306,27 +306,49 @@ const iframeModeEmbed = function(url) {
     if (typeof url == 'string') {
         const el_main = document.querySelector('main');
         if (el_main !== null) {
-            el_main.innerHTML = '<iframe src="'+url+'" class="u-h-100vh u-w-100 u-bl-none u-bt-none u-br-none u-bb-thin-dashed-alt"></iframe>';
+            const el_iframe_embed = document.createElement('iframe');
+            const matching_url = site.url+site.baseurl+'/?iframe_mode='+url;
+            el_iframe_embed.onload = function() {
+                // Update page title
+                try {
+                    // Iframe in on the same host
+                    document.title = el_iframe_embed.contentWindow.document.title;
+                } catch (e) {
+                    // CORS mismatch, just use the link text as document title
+                    const el_source_link = document.querySelector('.libdoc-sidebar-item > a[href="'+matching_url+'"]');
+                    if (el_source_link !== null) {
+                        document.title = el_source_link.innerText;
+                    }
+                }
+            }
+            el_iframe_embed.src = url;
+            el_iframe_embed.classList.add('u-h-100vh', 'u-w-100', 'u-bl-none', 'u-bt-none', 'u-br-none', 'u-bb-thin-dashed-alt');
+            el_main.innerHTML = '';
+            el_main.appendChild(el_iframe_embed);
             sidebar('close');
-            history.pushState(null, null, '?iframe_mode='+url);
+            // history.pushState(null, null, '?iframe_mode='+url);
             // Update link states into libdoc's navbar
-            document.querySelectorAll('.libdoc-sidebar-item a').forEach(function(el) {
-                const href = el.href;
-                if (href == url) {
+            document.querySelectorAll('.libdoc-sidebar-item').forEach(function(el_item) {
+                const el = el_item.querySelector('a');
+                if (el.href == matching_url) {
+                    el_item.classList.add('libdoc-sidebar-current-item');
                     el.classList.add('u-br-large-solid', 'u-bc-primary-edge');
+                    el.classList.remove('m-ff-lead');
                 } else {
+                    el_item.classList.remove('libdoc-sidebar-current-item');
                     el.classList.remove('u-br-large-solid', 'u-bc-primary-edge');
+                    el.classList.add('m-ff-lead');
                 }
             });
         }
     }
 }
-document.querySelectorAll('#libdoc-sidebar a[data-iframe-mode="true"]').forEach(function(el) {
-    el.addEventListener('click', function(e) {
-        e.preventDefault();
-        iframeModeEmbed(el.href);
-    })
-});
+// document.querySelectorAll('#libdoc-sidebar a[data-iframe-mode="true"]').forEach(function(el) {
+//     el.addEventListener('click', function(e) {
+//         e.preventDefault();
+//         iframeModeEmbed(el.href);
+//     })
+// });
 
 // LOAD IFRAME AT PAGE LOAD
 // If URL has iframe_mode as GET param
