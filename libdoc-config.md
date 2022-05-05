@@ -51,4 +51,8 @@ Main navigation containing site/project's logo, pages links and search form.
 * `sidebar.logo.url` <br> Can be either relative URL from site root starting with slash / or absolute URL starting with *http*. Local example */img/logo.png* or remote URL *https://remotesite.com/img/logo.png*.
 * `sidebar.logo.max_height` <br> Logo image max height, applies only if url is set. Default is 40px.
 * `sidebar.logo.font_size` <br> If no logo url, font size of the site title, ignored if url is set. Default is 32px.
-* `sidebar.additional_links` <br> Allows to add links that are not pages included into the project, anywhere into the sidebar. For each item
+* `sidebar.additional_links` <br> Allows to add links that are not pages included into the project, anywhere into the sidebar. For each item:
+    * `url` relative or absolute URL
+    * `title` Text into the link
+    * `order` Integer related to the [position of the item in the sidebar](libdoc-front-matter.html#order). Sidebar items are ordered by this value. Sets the rank of the page link into the sidebar, higher values give lower rank for the page link. Additional links are treated like any other page order.
+    * `category` Adds a separator above the item link with the name of the category if the previous item has not the same category.
