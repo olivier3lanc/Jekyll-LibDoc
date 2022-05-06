@@ -364,12 +364,9 @@ if (el_libdoc_sidebar_menu !== null) {
     const el_libdoc_sidebar_current_item = el_libdoc_sidebar_menu.querySelector('.libdoc-sidebar-current-item');
     if (el_libdoc_sidebar_current_item !== null) {
         const libdoc_sidebar_current_item_offset_top = el_libdoc_sidebar_current_item.offsetTop;
-        const libdoc_sidebar_current_item_offset_threshold = window.innerHeight - 2 * el_libdoc_sidebar_current_item.clientHeight;
-        if (libdoc_sidebar_current_item_offset_top > libdoc_sidebar_current_item_offset_threshold) {
-            el_libdoc_sidebar_menu.scrollTo({
-                top: libdoc_sidebar_current_item_offset_top,
-                behavior: 'smooth'
-            });
-        }
+        el_libdoc_sidebar_menu.scrollTo({
+            top: libdoc_sidebar_current_item_offset_top,
+            behavior: 'smooth'
+        });
     }
 }
