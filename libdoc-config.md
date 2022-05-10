@@ -56,3 +56,26 @@ Main navigation containing site/project's logo, pages links and search form.
     * `title` Text into the link
     * `order` Integer related to the [position of the item in the sidebar](libdoc-front-matter.html#order). Sidebar items are ordered by this value. Sets the rank of the page link into the sidebar, higher values give lower rank for the page link. Additional links are treated like any other page order.
     * `category` Adds a separator above the item link with the name of the category if the previous item has not the same category.
+
+## Assets
+
+The following parameters are available only for the [assets layout](libdoc-layouts.html#assets)
+
+* `assets.path_from_root` <br> The path from which files are available to download. '/' is the root.
+* `assets.extensions_enabled` <br> List of extension files you wish to display on assets layout.
+* `assets.image_extensions` <br> List of image extensions (without point) to display as image into asset grid
+
+## Prism.js syntax highlighter
+
+LibDoc uses [Prism.js](https://prismjs.com) as syntax highlighter. It is possible to customize few parameters through the config file:
+
+* `prism.theme` <br> Just enter the name of the theme you wish to use from available ones: coy, dark, funky, okaidia, twilight, solarizedlight, tomorrow (default).
+* `prism.font_size` <br> Sets the font size for Prism syntax highlighter, default is 0.9em.
+* `prism.line_height` <br> Sets the line height for Prism syntax highlighter, default is 1.4em.
+* `prism.languages` <br> The list of languages to enable. Just uncomment to enable.
+
+## Credits for LibDoc
+
+LibDoc theme comes with a link at the bottom of the page that links to its Github repository. You can disable it:
+
+`disable_powered_by_link` <br> Just uncomment to remove link.

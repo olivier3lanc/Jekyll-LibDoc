@@ -1,7 +1,7 @@
 ---
 ---
 // Include Lightbox 
-import PhotoSwipeLightbox from '{{ site.baseurl }}/user-context/js/photoswipe-lightbox.esm.js';
+import PhotoSwipeLightbox from '{{ site.baseurl }}/demo-only/js/photoswipe-lightbox.esm.js';
 
 const lightbox = new PhotoSwipeLightbox({
     // may select multiple "galleries"
@@ -11,6 +11,6 @@ const lightbox = new PhotoSwipeLightbox({
     children: 'a',
 
     // setup PhotoSwipe Core dynamic import
-    pswpModule: () => import('{{ site.baseurl }}/user-context/js/photoswipe.esm.js')
+    pswpModule: () => import('{{ site.baseurl }}/demo-only/js/photoswipe.esm.js')
 });
 lightbox.init();

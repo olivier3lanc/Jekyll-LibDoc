@@ -55,9 +55,15 @@ Easily add [shields.io](https://shields.io/) badges into the footer. Create your
 
 #### Playground example
 
-This homepage is an example of [libdoc/page-split](libdoc-layouts.html) layout. The following playground is automatically built and displayed on the right side of the screen. Playground settings are set into [config.yml](libdoc-config.html). The following code is included into the `<body>` part of the playground.
+This homepage is an example of [libdoc/page-split](libdoc-layouts.html) layout. The following playground is automatically built and displayed on the right side of the screen. Playground settings are set into [config.yml](libdoc-config.html#playground). The following code is included into the `<body>` part of the playground.
 
 ```html
+<nav    class="top"
+        scroll-btween="nav_1"
+        data-detector="detector-w1" 
+        data-top="|0:20 to 30:0 to 100:0|px">
+    <a  href="{{site.url}}{{site.baseurl}}/#playground-example" target="_parent">Code of this playground</a>
+</nav>
 <article>
     <p>
         <span scroll-btween="w1" 
@@ -84,12 +90,12 @@ This homepage is an example of [libdoc/page-split](libdoc-layouts.html) layout. 
                 data-detector="detector-w5" 
                 data-opacity="|0:0 to 2:1 to 98:1 to 100:0|" 
                 data-transform="scale(|0:0 to 2:1 to 98:1 to 100:2|)" 
-                data-letter-spacing="|0:-0.1 to 100:0|em">with</span>
+                data-letter-spacing="|0:-0.1 to 100:0|em">with its</span>
         <span scroll-btween="w6" 
                 data-detector="detector-w6" 
                 data-opacity="|0:0 to 2:1 to 98:1 to 100:0|" 
                 data-transform="scale(|0:0 to 2:1 to 98:1 to 100:2|)" 
-                data-letter-spacing="|0:-0.1 to 100:0|em">ScrollBtween</span>
+                data-letter-spacing="|0:-0.1 to 100:0|em">own settings</span>
     </p>
 </article>
 <div id="detector-w1" class="detector">&nbsp;</div>
@@ -98,8 +104,77 @@ This homepage is an example of [libdoc/page-split](libdoc-layouts.html) layout. 
 <div id="detector-w4" class="detector">&nbsp;</div>
 <div id="detector-w5" class="detector">&nbsp;</div>
 <div id="detector-w6" class="detector">&nbsp;</div>
-      
+<nav class="bottom">
+    <a  href="https://olivier3lanc.github.io/Scroll-Btween" target="_blank">This demo uses ScrollBtween</a>
+</nav>  
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Kufam:wght@600&display=swap');
+html {
+    position: relative;
+}
+html::before {
+    content: '';
+    pointer-events: none;
+    display: block;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: calc(100% - 40px);
+    height: calc(100% - 40px);
+    border: 1px solid white;
+}
+body {
+    color: #FFF;
+    font-family: 'Kufam', sans-serif;
+    background: radial-gradient(circle at 50% 50%, #ffb56b, #f39060, #e16b5c, #ca485c, #ac255e, #870160, #5b0060, #1f005c);
+}
+nav.top {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1;
+}
+nav.bottom {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1;
+}
+nav a {
+    display: inline-flex;
+    padding: 1em;
+    color: white;
+    font-size: 14px;
+    font-family: monospace;
+}
+article {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+p {
+    font-size: 10vmin;
+    letter-spacing: -0.1em;
+    line-height: 1em;
+    text-align: center;
+    white-space: nowrap;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+p > span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    opacity: 0;
+    margin: -1em 0em 0em 0em;
+}
+.detector { margin-top: 95vh; margin-bottom: 95vh; }
     #scroll-btween-debugbar { display: none; }
 </style>
 ```

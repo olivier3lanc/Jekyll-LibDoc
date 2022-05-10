@@ -1,0 +1,69 @@
+---
+title: Layouts
+description: List and descriptions of available layouts.
+layout: libdoc/page
+
+#LibDoc specific below
+category: Features
+order: 100
+---
+* 
+{:toc}
+
+## Page 
+
+![LibDoc page layout](libdoc/img/libdoc-layout-page.webp)
+
+The most common LibDoc's layout to display content. [View an example](libdoc-layout-page.html)
+
+```yaml
+# Front matter
+layout: libdoc/page
+```
+
+## Page split
+
+![LibDoc page split layout](libdoc/img/libdoc-layout-page-split.webp)
+
+Based on page layout, splits the main content in two sides: On the left, the page render, on the right, the first playground found on the page.
+
+[Example](libdoc-layout-page-split.html)
+
+```yaml
+# Front matter
+layout: libdoc/page-split
+```
+
+## Assets
+
+The same design `libdoc/page`. This layout adds a grid of user specified assets folder available for download or copy URL that are included into the project.
+The default path of the assets source is set in the [config file](libdoc-config.html#assets) which can be overridden for each page.
+
+[Example 1 - default](libdoc-layout-assets.html)
+
+
+[Example 2 - with overridden parameters](libdoc-layout-assets-alt.html)
+
+
+
+## Page code mirror
+
+Intended to be used for live playing with the code of the playground, the page [code mirror](https://codemirror.net/) playground layout runs the html of the current page onto the right side panel
+
+[Example](libdoc-layout-page-codemirror.html)
+
+```yaml
+# Front matter
+layout: libdoc/page-codemirror
+```
+
+## Blank
+
+Just a simple html render of the current page
+
+[Example](libdoc-layout-blank.html)
+
+```yaml
+# Front matter
+layout: libdoc/blank
+```

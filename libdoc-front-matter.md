@@ -1,6 +1,6 @@
 ---
 title: Front matter
-description: Optional LibDoc specific parameters available.
+description: Optional LibDoc specific parameters available for each page.
 layout: libdoc/page
 
 #LibDoc specific below
@@ -10,7 +10,7 @@ order: 100
 * 
 {:toc}
 
-LibDoc comes with the following optional parameters that can be set into the front matter of each page and every layout.
+LibDoc comes with the following optional parameters that can be set into the front matter of each page.
 
 ## Order
 
@@ -36,16 +36,18 @@ category: Features
 unlisted: true
 ```
 
-## Assets
+## Assets settings
 
-The following front matter parameters are available only for the [assets layout](libdoc-layouts.html#assets)
+*Available only for libdoc/assets layout*.
+
+These front matter settings override the [assets configuration](libdoc-config.html#assets).
 
 | `assets.` | Type | Description |
 | - | - | - |
 | `path_from_root` | *string* | The path from which files are available do download. `/` is the root |
 | `extensions_enabled` | *Array* | Array of file extensions to display |
 
-Example of custom assets layout configuration on a page: [view example](libdoc-layout-assets-alt.html)
+Example of custom assets layout configuration on a page: [view example](libdoc-layout-assets-alt.html
 
 ```yaml
 layout: libdoc/assets
@@ -59,61 +61,3 @@ assets:
         - png
 ```
 
-
-## Example
-
-Example with few pages with LibDoc's specific front matter:
-
-```yaml
-# Page 1
-title: Markdown
-# LibDoc secific optional settings
-category: Features
-order: 100
-unlisted: true
-
-# Page 2
-title: Configuration
-# LibDoc secific optional settings
-category: Features
-order: 100
-unlisted: true
-
-# Page 3
-title: Front matter
-# LibDoc secific optional settings
-category: Features
-order: 100
-unlisted: true
-
-# Page 4
-title: Page layout
-# LibDoc secific optional settings
-category: Layouts
-order: 200
-unlisted: true
-
-# Page 5
-title: Assets layout
-# LibDoc secific optional settings
-category: Layouts
-order: 200
-unlisted: true
-
-# Page 6
-title: Blank layout
-# LibDoc secific optional settings
-category: Layouts
-order: 200
-unlisted: true
-
-# Page 7 unlisted
-title: Page unlisted title
-# LibDoc secific optional settings
-#category: Features
-#order: 100
-unlisted: true
-```
-Screenshot of the sidebar's result:
-
-![Example of category and order settings](libdoc/img/order-and-category.webp)
