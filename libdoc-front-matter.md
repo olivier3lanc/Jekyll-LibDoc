@@ -36,6 +36,14 @@ category: Features
 unlisted: true
 ```
 
+## Iframe mode
+
+`iframe_mode` - *boolean* - If true, makes the target page load into an iframe, this allows to keep the sidebar visible.
+
+```yaml
+iframe_mode: true
+```
+
 ## Assets settings
 
 *Available only for libdoc/assets layout*.

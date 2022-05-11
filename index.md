@@ -5,10 +5,10 @@ unlisted: true
 ---
 ![LibDoc layout](libdoc/img/libdoc-layout-page.webp)
 
-LibDoc is a lightweight Gem free, plugin free and Github Pages compatitble Jekyll theme. LibDoc is dedicated to documentation of CSS and Javascript libraries. It comes with a [built-in playground](libdoc-playground.html) and [local search engine](libdoc-sidebar.html#search).
+LibDoc is a lightweight Gem free, plugin free and Github Pages compatible Jekyll theme. LibDoc is dedicated to documentation of CSS and Javascript libraries. It comes with a [built-in playground](libdoc-playground.html) and [local search engine](libdoc-sidebar.html#search).
 
 * **Github Pages compatible** <br>LibDoc runs **without Gem, without plugin**, it is lightweight and can run locally, depending on the resources you set into the [configuration](libdoc-config.html). **LibDoc is 100% compatible with** [Github Pages](https://pages.github.com/).<br><br>
-* **It is fast and easy to document and illustrate** <br>LibDoc was made to easily and quickly get perperly designed documentation.<br><br>
+* **It is fast and easy to document and illustrate** <br>LibDoc was made to easily and quickly get properly designed documentation.<br><br>
 * **Dual context: LibDoc + Playground** <br>LibDoc was made to craft documentation with its own embedded demos and examples which have their own CSS and JS resources defined into the [config.yml](libdoc-config.html#playground), just like any code sandbox.<br><br>
 * **5 main layouts** <br>LibDoc comes with dedicated [layouts](libdoc-layouts.html) for common documentation usages.<br><br>
 * **Playground**<br> A major feature of the LibDoc Jekyll theme is its own built-in and configurable playground. It extends the [syntax highlighter](libdoc-syntax-highlighter.html) by running the specified code into a configurable context with user defined style sheets and scripts. [Learn more](libdoc-playground.html)<br><br>
