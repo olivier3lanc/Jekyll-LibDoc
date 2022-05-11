@@ -1,4 +1,7 @@
-# Jekyll LibDoc
+---
+title: First page
+description: This is my first page
+---
 
 ![LibDoc splash screen](libdoc/img/libdoc.png)
 
@@ -6,29 +9,7 @@ LibDoc is a lightweight Gem free, plugin free and Github Pages compatitble Jekyl
 
 * **Github Pages compatible** <br>LibDoc runs **without Gem, without plugin**, it is lightweight and can run locally, depending on the resources you set into the [configuration](libdoc-config.html). **LibDoc is 100% compatible with** [Github Pages](https://pages.github.com/).<br><br>
 * **It is fast and easy to document and illustrate** <br>LibDoc was made to easily and quickly get perperly designed documentation.<br><br>
-* **Dual context: LibDoc + Playground** <br>LibDoc was made to craft documentation with its own embedded demos and examples which have their own CSS and JS resources defined into the [config.yml](libdoc-config.html#playground), just like any code sandbox.
-    ```html
-    Playground - User defined context set up into config.yml
-    └── html
-        ├── head
-        │   ├── playground.stylesheets in front matter config.yml
-        │   │   ├── file.css
-        │   │   ├── file.css
-        │   │   └── ...
-        │   └── playground.scripts_head in front matter config.yml
-        │       ├── file.js
-        │       ├── file.js
-        │       └── ...
-        └── body
-            ├── playground.scripts_body_modules in front matter config.yml
-            │   ├── js_module.js
-            │   ├── js_module.js
-            │   └── ...
-            └── playground.scripts_body in front matter config.yml
-                ├── file.js
-                ├── file.js
-                └── ...
-    ``` 
+* **Dual context: LibDoc + Playground** <br>LibDoc was made to craft documentation with its own embedded demos and examples which have their own CSS and JS resources defined into the [config.yml](libdoc-config.html#playground), just like any code sandbox.<br><br>
 * **5 main layouts** <br>LibDoc comes with dedicated [layouts](libdoc-layouts.html) for common documentation usages.<br><br>
 * **Playground**<br> A major feature of the LibDoc Jekyll theme is its own built-in and configurable playground. It extends the [syntax highlighter](libdoc-syntax-highlighter.html) by running the specified code into a configurable context with user defined style sheets and scripts. [Learn more](libdoc-playground.html)<br><br>
 * **100% static, no third-party service**<br> LidDoc works without any external service<br><br>
