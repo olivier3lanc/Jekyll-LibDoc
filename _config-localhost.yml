@@ -14,7 +14,7 @@ baseurl: /Jekyll-LibDoc/_site # the subpath of your site, e.g. /blog
 defaults:
   -
     values:
-      layout: "libdoc/page"
+      layout: libdoc/page
 kramdown:
     syntax_highlighter_opts:
         disable: true
