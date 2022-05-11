@@ -178,11 +178,11 @@ sidebar:
         -   url: ./libdoc-layout-page.html
             title: Relative link 1
             order: 500
-            category: Archives
+            category: Additional links
         -   url: ./libdoc-layouts.html
             title: Relative link 2
             order: 500
-            category: Archives
+            category: Additional links
         # Example remote URL
         -   url: https://www.wikipedia.org/
             title: Wikipedia
