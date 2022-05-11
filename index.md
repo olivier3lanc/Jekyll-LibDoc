@@ -175,7 +175,6 @@ p > span {
     margin: -1em 0em 0em 0em;
 }
 .detector { margin-top: 95vh; margin-bottom: 95vh; }
-    #scroll-btween-debugbar { display: none; }
 </style>
 ```
 {:.playground title="Playground example"}

@@ -16,7 +16,7 @@ LibDoc is a [Jekyll](https://www.jekyllrb.org) theme which supports all [Jekyll 
 
 ## Playground
 
-Playground is an user context completely separated from LibDoc theme, it can be embedded mulitple times with different contents on your pages. Here are available settings:
+Playground is an user context completely separated from LibDoc theme resources, it can be embedded mulitple times with different contents on your pages. Here are available settings:
 
 * `playground.stylesheets` <br> Style sheets files in `<head>`. Can be either relative URL from site root starting with slash / or absolute URL starting with *http*.
 * `playground.scripts_head` <br> Javascripts files in `<head>`. Can be either relative URL from site root starting with slash / or absolute URL starting with *http*.

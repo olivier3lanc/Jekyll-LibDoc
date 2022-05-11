@@ -34,6 +34,17 @@ Based on page layout, splits the main content in two sides: On the left, the pag
 layout: libdoc/page-split
 ```
 
+# Page code mirror
+
+Intended to be used for live playing with the code of the playground, the page [code mirror](https://codemirror.net/) playground layout runs the HTML of the current page onto the right side panel.
+
+[Example](libdoc-layout-page-codemirror.html)
+
+```yaml
+# Front matter
+layout: libdoc/page-codemirror
+```
+
 # Playground
 
 Include the entire page hard coded into the playground. 
@@ -57,14 +68,4 @@ The default path of the assets source is set in the [config file](libdoc-config.
 layout: libdoc/assets
 ```
 
-# Page code mirror
-
-Intended to be used for live playing with the code of the playground, the page [code mirror](https://codemirror.net/) playground layout runs the html of the current page onto the right side panel
-
-[Example](libdoc-layout-page-codemirror.html)
-
-```yaml
-# Front matter
-layout: libdoc/page-codemirror
-```
 

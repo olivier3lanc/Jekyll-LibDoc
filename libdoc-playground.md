@@ -12,96 +12,172 @@ order: 100
 
 A major feature of the [LibDoc Jekyll theme](https://github.com/olivier3lanc/Jekyll-LibDoc) is its own built-in and configurable playground. 
 
-* **A Layout**<br> Playground is available as layout, 100% independent from the LibDoc site. It writes your content into the `body` part of the page with the specified settings defined in the [config.yml](libdoc-config.html#playground). Just set your layout to `libdoc/playground` and build.
-* **An extended Syntax Highlighter**<br> It extends the Jekyll syntax highlighter by running each syntax highlighted area into an embedded iframe with the code executed into the custom context of [config.yml](libdoc-config.html#playground). Into your markdown, just add `{:.playground}` to your syntax highlight.
+* **A Layout** [example](libdoc-layout-playground.html)<br> Playground is available as layout, completely separated from LibDoc theme resources. It writes your content into the `body` part of the page with the specified settings defined in the [config.yml](libdoc-config.html#playground). Just set your layout to `libdoc/playground` and build.
+* **An extended Syntax Highlighter** [example](libdoc-layout-playground.html)<br> It extends the Jekyll syntax highlighter by running code of each syntax highlighted area into an embedded iframe with the code executed into the custom context of [config.yml](libdoc-config.html#playground). Into your markdown, just add `{:.playground}` to your syntax highlight. *Since syntax highlight code is injected with Javascript into the playground, script tags are not executed into playgrounds of syntax highlighters. Include Javascript files into your config files instead.* 
+
+## Playground examples
 
 Here is an example of playground:
 
 ```html
-<div class="row g-2 align-items-center mb-n3">
-    <div class="col-12 col-xl-2 mb-3 font-weight-semibold">Normal</div>
-    <div class="col-6 col-sm-4 col-md-2 col-xl mb-3">
-    <a href="#" class="btn btn-primary w-100">
-        Primary
-    </a>
-    </div>
-    <div class="col-6 col-sm-4 col-md-2 col-xl mb-3">
-    <a href="#" class="btn btn-secondary w-100">
-        Secondary
-    </a>
-    </div>
-    <div class="col-6 col-sm-4 col-md-2 col-xl mb-3">
-    <a href="#" class="btn btn-success w-100">
-        Success
-    </a>
-    </div>
-    <div class="col-6 col-sm-4 col-md-2 col-xl mb-3">
-    <a href="#" class="btn btn-warning w-100">
-        Warning
-    </a>
-    </div>
-    <div class="col-6 col-sm-4 col-md-2 col-xl mb-3">
-    <a href="#" class="btn btn-danger w-100">
-        Danger
-    </a>
-    </div>
-    <div class="col-6 col-sm-4 col-md-2 col-xl mb-3">
-    <a href="#" class="btn btn-info w-100">
-        Info
-    </a>
-    </div>
-    <div class="col-6 col-sm-4 col-md-2 col-xl mb-3">
-    <a href="#" class="btn btn-light w-100">
-        Light
-    </a>
-    </div>
-    <div class="col-6 col-sm-4 col-md-2 col-xl mb-3">
-    <a href="#" class="btn btn-dark w-100">
-        Dark
-    </a>
-    </div>
-</div>
+<article>
+    <p>
+        <span scroll-btween="w1" 
+                data-detector="detector-w1" 
+                data-opacity="|0:1 to 98:1 to 100:0|" 
+                data-transform="scale(|0:1 to 98:1 to 100:2|)" 
+                data-letter-spacing="|0:-0.05 to 100:0|em">Syntax Highlight</span>
+        <span scroll-btween="w2" 
+                data-detector="detector-w2" 
+                data-opacity="|0:0 to 2:1 to 98:1 to 100:0|" 
+                data-transform="scale(|0:0 to 2:1 to 98:1 to 100:2|)" 
+                data-letter-spacing="|0:-0.1 to 100:0|em">brought to life!</span>
+        <span scroll-btween="w3" 
+                data-detector="detector-w3" 
+                data-opacity="|0:0 to 2:1 to 98:1 to 100:0|" 
+                data-transform="scale(|0:0 to 2:1 to 98:1 to 100:2|)" 
+                data-letter-spacing="|0:-0.1 to 100:0|em">Playground</span>
+        <span scroll-btween="w4" 
+                data-detector="detector-w4" 
+                data-opacity="|0:0 to 2:1 to 98:1 to 100:0|" 
+                data-transform="scale(|0:0 to 2:1 to 98:1 to 100:2|)" 
+                data-letter-spacing="|0:-0.1 to 100:0|em">example</span>
+        <span scroll-btween="w5" 
+                data-detector="detector-w5" 
+                data-opacity="|0:0 to 2:1 to 98:1 to 100:0|" 
+                data-transform="scale(|0:0 to 2:1 to 98:1 to 100:2|)" 
+                data-letter-spacing="|0:-0.1 to 100:0|em">with its</span>
+        <span scroll-btween="w6" 
+                data-detector="detector-w6" 
+                data-opacity="|0:0 to 2:1 to 98:1 to 100:0|" 
+                data-transform="scale(|0:0 to 2:1 to 98:1 to 100:2|)" 
+                data-letter-spacing="|0:-0.1 to 100:0|em">own settings</span>
+    </p>
+</article>
+<div id="detector-w1" class="detector">&nbsp;</div>
+<div id="detector-w2" class="detector">&nbsp;</div>
+<div id="detector-w3" class="detector">&nbsp;</div>
+<div id="detector-w4" class="detector">&nbsp;</div>
+<div id="detector-w5" class="detector">&nbsp;</div>
+<div id="detector-w6" class="detector">&nbsp;</div>
+<nav class="bottom">
+    <a  href="https://olivier3lanc.github.io/Scroll-Btween" target="_blank">This demo uses ScrollBtween</a>
+</nav>  
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Kufam:wght@600&display=swap');
+    html {
+        position: relative;
+    }
+    html::before {
+        content: '';
+        pointer-events: none;
+        display: block;
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        width: calc(100% - 40px);
+        height: calc(100% - 40px);
+        border: 1px solid white;
+    }
+    body {
+        color: #FFF;
+        font-family: 'Kufam', sans-serif;
+        background: radial-gradient(circle at 50% 50%, #ffb56b, #f39060, #e16b5c, #ca485c, #ac255e, #870160, #5b0060, #1f005c);
+    }
+    nav.top {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        z-index: 1;
+    }
+    nav.bottom {
+        position: absolute;
+        bottom: 20px;
+        right: 20px;
+        z-index: 1;
+    }
+    nav a {
+        display: inline-flex;
+        padding: 1em;
+        color: white;
+        font-size: 14px;
+        font-family: monospace;
+    }
+    article {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+    p {
+        font-size: 10vmin;
+        letter-spacing: -0.1em;
+        line-height: 1em;
+        text-align: center;
+        white-space: nowrap;
+        position: relative;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+    }
+    p > span {
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: block;
+        width: 100%;
+        opacity: 0;
+        margin: -1em 0em 0em 0em;
+    }
+    .detector { margin-top: 95vh; margin-bottom: 95vh; }
+</style>
 ```
-{:.playground title=""}
+{:.playground title="A playground example"}
 
 Here is the markdown for the example above:
 
 ```markdown
     ```html
-        <header class="px-8 py-8 max-w-screen-lg mx-auto bg-blue-100 text-center">
-            <h1 class="text-4xl sm:text-6xl lg:text-7xl leading-none font-extrabold tracking-tight text-gray-900 mt-0 mb-8">My custom project.</h1>
-            <p class="max-w-screen-lg text-lg sm:text-2xl sm:leading-10 font-medium mb-10 sm:mb-11">Here is a fully crafted code playground with its own resources set in <a href="../libdoc-config.html#playground" target="_parent" class="text-blue-500 hover:text-blue-800">configuration</a>.</p>
-            <nav class="flex justify-center">
-                <a class="w-full sm:w-auto flex-none bg-blue-500 hover:bg-blue-600 text-white text-lg leading-6 font-semibold py-3 px-6 border border-transparent rounded-md focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-blue-600 focus:outline-none transition-colors duration-200" href="#">Get started</a>
-            </nav>
-        </header>
+        <nav    class="top"
+                scroll-btween="nav_1"
+                data-detector="detector-w1" 
+                data-top="|0:20 to 30:0 to 100:0|px">
+            <a  href="{{site.url}}{{site.baseurl}}/#playground-example" target="_parent">Code of this playground</a>
+        </nav>
+        [...]
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Kufam:wght@600&display=swap');
+            html {
+                position: relative;
+            }
+            [...]
+            .detector { margin-top: 95vh; margin-bottom: 95vh; }
+        </style>
     ```
-    {:.playground}
+    {:.playground title="A playground example"}
 ```
-
-## How it works
-
-1. **From markdown**
-    1. LibDoc's playground copy the code from the syntax highlighted area
-    2. Encodes code it in base64
-    3. Builds an URL with code data as GET parameters
-    4. Embeds the playground as iframe with the URL
-2. **Execution in playground's iframe**
-    1. Playground's stylesheets in `<head>` set in [config.yml](libdoc-config.html) `playground.stylesheets`
-    2. Playground's scripts in `<head>` set in [config.yml](libdoc-config.html) `playground.scripts_head`
-    3. The code - user's'code from markdown - is included into the DOM
-    4. Playground's scripts next to `</body>` set in [config.yml](libdoc-config.html) `playground.scripts_body`
-
 
 ## Usage
 
-Just add `{: .playground}` below the syntax highlight markdown code. How to add a playground with markdown:
+Just add `{:.playground}` below the syntax highlight markdown code. How to add a playground with markdown:
+
+Most simple case
 
 ```markdown
     ```name_of_the_language
         <the code>
     ```
     {:.playground}
+```
+
+Adding a custom title displayed in the title bar of the playground.
+
+```markdown
+    ```name_of_the_language
+        <the code>
+    ```
+    {:.playground title="Add any title"}
 ```
 
 * You can add as much playgrounds as you want into a page, playgrounds are lazy loaded.
@@ -111,6 +187,20 @@ Just add `{: .playground}` below the syntax highlight markdown code. How to add 
     * Maximize button
     * Open in new window button
     * Info modal that returns playground's settings
+
+## How it works
+
+1. **From markdown**
+    1. LibDoc's playground copy the code from the syntax highlighted area
+    2. Encodes code it in base64
+    3. Builds an URL with code data as GET parameters
+    4. Embeds the playground as iframe with the URL
+2. **Execution in playground's iframe**
+    1. Playground's stylesheets in `<head>` set in [config.yml](libdoc-config.html#playground) `playground.stylesheets`
+    2. Playground's scripts *type="text/javascript"* in `<head>` set in [config.yml](libdoc-config.html#playground) `playground.scripts_head`
+    3. The code - user's'code from markdown - is included into the DOM
+    4. Playground's scripts *type="modules"* set in [config.yml](libdoc-config.html#playground) `playground.scripts_body_modules`
+    5. Playground's scripts *type="text/javascript"* next to `</body>` set in [config.yml](libdoc-config.html#playground) `playground.scripts_body`
 
 ## Settings
 
