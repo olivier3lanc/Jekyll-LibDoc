@@ -11,10 +11,10 @@ baseurl: /Jekyll-LibDoc/_site # the subpath of your site, e.g. /blog
 #destination: ../marcelrent/public/proto-app # Build relative path destination. The destination directory e.g. /blog
 #keep_files: [cache]
 #markdown: kramdown
-defaults:
-  -
-    values:
-      layout: libdoc/page
+# defaults:
+#   -
+#     values:
+#       layout: libdoc/page # Uncommenting brings pbms on static files that do not need layout
 kramdown:
     syntax_highlighter_opts:
         disable: true
