@@ -1,6 +1,7 @@
 ---
 title: First page
 description: This is my first page
+layout: libdoc/page
 ---
 
 ![LibDoc splash screen](libdoc/img/libdoc.png)
