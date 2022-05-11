@@ -194,6 +194,33 @@ Adding a custom title displayed in the title bar of the playground.
 
 ## How it works
 
+As a layout or syntax highlight extension, playground is crafted as follows:
+
+```html
+Playground - User defined context set up into config.yml
+└── html
+    ├── head
+    │   ├── playground.stylesheets in front matter config.yml
+    │   │   ├── file.css
+    │   │   ├── file.css
+    │   │   └── ...
+    │   └── playground.scripts_head in front matter config.yml
+    │       ├── file.js
+    │       ├── file.js
+    │       └── ...
+    └── body
+        ├── playground.scripts_body_modules in front matter config.yml
+        │   ├── js_module.js
+        │   ├── js_module.js
+        │   └── ...
+        └── playground.scripts_body in front matter config.yml
+            ├── file.js
+            ├── file.js
+            └── ...
+``` 
+
+About extended syntax highlighter only:
+
 1. **From markdown**
     1. LibDoc's playground copy the generated HTML from the syntax highlighted area
     2. Encodes code it in base64
@@ -205,6 +232,8 @@ Adding a custom title displayed in the title bar of the playground.
     3. The code - user's'code from markdown - is included into the DOM
     4. Playground's scripts *type="modules"* set in [config.yml](libdoc-config.html#playground) `playground.scripts_body_modules`
     5. Playground's scripts *type="text/javascript"* next to `</body>` set in [config.yml](libdoc-config.html#playground) `playground.scripts_body`
+
+Please note: *Since syntax highlight code is injected with Javascript into the playground, script tags are not executed into playgrounds of syntax highlighters. Include Javascript files into your config files instead.*
 
 ## Settings
 
