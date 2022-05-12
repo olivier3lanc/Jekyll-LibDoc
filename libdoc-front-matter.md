@@ -30,7 +30,7 @@ category: Features
 
 ## Unlisted
 
-`unlisted` - *boolean* - If true, removes page link from the sidebar.
+`unlisted` - *boolean* - If true, removes page link from the sidebar and search results. [Example](libdoc-unlisted.html)
 
 ```yaml
 unlisted: true
@@ -38,7 +38,7 @@ unlisted: true
 
 ## Iframe mode
 
-`iframe_mode` - *boolean* - If true, makes the target page load into an iframe, this allows to keep the sidebar visible.
+`iframe_mode` - *boolean* - If true, makes the target page load into an iframe, this allows to keep the sidebar visible. [Example with a YouTube link](libdoc/iframe.html?src=https://www.youtube.com/embed/iWowJBRMtpc) and [example with a playground](libdoc/iframe.html?src={{site.url}}{{site.baseurl}}/libdoc-layout-playground-iframe.html)
 
 ```yaml
 iframe_mode: true

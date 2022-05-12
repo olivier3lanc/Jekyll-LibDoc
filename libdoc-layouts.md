@@ -36,6 +36,8 @@ layout: libdoc/page-split
 
 ## Page code mirror
 
+![LibDoc page codemirror layout](libdoc/img/libdoc-layout-page-codemirror.webp)
+
 Intended to be used for live playing with the code of the playground, the page [code mirror](https://codemirror.net/) playground layout runs the HTML of the current page onto the right side panel.
 
 [Example](libdoc-layout-page-codemirror.html)
@@ -46,6 +48,8 @@ layout: libdoc/page-codemirror
 ```
 
 ## Playground
+
+![LibDoc page playground layout](libdoc/img/libdoc-layout-playground.webp)
 
 Include the entire page hard coded into the playground. 
 
@@ -58,10 +62,13 @@ layout: libdoc/playground
 
 ## Assets
 
+![LibDoc page assets layout](libdoc/img/libdoc-layout-page-assets.webp)
+
 The same design `libdoc/page`. This layout adds a grid of user specified assets folder available for download or copy URL that are included into the project.
 The default path of the assets source is set in the [config file](libdoc-config.html#assets) which can be overridden for each page.
 
-[Example 1 - Based on config settings](libdoc-layout-assets.html) [Example 2 - with overridden parameters](libdoc-layout-assets-alt.html)
+* [Example 1 - Based on config settings](libdoc-layout-assets.html) 
+* [Example 2 - with overridden parameters](libdoc-layout-assets-alt.html)
 
 ```yaml
 # Front matter
