@@ -7,7 +7,6 @@ unlisted: true
 
  > LibDoc is a Jekyll theme that was crafted to easily and quickly get properly designed documentation especially for CSS and Javascript libraries. It comes with a [built-in playground](libdoc-playground.html) and local search engine.
 
-
 * **Dual context: LibDoc + Playground** <br>LibDoc was made to craft documentation with its own embedded demos and examples which have their own CSS and JS resources defined into the [config.yml](libdoc-config.html#playground), just like any code sandbox.<br><br>
 * **Github Pages compatible** <br>LibDoc runs **without Gem, without plugin**, it is lightweight and can run locally, depending on the resources you set into the [configuration](libdoc-config.html).<br><br>
 * **Gem free, plugin free** <br>LibDoc is Gem free and plugin free Jekyll theme and [Github Pages](https://pages.github.com/) compatible Jekyll theme.<br><br>
