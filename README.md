@@ -76,3 +76,8 @@ It is possible to craft documentation with LibDoc only with your browser, [Githu
 To automatically compile your LibDoc project, just enable your instance on this page `https://github.com/[GH_USER_NAME]/[REPO_NAME]/settings/pages`. [Learn more](https://pages.github.com/)
 
 Each time you commit and push on the specified branch, [Github Pages](https://pages.github.com) builds and hosts your project on the URL `https://[GH_USER_NAME].github.io/[REPO_NAME]`.
+
+
+## Contributing
+
+Feel free to contribute to LibDoc development, fork this project, make changes on develop branch and send pull requests.
