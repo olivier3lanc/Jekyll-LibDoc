@@ -1,20 +1,22 @@
 # ---------
 # JEKYLL CONFIGURATION
+# More info at https://jekyllrb.com/docs/configuration/options/
 # ---------
 
 title: LibDoc # title of the documentation
 description: >- # Description of the docs. (>- means to ignore newlines until next param)
   A Jekyll documentation theme with built-in search and playground
+# IMPORTANT: on Github Pages deploys, url and baseurl must be commented or set to proper settings, otherwise links and resources URL are wrong
 # url: http://localhost # the base hostname & protocol for your site, e.g. http://example.com
 # baseurl: /Jekyll-LibDoc/_site # the subpath of your site, e.g. /blog
 #permalink: /:path/:basename/:output_ext
-#destination: ../marcelrent/public/proto-app # Build relative path destination. The destination directory e.g. /blog
+#destination: ../your/new/path # Build relative path destination. The destination directory e.g. /blog
 #keep_files: [cache]
 #markdown: kramdown
 # defaults:
 #   -
 #     values:
-#       layout: libdoc/page # Uncommenting brings pbms on static files that do not need layout
+#       layout: libdoc/page # Uncommenting brings pbms on static files that must not be associated to any layout
 kramdown:
     syntax_highlighter_opts:
         disable: true
@@ -24,6 +26,7 @@ sass:
 
 # ---------
 # LIBDOC CONFIGURATION
+# https://olivier3lanc.github.io/Jekyll-LibDoc/libdoc-config.html
 # ---------
 
 # PLAYGROUND
@@ -165,9 +168,9 @@ sidebar:
     # Allows to add links that are not pages included into the project
     # Display additional links anywhere into the sidebar
     additional_links:
-        # -   url: https://github.com/olivier3lanc/Jekyll-LibDoc # Local or remote URL
-        #     title: <span class="i-github u-mr-xxs"></span> View on GitHub # Link text
-        #     order: 0 # Sets the rank of the page link into the sidebar, higher values give lower rank for the page link
+        -   url: https://github.com/olivier3lanc/Jekyll-LibDoc # Local or remote URL
+            title: <span class="i-github u-mr-xxs"></span> View on GitHub # Link text
+            order: 0 # Sets the rank of the page link into the sidebar, higher values give lower rank for the page link
             # category: Showcase # Add this this link into a category just like pages
         # -   url: https://www.youtube.com/embed/iWowJBRMtpc # Local or remote URL
         #     title: Iframe mode example # Link text
@@ -175,25 +178,31 @@ sidebar:
         #     iframe_mode: true
         #     category: Features
         # Example URL
-        # -   url: ./libdoc-layout-page.html
-        #     title: Relative link 1
-        #     order: 500
-        #     category: Archives
-        # -   url: ./libdoc-layouts.html
-        #     title: Relative link 2
-        #     order: 500
-        #     category: Archives
+        -   url: https://olivier3lanc.github.io/Scroll-Btween/
+            title: ScrollBtween
+            order: 500
+            category: Showcase
+        -   url: https://olivier3lanc.github.io/Scroll-Frames/
+            title: Scroll Frames
+            order: 500
+            category: Showcase
         # Example remote URL
-        # -   url: https://www.wikipedia.org/
-        #     title: Wikipedia
-        #     order: 510
-        #     category: External resources
+        -   url: https://pages.github.com
+            title: Github Pages
+            order: 510
+            category: External resources
+        -   url: https://jekyllrb.com
+            title: Jekyll
+            order: 510
+            category: External resources
 
 # BADGES
 # Feature that allows to display badges into the footer https://shields.io image html and url
 shields:
-    -   image_html: <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/olivier3lanc/Jekyll-LibDoc?logo=github&style=flat-square">
-        link_url: https://github.com/olivier3lanc/Jekyll-LibDoc
+    # -   image_html: <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/olivier3lanc/Jekyll-LibDoc?logo=github&style=flat-square">
+    #     link_url: https://github.com/olivier3lanc/Jekyll-LibDoc
+    # -   image_html: <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/olivier3lanc/Jekyll-LibDoc?logo=github&style=flat-square">
+    #     link_url: https://github.com/olivier3lanc/Jekyll-LibDoc
 
 # ASSETS
 # Settings for the assets layout
