@@ -19,7 +19,7 @@ LibDoc requires only [Jekyll](https://jekyllrb.com/) to compile your work.
 1. Install Jekyll on your machine following the steps described [here](https://jekyllrb.com/docs/)
 2. Get the latest version of LibDoc 
     * [Download blank](https://github.com/olivier3lanc/Jekyll-LibDoc/archive/refs/heads/master.zip) or [Download with demo content](https://github.com/olivier3lanc/Jekyll-LibDoc/archive/refs/heads/develop.zip)
-    * You can also clone repository `git@github.com:olivier3lanc/Jekyll-LibDoc.git`
+    * You can also clone repository from your terminal `git clone git@github.com:olivier3lanc/Jekyll-LibDoc.git`
 3. Into the folder where LibDoc was copied, adjust your settings of your YAML file, Most important are
     * `url` <br>The host of your local set up, this can be for example *http://localhost* or *http://192.168.1.2* or domaine name
     * `baseurl` <br>The path to your local copy of LibDoc. For example */Jekyll-LibDoc/_site*
