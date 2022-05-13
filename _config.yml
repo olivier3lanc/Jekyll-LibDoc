@@ -6,9 +6,9 @@
 title: LibDoc # title of the documentation
 description: >- # Description of the docs. (>- means to ignore newlines until next param)
   A Jekyll documentation theme with built-in search and playground
-# IMPORTANT: on Github Pages deploys, url and baseurl are ignored because automatically overridden
-url: http://localhost # the base hostname & protocol for your site, e.g. http://example.com
-baseurl: /Jekyll-LibDoc/_site # the subpath of your site, e.g. /blog
+# IMPORTANT: on Github Pages deploys, url and baseurl must be commented or set to proper settings, otherwise links and resources URL are wrong
+# url: http://localhost # the base hostname & protocol for your site, e.g. http://example.com
+# baseurl: /Jekyll-LibDoc/_site # the subpath of your site, e.g. /blog
 #permalink: /:path/:basename/:output_ext
 #destination: ../your/new/path # Build relative path destination. The destination directory e.g. /blog
 #keep_files: [cache]
@@ -37,8 +37,8 @@ playground:
     # Relative URL from site root starting with slash /
     # Absolute URL starting with 'http'
     stylesheets: 
-        - /demo-only/css/normalize.css
-        - /demo-only/css/photoswipe.css
+        # - /demo-only/css/normalize.css
+        # - /demo-only/css/photoswipe.css
     
     # PLAYGROUND HEAD JAVASCRIPTS
     # Javascript in <head>. Can be either:
@@ -52,15 +52,15 @@ playground:
     # JS modules do not work with a file:// URL 
     # JS modules need a web server.
     scripts_body_modules: 
-        - /demo-only/js/demo.js
+        # - /demo-only/js/demo.js
 
     # PLAYGROUND BODY JAVASCRIPTS
     # Javascript type="text/javascript" near </body>. Can be either:
     # Relative URL from site root starting with slash /
     # Absolute URL starting with 'http'
     scripts_body: # Javascript files near </body>. Can be either relative URL from site root, absolute URL starting with 'http'
-        - /demo-only/js/ola.min.js
-        - /demo-only/js/scroll-btween.js
+        # - /demo-only/js/ola.min.js
+        # - /demo-only/js/scroll-btween.js
         # - https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js
         # - /demo-only/js/demo.js
     
@@ -172,33 +172,37 @@ sidebar:
             title: <span class="i-github u-mr-xxs"></span> View on GitHub # Link text
             order: 0 # Sets the rank of the page link into the sidebar, higher values give lower rank for the page link
             # category: Showcase # Add this this link into a category just like pages
-        -   url: https://www.youtube.com/embed/iWowJBRMtpc # Local or remote URL
-            title: Iframe mode example # Link text
-            order: 100 # Sets the rank of the page link into the sidebar, higher values give lower rank for the page link
-            iframe_mode: true
-            category: Features
+        # -   url: https://www.youtube.com/embed/iWowJBRMtpc # Local or remote URL
+        #     title: Iframe mode example # Link text
+        #     order: 100 # Sets the rank of the page link into the sidebar, higher values give lower rank for the page link
+        #     iframe_mode: true
+        #     category: Features
         # Example URL
-        -   url: ./libdoc-layout-page.html
-            title: Relative link 1
+        -   url: https://olivier3lanc.github.io/Scroll-Btween/
+            title: ScrollBtween
             order: 500
-            category: Additional links
-        -   url: ./libdoc-layouts.html
-            title: Relative link 2
+            category: Showcase
+        -   url: https://olivier3lanc.github.io/Scroll-Frames/
+            title: Scroll Frames
             order: 500
-            category: Additional links
+            category: Showcase
         # Example remote URL
-        -   url: https://www.wikipedia.org/
-            title: Wikipedia
+        -   url: https://pages.github.com
+            title: Github Pages
+            order: 510
+            category: External resources
+        -   url: https://jekyllrb.com
+            title: Jekyll
             order: 510
             category: External resources
 
 # BADGES
 # Feature that allows to display badges into the footer https://shields.io image html and url
 shields:
-    -   image_html: <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/olivier3lanc/Jekyll-LibDoc?logo=github&style=flat-square">
-        link_url: https://github.com/olivier3lanc/Jekyll-LibDoc
-    -   image_html: <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/olivier3lanc/Jekyll-LibDoc?logo=github&style=flat-square">
-        link_url: https://github.com/olivier3lanc/Jekyll-LibDoc
+    # -   image_html: <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/olivier3lanc/Jekyll-LibDoc?logo=github&style=flat-square">
+    #     link_url: https://github.com/olivier3lanc/Jekyll-LibDoc
+    # -   image_html: <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/olivier3lanc/Jekyll-LibDoc?logo=github&style=flat-square">
+    #     link_url: https://github.com/olivier3lanc/Jekyll-LibDoc
 
 # ASSETS
 # Settings for the assets layout
