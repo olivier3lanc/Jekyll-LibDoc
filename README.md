@@ -5,7 +5,23 @@ layout: libdoc/page
 permalink: index.html
 ---
 
-![LibDoc layout](libdoc/img/libdoc.png)
+# Jekyll LibDoc
+
+[Documentation](https://olivier3lanc.github.io/Jekyll-LibDoc/) | 
+[Installation](https://olivier3lanc.github.io/Jekyll-LibDoc/libdoc-install.html) | 
+[Configuration](https://olivier3lanc.github.io/Jekyll-LibDoc/libdoc-config.html)
+
+![LibDoc layout](libdoc/img/libdoc-layout-page-split.webp)
+
+## Showcase
+
+The following documentation project use LibDoc:
+
+* [Scroll Frames](https://olivier3lanc.github.io/Scroll-Frames/) Animate sequences of still frames on any DOM element in relation with its position into the viewport.
+* [Scroll Btween](https://olivier3lanc.github.io/Scroll-Btween/) Tween any CSS values on any DOM element in relation with its position into the viewport.
+* [BYmyCAR UI Framework](https://itautomotive-dev.github.io/bymycar-ui/) Documentation of custom BYmyCAR website UI framework.
+
+## Features
 
  > LibDoc is a Jekyll theme that was crafted to easily and quickly get properly designed documentation especially for CSS and Javascript libraries. It comes with a [built-in playground](https://olivier3lanc.github.io/Jekyll-LibDoc/libdoc-playground.html) and local search engine.
 
@@ -31,3 +47,5 @@ permalink: index.html
 * **TOC - Table Of Content**<br> LibDoc supports `{:toc}` automatically generated from kramdown - markdown engine - TOC styling the table of content onto a right sidebar. [Learn more](https://olivier3lanc.github.io/Jekyll-LibDoc/libdoc-markdown.html#table-of-content-support)<br><br>
 * **Shields and badges**<br>![Badge example](https://shields.io/badge/style-for--the--badge-green?logo=appveyor&style=for-the-badge) <br>
 Easily add [shields.io](https://shields.io/) badges into the footer. Create your own badges and add it through the config.yml. [Learn more](https://olivier3lanc.github.io/Jekyll-LibDoc/libdoc-badges.html)<br><br>
+
+## Install

@@ -179,7 +179,7 @@ sidebar:
         #     category: Features
         # Example URL
         -   url: https://olivier3lanc.github.io/Scroll-Btween/
-            title: ScrollBtween
+            title: Scroll Btween
             order: 500
             category: Showcase
         -   url: https://olivier3lanc.github.io/Scroll-Frames/
