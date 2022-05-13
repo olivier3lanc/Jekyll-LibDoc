@@ -60,9 +60,16 @@ Include the entire page hard coded into the playground.
 layout: libdoc/playground
 ```
 
+By default, libdoc/playground is completely separated from other layouts, then sidebar disappears. If you can to keep the sidebar, just add the option `iframe_mode: true` into the [front matter](libdoc-front-matter.html#iframe-mode). See an [example with iframe mode]({{site.url}}{{site.baseurl}}/libdoc/iframe.html?src={{site.url}}{{site.baseurl}}/libdoc-layout-playground-iframe.html)
+
+```yaml
+# Optionally
+iframe_mode: true
+```
+
 ## Assets
 
-![LibDoc page assets layout](libdoc/img/libdoc-layout-page-assets.webp)
+![LibDoc page assets layout](libdoc/img/libdoc-layout-assets.webp)
 
 The same design `libdoc/page`. This layout adds a grid of user specified assets folder available for download or copy URL that are included into the project.
 The default path of the assets source is set in the [config file](libdoc-config.html#assets) which can be overridden for each page.

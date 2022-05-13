@@ -1,20 +1,22 @@
 # ---------
 # JEKYLL CONFIGURATION
+# More info at https://jekyllrb.com/docs/configuration/options/
 # ---------
 
 title: LibDoc # title of the documentation
 description: >- # Description of the docs. (>- means to ignore newlines until next param)
   A Jekyll documentation theme with built-in search and playground
-# url: http://localhost # the base hostname & protocol for your site, e.g. http://example.com
-# baseurl: /Jekyll-LibDoc/_site # the subpath of your site, e.g. /blog
+# IMPORTANT: on Github Pages deploys, url and baseurl are ignored because automatically overridden
+url: http://localhost # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: /Jekyll-LibDoc/_site # the subpath of your site, e.g. /blog
 #permalink: /:path/:basename/:output_ext
-#destination: ../marcelrent/public/proto-app # Build relative path destination. The destination directory e.g. /blog
+#destination: ../your/new/path # Build relative path destination. The destination directory e.g. /blog
 #keep_files: [cache]
 #markdown: kramdown
 # defaults:
 #   -
 #     values:
-#       layout: libdoc/page # Uncommenting brings pbms on static files that do not need layout
+#       layout: libdoc/page # Uncommenting brings pbms on static files that must not be associated to any layout
 kramdown:
     syntax_highlighter_opts:
         disable: true
@@ -24,6 +26,7 @@ sass:
 
 # ---------
 # LIBDOC CONFIGURATION
+# https://olivier3lanc.github.io/Jekyll-LibDoc/libdoc-config.html
 # ---------
 
 # PLAYGROUND

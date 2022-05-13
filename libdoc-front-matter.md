@@ -46,7 +46,7 @@ iframe_mode: true
 
 ## Assets settings
 
-*Available only for libdoc/assets layout*.
+*Available only for [libdoc/assets layout](libdoc-layouts.html#assets)*.
 
 These front matter settings override the [assets configuration](libdoc-config.html#assets).
 
