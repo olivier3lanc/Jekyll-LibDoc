@@ -78,4 +78,4 @@ Each time you commit and push on the specified branch, [Github Pages](https://pa
 
 ## Contributing
 
-Feel free to contribute to LibDoc development, fork this project, make changes on develop branch and send pull requests.
+Feel free to contribute to LibDoc development, fork this project, make changes on develop branch and send pull requests or simply report issues.
