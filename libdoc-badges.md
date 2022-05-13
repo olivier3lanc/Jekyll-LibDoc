@@ -5,7 +5,7 @@ layout: libdoc/page
 
 #LibDoc specific below
 category: Features
-order: 100
+order: 110
 #unlisted: true
 ---
 LibDoc allows to display [shields](https://shields.io) badges into the footer. You can add badges into the [config.yml](libdoc-config.html).
