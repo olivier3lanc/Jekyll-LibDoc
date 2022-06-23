@@ -21,6 +21,7 @@ The following documentation projects use LibDoc:
 
 * [Scroll Frames](https://olivier3lanc.github.io/Scroll-Frames/) Animate sequences of still frames on any DOM element in relation with its position into the viewport.
 * [Scroll Btween](https://olivier3lanc.github.io/Scroll-Btween/) Tween any CSS values on any DOM element in relation with its position into the viewport.
+* [GOA UI Framework](https://itautomotive-dev.github.io/goafe-ui/) Documentation of custom GOA CAR website UI framework.
 * [BYmyCAR UI Framework](https://itautomotive-dev.github.io/bymycar-ui/) Documentation of custom BYmyCAR website UI framework.
 
 ## Features
