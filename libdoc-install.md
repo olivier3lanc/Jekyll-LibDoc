@@ -33,7 +33,7 @@ LibDoc requires only [Jekyll](https://jekyllrb.com/) to compile your work.
 
 ## Online
 
-![Github.dev](libdoc/img/libdoc-edit-online.webp)
+![Github.dev](assets/libdoc/img/libdoc-edit-online.webp)
 
 It is possible to craft documentation with LibDoc only with your browser, [Github](https://www.github.com) and [Github Pages](https://pages.github.com).
 

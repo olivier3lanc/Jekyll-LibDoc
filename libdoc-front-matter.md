@@ -46,7 +46,7 @@ iframe_mode: true
 
 ## Assets settings
 
-*Available only for [libdoc/assets layout](libdoc-layouts.html#assets)*.
+*Available only for pages using [libdoc/assets](libdoc-layouts.html#assets) layout*.
 
 These front matter settings override the [assets configuration](libdoc-config.html#assets).
 
@@ -55,13 +55,13 @@ These front matter settings override the [assets configuration](libdoc-config.ht
 | `path_from_root` | *string* | The path from which files are available do download. `/` is the root |
 | `extensions_enabled` | *Array* | Array of file extensions to display |
 
-Example of custom assets layout configuration on a page: [view example](libdoc-layout-assets-alt.html
+Example of custom assets layout configuration on a page: [view example](libdoc-layout-assets-alt.html)
 
 ```yaml
 layout: libdoc/assets
 # Example of LibDoc secific optional settings
 assets:
-    path_from_root: /libdoc
+    path_from_root: /assets/libdoc
     extensions_enabled: # File extension to display
         - jpg
         - gif

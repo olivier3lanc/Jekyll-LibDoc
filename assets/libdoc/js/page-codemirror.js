@@ -31,7 +31,7 @@ let libdocCodeMirror = {
         // Set to base64
         const sentObject64 = btoa(stringifiedSentObject);
         // Iframe playground URL
-        const iframeUrl = `${site.url}${site.baseurl}/libdoc/playground.html#${sentObject64}`;
+        const iframeUrl = `${site.url}${site.baseurl}/assets/libdoc/playground.html#${sentObject64}`;
         // Build the iframe HTML string
         const iframeMarkup = `<iframe src="${iframeUrl}" class="u-transition-none u-absolute u-h-100 u-b-none u-w-100"></iframe>`;
         this.elements.result.innerHTML = iframeMarkup;
