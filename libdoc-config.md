@@ -87,8 +87,8 @@ The following YAML is the configuration of the current documentation.
 title: LibDoc # title of the documentation
 description: >- # Description of the docs. (>- means to ignore newlines until next param)
   A Jekyll documentation theme with built-in search and playground
-# IMPORTANT: on Github Pages deploys, url and baseurl are ignored because automatically overridden
-url: http://localhost # the base hostname & protocol for your site, e.g. http://example.com
+# IMPORTANT: on Github Pages deploys, url and baseurl must be commented or set to proper settings, otherwise links and resources URL are wrong
+url: http://localhost # the base hostname & protocol for your site, e.g. http://example.com::
 baseurl: /Jekyll-LibDoc/_site # the subpath of your site, e.g. /blog
 #permalink: /:path/:basename/:output_ext
 #destination: ../your/new/path # Build relative path destination. The destination directory e.g. /blog
@@ -119,14 +119,14 @@ playground:
     # Absolute URL starting with 'http'
     stylesheets: 
         - /demo-only/css/normalize.css
-        - /demo-only/css/photoswipe.css
+        # - /demo-only/css/photoswipe.css
     
     # PLAYGROUND HEAD JAVASCRIPTS
     # Javascript in <head>. Can be either:
     # Relative URL from site root starting with slash /
     # Absolute URL starting with 'http'
     scripts_head:
-        # - /libdoc/js/my-toggles.js
+        # - /assets/libdoc/js/my-toggles.js
 
     # PLAYGROUND MODULES JAVASCRIPTS
     # Javascript type="module" are set before text/javascript files
@@ -162,7 +162,7 @@ playground:
         
         # PLAYGROUND PNG favicon file 
         # Path from root or absolute/remote URL - Square 32x32 pixels icon png format or .ico for old browsers
-        favicon: /libdoc/img/favicon/playground-android-chrome-512x512.png
+        favicon: /assets/libdoc/img/favicon/playground-android-chrome-512x512.png
 
         # PLAYGROUND SVG favicon example - NOT supported on Safari
         # favicon: data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22256%22 height=%22256%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%237d6ee7%22></rect><path fill=%22%23fff%22 d=%22M36.63 22.42L66.52 22.42Q66.78 22.87 67.06 23.63Q67.32 24.40 67.32 25.30L67.32 25.30Q67.32 26.83 66.60 27.73Q65.88 28.63 64.53 28.63L64.53 28.63L40.05 28.63L40.05 47.35L63.36 47.35Q63.63 47.80 63.91 48.56Q64.17 49.33 64.17 50.23L64.17 50.23Q64.17 51.76 63.45 52.66Q62.73 53.56 61.38 53.56L61.38 53.56L40.05 53.56L40.05 77.05Q39.60 77.23 38.66 77.41Q37.71 77.59 36.72 77.59L36.72 77.59Q32.67 77.59 32.67 74.34L32.67 74.34L32.67 26.38Q32.67 24.58 33.75 23.50Q34.84 22.42 36.63 22.42L36.63 22.42Z%22></path></svg>
@@ -184,7 +184,7 @@ playground:
         # PLAYGROUND IMAGE
         # Open Graph image file for social networks. Can be either relative URL from site root, absolute URL starting with 'http'. Default is LibDoc's splash screen.
         # image: /img/custom_image.webp
-        image: /libdoc/img/meta-image-playground.jpg
+        image: /assets/libdoc/img/meta-image-playground.jpg
 
 # METADATA
 # Metadata informations for the site/project
@@ -199,7 +199,7 @@ metadata:
 
     # PNG favicon file 
     # Path from root or absolute/remote URL - Square 32x32 pixels icon png format or .ico for old browsers
-    favicon: /libdoc/img/favicon/favicon-32x32.png
+    favicon: /assets/libdoc/img/favicon/favicon-32x32.png
 
     # SVG favicon example - NOT supported on Safari
     # favicon: data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22256%22 height=%22256%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%237d6ee7%22></rect><path fill=%22%23fff%22 d=%22M36.63 22.42L66.52 22.42Q66.78 22.87 67.06 23.63Q67.32 24.40 67.32 25.30L67.32 25.30Q67.32 26.83 66.60 27.73Q65.88 28.63 64.53 28.63L64.53 28.63L40.05 28.63L40.05 47.35L63.36 47.35Q63.63 47.80 63.91 48.56Q64.17 49.33 64.17 50.23L64.17 50.23Q64.17 51.76 63.45 52.66Q62.73 53.56 61.38 53.56L61.38 53.56L40.05 53.56L40.05 77.05Q39.60 77.23 38.66 77.41Q37.71 77.59 36.72 77.59L36.72 77.59Q32.67 77.59 32.67 74.34L32.67 74.34L32.67 26.38Q32.67 24.58 33.75 23.50Q34.84 22.42 36.63 22.42L36.63 22.42Z%22></path></svg>
@@ -221,7 +221,7 @@ metadata:
     # IMAGE
     # Open Graph image file for social networks. Can be either relative URL from site root, absolute URL starting with 'http'. Default is LibDoc's splash screen.
     # image: /img/custom_image.webp
-    image: /libdoc/img/libdoc.png
+    image: /assets/libdoc/img/libdoc.png
 
 # SIDEBAR 
 # Main navigation containing site/project's logo, pages links and search form.
@@ -235,7 +235,7 @@ sidebar:
     logo:
         # LOGO URL
         # Image URL: Can be local e.g. '/img/logo.png' or remote 'https://remotesite.com/img/logo.png'
-        url: /libdoc/img/favicon/android-chrome-512x512.png
+        url: /assets/libdoc/img/favicon/android-chrome-512x512.png
 
         # LOGO MAX HEIGHT
         # Logo image max height, applies only if url is set
@@ -253,23 +253,27 @@ sidebar:
             title: <span class="i-github u-mr-xxs"></span> View on GitHub # Link text
             order: 0 # Sets the rank of the page link into the sidebar, higher values give lower rank for the page link
             # category: Showcase # Add this this link into a category just like pages
-        -   url: https://www.youtube.com/embed/iWowJBRMtpc # Local or remote URL
-            title: Iframe mode example # Link text
-            order: 100 # Sets the rank of the page link into the sidebar, higher values give lower rank for the page link
-            iframe_mode: true
-            category: Features
+        # -   url: https://www.youtube.com/embed/iWowJBRMtpc # Local or remote URL
+        #     title: Iframe mode example # Link text
+        #     order: 100 # Sets the rank of the page link into the sidebar, higher values give lower rank for the page link
+        #     iframe_mode: true
+        #     category: Features
         # Example URL
-        -   url: ./libdoc-layout-page.html
-            title: Relative link 1
+        -   url: https://olivier3lanc.github.io/Scroll-Btween/
+            title: Scroll Btween
             order: 500
-            category: Additional links
-        -   url: ./libdoc-layouts.html
-            title: Relative link 2
+            category: Showcase
+        -   url: https://olivier3lanc.github.io/Scroll-Frames/
+            title: Scroll Frames
             order: 500
-            category: Additional links
+            category: Showcase
         # Example remote URL
-        -   url: https://www.wikipedia.org/
-            title: Wikipedia
+        -   url: https://pages.github.com
+            title: Github Pages
+            order: 510
+            category: External resources
+        -   url: https://jekyllrb.com
+            title: Jekyll
             order: 510
             category: External resources
 
@@ -278,8 +282,8 @@ sidebar:
 shields:
     -   image_html: <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/olivier3lanc/Jekyll-LibDoc?logo=github&style=flat-square">
         link_url: https://github.com/olivier3lanc/Jekyll-LibDoc
-    -   image_html: <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/olivier3lanc/Jekyll-LibDoc?logo=github&style=flat-square">
-        link_url: https://github.com/olivier3lanc/Jekyll-LibDoc
+    -   image_html: <img alt="no trackers, no cookies and no analytics" title="This website has no trackers, no cookies and no analytics. Only feedback is important :)" src="https://img.shields.io/badge/no%20trackers|cookies|analytics-Just%20feedback-green?style=flat-square">
+        link_url: 'mailto:olivier3lanc@gmail.com'
 
 # ASSETS
 # Settings for the assets layout

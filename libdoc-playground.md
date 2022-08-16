@@ -41,7 +41,6 @@ playground:
     # Absolute URL starting with 'http'
     stylesheets: 
         - /demo-only/css/normalize.css
-        - /demo-only/css/photoswipe.css
     
     # PLAYGROUND HEAD JAVASCRIPTS
     # Javascript in <head>. Can be either:
@@ -55,7 +54,7 @@ playground:
     # JS modules do not work with a file:// URL 
     # JS modules need a web server.
     scripts_body_modules: 
-        - /demo-only/js/demo.js
+        # - /demo-only/js/demo.js
 
     # PLAYGROUND BODY JAVASCRIPTS
     # Javascript type="text/javascript" near </body>. Can be either:
@@ -84,7 +83,7 @@ playground:
         
         # PLAYGROUND PNG favicon file 
         # Path from root or absolute/remote URL - Square 32x32 pixels icon png format or .ico for old browsers
-        favicon: /libdoc/img/favicon/playground-android-chrome-512x512.png
+        favicon: /assets/libdoc/img/favicon/playground-android-chrome-512x512.png
 
         # PLAYGROUND SVG favicon example - NOT supported on Safari
         # favicon: data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22256%22 height=%22256%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%237d6ee7%22></rect><path fill=%22%23fff%22 d=%22M36.63 22.42L66.52 22.42Q66.78 22.87 67.06 23.63Q67.32 24.40 67.32 25.30L67.32 25.30Q67.32 26.83 66.60 27.73Q65.88 28.63 64.53 28.63L64.53 28.63L40.05 28.63L40.05 47.35L63.36 47.35Q63.63 47.80 63.91 48.56Q64.17 49.33 64.17 50.23L64.17 50.23Q64.17 51.76 63.45 52.66Q62.73 53.56 61.38 53.56L61.38 53.56L40.05 53.56L40.05 77.05Q39.60 77.23 38.66 77.41Q37.71 77.59 36.72 77.59L36.72 77.59Q32.67 77.59 32.67 74.34L32.67 74.34L32.67 26.38Q32.67 24.58 33.75 23.50Q34.84 22.42 36.63 22.42L36.63 22.42Z%22></path></svg>
@@ -106,38 +105,32 @@ playground:
         # PLAYGROUND IMAGE
         # Open Graph image file for social networks. Can be either relative URL from site root, absolute URL starting with 'http'. Default is LibDoc's splash screen.
         # image: /img/custom_image.webp
-        image: /libdoc/img/meta-image-playground.jpg
+        image: /assets/libdoc/img/meta-image-playground.jpg
 ```
 
-## Example - Basic HTML
+## Example - Basic example
 
-This playground example simply uses HTML with settings of CSS and Javascripts set into the [config.yml file](libdoc-config.html#playground). This playground features [Photoswipe lightbox](https://www.photoswipe.com).
+This playground example uses the [playground settings](libdoc-config.html#playground) with simple HTML. 
 
 ```html
-<h1>Simple Photoswipe gallery</h1>
-<nav id="gallery">
-    <a  href="https://olivier3lanc.github.io/photographies/paysages/automne/Chalets_Monal_Automne_2_MG_5773_size_1600x1066.webp"
-        data-pswp-width="1600" 
-        data-pswp-height="1066" 
-        target="_blank">
+<h1>Simple gallery</h1>
+<nav>
+    <a  href="https://olivier3lanc.github.io/photographies/paysages/automne/Chalets_Monal_Automne_2_MG_5773_size_1600x1066.webp">
         <img    srcset="https://images.weserv.nl/?url=https://olivier3lanc.github.io/photographies/paysages/automne/Chalets_Monal_Automne_2_MG_5773_size_1600x1066.webp&height=300&output=webp&q=30 2x"
-                src="https://images.weserv.nl/?url=https://olivier3lanc.github.io/photographies/paysages/automne/Chalets_Monal_Automne_2_MG_5773_size_1600x1066.webp&w=150&height=150&output=webp&q=30" 
+                src="https://images.weserv.nl/?url=https://olivier3lanc.github.io/photographies/paysages/automne/Chalets_Monal_Automne_2_MG_5773_size_1600x1066.webp&height=150&output=webp&q=30" 
                 alt="Le Monal en Automne"
                 width="225" height="150">
     </a>
-    <a  href="https://olivier3lanc.github.io/photographies/paysages/automne/le_monal_en_automne_mg_3672_1_size_2560x1706.webp"
-        data-pswp-width="2560" 
-        data-pswp-height="1706" 
-        target="_blank">
+    <a  href="https://olivier3lanc.github.io/photographies/paysages/automne/le_monal_en_automne_mg_3672_1_size_2560x1706.webp">
         <img    srcset="https://images.weserv.nl/?url=https://olivier3lanc.github.io/photographies/paysages/automne/le_monal_en_automne_mg_3672_1_size_2560x1706.webp&height=300&output=webp&q=30 2x"
-                src="https://images.weserv.nl/?url=https://olivier3lanc.github.io/photographies/paysages/automne/le_monal_en_automne_mg_3672_1_size_2560x1706.webp&w=150&height=150&output=webp&q=30" 
+                src="https://images.weserv.nl/?url=https://olivier3lanc.github.io/photographies/paysages/automne/le_monal_en_automne_mg_3672_1_size_2560x1706.webp&height=150&output=webp&q=30" 
                 alt="Les Chalets du Monal en Automne"
                 width="225" height="150">
     </a>
 </nav>
 <p>Photo credits Olivier 3lanc</p>
 ```
-{:.playground title="Example - Basic HTML"}
+{:.playground title="Basic example"}
 
 ## Example - HTML and CSS
 

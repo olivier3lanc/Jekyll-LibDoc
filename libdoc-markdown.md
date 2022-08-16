@@ -553,16 +553,16 @@ To create a task list, preface list items with a regular space character followe
 
 ## Images and media
 
-![Alt text](libdoc/img/150x150.webp) This is a text next to an image that is not as large as the page width.
+![Alt text](assets/libdoc/img/150x150.webp) This is a text next to an image that is not as large as the page width.
 
-![Alt text](libdoc/img/850x150.webp) This is a text next to an image that is at least as large as the page width.
+![Alt text](assets/libdoc/img/850x150.webp) This is a text next to an image that is at least as large as the page width.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/iWowJBRMtpc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ```markdown
-![Alt text](libdoc/img/150x150.webp) This is a text next to an image that is not as large as the page width.
+![Alt text](assets/libdoc/img/150x150.webp) This is a text next to an image that is not as large as the page width.
 
-![Alt text](libdoc/img/850x150.webp) This is a text next to an image that is at least as large as the page width.
+![Alt text](assets/libdoc/img/850x150.webp) This is a text next to an image that is at least as large as the page width.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/iWowJBRMtpc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
@@ -656,6 +656,6 @@ To include a pipe | as content within your cell, use a \ before the pipe:
 
 ## Cheatsheet
 
-![Github Markdown cheatsheet](libdoc/img/gfm-cheatsheet.webp)
+![Github Markdown cheatsheet](assets/libdoc/img/gfm-cheatsheet.webp)
 
 Here is the official [Github Markdown cheatsheet](https://guides.github.com/pdfs/markdown-cheatsheet-online.pdf)

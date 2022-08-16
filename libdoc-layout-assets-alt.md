@@ -7,7 +7,7 @@ layout: libdoc/assets
 category: Layouts examples
 order: 200
 assets:
-    path_from_root: /libdoc
+    path_from_root: /demo-only
     extensions_enabled: # File extension to display
         - jpg
         - gif
@@ -18,7 +18,7 @@ assets:
 ```yaml
 layout: libdoc/assets
 assets:
-    path_from_root: /libdoc
+    path_from_root: /demo-only
     extensions_enabled: # File extension to display
         - jpg
         - gif
@@ -26,5 +26,5 @@ assets:
         - png
 ```
 
-Assets layout with custom settings that override default settings of [config file](libdoc-config.html#assets): Into this page, we display all the images files contained into the /libdoc folder.
+Assets layout with custom settings that override default settings of [config file](libdoc-config.html#assets): Into this page, we display all the images files contained into the /demo-only folder.
 

@@ -351,7 +351,7 @@ const iframeModeEmbed = function(url) {
 document.querySelectorAll('#libdoc-sidebar a[data-iframe-mode="true"]').forEach(function(el) {
     el.addEventListener('click', function(e) {
         e.preventDefault();
-        const iframe_url = site.url + site.baseurl + '/libdoc/iframe.html?src=' + el.href;
+        const iframe_url = site.url + site.baseurl + '/assets/libdoc/iframe.html?src=' + el.href;
         location.href = iframe_url;
     });
 });

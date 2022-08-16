@@ -95,11 +95,10 @@ let playground = {
             // Set to base64
             var sentObject64 = btoa(stringifiedSentObject);
             // Build the iframe HTML string
-            var iframeStr = '<iframe id="'+playgroundId+'-iframe" data-src="'+site.url+site.baseurl+'/libdoc/playground.html#'+sentObject64+'" class="playground-iframe not-rendered u-transition-none u-absolute u-h-100 u-b-none u-w-100"></iframe>';
+            var iframeStr = '<iframe id="'+playgroundId+'-iframe" data-src="'+site.url+site.baseurl+'/assets/libdoc/playground.html#'+sentObject64+'" class="playground-iframe not-rendered u-transition-none u-absolute u-h-100 u-b-none u-w-100"></iframe>';
             // Sets the href attribute on the open new tab button link
             // jQuery('[data-playground-new-tab="'+playgroundId+'"]').attr('href', site.url+site.baseurl+'/libdoc/playground.html#'+sentObject64);
-            var iframeUrl = site.url+site.baseurl+'/libdoc/playground.html#'+sentObject64;
-            var pageFeaturedPlaygroundUrl = site.url+site.baseurl+'/libdoc/page-split.html#'+sentObject64;
+            var iframeUrl = site.url+site.baseurl+'/assets/libdoc/playground.html#'+sentObject64;
             // Trim to remove unwanted white spaces
             var trimmed = content.replace(/ /g,'');
             var buf = [];
