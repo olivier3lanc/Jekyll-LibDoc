@@ -17,7 +17,7 @@ let sidebar = function(cmd) {
 let modalAjax = function(file) {
     const el_modal_content = document.querySelector('#libdoc-modal-content');
     if (typeof file == 'string' && el_modal_content !== null) {
-        const url = site.url+site.baseurl+'/libdoc/ajax/'+file+'.html';
+        const url = site.url+site.baseurl+'/assets/libdoc/ajax/'+file+'.html';
         fetch(url)
             .then(data => data.text())
             .then(data => {
