@@ -10,11 +10,32 @@ order: 90
 * 
 {:toc}
 
-## Requirements
+## Online - Remote theme
 
-LibDoc requires only [Jekyll](https://jekyllrb.com/) to compile your work.
+*Available only on GitHub*, [remote theme feature](https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/adding-a-theme-to-your-github-pages-site-using-jekyll#adding-a-theme) is the most simple way to use LibDoc, it does not require any installation, just follow these few steps:
+
+1. **Create a repository** <br>Just add a new repository on your GitHub account. [Example](https://github.com/olivier3lanc/LibDoc-remote-demo/)<br><br>
+2. **Create a LibDoc config file** <br>Create and configure your LibDoc config file called [_config.yml](libdoc-config.html), required for GitHub Pages, do not forget to add/uncomment the following line:<br>`remote_theme: olivier3lanc/Jekyll-LibDoc`<br>[View a _config.yml example](https://github.com/olivier3lanc/LibDoc-remote-demo/blob/main/_config.yml)<br><br>
+3. **Enable Github Pages** <br>To automatically compile your LibDoc project, just enable GitHub Pages at `https://github.com/[GH_USER_NAME]/[REPO_NAME]/settings/pages`. Each time you commit and push on the specified branch, [Github Pages](https://pages.github.com) builds and hosts your project on the URL `https://[GH_USER_NAME].github.io/[REPO_NAME]`.
+
+Your repository is now ready to be deployed as GitHub Pages website, all you have to do is adding your content! Learn more about [remote themes](https://github.blog/2017-11-29-use-any-theme-with-github-pages/)
+
+
+## Online - Copy or clone
+
+![Github.dev](assets/libdoc/img/libdoc-edit-online.webp)
+
+It is possible to craft documentation with LibDoc only with your browser, [Github](https://www.github.com) and [Github Pages](https://pages.github.com). 
+
+1. Copy, clone or fork [LibDoc repository](https://github.com/olivier3lanc/Jekyll-LibDoc)
+2. On the forked/copy repository, press `Shift + .` or go to `https://github.dev/[GH_USER_NAME]/[REPO_NAME]/tree/[BRANCH_NAME]`
+3. You are now into [Visual Studio Code](https://code.visualstudio.com/) and you can edit, commit and push.
+
+To automatically compile your LibDoc project, just enable your instance on this page `https://github.com/[GH_USER_NAME]/[REPO_NAME]/settings/pages`. Each time you commit and push on the specified branch, [Github Pages](https://pages.github.com) builds and hosts your project on the URL `https://[GH_USER_NAME].github.io/[REPO_NAME]`.
 
 ## Locally
+
+LibDoc requires only [Jekyll](https://jekyllrb.com/) to compile your work.
 
 1. Install Jekyll on your machine following the steps described [here](https://jekyllrb.com/docs/)
 2. Get the latest version of LibDoc 
@@ -31,21 +52,14 @@ LibDoc requires only [Jekyll](https://jekyllrb.com/) to compile your work.
     * `jekyll build -c _personal-config.yml --watch` <br> Builds the project using *_personal-config.yml* and automatically compiles on detected changes.
     * Learn more about command line usage on [official Jekyll documentation](https://jekyllrb.com/docs/usage/)
 
-## Online
 
-![Github.dev](assets/libdoc/img/libdoc-edit-online.webp)
 
-It is possible to craft documentation with LibDoc only with your browser, [Github](https://www.github.com) and [Github Pages](https://pages.github.com).
 
-1. Copy or fork [LibDoc repository](https://github.com/olivier3lanc/Jekyll-LibDoc)
-2. On the forked/copy repository, press `Shift + .` or go to `https://github.dev/[GH_USER_NAME]/[REPO_NAME]/tree/[BRANCH_NAME]`
-3. You are now into [Visual Studio Code](https://code.visualstudio.com/) and you can edit, commit and push.
 
-## Enable Github Pages
 
-To automatically compile your LibDoc project, just enable your instance on this page `https://github.com/[GH_USER_NAME]/[REPO_NAME]/settings/pages`. [Learn more](https://pages.github.com/)
 
-Each time you commit and push on the specified branch, [Github Pages](https://pages.github.com) builds and hosts your project on the URL `https://[GH_USER_NAME].github.io/[REPO_NAME]`.
+
+
 
 
 

@@ -84,6 +84,8 @@ The following YAML is the configuration of the current documentation.
 # More info at https://jekyllrb.com/docs/configuration/options/
 # ---------
 
+# TO USE JEKYLL LIBDOC AS REMOTE THEME, UNCOMMENT (available only on Github)
+# remote_theme: olivier3lanc/Jekyll-LibDoc
 title: LibDoc # title of the documentation
 description: >- # Description of the docs. (>- means to ignore newlines until next param)
   A Jekyll documentation theme with built-in search and playground

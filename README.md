@@ -18,6 +18,7 @@ The following documentation projects use LibDoc:
 
 ## Features
 
+* **Quick and easy without installation<sup>new</sup>**<br> Quickly deploy Jekyll LibDoc on a Github repository with [remote theme feature](https://olivier3lanc.github.io/Jekyll-LibDoc/libdoc-install.html#online---remote-theme)<br><br>
 * **Dual context: LibDoc + Playground**<br> LibDoc was made to craft documentation with its own embedded demos and examples. A major feature of the LibDoc Jekyll theme is its own built-in and configurable playground which is both a [layout](https://olivier3lanc.github.io/Jekyll-LibDoc/libdoc-layouts.html#playground) and a syntax highlighter extension. It extends the [syntax highlighter](https://olivier3lanc.github.io/Jekyll-LibDoc/libdoc-config.html#prismjs-syntax-highlighter) by running the specified code into a configurable context with user defined style sheets and scripts. [Learn more](https://olivier3lanc.github.io/Jekyll-LibDoc/libdoc-playground.html)<br><br>
 * **Gem free, plugin free** <br>LibDoc runs without any Gem nor plugin.<br><br>
 * **Github Pages compatible Jekyll theme** <br>Easily deploy your project on Github Pages, LibDoc is fully compatible.<br><br>
