@@ -73,7 +73,7 @@ main {
             margin-top: 1em;
         }
     }
-    ul {
+    ul:not([data-playground-commands]) {
         &>li {
             position: relative;
             margin-bottom: 1em;
@@ -90,9 +90,9 @@ main {
             }
         }
     }
-    ol {
+    ol:not([data-playground-commands]) {
         counter-reset: count;
-        &>li {
+        &>li:not([data-playground-commands]) {
             counter-increment: count;
             position: relative;
             margin-bottom: 1em;

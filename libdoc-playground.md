@@ -12,16 +12,16 @@ order: 100
 
 A major feature of the [LibDoc Jekyll theme](https://github.com/olivier3lanc/Jekyll-LibDoc) is its own built-in and configurable playground. 
 
-* **Playground is a Layout** [example](libdoc-layout-playground.html)<br> Playground is available as layout, completely separated from LibDoc theme resources. It writes your content into the `body` part of the page with the specified settings defined in the [config.yml](libdoc-config.html#playground). Just set your layout to `libdoc/playground` and build.<br><br>
+* **Playground is a Layout** [example](libdoc-layout-playground.html)<br> Playground is available as layout, completely separated from LibDoc theme resources. It writes your content into the `body` part of the page with the specified settings defined in the [config.yml](libdoc-config.html#playground). Just set your layout to `libdoc/playground` and build.
 * **Playground is an extended syntax highlighter** [example](#example---basic-html)<br> It extends the Jekyll syntax highlighter by running code of each syntax highlighted area into an embedded iframe with the code executed into the custom context of [config.yml](libdoc-config.html#playground). Into your markdown, just add `{:.playground}` to your syntax highlight. <br>
 > *Since syntax highlight code is injected with Javascript into the playground, script tags are not executed into playgrounds of syntax highlighters. Include Javascript files into your config files instead.* 
-    * **One config, multiple playgrounds** <br> You can add as much playgrounds as you want into a page, playgrounds are lazy loaded.<br><br>
-    * **Embed** <br> Playgrounds are embedded with an `iframe` tag.<br><br>
-    * **Tools** <br> For each playground:
-        * Maximize button.
-        * Open in new window button.
-        * Info modal that returns playground's settings.
-        * Resize playground embed window for each playground at its bottom right.
+* **One config, multiple playgrounds** <br> You can add as much playgrounds as you want into a page, playgrounds are lazy loaded.
+* **Embed** <br> Playgrounds are embedded with an `iframe` tag.
+* **Tools** <br> For each playground:
+    * Maximize button.
+    * Open in new window button.
+    * Info modal that returns playground's settings.
+    * Resize playground embed window for each playground at its bottom right.
 
 ## Demo settings
 
@@ -390,7 +390,7 @@ About extended syntax highlighter only:
     1. LibDoc's playground copy the generated HTML from the syntax highlighted area
     2. Encodes code it in base64
     3. Builds an URL with code data as GET parameters
-    4. Embeds the playground as iframe with the URL<br><br>
+    4. Embeds the playground as iframe with the URL
 2. **Execution in playground's iframe**
     1. Playground's stylesheets in `<head>` set in [config.yml](libdoc-config.html#playground) `playground.stylesheets`
     2. Playground's scripts *type="text/javascript"* in `<head>` set in [config.yml](libdoc-config.html#playground) `playground.scripts_head`
