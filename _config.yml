@@ -186,6 +186,10 @@ sidebar:
             title: Scroll Frames
             order: 500
             category: Showcase
+        -   url: https://olivier3lanc.github.io/seemap/
+            title: SEEMAP
+            order: 500
+            category: Showcase
         # Example remote URL
         -   url: https://pages.github.com
             title: Github Pages
