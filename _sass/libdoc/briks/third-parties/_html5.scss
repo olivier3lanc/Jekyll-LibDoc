@@ -119,8 +119,7 @@ code {
         padding-right: my-spacing(xxs);
         font-size: my-font-size(sm);
         position: relative;
-        background-color: my-color(primary);
-        color: my-color(primary-max);
+        background-color: my-color(primary-edge);
         white-space: nowrap;
         &::after,
         &::before {
@@ -128,15 +127,16 @@ code {
             position: absolute;
             display: block;
             width: 100%;
-            height: 3px;
-            top: -3px;
+            height: 5px;
+            top: -5px;
             left: 0;
-            background-color: my-color(primary);
+            background-color: my-color(primary-edge);
             border-radius: 5px 5px 0px 0px;
         }
         &::before {
             top: calc(100% - 1px);
             border-radius: 0px 0px 5px 5px;
+            box-shadow: 0px 3px 3px 0px lightgray;
         }
     }
 }
