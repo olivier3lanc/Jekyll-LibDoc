@@ -28,6 +28,14 @@ order: 100
 category: Features
 ```
 
+## Separator
+
+`separator` - *boolean* - Adds only a separator above the item link if set to true. Has no effect if not specified.
+
+```yaml
+separator: true
+```
+
 ## Unlisted
 
 `unlisted` - *boolean* - If true, removes page link from the sidebar and search results. [Example](libdoc-unlisted.html)
