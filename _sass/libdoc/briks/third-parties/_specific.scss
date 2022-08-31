@@ -73,7 +73,7 @@ main {
             margin-top: 1em;
         }
     }
-    ul:not([data-playground-commands]) {
+    ul:not([data-playground-commands]):not(#libdoc-assets) {
         &>li {
             position: relative;
             margin-bottom: 1em;
