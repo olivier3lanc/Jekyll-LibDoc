@@ -69,7 +69,7 @@ It is possible to only write your content without complete LibDoc installation, 
     ```yml
     remote_theme: olivier3lanc/Jekyll-LibDoc
     plugins:
-    - jekyll-remote-theme
+        - jekyll-remote-theme
     ```
 4. Run `jekyll build` or with any custom config file `jekyll build -c _your-own-config.yml`
 
