@@ -1,5 +1,7 @@
 # Jekyll LibDoc
 
+**A Jekyll documentation theme with built-in search and playground**
+
 [Documentation](https://olivier3lanc.github.io/Jekyll-LibDoc/) | 
 [Installation](https://olivier3lanc.github.io/Jekyll-LibDoc/libdoc-install.html) | 
 [Configuration](https://olivier3lanc.github.io/Jekyll-LibDoc/libdoc-config.html)
