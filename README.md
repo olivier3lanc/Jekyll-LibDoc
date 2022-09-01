@@ -1,17 +1,12 @@
----
-title: Hello World !
-description: This is the very beginning of a pretty documentation
-layout: libdoc/page
-permalink: index.html
----
-
 # Jekyll LibDoc
+
+**A Jekyll documentation theme with built-in search and playground**
 
 [Documentation](https://olivier3lanc.github.io/Jekyll-LibDoc/) | 
 [Installation](https://olivier3lanc.github.io/Jekyll-LibDoc/libdoc-install.html) | 
 [Configuration](https://olivier3lanc.github.io/Jekyll-LibDoc/libdoc-config.html)
 
- LibDoc is a Jekyll theme that was crafted to easily and quickly get properly designed documentation especially for CSS and Javascript libraries. It comes with a [built-in playground](https://olivier3lanc.github.io/Jekyll-LibDoc/libdoc-playground.html) and local search engine.
+LibDoc is a Jekyll theme that was crafted to easily and quickly get properly designed documentation especially for CSS and Javascript libraries. It comes with a [built-in playground](https://olivier3lanc.github.io/Jekyll-LibDoc/libdoc-playground.html) and local search engine.
 
 ![LibDoc layout](https://github.com/olivier3lanc/Jekyll-LibDoc/raw/master/assets/libdoc/img/libdoc-layout-page-split.webp)
 
