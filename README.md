@@ -16,6 +16,7 @@ LibDoc is a Jekyll theme that was crafted to easily and quickly get properly des
 
 The following documentation projects use LibDoc:
 
+* [SEEMAP](https://olivier3lanc.github.io/seemap/) A single HTML map file bundled with customizable popular Leaflet plugins, map providers and its own API.
 * [Scroll Frames](https://olivier3lanc.github.io/Scroll-Frames/) Animate sequences of still frames on any DOM element in relation with its position into the viewport.
 * [Scroll Btween](https://olivier3lanc.github.io/Scroll-Btween/) Tween any CSS values on any DOM element in relation with its position into the viewport.
 * [GOA UI Framework](https://itautomotive-dev.github.io/goafe-ui/) Documentation of custom GOA CAR website UI framework.
