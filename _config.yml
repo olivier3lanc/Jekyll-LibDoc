@@ -7,22 +7,22 @@ title: LibDoc # title of the documentation
 description: >- # Description of the docs. (>- means to ignore newlines until next param)
   A Jekyll documentation theme with built-in search and playground
 # IMPORTANT: on Github Pages deploys, url and baseurl must be commented or set to proper settings, otherwise links and resources URL are wrong
-# url: http://localhost # the base hostname & protocol for your site, e.g. http://example.com
+# url: http://192.168.1.54 # the base hostname & protocol for your site, e.g. http://example.com
 # baseurl: /Jekyll-LibDoc/_site # the subpath of your site, e.g. /blog
 #permalink: /:path/:basename/:output_ext
 #destination: ../your/new/path # Build relative path destination. The destination directory e.g. /blog
 #keep_files: [cache]
 #markdown: kramdown
-# defaults:
-#   -
-#     values:
-#       layout: libdoc/page # Uncommenting brings pbms on static files that must not be associated to any layout
+defaults:
+  -
+    values:
+      layout: libdoc/page
 kramdown:
     syntax_highlighter_opts:
         disable: true
 sass:
     style: compressed
-#exclude: ['/misc']
+# exclude: ['/assets/libdoc/ajax/playground-settings.html']
 
 # ---------
 # LIBDOC CONFIGURATION
@@ -45,7 +45,7 @@ playground:
     # Relative URL from site root starting with slash /
     # Absolute URL starting with 'http'
     scripts_head:
-        # - /libdoc/js/my-toggles.js
+        # - /js/my-toggles.js
 
     # PLAYGROUND MODULES JAVASCRIPTS
     # Javascript type="module" are set before text/javascript files
@@ -81,7 +81,7 @@ playground:
         
         # PLAYGROUND PNG favicon file 
         # Path from root or absolute/remote URL - Square 32x32 pixels icon png format or .ico for old browsers
-        favicon: /libdoc/img/favicon/playground-android-chrome-512x512.png
+        favicon: /assets/libdoc/img/favicon/playground-android-chrome-512x512.png
 
         # PLAYGROUND SVG favicon example - NOT supported on Safari
         # favicon: data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22256%22 height=%22256%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%237d6ee7%22></rect><path fill=%22%23fff%22 d=%22M36.63 22.42L66.52 22.42Q66.78 22.87 67.06 23.63Q67.32 24.40 67.32 25.30L67.32 25.30Q67.32 26.83 66.60 27.73Q65.88 28.63 64.53 28.63L64.53 28.63L40.05 28.63L40.05 47.35L63.36 47.35Q63.63 47.80 63.91 48.56Q64.17 49.33 64.17 50.23L64.17 50.23Q64.17 51.76 63.45 52.66Q62.73 53.56 61.38 53.56L61.38 53.56L40.05 53.56L40.05 77.05Q39.60 77.23 38.66 77.41Q37.71 77.59 36.72 77.59L36.72 77.59Q32.67 77.59 32.67 74.34L32.67 74.34L32.67 26.38Q32.67 24.58 33.75 23.50Q34.84 22.42 36.63 22.42L36.63 22.42Z%22></path></svg>
@@ -103,7 +103,7 @@ playground:
         # PLAYGROUND IMAGE
         # Open Graph image file for social networks. Can be either relative URL from site root, absolute URL starting with 'http'. Default is LibDoc's splash screen.
         # image: /img/custom_image.webp
-        image: /libdoc/img/meta-image-playground.jpg
+        image: /assets/libdoc/img/meta-image-playground.jpg
 
 # METADATA
 # Metadata informations for the site/project
@@ -118,7 +118,7 @@ metadata:
 
     # PNG favicon file 
     # Path from root or absolute/remote URL - Square 32x32 pixels icon png format or .ico for old browsers
-    favicon: /libdoc/img/favicon/favicon-32x32.png
+    favicon: /assets/libdoc/img/favicon/favicon-32x32.png
 
     # SVG favicon example - NOT supported on Safari
     # favicon: data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22256%22 height=%22256%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%237d6ee7%22></rect><path fill=%22%23fff%22 d=%22M36.63 22.42L66.52 22.42Q66.78 22.87 67.06 23.63Q67.32 24.40 67.32 25.30L67.32 25.30Q67.32 26.83 66.60 27.73Q65.88 28.63 64.53 28.63L64.53 28.63L40.05 28.63L40.05 47.35L63.36 47.35Q63.63 47.80 63.91 48.56Q64.17 49.33 64.17 50.23L64.17 50.23Q64.17 51.76 63.45 52.66Q62.73 53.56 61.38 53.56L61.38 53.56L40.05 53.56L40.05 77.05Q39.60 77.23 38.66 77.41Q37.71 77.59 36.72 77.59L36.72 77.59Q32.67 77.59 32.67 74.34L32.67 74.34L32.67 26.38Q32.67 24.58 33.75 23.50Q34.84 22.42 36.63 22.42L36.63 22.42Z%22></path></svg>
@@ -140,7 +140,7 @@ metadata:
     # IMAGE
     # Open Graph image file for social networks. Can be either relative URL from site root, absolute URL starting with 'http'. Default is LibDoc's splash screen.
     # image: /img/custom_image.webp
-    image: /libdoc/img/libdoc.png
+    image: /assets/libdoc/img/libdoc.png
 
 # SIDEBAR 
 # Main navigation containing site/project's logo, pages links and search form.
@@ -154,7 +154,7 @@ sidebar:
     logo:
         # LOGO URL
         # Image URL: Can be local e.g. '/img/logo.png' or remote 'https://remotesite.com/img/logo.png'
-        url: /libdoc/img/favicon/android-chrome-512x512.png
+        url: /assets/libdoc/img/favicon/android-chrome-512x512.png
 
         # LOGO MAX HEIGHT
         # Logo image max height, applies only if url is set
