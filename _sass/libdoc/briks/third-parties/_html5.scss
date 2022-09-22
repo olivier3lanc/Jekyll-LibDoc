@@ -65,6 +65,8 @@ body {
     color: my-color(primary);
     background-color: my-color(primary-max);
     line-height: 1.6em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 em {
     font-family: my-font-family(lead-em);
