@@ -63,7 +63,7 @@ Your repository is now ready to be deployed as GitHub Pages website, all you hav
 
 ### Online - No installation copy or clone
 
-![Github.dev](https://github.com/olivier3lanc/Jekyll-LibDoc/raw/master/assets/libdoc/img/libdoc-edit-online.webp)
+![Github.dev](https://github.com/olivier3lanc/Jekyll-LibDoc/raw/develop/assets/libdoc/img/libdoc-edit-online.webp)
 
 It is possible to craft documentation with LibDoc only with your browser, [Github](https://www.github.com) and [Github Pages](https://pages.github.com). 
 
