@@ -10,7 +10,7 @@ LibDoc is a Jekyll theme that was crafted to easily and quickly get properly des
 
 [![pages-build-deployment](https://github.com/olivier3lanc/Jekyll-LibDoc/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/olivier3lanc/Jekyll-LibDoc/actions/workflows/pages/pages-build-deployment) [![Jekyll Themes Shield](https://img.shields.io/badge/featured%20on-JekyllThemes-red.svg)](https://jekyll-themes.com) 
 
-![LibDoc layout](https://github.com/olivier3lanc/Jekyll-LibDoc/raw/master/assets/libdoc/img/libdoc-layout-page-split.webp)
+![LibDoc layout](https://github.com/olivier3lanc/Jekyll-LibDoc/raw/develop/assets/libdoc/img/libdoc-layout-page-split.webp)
 
 ## Showcase
 
