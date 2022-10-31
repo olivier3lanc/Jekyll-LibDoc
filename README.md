@@ -63,10 +63,10 @@ Your repository is now ready to be deployed as GitHub Pages website, all you hav
 
 ### Online - No installation copy or clone
 
-![Github.dev](https://github.com/olivier3lanc/Jekyll-LibDoc/raw/master/assets/libdoc/img/libdoc-edit-online.webp)
+![Github.dev](https://github.com/olivier3lanc/Jekyll-LibDoc/raw/develop/assets/libdoc/img/libdoc-edit-online.webp)
 
 It is possible to craft documentation with LibDoc only with your browser, [Github](https://www.github.com) and [Github Pages](https://pages.github.com). 
-
+s
 1. Copy, clone or fork [LibDoc repository](https://github.com/olivier3lanc/Jekyll-LibDoc)
 2. On the forked/copy repository, press `Shift + .` or go to `https://github.dev/[GH_USER_NAME]/[REPO_NAME]/tree/[BRANCH_NAME]`
 3. You are now into [Visual Studio Code](https://code.visualstudio.com/) and you can edit, commit and push.
