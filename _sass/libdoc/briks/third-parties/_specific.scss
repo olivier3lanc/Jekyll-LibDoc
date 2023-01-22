@@ -111,3 +111,8 @@ main {
 #markdown-toc {
     margin-top: 0px;
 }
+@media print {
+    #libdoc-sidebar {
+        display: none;
+    }
+}
