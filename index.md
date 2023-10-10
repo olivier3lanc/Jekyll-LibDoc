@@ -1,5 +1,5 @@
 ---
 ---
-## Hello world!
+## Purpose
 
-Welcome to your new documentation site! First, configure your `_config.yml` to remove the demo content and adjust your own settings. [See config documentation](https://olivier3lanc.github.io/Jekyll-LibDoc/libdoc-config.html)
+Our mission is to rejuvenate classic Catholic literature from the public domain by refining typography, correcting scanning inaccuracies, and incorporating links. With the valuable resources from Google Books, archive.org, and numerous others, these timeless works have been preserved. Yet, there’s a gap in their presentation for seamless reading on mobile devices. We aim to bridge that gap, hoping that these books not only enlighten you but also bring you nearer to God!
