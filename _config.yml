@@ -3,9 +3,9 @@
 # More info at https://jekyllrb.com/docs/configuration/options/
 # ---------
 
-title: LibDoc # title of the documentation
+title: S.D. Cason Catholic Library
 description: >- # Description of the docs. (>- means to ignore newlines until next param)
-  A Jekyll documentation theme with built-in search and playground
+  A library of classic public-domain Catholic books.
 # IMPORTANT: on Github Pages deploys, url and baseurl must be commented or set to proper settings, otherwise links and resources URL are wrong
 # url: http://192.168.1.54 # the base hostname & protocol for your site, e.g. http://example.com
 # baseurl: /Jekyll-LibDoc/_site # the subpath of your site, e.g. /blog
