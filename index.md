@@ -1,4 +1,5 @@
 ---
+category: About
 ---
 # Welcome to S.D. Cason Catholic Library
 
