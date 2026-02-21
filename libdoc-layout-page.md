@@ -109,7 +109,7 @@ This is another playground using settings from [config.yml](libdoc-config.html#p
 <div id="detector-w5" class="detector">&nbsp;</div>
 <div id="detector-w6" class="detector">&nbsp;</div>
 <nav class="bottom">
-    <a  href="https://olivier3lanc.github.io/Scroll-Btween" target="_blank">This demo uses ScrollBtween</a>
+    <a  href="https://olivier3lanc.me/Scroll-Btween" target="_blank">This demo uses ScrollBtween</a>
 </nav>  
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Kufam:wght@600&display=swap');

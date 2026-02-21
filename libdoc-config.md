@@ -109,7 +109,7 @@ sass:
 
 # ---------
 # LIBDOC CONFIGURATION
-# https://olivier3lanc.github.io/Jekyll-LibDoc/libdoc-config.html
+# https://olivier3lanc.me/Jekyll-LibDoc/libdoc-config.html
 # ---------
 
 # PLAYGROUND
@@ -261,11 +261,11 @@ sidebar:
         #     iframe_mode: true
         #     category: Features
         # Example URL
-        -   url: https://olivier3lanc.github.io/Scroll-Btween/
+        -   url: https://olivier3lanc.me/Scroll-Btween/
             title: Scroll Btween
             order: 500
             category: Showcase
-        -   url: https://olivier3lanc.github.io/Scroll-Frames/
+        -   url: https://olivier3lanc.me/Scroll-Frames/
             title: Scroll Frames
             order: 500
             category: Showcase

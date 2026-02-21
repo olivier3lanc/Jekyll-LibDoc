@@ -115,15 +115,15 @@ This playground example uses the [playground settings](libdoc-config.html#playgr
 ```html
 <h1>Simple gallery</h1>
 <nav>
-    <a  href="https://olivier3lanc.github.io/photographies/paysages/automne/Chalets_Monal_Automne_2_MG_5773_size_1600x1066.webp">
-        <img    srcset="https://images.weserv.nl/?url=https://olivier3lanc.github.io/photographies/paysages/automne/Chalets_Monal_Automne_2_MG_5773_size_1600x1066.webp&height=300&output=webp&q=30 2x"
-                src="https://images.weserv.nl/?url=https://olivier3lanc.github.io/photographies/paysages/automne/Chalets_Monal_Automne_2_MG_5773_size_1600x1066.webp&height=150&output=webp&q=30" 
+    <a  href="https://olivier3lanc.me/photographies/paysages/automne/Chalets_Monal_Automne_2_MG_5773_size_1600x1066.webp">
+        <img    srcset="https://images.weserv.nl/?url=https://olivier3lanc.me/photographies/paysages/automne/Chalets_Monal_Automne_2_MG_5773_size_1600x1066.webp&height=300&output=webp&q=30 2x"
+                src="https://images.weserv.nl/?url=https://olivier3lanc.me/photographies/paysages/automne/Chalets_Monal_Automne_2_MG_5773_size_1600x1066.webp&height=150&output=webp&q=30" 
                 alt="Le Monal en Automne"
                 width="225" height="150">
     </a>
-    <a  href="https://olivier3lanc.github.io/photographies/paysages/automne/le_monal_en_automne_mg_3672_1_size_2560x1706.webp">
-        <img    srcset="https://images.weserv.nl/?url=https://olivier3lanc.github.io/photographies/paysages/automne/le_monal_en_automne_mg_3672_1_size_2560x1706.webp&height=300&output=webp&q=30 2x"
-                src="https://images.weserv.nl/?url=https://olivier3lanc.github.io/photographies/paysages/automne/le_monal_en_automne_mg_3672_1_size_2560x1706.webp&height=150&output=webp&q=30" 
+    <a  href="https://olivier3lanc.me/photographies/paysages/automne/le_monal_en_automne_mg_3672_1_size_2560x1706.webp">
+        <img    srcset="https://images.weserv.nl/?url=https://olivier3lanc.me/photographies/paysages/automne/le_monal_en_automne_mg_3672_1_size_2560x1706.webp&height=300&output=webp&q=30 2x"
+                src="https://images.weserv.nl/?url=https://olivier3lanc.me/photographies/paysages/automne/le_monal_en_automne_mg_3672_1_size_2560x1706.webp&height=150&output=webp&q=30" 
                 alt="Les Chalets du Monal en Automne"
                 width="225" height="150">
     </a>
@@ -134,7 +134,7 @@ This playground example uses the [playground settings](libdoc-config.html#playgr
 
 ## Example - HTML and CSS
 
-This playground example uses HTML and CSS in addition with settings from [config.yml file](libdoc-config.html#playground). This playground features [ScrollBtween](https://olivier3lanc.github.io/Scroll-Btween/).
+This playground example uses HTML and CSS in addition with settings from [config.yml file](libdoc-config.html#playground). This playground features [ScrollBtween](https://olivier3lanc.me/Scroll-Btween/).
 
 ```html
 <article class="wrapper-playground gyp1" scroll-btween="gyp-back" data-detector="detector" data-background-position="|70 to 30|% center">
@@ -143,7 +143,7 @@ This playground example uses HTML and CSS in addition with settings from [config
         <p>Gypaetus barbatus</p>
     </header>
     <figure scroll-btween="gyp-front" data-detector="detector" data-left="|3 to -3|%" data-top="|0 to -20|%">
-        <img src="https://olivier3lanc.github.io/Scroll-Btween/img/gyp-front-1000.webp" alt="Bearded vulture">
+        <img src="https://olivier3lanc.me/Scroll-Btween/img/gyp-front-1000.webp" alt="Bearded vulture">
     </figure>
 </article>
 <div id="detector"></div>
@@ -153,7 +153,7 @@ This playground example uses HTML and CSS in addition with settings from [config
         <p>Gypaetus barbatus</p>
     </header>
     <figure scroll-btween="gyp-front2" data-left="|0 to 13|%" data-top="|0 to -5|%">
-        <img src="https://olivier3lanc.github.io/Scroll-Btween/img/gyp2-front-1000.webp" alt="Bearded vulture">
+        <img src="https://olivier3lanc.me/Scroll-Btween/img/gyp2-front-1000.webp" alt="Bearded vulture">
     </figure>
 </article>
 <p>Photo credits Olivier 3lanc</p>
@@ -175,10 +175,10 @@ This playground example uses HTML and CSS in addition with settings from [config
         background-repeat: no-repeat;
     }
     .wrapper-playground.gyp1 {
-        background-image: url(https://olivier3lanc.github.io/Scroll-Btween/img/gyp-back-1000.webp);
+        background-image: url(https://olivier3lanc.me/Scroll-Btween/img/gyp-back-1000.webp);
     }
     .wrapper-playground.gyp2 {
-        background-image: url(https://olivier3lanc.github.io/Scroll-Btween/img/gyp2-back-1000.webp);
+        background-image: url(https://olivier3lanc.me/Scroll-Btween/img/gyp2-back-1000.webp);
     }
     .wrapper-playground::before {
         content: '';

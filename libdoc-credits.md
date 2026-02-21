@@ -25,9 +25,9 @@ For core features:
 * [Lunr](https://lunrjs.com/) Search made simple
 
 
-For [current demo](https://olivier3lanc.github.io/Jekyll-LibDoc/):
+For [current demo](https://olivier3lanc.me/Jekyll-LibDoc/):
 
-* [Scroll Btween](https://olivier3lanc.github.io/Scroll-Btween/) Tween any CSS values on any DOM element in relation with its position into the viewport.
+* [Scroll Btween](https://olivier3lanc.me/Scroll-Btween/) Tween any CSS values on any DOM element in relation with its position into the viewport.
 * [GitHub - franciscop/ola: 🌊 Smooth animation library for interpolating numbers](https://github.com/franciscop/ola) 🌊 Smooth animation library for interpolating numbers - GitHub - franciscop/ola: 🌊 Smooth animation library for interpolating numbers
 * [PhotoSwipe](https://photoswipe.com/) Open-source JavaScript image gallery and lightbox.
 * [Bootstrap](https://getbootstrap.com/) The most popular HTML, CSS, and JS library in the world.
