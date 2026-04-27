@@ -205,6 +205,10 @@ sidebar:
             title: Olivier 3lanc
             order: 520
             category: Author
+        -   url: https://www.olivewhite.com
+            title: Olive White Photographies
+            order: 530
+            category: Author
 
 # BADGES
 # Feature that allows to display badges into the footer https://shields.io image html and url

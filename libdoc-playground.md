@@ -128,7 +128,7 @@ This playground example uses the [playground settings](libdoc-config.html#playgr
                 width="225" height="150">
     </a>
 </nav>
-<p>Photo credits Olivier 3lanc</p>
+<p>Photo credits <a href="https://www.olivewhite.com">Olive White Photographies</a></p>
 ```
 {:.playground title="Basic example"}
 
@@ -156,7 +156,7 @@ This playground example uses HTML and CSS in addition with settings from [config
         <img src="https://olivier3lanc.me/Scroll-Btween/img/gyp2-front-1000.webp" alt="Bearded vulture">
     </figure>
 </article>
-<p>Photo credits Olivier 3lanc</p>
+<p>Photo credits <a href="https://www.olivewhite.com">Olive White Photographies</a></p>
 <style>
     body {
         margin: 0; padding:0; height: 400vh;

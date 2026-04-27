@@ -31,5 +31,5 @@ For [current demo](https://olivier3lanc.me/Jekyll-LibDoc/):
 * [GitHub - franciscop/ola: 🌊 Smooth animation library for interpolating numbers](https://github.com/franciscop/ola) 🌊 Smooth animation library for interpolating numbers - GitHub - franciscop/ola: 🌊 Smooth animation library for interpolating numbers
 * [PhotoSwipe](https://photoswipe.com/) Open-source JavaScript image gallery and lightbox.
 * [Bootstrap](https://getbootstrap.com/) The most popular HTML, CSS, and JS library in the world.
-* All photo credits Olivier 3lanc (me^^).
+* All photo credits [Olive White Photographies](https://www.olivewhite.com).
 
